@@ -1,0 +1,30 @@
+{
+    "text": {
+        "start": "Старт",
+        "no_requests": "Закончились запросы",
+        "help": "Информация",
+        "profile": "Профиль",
+
+        "alert_in_progress": "В процессе",
+        "call_alert_in_progress": "В процессе(call)",
+
+        "change_mode_sms": "Выберите нейросеть",
+        "switch_to_chatgpt": "GPT(описание)",
+        "switch_to_midjourney": "Stable (описание)",
+        "switch_to_pikalabs": "Pikalabs(описание)",
+        "switch_to_deepai": "DeepAI (описание)",
+
+        "generate_mj": "Выбран Stable",
+        "generate_gpt": "Выбран GPT",
+        "generate_zeroscope": "Выбран Pika Labs",
+
+        "prompt_add": "Промпт принят",
+        "mj_error": "Stable Ошибка",
+        "error_gpt": "GPT ошибка",
+
+        "mj_after_progress": "Готово Stable",
+        "pikalabs_after_progress": "Готово pika",
+        "deepai_after_progress": "готово deepai"
+
+    }
+}

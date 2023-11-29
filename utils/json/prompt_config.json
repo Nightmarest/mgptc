@@ -1,0 +1,162 @@
+[
+    {
+        "photo_url": "https://i.postimg.cc/fbzKwxJG/1.jpg",
+        "title": "Объекты на чёрном фоне",
+        "prompt": "hand holding, {} mockup, handheld, black backgroung, aerial view, minimalist outlines, large-scale, captivating"
+    },
+    {
+        "photo_url": "https://i.postimg.cc/02qn8wK8/2.jpg",
+        "title": "Корпоративный стиль",
+        "prompt": "corporate style of {} company, modern style --q 5 --ar 3:2"
+    },
+    {
+        "photo_url": "https://i.postimg.cc/fTSXf3QG/3.jpg",
+        "title": "Фигуры из бумаги",
+        "prompt": "A layered paper {}, crafted with Vintage Manuscript Paper with hyper details, soft light, 3D"
+    },
+    {
+        "photo_url": "https://i.postimg.cc/8CrwpB4z/4.jpg",
+        "title": "Создать свой логотип",
+        "prompt": "logo {} --s 250"
+    },
+    {
+        "photo_url": "https://i.postimg.cc/cLj7Kgkk/5.jpg",
+        "title": "Full HD Photo",
+        "prompt": "Photo with a Canon R5, 50 mm, DSLR, {} --v 5 --ar 3:2 --no camera"
+    },
+    {
+        "photo_url": "https://i.postimg.cc/WzFT1ydH/6.jpg",
+        "title": "3D объекты",
+        "prompt": "Isometric art of a {}, with creativity and ideas flowing, dreamy summer color palette, aestehtic, minimal design"
+    },
+    {
+        "photo_url": "https://i.postimg.cc/nV9q5Y2d/7.jpg",
+        "title": "Mayan Art",
+        "prompt": "Mayan Art {}, facing the camera, blue and gold, ornate, intricate, award winning photography, black background"
+    },
+    {
+        "photo_url": "https://i.postimg.cc/zXfHX0jS/9.jpg",
+        "title": "Macro съёмка",
+        "prompt": "short perspective, macro shot {}, dew drops, dewdrops, 32k uhd --ar 4:5"
+    },
+    {
+        "photo_url": "https://i.postimg.cc/ryfzb5kd/10.jpg",
+        "title": "Автомобили",
+        "prompt": "{} black::2 port::3 autumn, rain, fog, blue-orange tone, dusk, spot light, photorealism, shot with a canon ef 24mm f1.4 usm lens, --ar 5:4"
+    },
+    {
+        "photo_url": "https://i.postimg.cc/sxNVFkWQ/11.jpg",
+        "title": "Биомеханика",
+        "prompt": "HR Giger style {}"
+    },
+    {
+        "photo_url": "https://i.postimg.cc/Dws7DYw0/13.jpg",
+        "title": "Ультра реализм",
+        "prompt": "{} in Hyper realistic style"
+    },
+    {
+        "photo_url": "https://i.postimg.cc/MHPG6cCG/12.jpg",
+        "title": "Детальная раскладка объектов",
+        "prompt": "Knolling of {}"
+    },
+    {
+        "photo_url": "https://static.wixstatic.com/media/8b9a7b_a83ee9d609834a49afc0e9d2933285f9~mv2.jpeg/v1/fill/w_541,h_719,al_c,q_90,enc_auto/8b9a7b_a83ee9d609834a49afc0e9d2933285f9~mv2.jpeg",
+        "title": "Стиль модели",
+        "prompt": "cinematic portrait, {} supermodel, tight outfit, detailed face, muted colors :: Fashion Photographer --ar 3:4"
+    },
+    {
+        "photo_url": "https://static.wixstatic.com/media/8b9a7b_a844faa94bcd4860968e369b030090fe~mv2.jpeg?dn=F1KdDu1XsAAiAun.jpeg",
+        "title": "Еда в тарелке",
+        "prompt": "Hands holding a {}, brown background --ar 16:9"
+    },
+    {
+        "photo_url": "https://static.wixstatic.com/media/8b9a7b_4f034d86b7dc4385a7ce0e14d66a1695~mv2.jpeg?dn=F1KdDuSWwAIRY0-.jpeg",
+        "title": "Еда в руке",
+        "prompt": "A hand holding a {}, pastel green background --ar 16:9"
+    },
+    {
+        "photo_url": "https://static.wixstatic.com/media/8b9a7b_47b0e96bcb3b4372a1ee35d89f1da65f~mv2.jpg?dn=dimitrakar_Product_photography_photo_of_one_avocada_on_a_driftw_125834e7-df64-4f43-897d-39c480e705ff.jpg",
+        "title": "Модельное фото еды",
+        "prompt": "Product photography, photo of one {} on a driftwood, clean light beige background, a flat front shot, beautiful soft lighting and shadow"
+    },
+    {
+        "photo_url": "https://i.postimg.cc/mDYR2h66/dthtddtdbftn.jpg",
+        "title": "Фрукты в разрезе",
+        "prompt": "Sliced {}, minimalism, high realism, bright background, reality, professional photography, balanced lighting"
+    },
+    {
+        "photo_url": "https://i.postimg.cc/brqPG87Y/ftnfnfntfnftn.jpg",
+        "title": "Крохотные объекты и животные",
+        "prompt": "a tiny {} sitting on the tip of the finger, macro shot, in the style of fantasy realism, miniaturecore, natural phenomena, I can't believe how beautiful this is, cute --ar 16:9"
+    },
+    {
+        "photo_url": "https://i.postimg.cc/jdgTjpZK/jhjfyhdtws.jpg",
+        "title": "Векторные иллюстрации",
+        "prompt": "vector illustration {} --s 250"
+    },
+    {
+        "photo_url": "https://i.postimg.cc/vHcnDsbt/ugmyfdtbrsvef.jpg",
+        "title": "Ракурс сверху",
+        "prompt": "an adult {}, photo angle: Bird's Eye View perspective --ar 16:9"
+    },
+    {
+        "photo_url": "https://i.postimg.cc/QM5Z0Hsx/ujyhtgrfvec.jpg",
+        "title": "Ракурс снизу",
+        "prompt": "photograph of {}, perspective: from bottom to top, Worms Eye View --ar 4:5"
+    },
+    {
+        "photo_url": "https://i.postimg.cc/sXrd8sDP/njbikfl.jpg",
+        "title": "Длинная перспектива",
+        "prompt": "Long perspective, {} --ar 4:5"
+    },
+    {
+        "photo_url": "https://i.postimg.cc/Zn9qYJp9/asdfrtgyhujhb.jpg",
+        "title": "Короткая перспектива",
+        "prompt": "short perspective, macro shot of a {}, 32k uhd --ar 4:5"
+    },
+    {
+        "photo_url": "https://i.postimg.cc/mk49tzZc/debfrntgyhu.jpg",
+        "title": "Объектив Sigma 150-600mm 5-6.3 Contemporary DG OS HSM",
+        "prompt": "{}, taken with Sigma 150-600mm 5-6.3 Contemporary DG OS HSM lens, daylight, detail photo"
+    },
+    {
+        "photo_url": "https://i.postimg.cc/9MZTmt25/o-iumnytbrvce.jpg",
+        "title": "Объектив GoPro Max Lens",
+        "prompt": "{}, taken on GoPro Max Lens camera, detail photo"
+    },
+    {
+        "photo_url": "https://i.postimg.cc/wMzWgjS2/sdfghjkjhgfd.jpg",
+        "title": "Объектив Tamron 10-24mm f/3.5-4.5 Di II VC HLD Lens",
+        "prompt": "{}, shot with a Tamron 10-24mm f/3.5-4.5 Di II VC HLD Lens, lit by daylight, detailed photo"
+    },
+    {
+        "photo_url": "https://i.postimg.cc/sDNpJ2wL/dfghjhgfd.jpg",
+        "title": "Оъектив Zeiss Otus 55mm f/1.4 Lens",
+        "prompt": "{}, shot with a Zeiss Otus 55mm f/1.4 Lens, lit by daylight, detailed photo"
+    },
+    {
+        "photo_url": "https://i.postimg.cc/7hN27HbK/asdfghjkjhytred.jpg",
+        "title": "Объектив Canon EF 100mm f/2.8L Macro IS USM Lens",
+        "prompt": "{}, shot with a Canon EF 100mm f/2.8L Macro IS USM Lens, lit by daylight, detailed photo"
+    },
+    {
+        "photo_url": "https://i.postimg.cc/KjcJ6p0K/house.jpg",
+        "title": "Дизайн дома",
+        "prompt": "{}, loft style, strict, inspired by nature, natural lighting, intricate details --s 750 --q 5 --ar 16:9"
+    },
+    {
+        "photo_url": "https://i.postimg.cc/MK2yfF71/abstraction.jpg",
+        "title": "Абстракция",
+        "prompt": "3d render with abstract {} monochrome art piece of surreal sculpture in spherical organic curve wavy smooth and soft biological shape in white matte ceramic material on white background"
+    },
+    {
+        "photo_url": "https://i.postimg.cc/pLPzq51T/smilw.jpg",
+        "title": "Эмодзи",
+        "prompt": "emoji icons, {} style, on white background, high-angle photo, soft light, 3d render, wide angle shooting, raw"
+    },
+    {
+        "photo_url": "https://i.postimg.cc/2jvWY7sy/fruit.jpg",
+        "title": "Фрукты",
+        "prompt": "Photografi {} with water --ar 9:16"
+    }
+]

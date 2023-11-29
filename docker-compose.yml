@@ -1,0 +1,84 @@
+version: '2.21'
+
+services:
+  redis:
+    image: redis:latest
+    command: redis-server
+    restart: on-failure
+    ports:
+      - 6379:6379
+
+  bot:
+    build: .
+    command:  sh -c "python3 main.py"
+    restart: always
+    volumes:
+      - .:/usr/app/src
+    environment:
+      - TZ=Europe/Moscow
+
+  mj_main:
+    build: .
+    command:  sh -c "python3 mj_main.py"
+    restart: always
+    volumes:
+      - .:/usr/app/src
+    environment:
+      - TZ=Europe/Moscow
+
+  pikalabs_1:
+    build: .
+    command:  sh -c "python3 pikalabs_main.py"
+    restart: always
+    volumes:
+      - .:/usr/app/src
+    environment:
+      - TOKEN=MTE3MTA3NjA3NDk4MjA4MDU2Mg.GZxem_.JRkUqXSvJ9LcqB6hwLFmhrOQYQ1_P-vGk2mxPg
+      - TZ=Europe/Moscow
+
+  api:
+    build: .
+    command:  sh -c "uvicorn webhook:app --host 0.0.0.0 --port 8000"
+    restart: always
+    expose:
+      - 8000
+    volumes:
+      - .:/usr/app/src
+    environment:
+      - TOKEN=MTEyMzEzMzc1MjM5OTM2NDE0Ng.GQ53qc.3cC2Lme96oHaRTEdFe9a3jyao46sOje1GJSg-k
+      - TZ=Europe/Moscow
+    ports:
+      - 8000:8000
+
+  nginx:
+    image: nginx:latest
+    restart: always
+    expose:
+      - 8080
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./data/nginx:/etc/nginx/conf.d
+      - ./data/certbot/conf:/etc/letsencrypt
+      - ./data/certbot/www:/var/www/certbot
+    depends_on:
+      - api
+      - webapp_store
+
+  certbot:
+    image: certbot/certbot
+    volumes:
+      - ./data/certbot/conf:/etc/letsencrypt
+      - ./data/certbot/www:/var/www/certbot
+
+  webapp_store:
+    build:
+      context: .
+      dockerfile: DockerfileWebApp
+    container_name: WebApp
+    restart: always
+    expose:
+      - 3000
+    ports:
+      - 3000:3000
