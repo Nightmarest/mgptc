@@ -78,7 +78,7 @@ async def choose_mode(call: CallbackQuery, state: FSMContext, user: Clients):
     elif call.data == 'dalle_mode':
         user.model = "dalle"
         await call.message.edit_text(
-            text=get_text('text.switch_to_deepai')
+            text=get_text('text.switch_to_dalle')
         )
 
 
@@ -105,6 +105,7 @@ async def manage_stable_menu(call: CallbackQuery, stable: Stable):
 
 
 async def manage_stable_ratio(call: CallbackQuery, stable: Stable):
+    call_text = ""
     if call.data != "manage_stable_ratio":
         call_ratio = call.data.split("_")[2]
         stable.ratio = call_ratio
@@ -125,6 +126,8 @@ async def manage_stable_ratio(call: CallbackQuery, stable: Stable):
 
 
 async def manage_stable_style(call: CallbackQuery, stable: Stable):
+    call_text = ""
+
     if call.data != "manage_stable_style":
         call_style = call.data.split("_")[2]
         stable.style = call_style
@@ -141,6 +144,8 @@ async def manage_stable_style(call: CallbackQuery, stable: Stable):
 
 
 async def manage_stable_model(call: CallbackQuery, stable: Stable):
+    call_text = ""
+
     if call.data != "manage_stable_model":
         stable_model = call.data.split("_")[2]
         stable.model = stable_model
