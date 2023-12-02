@@ -107,7 +107,7 @@ class kb:
         )])
         keyboard_list.append([InlineKeyboardButton(
             text = "DALL-E",
-            callback_data="deepai_mode"
+            callback_data="dalle_mode"
         )])
         return InlineKeyboardMarkup(inline_keyboard=keyboard_list)
 
