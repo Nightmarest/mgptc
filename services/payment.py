@@ -107,7 +107,7 @@ class cloudpay_api:
                     "InvoiceId": response['Model']['InvoiceId'],
                     "description": "Ежемесячная подписка на сервис Midjourney",
                     "email": "user@example.com",
-                    "amount": response['Model']['Amount'],
+                    "amount": pay_list[buy_type]['amount'],
                     "currency": "RUB",
                     "requireConfirmation": False,
                     "startDate": now.strftime("%Y-%m-%dT%H:%M:%S"),
