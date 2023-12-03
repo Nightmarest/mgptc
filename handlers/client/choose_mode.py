@@ -155,10 +155,10 @@ async def manage_stable_model(call: CallbackQuery, stable: Stable):
             f'''{hide_link("https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/c63c2f98-4d4a-43e8-82c4-f7a577a8db72/width=1152/00000-1447182128.jpeg")}<b>С помощью Juggernaut XL вы можете без особых усилий создавать реалистичных, кинематографичных и фотореалистичных персонажей и локации.
 
 Рекомендуем в целом использовать эту модель, применяя стиль Midjourney.</b>''',
-            "juggernaut-xl"
+            "juggernaut-xl-v7"
         ),
         (
-            f'''{hide_link("https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/34c608bb-7071-4546-b60d-98557e772708/width=1152/00032-2208550682.jpeg")}<b>Эта модель отлично настроена для фотореализма.</b>''',
+            f'''{hide_link("https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/68df5736-dd1f-4df4-8e7d-5fbd7adf8730/width=720/0.jpeg")}<b>Эта модель отлично настроена для фотореализма.</b>''',
             "albedobase-xl"
         ),
         (
@@ -166,8 +166,8 @@ async def manage_stable_model(call: CallbackQuery, stable: Stable):
             "yamermix-v8-vae"
         ),
         (
-            f'''{hide_link("https://telegra.ph/file/44b7955037e216d14f187.png")}<b>Новая Deliberate v3 даёт революционные возможности создания изображений по коротким подсказкам. Уникальный набор данных и улучшенные алгоритмы позволяют с лёгкостью генерировать шедевры.</b>''',
-            "deliberate-v3"
+            f'''{hide_link("https://pub-3626123a908346a7a8be8d9295f44e26.r2.dev/generations/18350195621701335828.png")}<b>Новая Colossus Project XL даёт революционные возможности создания изображений по коротким подсказкам. Уникальный набор данных и улучшенные алгоритмы позволяют с лёгкостью генерировать шедевры.</b>''',
+            "colossus-project-xl-sfwns"
         )
     ]
 
