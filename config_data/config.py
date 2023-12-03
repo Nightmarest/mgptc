@@ -1,10 +1,10 @@
 import os
 
 config = {
-    "APIToken": "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", # OPENAI
+    "APIToken": "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", # OPENAI
     "ZeroscopeToken": "r8_DyAbjQpqxhwxSmj9qKVVpjysDmnSUdT4Bkf2g", #зероскоп токен
     "DeeplToken": "725ea090-4ba9-494c-8c58-8912b78537a9",
-    "BotToken": "6219812476:AAHTYOy3svyVM-J3D0IwjXGSvgwB_a428io",  # Токен самого бота 6062729970:AAHxJG2GCp4A4cL5fROgKRnn7OSrkD5wEBQ
+    "BotToken": "6062729970:AAG1aK3DE-FxpfP7sMeIivaqcQZIRwaQwYA",  # Токен самого бота 6062729970:AAHxJG2GCp4A4cL5fROgKRnn7OSrkD5wEBQ
     # "BotToken": "6157728996:AAGRBicyQL4ozhTtIBW8m9X-YAuO29csT4s",
     # Токен самого бота 6062729970:AAHxJG2GCp4A4cL5fROgKRnn7OSrkD5wEBQ
 
