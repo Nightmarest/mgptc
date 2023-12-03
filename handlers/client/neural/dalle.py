@@ -24,7 +24,7 @@ async def dalle_image(message: Message, state: FSMContext):
     ban_word = check_ban_words(prompt)
     if ban_word:
         await wait_msg.delete()
-        return await message.answer(f"{get_text('text.ban_words')} - <code>{ban_word}</code>")
+        return await message.answer(f"{get_text("text.error_gpt")} - <code>{ban_word}</code>")
 
     await state.set_state(ClientState.process)
 
