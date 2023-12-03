@@ -426,10 +426,10 @@ class kb:
         builder = InlineKeyboardBuilder()
 
         button_list = [
-            ("Juggernaut XL", "juggernaut-xl"),
+            ("Juggernaut XL V7", "juggernaut-xl-v7"),
             ("SDXL Unstable Diffusers", "yamermix-v8-vae"),
             ("AlbedoBase XL", "albedobase-xl"),
-            ("Deliberate", "deliberate-v3")
+            ("Colossus Project XL", "colossus-project-xl-sfwns")
         ]
 
         for button in button_list:
