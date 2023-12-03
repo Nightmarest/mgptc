@@ -23,8 +23,9 @@
         "error_gpt": "GPT ошибка",
 
         "mj_after_progress": "Готово Stable",
+        "mj_after_progress_upscale": "upscale Stable",
         "pikalabs_after_progress": "Готово pika",
-        "deepai_after_progress": "готово deepai"
-
+        "deepai_after_progress": "готово deepai",
+        "dalle_after_progress": "готово dalle"
     }
 }
