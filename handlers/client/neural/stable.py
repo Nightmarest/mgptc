@@ -1,8 +1,7 @@
 import asyncio
-import aiohttp
+import re
 import io
 import requests
-import random
 
 from aiogram.fsm.context import FSMContext
 from aiogram.types import Message, CallbackQuery, FSInputFile, BufferedInputFile
@@ -21,13 +20,15 @@ from utils.func import check_mj_status, generate_random_text, get_text, clean
 
 
 async def stable_prompt(message: Message, state: FSMContext, stable: Stable):
-    for char in message.text:
-        if ord(char) in range(ord('а'), ord('я')+1):
-            return await message.answer("⚠️ Обнаружена кириллица! Пожалуйста, используйте английский язык для запросов.")
-
-
     sticker_file = FSInputFile(config["StickerMJ"])
     wait_msg = await message.answer_sticker(sticker=sticker_file)
+    config_dict = {}
+
+    matches = re.findall(r'-(\w+)\s+([\w\s:]+)(?=\s*-|\s*$)', message.text)
+
+    for match in matches:
+        config_name, config_value = match
+        config_dict[config_name] = config_value
 
     if await state.get_state() == ClientState.prompt_add:
         data = await state.get_data()
@@ -60,7 +61,8 @@ async def stable_prompt(message: Message, state: FSMContext, stable: Stable):
         prompt=request,
         ratio=stable.ratio,
         model=stable.model,
-        track_id=f"{message.from_user.id}_{track_id}_{request}"
+        track_id=f"{message.from_user.id}_{track_id}_{request}",
+        config_dict=config_dict
     )
 
     if not response:
@@ -68,8 +70,9 @@ async def stable_prompt(message: Message, state: FSMContext, stable: Stable):
             mj_status="error"
         )
         await state.set_state()
-        await wait_msg.delete()
-        await message.answer(get_text("text.error_gpt"))
+        await message.answer(
+            text=get_text("text.error_gpt")
+        )
 
 
 async def stable_upscale(call: CallbackQuery, state: FSMContext, user: Clients):
