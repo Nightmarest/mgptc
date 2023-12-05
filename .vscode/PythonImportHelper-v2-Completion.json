@@ -313,6 +313,30 @@
         "documentation": {}
     },
     {
+        "label": "STYLE_STABLE",
+        "importPath": "config_data.config",
+        "description": "config_data.config",
+        "isExtraImport": true,
+        "detail": "config_data.config",
+        "documentation": {}
+    },
+    {
+        "label": "MODELS_STABLE",
+        "importPath": "config_data.config",
+        "description": "config_data.config",
+        "isExtraImport": true,
+        "detail": "config_data.config",
+        "documentation": {}
+    },
+    {
+        "label": "FORMAT_STABLE",
+        "importPath": "config_data.config",
+        "description": "config_data.config",
+        "isExtraImport": true,
+        "detail": "config_data.config",
+        "documentation": {}
+    },
+    {
         "label": "config",
         "importPath": "config_data.config",
         "description": "config_data.config",
@@ -4278,6 +4302,24 @@
         "documentation": {}
     },
     {
+        "label": "STYLE_STABLE",
+        "kind": 5,
+        "importPath": "config_data.config",
+        "description": "config_data.config",
+        "peekOfCode": "STYLE_STABLE = [\n    (\"1:1\", \"1024:1024\"),\n    (\"2:3\", \"512:768\"),\n    (\"3:2\", \"768:512\")\n]\nFORMAT_STABLE = [\n    (\"Без стиля\", \"default\"),\n    (\"Midjourney\", \"midjourney\")\n]",
+        "detail": "config_data.config",
+        "documentation": {}
+    },
+    {
+        "label": "FORMAT_STABLE",
+        "kind": 5,
+        "importPath": "config_data.config",
+        "description": "config_data.config",
+        "peekOfCode": "FORMAT_STABLE = [\n    (\"Без стиля\", \"default\"),\n    (\"Midjourney\", \"midjourney\")\n]",
+        "detail": "config_data.config",
+        "documentation": {}
+    },
+    {
         "label": "discord_list",
         "kind": 5,
         "importPath": "config_data.config_load",
@@ -4885,7 +4927,7 @@
         "kind": 2,
         "importPath": "utils.func",
         "description": "utils.func",
-        "peekOfCode": "def stable_formatted(element: str) -> str:\n    stable_list = [\n        (\"1:1\", \"1024:1024\"),\n        (\"2:3\", \"512:768\"),\n        (\"3:2\", \"768:512\"),\n        (\"Без стиля\", \"default\"),\n        (\"Midjourney\", \"midjourney\"),\n        (\"Juggernaut XL\", \"juggernaut-xl\"),\n        (\"SDXL Unstable Diffusers\", \"yamermix-v8-vae\"),\n        (\"AlbedoBase XL\", \"albedobase-xl\"),",
+        "peekOfCode": "def stable_formatted(element: str) -> str:\n    MODELS_LIST = [(value.get('first_name'), key) for key, value in MODELS_STABLE.items()]\n    stable_list = FORMAT_STABLE + STYLE_STABLE + MODELS_LIST\n    for stable in stable_list:\n        if stable[1] == element:\n            finally_element = stable[0]\n    return finally_element",
         "detail": "utils.func",
         "documentation": {}
     },
