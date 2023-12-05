@@ -18,25 +18,24 @@ from services.neural.deepai import upscale_photo
 from utils.func import check_mj_status, generate_random_text, get_text, clean
 
 
-
 async def stable_prompt(message: Message, state: FSMContext, stable: Stable):
     sticker_file = FSInputFile(config["StickerMJ"])
     wait_msg = await message.answer_sticker(sticker=sticker_file)
     config_dict = {}
 
     matches = re.findall(r'-(\w+)\s+([\w\s:]+)(?=\s*-|\s*$)', message.text)
+    request = re.sub(r'-\w+\s+[\w\s:]+(?=\s*-|\s*$)', '', message.text)
 
     for match in matches:
         config_name, config_value = match
         config_dict[config_name] = config_value
 
-    if await state.get_state() == ClientState.prompt_add:
-        data = await state.get_data()
-        if "prompt_temp" in data:
-            prompt_temp: str = data["prompt_temp"]
-        request = clean(prompt_temp.format(message.text.lower()))[:2056]
-    else:
-        request = clean(message.text.lower())[:2056]
+    # if await state.get_state() == ClientState.prompt_add:
+    #     data = await state.get_data()
+    #     if "prompt_temp" in data:
+    #         prompt_temp: str = data["prompt_temp"]
+    #     request = clean(prompt_temp.format(message.text.lower()))[:2056]
+    # else:
 
     track_id = generate_random_text()
     await state.set_state(ClientState.process)
@@ -61,7 +60,7 @@ async def stable_prompt(message: Message, state: FSMContext, stable: Stable):
         prompt=request,
         ratio=stable.ratio,
         model=stable.model,
-        track_id=f"{message.from_user.id}_{track_id}_{request}",
+        track_id=f"{message.from_user.id}_{track_id}_{clean(message.text)}",
         config_dict=config_dict
     )
 
@@ -131,6 +130,15 @@ async def stable_retry(call: CallbackQuery, state: FSMContext, stable: Stable, s
         .where(Temp.pic_code == pic_code)
     )
 
+    config_dict = {}
+
+    matches = re.findall(r'-(\w+)\s+([\w\s:]+)(?=\s*-|\s*$)', prompt)
+    request = re.sub(r'-\w+\s+[\w\s:]+(?=\s*-|\s*$)', '', prompt)
+
+    for match in matches:
+        config_name, config_value = match
+        config_dict[config_name] = config_value
+
     await call.message.edit_reply_markup(
         reply_markup=kb.read_keyboard(
             keyboard=call.message.reply_markup,
@@ -160,10 +168,11 @@ async def stable_retry(call: CallbackQuery, state: FSMContext, stable: Stable, s
     )
 
     response = await stable_pic(
-        prompt=prompt,
+        prompt=request,
         ratio=stable.ratio,
         model=stable.model,
-        track_id=f"{call.from_user.id}_{track_id}_{prompt}"
+        track_id=f"{call.from_user.id}_{track_id}_{prompt}",
+        config_dict=config_dict
     )
 
     if not response:

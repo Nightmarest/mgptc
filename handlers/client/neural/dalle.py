@@ -37,7 +37,7 @@ async def dalle_image(message: Message, state: FSMContext):
             quality="standard",
             response_format="url",
         )
-    except InvalidRequestError as e:
+    except Exception as e:
         await wait_msg.delete()
         await state.set_state()
         await message.answer(get_text("text.error_gpt"))
