@@ -394,6 +394,15 @@
         "documentation": {}
     },
     {
+        "label": "aiogram",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "aiogram",
+        "description": "aiogram",
+        "detail": "aiogram",
+        "documentation": {}
+    },
+    {
         "label": "Bot",
         "importPath": "aiogram",
         "description": "aiogram",
@@ -418,14 +427,6 @@
         "documentation": {}
     },
     {
-        "label": "BaseMiddleware",
-        "importPath": "aiogram",
-        "description": "aiogram",
-        "isExtraImport": true,
-        "detail": "aiogram",
-        "documentation": {}
-    },
-    {
         "label": "F",
         "importPath": "aiogram",
         "description": "aiogram",
@@ -459,6 +460,22 @@
     },
     {
         "label": "Dispatcher",
+        "importPath": "aiogram",
+        "description": "aiogram",
+        "isExtraImport": true,
+        "detail": "aiogram",
+        "documentation": {}
+    },
+    {
+        "label": "BaseMiddleware",
+        "importPath": "aiogram",
+        "description": "aiogram",
+        "isExtraImport": true,
+        "detail": "aiogram",
+        "documentation": {}
+    },
+    {
+        "label": "BaseMiddleware",
         "importPath": "aiogram",
         "description": "aiogram",
         "isExtraImport": true,
@@ -564,6 +581,335 @@
         "documentation": {}
     },
     {
+        "label": "Mapped",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "mapped_column",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "DeclarativeBase",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "registry",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "Mapped",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "mapped_column",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "Mapped",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "mapped_column",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "Mapped",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "mapped_column",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "Mapped",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "mapped_column",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "Mapped",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "mapped_column",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "Mapped",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "mapped_column",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "sessionmaker",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "Session",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "Session",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "Annotated",
+        "importPath": "typing_extensions",
+        "description": "typing_extensions",
+        "isExtraImport": true,
+        "detail": "typing_extensions",
+        "documentation": {}
+    },
+    {
+        "label": "BigInteger",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "create_engine",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "URL",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "text",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "select",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "delete",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "select",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "select",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "select",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "datetime",
+        "description": "datetime",
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "date",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Callable",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Awaitable",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
         "label": "Any",
         "importPath": "typing",
         "description": "typing",
@@ -604,38 +950,6 @@
         "documentation": {}
     },
     {
-        "label": "Optional",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Union",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
         "label": "Tuple",
         "importPath": "typing",
         "description": "typing",
@@ -644,19 +958,252 @@
         "documentation": {}
     },
     {
-        "label": "Update",
-        "importPath": "aiogram.types",
-        "description": "aiogram.types",
+        "label": "Base",
+        "importPath": "database.models",
+        "description": "database.models",
         "isExtraImport": true,
-        "detail": "aiogram.types",
+        "detail": "database.models",
         "documentation": {}
     },
     {
-        "label": "User",
-        "importPath": "aiogram.types",
-        "description": "aiogram.types",
+        "label": "Base",
+        "importPath": "database.models",
+        "description": "database.models",
         "isExtraImport": true,
-        "detail": "aiogram.types",
+        "detail": "database.models",
+        "documentation": {}
+    },
+    {
+        "label": "Stack",
+        "importPath": "database.models",
+        "description": "database.models",
+        "isExtraImport": true,
+        "detail": "database.models",
+        "documentation": {}
+    },
+    {
+        "label": "Clients",
+        "importPath": "database.models",
+        "description": "database.models",
+        "isExtraImport": true,
+        "detail": "database.models",
+        "documentation": {}
+    },
+    {
+        "label": "Advertising",
+        "importPath": "database.models",
+        "description": "database.models",
+        "isExtraImport": true,
+        "detail": "database.models",
+        "documentation": {}
+    },
+    {
+        "label": "Stable",
+        "importPath": "database.models",
+        "description": "database.models",
+        "isExtraImport": true,
+        "detail": "database.models",
+        "documentation": {}
+    },
+    {
+        "label": "Clients",
+        "importPath": "database.models",
+        "description": "database.models",
+        "isExtraImport": true,
+        "detail": "database.models",
+        "documentation": {}
+    },
+    {
+        "label": "Temp",
+        "importPath": "database.models",
+        "description": "database.models",
+        "isExtraImport": true,
+        "detail": "database.models",
+        "documentation": {}
+    },
+    {
+        "label": "Clients",
+        "importPath": "database.models",
+        "description": "database.models",
+        "isExtraImport": true,
+        "detail": "database.models",
+        "documentation": {}
+    },
+    {
+        "label": "Clients",
+        "importPath": "database.models",
+        "description": "database.models",
+        "isExtraImport": true,
+        "detail": "database.models",
+        "documentation": {}
+    },
+    {
+        "label": "Clients",
+        "importPath": "database.models",
+        "description": "database.models",
+        "isExtraImport": true,
+        "detail": "database.models",
+        "documentation": {}
+    },
+    {
+        "label": "Clients",
+        "importPath": "database.models",
+        "description": "database.models",
+        "isExtraImport": true,
+        "detail": "database.models",
+        "documentation": {}
+    },
+    {
+        "label": "Temp",
+        "importPath": "database.models",
+        "description": "database.models",
+        "isExtraImport": true,
+        "detail": "database.models",
+        "documentation": {}
+    },
+    {
+        "label": "URL",
+        "importPath": "sqlalchemy.engine",
+        "description": "sqlalchemy.engine",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.engine",
+        "documentation": {}
+    },
+    {
+        "label": "AsyncEngine",
+        "importPath": "sqlalchemy.ext.asyncio",
+        "description": "sqlalchemy.ext.asyncio",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.ext.asyncio",
+        "documentation": {}
+    },
+    {
+        "label": "create_async_engine",
+        "importPath": "sqlalchemy.ext.asyncio",
+        "description": "sqlalchemy.ext.asyncio",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.ext.asyncio",
+        "documentation": {}
+    },
+    {
+        "label": "async_sessionmaker",
+        "importPath": "sqlalchemy.ext.asyncio",
+        "description": "sqlalchemy.ext.asyncio",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.ext.asyncio",
+        "documentation": {}
+    },
+    {
+        "label": "async_sessionmaker",
+        "importPath": "sqlalchemy.ext.asyncio",
+        "description": "sqlalchemy.ext.asyncio",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.ext.asyncio",
+        "documentation": {}
+    },
+    {
+        "label": "async_sessionmaker",
+        "importPath": "sqlalchemy.ext.asyncio",
+        "description": "sqlalchemy.ext.asyncio",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.ext.asyncio",
+        "documentation": {}
+    },
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "State",
+        "importPath": "aiogram.fsm.state",
+        "description": "aiogram.fsm.state",
+        "isExtraImport": true,
+        "detail": "aiogram.fsm.state",
+        "documentation": {}
+    },
+    {
+        "label": "StatesGroup",
+        "importPath": "aiogram.fsm.state",
+        "description": "aiogram.fsm.state",
+        "isExtraImport": true,
+        "detail": "aiogram.fsm.state",
+        "documentation": {}
+    },
+    {
+        "label": "State",
+        "importPath": "aiogram.fsm.state",
+        "description": "aiogram.fsm.state",
+        "isExtraImport": true,
+        "detail": "aiogram.fsm.state",
+        "documentation": {}
+    },
+    {
+        "label": "StatesGroup",
+        "importPath": "aiogram.fsm.state",
+        "description": "aiogram.fsm.state",
+        "isExtraImport": true,
+        "detail": "aiogram.fsm.state",
+        "documentation": {}
+    },
+    {
+        "label": "State",
+        "importPath": "aiogram.fsm.state",
+        "description": "aiogram.fsm.state",
+        "isExtraImport": true,
+        "detail": "aiogram.fsm.state",
+        "documentation": {}
+    },
+    {
+        "label": "Filter",
+        "importPath": "aiogram.filters",
+        "description": "aiogram.filters",
+        "isExtraImport": true,
+        "detail": "aiogram.filters",
+        "documentation": {}
+    },
+    {
+        "label": "StateFilter",
+        "importPath": "aiogram.filters",
+        "description": "aiogram.filters",
+        "isExtraImport": true,
+        "detail": "aiogram.filters",
+        "documentation": {}
+    },
+    {
+        "label": "StateFilter",
+        "importPath": "aiogram.filters",
+        "description": "aiogram.filters",
+        "isExtraImport": true,
+        "detail": "aiogram.filters",
+        "documentation": {}
+    },
+    {
+        "label": "ChatMemberUpdatedFilter",
+        "importPath": "aiogram.filters",
+        "description": "aiogram.filters",
+        "isExtraImport": true,
+        "detail": "aiogram.filters",
+        "documentation": {}
+    },
+    {
+        "label": "KICKED",
+        "importPath": "aiogram.filters",
+        "description": "aiogram.filters",
+        "isExtraImport": true,
+        "detail": "aiogram.filters",
+        "documentation": {}
+    },
+    {
+        "label": "MEMBER",
+        "importPath": "aiogram.filters",
+        "description": "aiogram.filters",
+        "isExtraImport": true,
+        "detail": "aiogram.filters",
         "documentation": {}
     },
     {
@@ -1180,6 +1727,30 @@
         "documentation": {}
     },
     {
+        "label": "Update",
+        "importPath": "aiogram.types",
+        "description": "aiogram.types",
+        "isExtraImport": true,
+        "detail": "aiogram.types",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "aiogram.types",
+        "description": "aiogram.types",
+        "isExtraImport": true,
+        "detail": "aiogram.types",
+        "documentation": {}
+    },
+    {
+        "label": "Message",
+        "importPath": "aiogram.types",
+        "description": "aiogram.types",
+        "isExtraImport": true,
+        "detail": "aiogram.types",
+        "documentation": {}
+    },
+    {
         "label": "CallbackQuery",
         "importPath": "aiogram.types",
         "description": "aiogram.types",
@@ -1252,235 +1823,131 @@
         "documentation": {}
     },
     {
-        "label": "Session",
-        "importPath": "sqlalchemy.orm",
-        "description": "sqlalchemy.orm",
+        "label": "check_subscribe",
+        "importPath": "utils.check_sub",
+        "description": "utils.check_sub",
         "isExtraImport": true,
-        "detail": "sqlalchemy.orm",
+        "detail": "utils.check_sub",
         "documentation": {}
     },
     {
-        "label": "Mapped",
-        "importPath": "sqlalchemy.orm",
-        "description": "sqlalchemy.orm",
+        "label": "add_channnel",
+        "importPath": "utils.check_sub",
+        "description": "utils.check_sub",
         "isExtraImport": true,
-        "detail": "sqlalchemy.orm",
+        "detail": "utils.check_sub",
         "documentation": {}
     },
     {
-        "label": "mapped_column",
-        "importPath": "sqlalchemy.orm",
-        "description": "sqlalchemy.orm",
+        "label": "remove_channel",
+        "importPath": "utils.check_sub",
+        "description": "utils.check_sub",
         "isExtraImport": true,
-        "detail": "sqlalchemy.orm",
+        "detail": "utils.check_sub",
         "documentation": {}
     },
     {
-        "label": "DeclarativeBase",
-        "importPath": "sqlalchemy.orm",
-        "description": "sqlalchemy.orm",
+        "label": "gen_keyboard",
+        "importPath": "utils.check_sub",
+        "description": "utils.check_sub",
         "isExtraImport": true,
-        "detail": "sqlalchemy.orm",
+        "detail": "utils.check_sub",
         "documentation": {}
     },
     {
-        "label": "registry",
-        "importPath": "sqlalchemy.orm",
-        "description": "sqlalchemy.orm",
+        "label": "c_listener",
+        "importPath": "utils.check_sub",
+        "description": "utils.check_sub",
         "isExtraImport": true,
-        "detail": "sqlalchemy.orm",
+        "detail": "utils.check_sub",
         "documentation": {}
     },
     {
-        "label": "Mapped",
-        "importPath": "sqlalchemy.orm",
-        "description": "sqlalchemy.orm",
+        "label": "pay_list",
+        "importPath": "config_data.config_load",
+        "description": "config_data.config_load",
         "isExtraImport": true,
-        "detail": "sqlalchemy.orm",
+        "detail": "config_data.config_load",
         "documentation": {}
     },
     {
-        "label": "mapped_column",
-        "importPath": "sqlalchemy.orm",
-        "description": "sqlalchemy.orm",
+        "label": "discord_relax_cycle",
+        "importPath": "config_data.config_load",
+        "description": "config_data.config_load",
         "isExtraImport": true,
-        "detail": "sqlalchemy.orm",
+        "detail": "config_data.config_load",
         "documentation": {}
     },
     {
-        "label": "Mapped",
-        "importPath": "sqlalchemy.orm",
-        "description": "sqlalchemy.orm",
+        "label": "discord_fast_cycle",
+        "importPath": "config_data.config_load",
+        "description": "config_data.config_load",
         "isExtraImport": true,
-        "detail": "sqlalchemy.orm",
+        "detail": "config_data.config_load",
         "documentation": {}
     },
     {
-        "label": "mapped_column",
-        "importPath": "sqlalchemy.orm",
-        "description": "sqlalchemy.orm",
+        "label": "discord_relax_cycle",
+        "importPath": "config_data.config_load",
+        "description": "config_data.config_load",
         "isExtraImport": true,
-        "detail": "sqlalchemy.orm",
+        "detail": "config_data.config_load",
         "documentation": {}
     },
     {
-        "label": "Mapped",
-        "importPath": "sqlalchemy.orm",
-        "description": "sqlalchemy.orm",
+        "label": "discord_fast_cycle",
+        "importPath": "config_data.config_load",
+        "description": "config_data.config_load",
         "isExtraImport": true,
-        "detail": "sqlalchemy.orm",
+        "detail": "config_data.config_load",
         "documentation": {}
     },
     {
-        "label": "mapped_column",
-        "importPath": "sqlalchemy.orm",
-        "description": "sqlalchemy.orm",
+        "label": "discord_relax_cycle",
+        "importPath": "config_data.config_load",
+        "description": "config_data.config_load",
         "isExtraImport": true,
-        "detail": "sqlalchemy.orm",
+        "detail": "config_data.config_load",
         "documentation": {}
     },
     {
-        "label": "Mapped",
-        "importPath": "sqlalchemy.orm",
-        "description": "sqlalchemy.orm",
+        "label": "pay_list",
+        "importPath": "config_data.config_load",
+        "description": "config_data.config_load",
         "isExtraImport": true,
-        "detail": "sqlalchemy.orm",
+        "detail": "config_data.config_load",
         "documentation": {}
     },
     {
-        "label": "mapped_column",
-        "importPath": "sqlalchemy.orm",
-        "description": "sqlalchemy.orm",
+        "label": "pay_list",
+        "importPath": "config_data.config_load",
+        "description": "config_data.config_load",
         "isExtraImport": true,
-        "detail": "sqlalchemy.orm",
+        "detail": "config_data.config_load",
         "documentation": {}
     },
     {
-        "label": "Mapped",
-        "importPath": "sqlalchemy.orm",
-        "description": "sqlalchemy.orm",
+        "label": "pay_list",
+        "importPath": "config_data.config_load",
+        "description": "config_data.config_load",
         "isExtraImport": true,
-        "detail": "sqlalchemy.orm",
+        "detail": "config_data.config_load",
         "documentation": {}
     },
     {
-        "label": "mapped_column",
-        "importPath": "sqlalchemy.orm",
-        "description": "sqlalchemy.orm",
+        "label": "pay_list",
+        "importPath": "config_data.config_load",
+        "description": "config_data.config_load",
         "isExtraImport": true,
-        "detail": "sqlalchemy.orm",
+        "detail": "config_data.config_load",
         "documentation": {}
     },
     {
-        "label": "Mapped",
-        "importPath": "sqlalchemy.orm",
-        "description": "sqlalchemy.orm",
+        "label": "ban_list",
+        "importPath": "config_data.config_load",
+        "description": "config_data.config_load",
         "isExtraImport": true,
-        "detail": "sqlalchemy.orm",
-        "documentation": {}
-    },
-    {
-        "label": "mapped_column",
-        "importPath": "sqlalchemy.orm",
-        "description": "sqlalchemy.orm",
-        "isExtraImport": true,
-        "detail": "sqlalchemy.orm",
-        "documentation": {}
-    },
-    {
-        "label": "sessionmaker",
-        "importPath": "sqlalchemy.orm",
-        "description": "sqlalchemy.orm",
-        "isExtraImport": true,
-        "detail": "sqlalchemy.orm",
-        "documentation": {}
-    },
-    {
-        "label": "Session",
-        "importPath": "sqlalchemy.orm",
-        "description": "sqlalchemy.orm",
-        "isExtraImport": true,
-        "detail": "sqlalchemy.orm",
-        "documentation": {}
-    },
-    {
-        "label": "select",
-        "importPath": "sqlalchemy",
-        "description": "sqlalchemy",
-        "isExtraImport": true,
-        "detail": "sqlalchemy",
-        "documentation": {}
-    },
-    {
-        "label": "BigInteger",
-        "importPath": "sqlalchemy",
-        "description": "sqlalchemy",
-        "isExtraImport": true,
-        "detail": "sqlalchemy",
-        "documentation": {}
-    },
-    {
-        "label": "create_engine",
-        "importPath": "sqlalchemy",
-        "description": "sqlalchemy",
-        "isExtraImport": true,
-        "detail": "sqlalchemy",
-        "documentation": {}
-    },
-    {
-        "label": "URL",
-        "importPath": "sqlalchemy",
-        "description": "sqlalchemy",
-        "isExtraImport": true,
-        "detail": "sqlalchemy",
-        "documentation": {}
-    },
-    {
-        "label": "text",
-        "importPath": "sqlalchemy",
-        "description": "sqlalchemy",
-        "isExtraImport": true,
-        "detail": "sqlalchemy",
-        "documentation": {}
-    },
-    {
-        "label": "select",
-        "importPath": "sqlalchemy",
-        "description": "sqlalchemy",
-        "isExtraImport": true,
-        "detail": "sqlalchemy",
-        "documentation": {}
-    },
-    {
-        "label": "delete",
-        "importPath": "sqlalchemy",
-        "description": "sqlalchemy",
-        "isExtraImport": true,
-        "detail": "sqlalchemy",
-        "documentation": {}
-    },
-    {
-        "label": "select",
-        "importPath": "sqlalchemy",
-        "description": "sqlalchemy",
-        "isExtraImport": true,
-        "detail": "sqlalchemy",
-        "documentation": {}
-    },
-    {
-        "label": "select",
-        "importPath": "sqlalchemy",
-        "description": "sqlalchemy",
-        "isExtraImport": true,
-        "detail": "sqlalchemy",
-        "documentation": {}
-    },
-    {
-        "label": "db",
-        "importPath": "config_data.create_bot",
-        "description": "config_data.create_bot",
-        "isExtraImport": true,
-        "detail": "config_data.create_bot",
+        "detail": "config_data.config_load",
         "documentation": {}
     },
     {
@@ -1740,6 +2207,14 @@
         "documentation": {}
     },
     {
+        "label": "db",
+        "importPath": "config_data.create_bot",
+        "description": "config_data.create_bot",
+        "isExtraImport": true,
+        "detail": "config_data.create_bot",
+        "documentation": {}
+    },
+    {
         "label": "bot",
         "importPath": "config_data.create_bot",
         "description": "config_data.create_bot",
@@ -1825,448 +2300,6 @@
         "description": "config_data.create_bot",
         "isExtraImport": true,
         "detail": "config_data.create_bot",
-        "documentation": {}
-    },
-    {
-        "label": "Clients",
-        "importPath": "database.models.clients",
-        "description": "database.models.clients",
-        "isExtraImport": true,
-        "detail": "database.models.clients",
-        "documentation": {}
-    },
-    {
-        "label": "Clients",
-        "importPath": "database.models.clients",
-        "description": "database.models.clients",
-        "isExtraImport": true,
-        "detail": "database.models.clients",
-        "documentation": {}
-    },
-    {
-        "label": "Stable",
-        "importPath": "database.models.stable",
-        "description": "database.models.stable",
-        "isExtraImport": true,
-        "detail": "database.models.stable",
-        "documentation": {}
-    },
-    {
-        "label": "Stable",
-        "importPath": "database.models.stable",
-        "description": "database.models.stable",
-        "isExtraImport": true,
-        "detail": "database.models.stable",
-        "documentation": {}
-    },
-    {
-        "label": "Annotated",
-        "importPath": "typing_extensions",
-        "description": "typing_extensions",
-        "isExtraImport": true,
-        "detail": "typing_extensions",
-        "documentation": {}
-    },
-    {
-        "label": "datetime",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "datetime",
-        "description": "datetime",
-        "detail": "datetime",
-        "documentation": {}
-    },
-    {
-        "label": "date",
-        "importPath": "datetime",
-        "description": "datetime",
-        "isExtraImport": true,
-        "detail": "datetime",
-        "documentation": {}
-    },
-    {
-        "label": "datetime",
-        "importPath": "datetime",
-        "description": "datetime",
-        "isExtraImport": true,
-        "detail": "datetime",
-        "documentation": {}
-    },
-    {
-        "label": "datetime",
-        "importPath": "datetime",
-        "description": "datetime",
-        "isExtraImport": true,
-        "detail": "datetime",
-        "documentation": {}
-    },
-    {
-        "label": "Base",
-        "importPath": "database.models",
-        "description": "database.models",
-        "isExtraImport": true,
-        "detail": "database.models",
-        "documentation": {}
-    },
-    {
-        "label": "Base",
-        "importPath": "database.models",
-        "description": "database.models",
-        "isExtraImport": true,
-        "detail": "database.models",
-        "documentation": {}
-    },
-    {
-        "label": "Stack",
-        "importPath": "database.models",
-        "description": "database.models",
-        "isExtraImport": true,
-        "detail": "database.models",
-        "documentation": {}
-    },
-    {
-        "label": "Clients",
-        "importPath": "database.models",
-        "description": "database.models",
-        "isExtraImport": true,
-        "detail": "database.models",
-        "documentation": {}
-    },
-    {
-        "label": "Advertising",
-        "importPath": "database.models",
-        "description": "database.models",
-        "isExtraImport": true,
-        "detail": "database.models",
-        "documentation": {}
-    },
-    {
-        "label": "Stable",
-        "importPath": "database.models",
-        "description": "database.models",
-        "isExtraImport": true,
-        "detail": "database.models",
-        "documentation": {}
-    },
-    {
-        "label": "Clients",
-        "importPath": "database.models",
-        "description": "database.models",
-        "isExtraImport": true,
-        "detail": "database.models",
-        "documentation": {}
-    },
-    {
-        "label": "Temp",
-        "importPath": "database.models",
-        "description": "database.models",
-        "isExtraImport": true,
-        "detail": "database.models",
-        "documentation": {}
-    },
-    {
-        "label": "Clients",
-        "importPath": "database.models",
-        "description": "database.models",
-        "isExtraImport": true,
-        "detail": "database.models",
-        "documentation": {}
-    },
-    {
-        "label": "Clients",
-        "importPath": "database.models",
-        "description": "database.models",
-        "isExtraImport": true,
-        "detail": "database.models",
-        "documentation": {}
-    },
-    {
-        "label": "Clients",
-        "importPath": "database.models",
-        "description": "database.models",
-        "isExtraImport": true,
-        "detail": "database.models",
-        "documentation": {}
-    },
-    {
-        "label": "Clients",
-        "importPath": "database.models",
-        "description": "database.models",
-        "isExtraImport": true,
-        "detail": "database.models",
-        "documentation": {}
-    },
-    {
-        "label": "Temp",
-        "importPath": "database.models",
-        "description": "database.models",
-        "isExtraImport": true,
-        "detail": "database.models",
-        "documentation": {}
-    },
-    {
-        "label": "URL",
-        "importPath": "sqlalchemy.engine",
-        "description": "sqlalchemy.engine",
-        "isExtraImport": true,
-        "detail": "sqlalchemy.engine",
-        "documentation": {}
-    },
-    {
-        "label": "AsyncEngine",
-        "importPath": "sqlalchemy.ext.asyncio",
-        "description": "sqlalchemy.ext.asyncio",
-        "isExtraImport": true,
-        "detail": "sqlalchemy.ext.asyncio",
-        "documentation": {}
-    },
-    {
-        "label": "create_async_engine",
-        "importPath": "sqlalchemy.ext.asyncio",
-        "description": "sqlalchemy.ext.asyncio",
-        "isExtraImport": true,
-        "detail": "sqlalchemy.ext.asyncio",
-        "documentation": {}
-    },
-    {
-        "label": "async_sessionmaker",
-        "importPath": "sqlalchemy.ext.asyncio",
-        "description": "sqlalchemy.ext.asyncio",
-        "isExtraImport": true,
-        "detail": "sqlalchemy.ext.asyncio",
-        "documentation": {}
-    },
-    {
-        "label": "async_sessionmaker",
-        "importPath": "sqlalchemy.ext.asyncio",
-        "description": "sqlalchemy.ext.asyncio",
-        "isExtraImport": true,
-        "detail": "sqlalchemy.ext.asyncio",
-        "documentation": {}
-    },
-    {
-        "label": "re",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "re",
-        "description": "re",
-        "detail": "re",
-        "documentation": {}
-    },
-    {
-        "label": "State",
-        "importPath": "aiogram.fsm.state",
-        "description": "aiogram.fsm.state",
-        "isExtraImport": true,
-        "detail": "aiogram.fsm.state",
-        "documentation": {}
-    },
-    {
-        "label": "StatesGroup",
-        "importPath": "aiogram.fsm.state",
-        "description": "aiogram.fsm.state",
-        "isExtraImport": true,
-        "detail": "aiogram.fsm.state",
-        "documentation": {}
-    },
-    {
-        "label": "State",
-        "importPath": "aiogram.fsm.state",
-        "description": "aiogram.fsm.state",
-        "isExtraImport": true,
-        "detail": "aiogram.fsm.state",
-        "documentation": {}
-    },
-    {
-        "label": "StatesGroup",
-        "importPath": "aiogram.fsm.state",
-        "description": "aiogram.fsm.state",
-        "isExtraImport": true,
-        "detail": "aiogram.fsm.state",
-        "documentation": {}
-    },
-    {
-        "label": "State",
-        "importPath": "aiogram.fsm.state",
-        "description": "aiogram.fsm.state",
-        "isExtraImport": true,
-        "detail": "aiogram.fsm.state",
-        "documentation": {}
-    },
-    {
-        "label": "Filter",
-        "importPath": "aiogram.filters",
-        "description": "aiogram.filters",
-        "isExtraImport": true,
-        "detail": "aiogram.filters",
-        "documentation": {}
-    },
-    {
-        "label": "StateFilter",
-        "importPath": "aiogram.filters",
-        "description": "aiogram.filters",
-        "isExtraImport": true,
-        "detail": "aiogram.filters",
-        "documentation": {}
-    },
-    {
-        "label": "StateFilter",
-        "importPath": "aiogram.filters",
-        "description": "aiogram.filters",
-        "isExtraImport": true,
-        "detail": "aiogram.filters",
-        "documentation": {}
-    },
-    {
-        "label": "ChatMemberUpdatedFilter",
-        "importPath": "aiogram.filters",
-        "description": "aiogram.filters",
-        "isExtraImport": true,
-        "detail": "aiogram.filters",
-        "documentation": {}
-    },
-    {
-        "label": "KICKED",
-        "importPath": "aiogram.filters",
-        "description": "aiogram.filters",
-        "isExtraImport": true,
-        "detail": "aiogram.filters",
-        "documentation": {}
-    },
-    {
-        "label": "MEMBER",
-        "importPath": "aiogram.filters",
-        "description": "aiogram.filters",
-        "isExtraImport": true,
-        "detail": "aiogram.filters",
-        "documentation": {}
-    },
-    {
-        "label": "check_subscribe",
-        "importPath": "utils.check_sub",
-        "description": "utils.check_sub",
-        "isExtraImport": true,
-        "detail": "utils.check_sub",
-        "documentation": {}
-    },
-    {
-        "label": "add_channnel",
-        "importPath": "utils.check_sub",
-        "description": "utils.check_sub",
-        "isExtraImport": true,
-        "detail": "utils.check_sub",
-        "documentation": {}
-    },
-    {
-        "label": "remove_channel",
-        "importPath": "utils.check_sub",
-        "description": "utils.check_sub",
-        "isExtraImport": true,
-        "detail": "utils.check_sub",
-        "documentation": {}
-    },
-    {
-        "label": "gen_keyboard",
-        "importPath": "utils.check_sub",
-        "description": "utils.check_sub",
-        "isExtraImport": true,
-        "detail": "utils.check_sub",
-        "documentation": {}
-    },
-    {
-        "label": "c_listener",
-        "importPath": "utils.check_sub",
-        "description": "utils.check_sub",
-        "isExtraImport": true,
-        "detail": "utils.check_sub",
-        "documentation": {}
-    },
-    {
-        "label": "pay_list",
-        "importPath": "config_data.config_load",
-        "description": "config_data.config_load",
-        "isExtraImport": true,
-        "detail": "config_data.config_load",
-        "documentation": {}
-    },
-    {
-        "label": "discord_relax_cycle",
-        "importPath": "config_data.config_load",
-        "description": "config_data.config_load",
-        "isExtraImport": true,
-        "detail": "config_data.config_load",
-        "documentation": {}
-    },
-    {
-        "label": "discord_fast_cycle",
-        "importPath": "config_data.config_load",
-        "description": "config_data.config_load",
-        "isExtraImport": true,
-        "detail": "config_data.config_load",
-        "documentation": {}
-    },
-    {
-        "label": "discord_relax_cycle",
-        "importPath": "config_data.config_load",
-        "description": "config_data.config_load",
-        "isExtraImport": true,
-        "detail": "config_data.config_load",
-        "documentation": {}
-    },
-    {
-        "label": "discord_fast_cycle",
-        "importPath": "config_data.config_load",
-        "description": "config_data.config_load",
-        "isExtraImport": true,
-        "detail": "config_data.config_load",
-        "documentation": {}
-    },
-    {
-        "label": "discord_relax_cycle",
-        "importPath": "config_data.config_load",
-        "description": "config_data.config_load",
-        "isExtraImport": true,
-        "detail": "config_data.config_load",
-        "documentation": {}
-    },
-    {
-        "label": "pay_list",
-        "importPath": "config_data.config_load",
-        "description": "config_data.config_load",
-        "isExtraImport": true,
-        "detail": "config_data.config_load",
-        "documentation": {}
-    },
-    {
-        "label": "pay_list",
-        "importPath": "config_data.config_load",
-        "description": "config_data.config_load",
-        "isExtraImport": true,
-        "detail": "config_data.config_load",
-        "documentation": {}
-    },
-    {
-        "label": "pay_list",
-        "importPath": "config_data.config_load",
-        "description": "config_data.config_load",
-        "isExtraImport": true,
-        "detail": "config_data.config_load",
-        "documentation": {}
-    },
-    {
-        "label": "pay_list",
-        "importPath": "config_data.config_load",
-        "description": "config_data.config_load",
-        "isExtraImport": true,
-        "detail": "config_data.config_load",
-        "documentation": {}
-    },
-    {
-        "label": "ban_list",
-        "importPath": "config_data.config_load",
-        "description": "config_data.config_load",
-        "isExtraImport": true,
-        "detail": "config_data.config_load",
         "documentation": {}
     },
     {
@@ -3496,6 +3529,38 @@
         "documentation": {}
     },
     {
+        "label": "Stable",
+        "importPath": "database.models.stable",
+        "description": "database.models.stable",
+        "isExtraImport": true,
+        "detail": "database.models.stable",
+        "documentation": {}
+    },
+    {
+        "label": "Stable",
+        "importPath": "database.models.stable",
+        "description": "database.models.stable",
+        "isExtraImport": true,
+        "detail": "database.models.stable",
+        "documentation": {}
+    },
+    {
+        "label": "Clients",
+        "importPath": "database.models.clients",
+        "description": "database.models.clients",
+        "isExtraImport": true,
+        "detail": "database.models.clients",
+        "documentation": {}
+    },
+    {
+        "label": "Clients",
+        "importPath": "database.models.clients",
+        "description": "database.models.clients",
+        "isExtraImport": true,
+        "detail": "database.models.clients",
+        "documentation": {}
+    },
+    {
         "label": "dalle_image",
         "importPath": "handlers.client.neural.dalle",
         "description": "handlers.client.neural.dalle",
@@ -3513,10 +3578,18 @@
     },
     {
         "label": "SessionMiddleware",
-        "importPath": "config_data.session_middleware",
-        "description": "config_data.session_middleware",
+        "importPath": "middlewares",
+        "description": "middlewares",
         "isExtraImport": true,
-        "detail": "config_data.session_middleware",
+        "detail": "middlewares",
+        "documentation": {}
+    },
+    {
+        "label": "MediaGroupMiddleware",
+        "importPath": "middlewares",
+        "description": "middlewares",
+        "isExtraImport": true,
+        "detail": "middlewares",
         "documentation": {}
     },
     {
@@ -4294,15 +4367,6 @@
         "documentation": {}
     },
     {
-        "label": "SessionMiddleware",
-        "kind": 6,
-        "importPath": "config_data.session_middleware",
-        "description": "config_data.session_middleware",
-        "peekOfCode": "class SessionMiddleware(BaseMiddleware):\n    \"\"\"\n    Middleware for adding await session.\n    \"\"\"\n    def __init__(self, sessionmaker):\n        self.sessionmaker = sessionmaker\n    async def __call__(\n        self,\n        handler: Callable[[Update, Dict[str, Any]], Awaitable[Any]],\n        event: Update,",
-        "detail": "config_data.session_middleware",
-        "documentation": {}
-    },
-    {
         "label": "Advertising",
         "kind": 6,
         "importPath": "database.models.ads",
@@ -4658,7 +4722,7 @@
         "kind": 2,
         "importPath": "handlers.register",
         "description": "handlers.register",
-        "peekOfCode": "def register_middlewares(dp: Dispatcher, sessionmaker: async_sessionmaker):\n    dp.update.outer_middleware(SessionMiddleware(sessionmaker))",
+        "peekOfCode": "def register_middlewares(dp: Dispatcher, sessionmaker: async_sessionmaker):\n    dp.update.outer_middleware(MediaGroupMiddleware())\n    dp.update.outer_middleware(SessionMiddleware(sessionmaker))",
         "detail": "handlers.register",
         "documentation": {}
     },
@@ -4669,6 +4733,24 @@
         "description": "keyboards.client_kb",
         "peekOfCode": "class kb:\n    # Start Keyboard\n    def start_agreement():\n        b1 = KeyboardButton(text = get_text(\"buts.agreement_ok\"))\n        kb_agreement = ReplyKeyboardMarkup(\n            row_width=1, resize_keyboard=True,\n            one_time_keyboard = True, keyboard = [[b1]]\n        )\n        return kb_agreement\n    def start():",
         "detail": "keyboards.client_kb",
+        "documentation": {}
+    },
+    {
+        "label": "MediaGroupMiddleware",
+        "kind": 6,
+        "importPath": "middlewares.media_group",
+        "description": "middlewares.media_group",
+        "peekOfCode": "class MediaGroupMiddleware(BaseMiddleware):\n    album_data: dict = {}\n    def __init__(self, latency: Union[int, float] = 0.01):\n        self.latency = latency\n    async def __call__(\n            self,\n            handler: Callable[[Message, dict[str, Any]], Awaitable[Any]],\n            message: Message,\n            data: dict[str, Any]\n    ) -> Any:",
+        "detail": "middlewares.media_group",
+        "documentation": {}
+    },
+    {
+        "label": "SessionMiddleware",
+        "kind": 6,
+        "importPath": "middlewares.session",
+        "description": "middlewares.session",
+        "peekOfCode": "class SessionMiddleware(BaseMiddleware):\n    \"\"\"\n    Middleware for adding await session.\n    \"\"\"\n    def __init__(self, sessionmaker: async_sessionmaker):\n        self.sessionmaker = sessionmaker\n    async def __call__(\n        self,\n        handler: Callable[[Update, Dict[str, Any]], Awaitable[Any]],\n        event: Update,",
+        "detail": "middlewares.session",
         "documentation": {}
     },
     {

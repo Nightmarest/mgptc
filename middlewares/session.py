@@ -1,6 +1,7 @@
 from typing import Any, Awaitable, Callable, Dict, Optional
 from aiogram import BaseMiddleware
 from aiogram.types import Update, User
+from sqlalchemy.ext.asyncio import async_sessionmaker
 from sqlalchemy.orm import Session
 from sqlalchemy import select
 
@@ -14,7 +15,7 @@ class SessionMiddleware(BaseMiddleware):
     Middleware for adding await session.
     """
 
-    def __init__(self, sessionmaker):
+    def __init__(self, sessionmaker: async_sessionmaker):
         self.sessionmaker = sessionmaker
 
     async def __call__(

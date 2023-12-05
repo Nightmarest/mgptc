@@ -11,7 +11,7 @@ from config_data.create_bot import db
 from utils.func import get_text
 from filters.states.state import ClientState
 from handlers.admin.state import PromoState
-from config_data.session_middleware import SessionMiddleware
+from middlewares import SessionMiddleware, MediaGroupMiddleware
 from filters.client import (
     GPTUserPoorFilter, MJUserPoorFilter, CheckSubFilter,
     MJRequestsToday, PikaLabsSUserPoorFilter, DeepAIUserPoorFilter,
@@ -113,4 +113,5 @@ def register_client_handlers(router: Router):
 
 
 def register_middlewares(dp: Dispatcher, sessionmaker: async_sessionmaker):
+    dp.update.outer_middleware(MediaGroupMiddleware())
     dp.update.outer_middleware(SessionMiddleware(sessionmaker))
