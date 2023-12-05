@@ -79,11 +79,11 @@ class cloudpay_api:
             return payurl, code, reason
 
     async def check(track_id, buy_type, chatid):
-        url = 'https://api.cloudpayments.ru/v2/payments/find'
+        url = 'https://api.cloudpayments.ru/v2/payments/get'
         headers = { 'content-type': 'application/json' }
         session = aiohttp.ClientSession()
         checkpay = {
-            "InvoiceId": track_id,
+            "TransactionId": track_id,
         }
 
         async with session.post(
@@ -112,7 +112,7 @@ class cloudpay_api:
                     "requireConfirmation": False,
                     "startDate": now.strftime("%Y-%m-%dT%H:%M:%S"),
                     "interval": "Month",
-                    "period": 1
+                    "period": pay_list[buy_type]["period"]
                 }
 
                 async with session.post(

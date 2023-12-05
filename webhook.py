@@ -26,11 +26,11 @@ app = FastAPI()
 #      return {"code": 0}
 
 @app.post("/pay/success/")
-async def webhook(AccountId: str = Form(), InvoiceId: str = Form(), Data: str = Form()):
+async def webhook(AccountId: str = Form(), TransactionId: str = Form(), Data = Form()):
  # if SubscriptionId != "":
     d = ast.literal_eval(Data)
     lg.info(Data)
-    await cloudpay_api.check(InvoiceId, d['buytype'], AccountId)
+    await cloudpay_api.check(TransactionId, d['buytype'], AccountId)
 
     return {"code": 0}
 
@@ -109,6 +109,7 @@ async def cryptosuccess(req: Request):
 @app.post("/neural/stable")
 async def stableprocess(req: Request):
     response = await req.json()
+    lg.info(response)
 
     if response["status"] == 'processing':
         return 200
