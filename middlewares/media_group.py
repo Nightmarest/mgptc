@@ -1,5 +1,4 @@
 import asyncio
-import aiogram
 from aiogram.types import Message
 from aiogram import BaseMiddleware
 from typing import Callable, Any, Awaitable, Union

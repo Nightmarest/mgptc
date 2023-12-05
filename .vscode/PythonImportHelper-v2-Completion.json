@@ -1,11 +1,18 @@
 [
     {
-        "label": "os",
-        "kind": 6,
+        "label": "hide_link",
+        "importPath": "aiogram.utils.markdown",
+        "description": "aiogram.utils.markdown",
         "isExtraImport": true,
-        "importPath": "os",
-        "description": "os",
-        "detail": "os",
+        "detail": "aiogram.utils.markdown",
+        "documentation": {}
+    },
+    {
+        "label": "hide_link",
+        "importPath": "aiogram.utils.markdown",
+        "description": "aiogram.utils.markdown",
+        "isExtraImport": true,
+        "detail": "aiogram.utils.markdown",
         "documentation": {}
     },
     {
@@ -42,7 +49,7 @@
         "documentation": {}
     },
     {
-        "label": "config",
+        "label": "MODELS_STABLE",
         "importPath": "config_data.config",
         "description": "config_data.config",
         "isExtraImport": true,
@@ -210,6 +217,14 @@
         "documentation": {}
     },
     {
+        "label": "MODELS_STABLE",
+        "importPath": "config_data.config",
+        "description": "config_data.config",
+        "isExtraImport": true,
+        "detail": "config_data.config",
+        "documentation": {}
+    },
+    {
         "label": "config",
         "importPath": "config_data.config",
         "description": "config_data.config",
@@ -219,6 +234,22 @@
     },
     {
         "label": "config",
+        "importPath": "config_data.config",
+        "description": "config_data.config",
+        "isExtraImport": true,
+        "detail": "config_data.config",
+        "documentation": {}
+    },
+    {
+        "label": "config",
+        "importPath": "config_data.config",
+        "description": "config_data.config",
+        "isExtraImport": true,
+        "detail": "config_data.config",
+        "documentation": {}
+    },
+    {
+        "label": "MODELS_STABLE",
         "importPath": "config_data.config",
         "description": "config_data.config",
         "isExtraImport": true,
@@ -394,15 +425,6 @@
         "documentation": {}
     },
     {
-        "label": "aiogram",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "aiogram",
-        "description": "aiogram",
-        "detail": "aiogram",
-        "documentation": {}
-    },
-    {
         "label": "Bot",
         "importPath": "aiogram",
         "description": "aiogram",
@@ -516,22 +538,6 @@
     },
     {
         "label": "F",
-        "importPath": "aiogram",
-        "description": "aiogram",
-        "isExtraImport": true,
-        "detail": "aiogram",
-        "documentation": {}
-    },
-    {
-        "label": "Bot",
-        "importPath": "aiogram",
-        "description": "aiogram",
-        "isExtraImport": true,
-        "detail": "aiogram",
-        "documentation": {}
-    },
-    {
-        "label": "Dispatcher",
         "importPath": "aiogram",
         "description": "aiogram",
         "isExtraImport": true,
@@ -1703,14 +1709,6 @@
         "documentation": {}
     },
     {
-        "label": "MenuButtonWebApp",
-        "importPath": "aiogram.types",
-        "description": "aiogram.types",
-        "isExtraImport": true,
-        "detail": "aiogram.types",
-        "documentation": {}
-    },
-    {
         "label": "WebAppInfo",
         "importPath": "aiogram.types",
         "description": "aiogram.types",
@@ -1792,22 +1790,6 @@
     },
     {
         "label": "Message",
-        "importPath": "aiogram.types",
-        "description": "aiogram.types",
-        "isExtraImport": true,
-        "detail": "aiogram.types",
-        "documentation": {}
-    },
-    {
-        "label": "Message",
-        "importPath": "aiogram.types",
-        "description": "aiogram.types",
-        "isExtraImport": true,
-        "detail": "aiogram.types",
-        "documentation": {}
-    },
-    {
-        "label": "InputMediaPhoto",
         "importPath": "aiogram.types",
         "description": "aiogram.types",
         "isExtraImport": true,
@@ -3521,14 +3503,6 @@
         "documentation": {}
     },
     {
-        "label": "hide_link",
-        "importPath": "aiogram.utils.markdown",
-        "description": "aiogram.utils.markdown",
-        "isExtraImport": true,
-        "detail": "aiogram.utils.markdown",
-        "documentation": {}
-    },
-    {
         "label": "Stable",
         "importPath": "database.models.stable",
         "description": "database.models.stable",
@@ -4155,6 +4129,15 @@
         "documentation": {}
     },
     {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
         "label": "Client",
         "importPath": "discum",
         "description": "discum",
@@ -4282,6 +4265,15 @@
         "importPath": "config_data.config",
         "description": "config_data.config",
         "peekOfCode": "config = {\n    \"APIToken\": \"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\", # OPENAI\n    \"ZeroscopeToken\": \"r8_DyAbjQpqxhwxSmj9qKVVpjysDmnSUdT4Bkf2g\", #зероскоп токен\n    \"DeeplToken\": \"725ea090-4ba9-494c-8c58-8912b78537a9\",\n    \"BotToken\": \"6062729970:AAG1aK3DE-FxpfP7sMeIivaqcQZIRwaQwYA\",  # Токен самого бота 6062729970:AAHxJG2GCp4A4cL5fROgKRnn7OSrkD5wEBQ\n    # \"BotToken\": \"6157728996:AAGRBicyQL4ozhTtIBW8m9X-YAuO29csT4s\",\n    # Токен самого бота 6062729970:AAHxJG2GCp4A4cL5fROgKRnn7OSrkD5wEBQ\n    \"DBHost\": \"194.31.173.202\",  # DataBase host\n    \"DBPort\": 5432,  # DataBase port\n    \"DBUser\": \"gen_user\",  # DataBase user",
+        "detail": "config_data.config",
+        "documentation": {}
+    },
+    {
+        "label": "MODELS_STABLE",
+        "kind": 5,
+        "importPath": "config_data.config",
+        "description": "config_data.config",
+        "peekOfCode": "MODELS_STABLE = {\n    'juggernaut-xl-v7': {\n        'first_name': 'Juggernaut XL V7',\n        'description': f'''{hide_link(\"https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/c63c2f98-4d4a-43e8-82c4-f7a577a8db72/width=1152/00000-1447182128.jpeg\")}<b>С помощью Juggernaut XL вы можете без особых усилий создавать реалистичных, кинематографичных и фотореалистичных персонажей и локации.\nРекомендуем в целом использовать эту модель, применяя стиль Midjourney.</b>'''\n    },\n    'albedobase-xl': {\n        'first_name': 'AlbedoBase XL',\n        'description': f'''{hide_link(\"https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/68df5736-dd1f-4df4-8e7d-5fbd7adf8730/width=720/0.jpeg\")}<b>Эта модель отлично настроена для фотореализма.</b>'''\n    },",
         "detail": "config_data.config",
         "documentation": {}
     },
@@ -4425,7 +4417,7 @@
         "kind": 6,
         "importPath": "database.models.stable",
         "description": "database.models.stable",
-        "peekOfCode": "class Stable(Base):\n    __tablename__ = \"stable\"\n    user_id: Mapped[bigint] = mapped_column(primary_key=True, autoincrement=True)\n    model: Mapped[str] = mapped_column(default=\"juggernaut-xl\")\n    ratio: Mapped[str] = mapped_column(default=\"1024:1024\")\n    style: Mapped[str] = mapped_column(default=\"midjourney\")",
+        "peekOfCode": "class Stable(Base):\n    __tablename__ = \"stable\"\n    user_id: Mapped[bigint] = mapped_column(primary_key=True, autoincrement=True)\n    model: Mapped[str] = mapped_column(default=list(MODELS_STABLE)[0])\n    ratio: Mapped[str] = mapped_column(default=\"1024:1024\")\n    style: Mapped[str] = mapped_column(default=\"midjourney\")",
         "detail": "database.models.stable",
         "documentation": {}
     },
@@ -4952,20 +4944,11 @@
         "documentation": {}
     },
     {
-        "label": "dp",
+        "label": "MODELS_STABLE",
         "kind": 5,
         "importPath": "test",
         "description": "test",
-        "peekOfCode": "dp = Dispatcher()\nbot = Bot(\"6219812476:AAHV6E9f7NJZ9LcHNeVU90r4P-cGZKYkDHc\")\n@dp.message()\nasync def message(message: Message):\n    url_list = [\n        \"https://pub-3626123a908346a7a8be8d9295f44e26.r2.dev/generations/0-ac6ab0c4-31a4-47fc-b50f-8d5dc8a121a6.png\",\n        \"https://pub-3626123a908346a7a8be8d9295f44e26.r2.dev/generations/1-ac6ab0c4-31a4-47fc-b50f-8d5dc8a121a6.png\",\n        \"https://pub-3626123a908346a7a8be8d9295f44e26.r2.dev/generations/2-ac6ab0c4-31a4-47fc-b50f-8d5dc8a121a6.png\",\n        \"https://pub-3626123a908346a7a8be8d9295f44e26.r2.dev/generations/3-ac6ab0c4-31a4-47fc-b50f-8d5dc8a121a6.png\"\n    ]",
-        "detail": "test",
-        "documentation": {}
-    },
-    {
-        "label": "bot",
-        "kind": 5,
-        "importPath": "test",
-        "description": "test",
-        "peekOfCode": "bot = Bot(\"6219812476:AAHV6E9f7NJZ9LcHNeVU90r4P-cGZKYkDHc\")\n@dp.message()\nasync def message(message: Message):\n    url_list = [\n        \"https://pub-3626123a908346a7a8be8d9295f44e26.r2.dev/generations/0-ac6ab0c4-31a4-47fc-b50f-8d5dc8a121a6.png\",\n        \"https://pub-3626123a908346a7a8be8d9295f44e26.r2.dev/generations/1-ac6ab0c4-31a4-47fc-b50f-8d5dc8a121a6.png\",\n        \"https://pub-3626123a908346a7a8be8d9295f44e26.r2.dev/generations/2-ac6ab0c4-31a4-47fc-b50f-8d5dc8a121a6.png\",\n        \"https://pub-3626123a908346a7a8be8d9295f44e26.r2.dev/generations/3-ac6ab0c4-31a4-47fc-b50f-8d5dc8a121a6.png\"\n    ]\n    photo_list = []",
+        "peekOfCode": "MODELS_STABLE = {\n    'juggernaut-xl-v7': {\n        'first_name': 'Juggernaut XL V7',\n       # 'description': f'''{hide_link(\"https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/c63c2f98-4d4a-43e8-82c4-f7a577a8db72/width=1152/00000-1447182128.jpeg\")}<b>С помощью Juggernaut XL вы можете без особых усилий создавать реалистичных, кинематографичных и фотореалистичных персонажей и локации.\\n\\nРекомендуем в целом использовать эту модель, применяя стиль Midjourney.</b>'''\n    },\n    'albedobase-xl': {\n        'first_name': 'AlbedoBase XL',\n      #  'description': f'''{hide_link(\"https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/68df5736-dd1f-4df4-8e7d-5fbd7adf8730/width=720/0.jpeg\")}<b>Эта модель отлично настроена для фотореализма.</b>'''\n    },\n    'yamermix-v8-vae': {",
         "detail": "test",
         "documentation": {}
     },

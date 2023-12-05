@@ -3,6 +3,7 @@ from aiogram.fsm.context import FSMContext
 from aiogram.utils.markdown import hide_link
 
 from utils.func import get_text, stable_formatted
+from config_data.config import MODELS_STABLE
 from database.models.stable import Stable
 from database.models.clients import Clients
 from keyboards.client_kb import kb
@@ -82,8 +83,6 @@ async def choose_mode(call: CallbackQuery, state: FSMContext, user: Clients):
         )
 
 
-
-
 async def manage_stable_menu(call: CallbackQuery, stable: Stable):
     await call.answer()
     TEXT = "<b>🏙️ Формат:</b> <code>{}</code>\n🧢 <b>Стиль:</b> <code>{}</code>\n<b>🖱️ Модель:</b> <code>{}</code>".format(
@@ -144,36 +143,11 @@ async def manage_stable_style(call: CallbackQuery, stable: Stable):
 
 
 async def manage_stable_model(call: CallbackQuery, stable: Stable):
-    call_text = ""
-
     if call.data != "manage_stable_model":
         stable_model = call.data.split("_")[2]
         stable.model = stable_model
 
-    text_list = [
-        (
-            f'''{hide_link("https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/c63c2f98-4d4a-43e8-82c4-f7a577a8db72/width=1152/00000-1447182128.jpeg")}<b>С помощью Juggernaut XL вы можете без особых усилий создавать реалистичных, кинематографичных и фотореалистичных персонажей и локации.
-
-Рекомендуем в целом использовать эту модель, применяя стиль Midjourney.</b>''',
-            "juggernaut-xl-v7"
-        ),
-        (
-            f'''{hide_link("https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/68df5736-dd1f-4df4-8e7d-5fbd7adf8730/width=720/0.jpeg")}<b>Эта модель отлично настроена для фотореализма.</b>''',
-            "albedobase-xl"
-        ),
-        (
-            f'''{hide_link("https://image.stablediffusionapi.com/?quality=45&Image=https://pub-3626123a908346a7a8be8d9295f44e26.r2.dev/generations/18141439221696749891.png")}<b>Эта модель не поддается ограничениям и дает вам возможность создавать все, что пожелает ваше воображение.</b>''',
-            "yamermix-v8-vae"
-        ),
-        (
-            f'''{hide_link("https://pub-3626123a908346a7a8be8d9295f44e26.r2.dev/generations/18350195621701335828.png")}<b>Новая Colossus Project XL даёт революционные возможности создания изображений по коротким подсказкам. Уникальный набор данных и улучшенные алгоритмы позволяют с лёгкостью генерировать шедевры.</b>''',
-            "colossus-project-xl-sfwns"
-        )
-    ]
-
-    for text in text_list:
-        if stable.model == text[1]:
-            call_text = text[0]
+    call_text = MODELS_STABLE.get(stable.model).get('description')
 
     await call.message.edit_text(
         text=call_text,

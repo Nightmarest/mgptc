@@ -5,10 +5,12 @@ from aiogram.types import (
     InlineKeyboardMarkup,
 )
 from aiogram.utils.keyboard import InlineKeyboardBuilder
+from aiogram.types import WebAppInfo
+
+from config_data.config import MODELS_STABLE
 from config_data.config import config
 from config_data.config_load import pay_list
 from utils.func import get_text
-from aiogram.types import MenuButtonWebApp, WebAppInfo
 
 
 class kb:
@@ -425,20 +427,13 @@ class kb:
     def manage_model(model: str):
         builder = InlineKeyboardBuilder()
 
-        button_list = [
-            ("Juggernaut XL V7", "juggernaut-xl-v7"),
-            ("SDXL Unstable Diffusers", "yamermix-v8-vae"),
-            ("AlbedoBase XL", "albedobase-xl"),
-            ("Colossus Project XL", "colossus-project-xl-sfwns")
-        ]
-
-        for button in button_list:
-            if model == button[1]:
-                call_text = "✨ " + button[0]
+        for key, value in MODELS_STABLE:
+            if model == key:
+                call_text = "✨ " + value.get('first_name')
                 callback_data = "pass"
             else:
-                call_text = button[0]
-                callback_data = f"choise_model_{button[1]}"
+                call_text = value.get('first_name')
+                callback_data = f"choise_model_{key}"
 
             builder.button(
                 text=call_text,

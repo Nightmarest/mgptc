@@ -1,4 +1,5 @@
-import os
+from aiogram.utils.markdown import hide_link
+
 
 config = {
     "APIToken": "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", # OPENAI
@@ -87,4 +88,29 @@ config = {
 
     "agreement": "http://bit.ly/49WoClh",
     # True agreement: https://telegra.ph/Usloviya-predostavleniya-uslug-k-Telegram-botu-midjourneychatgpt-bot-11-28
+}
+
+
+MODELS_STABLE = {
+    'juggernaut-xl-v7': {
+        'first_name': 'Juggernaut XL V7',
+        'description': f'''{hide_link("https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/c63c2f98-4d4a-43e8-82c4-f7a577a8db72/width=1152/00000-1447182128.jpeg")}<b>С помощью Juggernaut XL вы можете без особых усилий создавать реалистичных, кинематографичных и фотореалистичных персонажей и локации.
+
+Рекомендуем в целом использовать эту модель, применяя стиль Midjourney.</b>'''
+    },
+
+    'albedobase-xl': {
+        'first_name': 'AlbedoBase XL',
+        'description': f'''{hide_link("https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/68df5736-dd1f-4df4-8e7d-5fbd7adf8730/width=720/0.jpeg")}<b>Эта модель отлично настроена для фотореализма.</b>'''
+    },
+
+    'yamermix-v8-vae': {
+        'first_name': 'SDXL Unstable Diffusers',
+        'description': f'''{hide_link("https://image.stablediffusionapi.com/?quality=45&Image=https://pub-3626123a908346a7a8be8d9295f44e26.r2.dev/generations/18141439221696749891.png")}<b>Эта модель не поддается ограничениям и дает вам возможность создавать все, что пожелает ваше воображение.</b>'''
+    },
+
+    'colossus-project-xl-sfwns': {
+        'first_name': 'Colossus Project XL',
+        'description': f'''{hide_link("https://pub-3626123a908346a7a8be8d9295f44e26.r2.dev/generations/18350195621701335828.png")}<b>Новая Colossus Project XL даёт революционные возможности создания изображений по коротким подсказкам. Уникальный набор данных и улучшенные алгоритмы позволяют с лёгкостью генерировать шедевры.</b>'''
+    }
 }
