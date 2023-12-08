@@ -80,7 +80,7 @@
         "requests_deepai": 0,
         "requests_dalle": 0,
         "autosub": false,
-        "voiceaccess": false
+        "voiceaccess": true
 
     },
 
@@ -101,7 +101,7 @@
         "requests_deepai": 0,
         "requests_dalle": 0,
         "autosub": true,
-        "voiceaccess": false,
+        "voiceaccess": true,
         "period": 1
 
     },
@@ -122,11 +122,11 @@
         "requests_deepai": 0,
         "requests_dalle": 0,
         "autosub": true,
-        "voiceaccess": false,
+        "voiceaccess": true,
         "period": 3
     },
     "buy-6": {
-        "callback_text": "Пробная GPT 3.5",
+        "callback_text": "Пробная GPT 4",
         "message_text": "Пробная GPT 4",
         "amount": 480,
         "expired_time": "month",
@@ -142,7 +142,7 @@
         "requests_deepai": 0,
         "requests_dalle": 0,
         "autosub": true,
-        "voiceaccess": false,
+        "voiceaccess": true,
         "period": 1
     },
     "buy-7": {
