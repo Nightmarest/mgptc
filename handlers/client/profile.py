@@ -79,4 +79,4 @@ async def switch_voice_answer(call: CallbackQuery, user: Clients):
         except Exception as e:
             await call.answer("❌ Активируйте премиум план с данной привелегией")
 
-    await call_profile(call)
+    await call_profile(call, user)
