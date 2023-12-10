@@ -10,8 +10,7 @@ from config_data.config import config
 from config_data.create_bot import db
 from utils.func import get_text
 from filters.states.state import ClientState
-from handlers.admin.state import CreatePromo
-from config_data.session_middleware import SessionMiddleware
+from middlewares import SessionMiddleware, MediaGroupMiddleware
 from filters.client import (
     GPTUserPoorFilter, MJUserPoorFilter, CheckSubFilter,
     MJRequestsToday, PikaLabsSUserPoorFilter, DeepAIUserPoorFilter,
@@ -67,6 +66,8 @@ def register_client_handlers(router: Router):
     router.message.register(help, F.text == get_text("buts.help"))
     router.message.register(profile, F.text == get_text("buts.profile"))
     router.message.register(promocodes, F.text == get_text("buts.premium"))
+    router.message.register(premium, StateFilter(PromoState.promo))
+
 
 
     router.callback_query.register(call_warning_in_progress, StateFilter(ClientState.process))
@@ -111,4 +112,5 @@ def register_client_handlers(router: Router):
 
 
 def register_middlewares(dp: Dispatcher, sessionmaker: async_sessionmaker):
+    dp.update.outer_middleware(MediaGroupMiddleware())
     dp.update.outer_middleware(SessionMiddleware(sessionmaker))
