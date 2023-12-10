@@ -171,6 +171,7 @@ class PostgreSQL:
         try:
             with self.Session() as session:
                 result = session.execute(text(request))
+                session.commit()
                 return result.fetchall()
         except Exception as e:
             lg.error(f"Error in go: {e}")

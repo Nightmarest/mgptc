@@ -178,3 +178,28 @@ def stable_formatted(element: str) -> str:
             finally_element = stable[0]
 
     return finally_element
+
+def timeword(d=0, h=0, m=0):
+    dmy = {'d': int(d), 'h': int(h), 'm': int(m)}
+    print(dmy)
+    words = {'y': ['лет', 'год', 'года'], 'mouth': ['месяцев', 'месяц', 'месяца'], 'd': ['дней', 'день', 'дня'],
+             'h': ['часов', 'час', 'часа'],
+             'm': ['минут', 'минута', 'минуты']}
+
+    out = []
+    for k, v in dmy.items():
+        remainder = v % 10
+        if v == 0 or remainder == 0 or remainder >= 5 or v in range(11, 19):
+            st = str(v), words[k][0]
+        elif remainder == 1:
+            st = str(v), words[k][1]
+        else:
+            st = str(v), words[k][2]
+
+        if int(st[0]) > 0:
+            out.append(" ".join(st))
+        else:
+            pass
+
+    time = " ".join(out)
+    return time
