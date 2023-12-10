@@ -66,7 +66,6 @@ def register_client_handlers(router: Router):
     router.message.register(help, F.text == get_text("buts.help"))
     router.message.register(profile, F.text == get_text("buts.profile"))
     router.message.register(promocodes, F.text == get_text("buts.premium"))
-    router.message.register(premium, StateFilter(PromoState.promo))
 
 
 
