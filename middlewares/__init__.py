@@ -1,2 +1,2 @@
-from .media_group import MediaGroupMiddleware
+#from .media_group import MediaGroupMiddleware
 from .session import SessionMiddleware
