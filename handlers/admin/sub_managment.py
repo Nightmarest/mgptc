@@ -1,5 +1,6 @@
 import json
 import re
+from datetime import datetime
 
 import aiohttp
 from aiogram.client import session
@@ -279,25 +280,32 @@ async def submanage_recursive_auto_finally(query: CallbackQuery):
                         numbers = re.sub(r"\D", "", x['NextTransactionDate'])
                         tariff = db.read(i[0], "premium_type")
                         if tariff != "":
+                            dt_object = None
                             if tariff is not None:
-                                amount = pay_list[tariff]['amount']
-                                if x['Amount'] != amount:
-                                    LA_request = {
-                                        "Id": x['Id'],
-                                        "description":" Подарочные дни. Script made by KNOPPiX",
-                                        "StartDate": int(numbers) + time
-                                    }
-                                    url = 'https://api.cloudpayments.ru/subscriptions/update'
+                                if i[2] is not None:
+                                    if i[2] != "":
+                                        tstamp = datetime.strptime(i[2], "%Y-%m-%d").timestamp()
+                                        tstamp = tstamp + time
+                                        dt_object = datetime.fromtimestamp(tstamp)
+                                        db.update(i[0], i[2], dt_object.date())
+                                        amount = pay_list[tariff]['amount']
+                                        print(dt_object.strftime("%Y-%m-%dT%H:%M:%S"))
+                                        LA_request = {
+                                            "Id": x['Id'],
+                                            "description":" Подарочные дни. Script made by KNOPPiX",
+                                            "StartDate": dt_object.strftime("%Y-%m-%dT%H:%M:%S")
+                                        }
+                                        url = 'https://api.cloudpayments.ru/subscriptions/update'
 
-
-                                    async with session.post(
-                                            url, data=json.dumps(LA_request), headers=headers,
-                                            auth=aiohttp.BasicAuth(
-                                                config['CPID'],
-                                                config['CPKEY']
-                                            )
-                                    ) as resp:
-                                        response = await resp.json(content_type=None)
+                                        async with session.post(
+                                                url, data=json.dumps(LA_request), headers=headers,
+                                                auth=aiohttp.BasicAuth(
+                                                    config['CPID'],
+                                                    config['CPKEY']
+                                                )
+                                        ) as resp:
+                                            response = await resp.json(content_type=None)
+                                            print(response)
     await query.message.edit_text("✅ Подарочные дни успешно начислены!")
 
     # db.admin_request(f"SELECT id FROM clients WHERE {pay_list[data]['dbcolumn']} = {data}")

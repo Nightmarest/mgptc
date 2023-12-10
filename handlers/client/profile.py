@@ -41,12 +41,12 @@ async def profile(message: Message, user: Clients):
     agr = db.read(chat_id, "agreement")
     if agr is False:
         await agreement.agreement_check(message)
-    text = f"<b>🌙 Доступно запросов для ChatGPT:</b> {user.requests_gpt}\n" \
-               f"<b>🍬 Доступно запросов для StableDiffusion:</b> {user.requests_mj}\n" \
-               f"<b>🍬 Доступно запросов для Pika Labs:</b> {user.requests_pikalabs}\n" \
-               f"<b>🌇 Доступно запросов для DeepAI:</b> {user.requests_deepai}\n" \
-               f"<b>🎈 Доступно запросов для Dall-E:</b> {user.requests_dalle}\n\n" \
-               f"<b>⏳ Оставшееся время подпииски:</b> {tmd}\n\n"\
+    text = f"<i>•Доступно запросов для ChatGPT:</i> {user.requests_gpt}\n\n" \
+               f"<i>•Доступно запросов для StableDiffusion:</i> {user.requests_mj}\n\n" \
+               f"<i>•Доступно запросов для Pika Labs:</i> {user.requests_pikalabs}\n\n" \
+               f"<i>•Доступно запросов для DeepAI:</i> {user.requests_deepai}\n\n" \
+               f"<i>•Доступно запросов для Dall-E:</i> {user.requests_dalle}\n\n\n" \
+               f"<i>•Оставшееся время подпииски:</i> {tmd}\n\n"\
                f"{get_text('text.profile')}"
     await message.answer(
         text=text,
@@ -69,13 +69,26 @@ async def call_profile(call: CallbackQuery, user: Clients):
         auto = False
     days: int = check_donate_sub(chat_id)
     print(days)
+    date = db.read(chat_id, 'expired_time')
+    tmd = ""
+    if date is None:
+        tmd = "Неизвестно"
+    elif date == "":
+        tmd = "Неизвестно"
+    else:
+        now_date = datetime.date.today()
+        date_split = date.split('-')
+        expired_date = datetime.date(int(date_split[0]), int(date_split[1]), int(date_split[2]))
+        # Вычисляем разницу между датами
+        delta = expired_date - now_date
+        tmd = timeword(delta.days)
 
-    text = f"<b>🌙 Доступно запросов для ChatGPT:</b> {user.requests_gpt}\n"\
-               f"<b>🍬 Доступно запросов для StableDiffusion:</b> {user.requests_mj}\n"\
-               f"<b>🍬 Доступно запросов для Pika Labs:</b> {user.requests_pikalabs}\n"\
-               f"<b>🌇 Доступно запросов для DeepAI:</b> {user.requests_deepai}\n"\
-               f"<b>🎈 Доступно запросов для Dall-E:</b> {user.requests_dalle}\n\n"\
-               f"<b>⏳ Оставшееся время подпииски:</b> {db.read(chat_id, 'expired_time')}\n\n"\
+    text = f"<i>•Доступно запросов для ChatGPT:</i> {user.requests_gpt}\n\n" \
+               f"<i>•Доступно запросов для StableDiffusion:</i> {user.requests_mj}\n\n" \
+               f"<i>•Доступно запросов для Pika Labs:</i> {user.requests_pikalabs}\n\n" \
+               f"<i>•Доступно запросов для DeepAI:</i> {user.requests_deepai}\n\n" \
+               f"<i>•Доступно запросов для Dall-E:</i> {user.requests_dalle}\n\n\n" \
+               f"<i>•Оставшееся время подпииски:</i> {tmd}\n\n"\
                f"{get_text('text.profile')}"
     await call.message.edit_text(
         text=text,
