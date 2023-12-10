@@ -217,7 +217,7 @@ async def submanage_recursive_choose(message: Message, state: FSMContext):
 
 async def submanage_recursive_auto_finally(query: CallbackQuery):
     await query.message.edit_text("⏱️ Начат процесс начисления. Данный процесс может занять до 10 минут.")
-
+    counter = 0
     data = query.data.split(":")
     print(data)
     time = 0
@@ -240,15 +240,19 @@ async def submanage_recursive_auto_finally(query: CallbackQuery):
         aitime = "expired_time"
 
     if data[2] == "day":
-        time = 3600
+        time = 3600 * int(data[4])
     elif data[2] == "week":
-        time = 604800
+        time = 604800 * int(data[4])
     elif data[2] == "month":
-        time = 2629743
+        time = 2629743 * int(data[4])
     elif data[2] == "year":
-        time = 31556926
+        time = 31556926 * int(data[4])
 
 
+
+    time = int(time)
+
+    print(time)
     ids = db.admin_request(f"SELECT id, {ai}, {aitime} FROM clients")
     url = 'https://api.cloudpayments.ru/subscriptions/find'
     headers = {'content-type': 'application/json'}
@@ -289,11 +293,11 @@ async def submanage_recursive_auto_finally(query: CallbackQuery):
                                         dt_object = datetime.fromtimestamp(tstamp)
                                         db.update(i[0], i[2], dt_object.date())
                                         amount = pay_list[tariff]['amount']
-                                        print(dt_object.strftime("%Y-%m-%dT%H:%M:%S"))
+                                        print(dt_object.strftime("%Y-%d-%mT%H:%M:%S"))
                                         LA_request = {
                                             "Id": x['Id'],
                                             "description":" Подарочные дни. Script made by KNOPPiX",
-                                            "StartDate": dt_object.strftime("%Y-%m-%dT%H:%M:%S")
+                                            "StartDate": dt_object.strftime("%Y-%d-%mT%H:%M:%S")
                                         }
                                         url = 'https://api.cloudpayments.ru/subscriptions/update'
 
@@ -306,6 +310,8 @@ async def submanage_recursive_auto_finally(query: CallbackQuery):
                                         ) as resp:
                                             response = await resp.json(content_type=None)
                                             print(response)
-    await query.message.edit_text("✅ Подарочные дни успешно начислены!")
+                                        counter = counter + 1
+                                        await query.message.edit_text(f"⏱️ Начат процесс начисления. Данный процесс может занять до 10 минут.\n\n✅ Количество уже выданных подарков: {counter}")
+    await query.message.edit_text(f"✅ Подарочные дни успешно начислены!\n\n⚡️ Всего выдано: {counter}")
 
     # db.admin_request(f"SELECT id FROM clients WHERE {pay_list[data]['dbcolumn']} = {data}")

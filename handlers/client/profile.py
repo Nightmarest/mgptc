@@ -41,13 +41,14 @@ async def profile(message: Message, user: Clients):
     agr = db.read(chat_id, "agreement")
     if agr is False:
         await agreement.agreement_check(message)
-    text = f"<i>•Доступно запросов для ChatGPT:</i> {user.requests_gpt}\n\n" \
-               f"<i>•Доступно запросов для StableDiffusion:</i> {user.requests_mj}\n\n" \
-               f"<i>•Доступно запросов для Pika Labs:</i> {user.requests_pikalabs}\n\n" \
-               f"<i>•Доступно запросов для DeepAI:</i> {user.requests_deepai}\n\n" \
-               f"<i>•Доступно запросов для Dall-E:</i> {user.requests_dalle}\n\n\n" \
-               f"<i>•Оставшееся время подпииски:</i> {tmd}\n\n"\
-               f"{get_text('text.profile')}"
+    text = f"<i>•Доступно запросов для ChatGPT: {user.requests_gpt}\n\n</i>" \
+               f"<i>•Доступно запросов для StableDiffusion: {user.requests_mj}\n\n</i>" \
+               f"<i>•Доступно запросов для Pika Labs: {user.requests_pikalabs}\n\n</i>" \
+               f"<i>•Доступно запросов для DeepAI: {user.requests_deepai}\n\n</i>" \
+               f"<i>•Доступно запросов для Dall-E: {user.requests_dalle}\n\n\n</i>" \
+               f"<i>•Оставшееся время подпииски: {tmd}\n\n</i>"\
+               f"<b>•Ваш TelegramID:</b> <code>{message.from_user.id}</code>"
+               # f"{get_text('text.profile')}"
     await message.answer(
         text=text,
         reply_markup=kb.profile(
@@ -83,13 +84,14 @@ async def call_profile(call: CallbackQuery, user: Clients):
         delta = expired_date - now_date
         tmd = timeword(delta.days)
 
-    text = f"<i>•Доступно запросов для ChatGPT:</i> {user.requests_gpt}\n\n" \
-               f"<i>•Доступно запросов для StableDiffusion:</i> {user.requests_mj}\n\n" \
-               f"<i>•Доступно запросов для Pika Labs:</i> {user.requests_pikalabs}\n\n" \
-               f"<i>•Доступно запросов для DeepAI:</i> {user.requests_deepai}\n\n" \
-               f"<i>•Доступно запросов для Dall-E:</i> {user.requests_dalle}\n\n\n" \
-               f"<i>•Оставшееся время подпииски:</i> {tmd}\n\n"\
-               f"{get_text('text.profile')}"
+    text = f"<i>•Доступно запросов для ChatGPT: {user.requests_gpt}\n\n</i>" \
+               f"<i>•Доступно запросов для StableDiffusion: {user.requests_mj}\n\n</i>" \
+               f"<i>•Доступно запросов для Pika Labs: {user.requests_pikalabs}\n\n</i>" \
+               f"<i>•Доступно запросов для DeepAI: {user.requests_deepai}\n\n</i>" \
+               f"<i>•Доступно запросов для Dall-E: {user.requests_dalle}\n\n\n</i>" \
+               f"<i>•Оставшееся время подпииски: {tmd}\n\n</i>"\
+               f"<b>•Ваш TelegramID:</b> <code>{call.from_user.id}</code>"
+               # f"{get_text('text.profile')}"
     await call.message.edit_text(
         text=text,
         reply_markup=kb.profile(
