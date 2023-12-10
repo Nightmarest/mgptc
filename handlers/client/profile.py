@@ -109,8 +109,8 @@ async def switch_voice_answer(call: CallbackQuery, user: Clients):
     else:
         tariff = user.premium_type
         try:
-            if pay_list[tariff]['voiceacess'] is None:
-                if pay_list[tariff]['voiceacess'] is True:
+            if pay_list[tariff]['voiceaccess'] is None:
+                if pay_list[tariff]['voiceaccess'] is True:
                     user.voice_answer = True
                 else:
                     await call.answer("❌ Активируйте премиум план с данной привелегией")
@@ -119,4 +119,4 @@ async def switch_voice_answer(call: CallbackQuery, user: Clients):
         except Exception as e:
             await call.answer("❌ Активируйте премиум план с данной привелегией")
 
-    await call_profile(call)
+    await call_profile(call, user)
