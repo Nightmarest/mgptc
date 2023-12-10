@@ -10,7 +10,7 @@ from aiogram.fsm.storage.base import StorageKey
 
 from filters.states.state import ClientState
 from utils.json import read_json
-from config_data.config import config, STYLE_STABLE, MODELS_STABLE, FORMAT_STABLE
+from config_data.config import config
 from config_data.config_load import ban_list
 from config_data.create_bot import bot, dp, db
 
@@ -159,11 +159,47 @@ async def check_photo_nsfw(photo_link: str) -> bool:
 
 
 def stable_formatted(element: str) -> str:
-    MODELS_LIST = [(value.get('first_name'), key) for key, value in MODELS_STABLE.items()]
-    stable_list = FORMAT_STABLE + STYLE_STABLE + MODELS_LIST
+    stable_list = [
+        ("1:1", "1024:1024"),
+        ("2:3", "512:768"),
+        ("3:2", "768:512"),
+
+        ("Без стиля", "default"),
+        ("Midjourney", "midjourney"),
+
+        ("Juggernaut XL", "juggernaut-xl"),
+        ("SDXL Unstable Diffusers", "yamermix-v8-vae"),
+        ("AlbedoBase XL", "albedobase-xl"),
+        ("Deliberate", "deliberate-v3")
+    ]
 
     for stable in stable_list:
         if stable[1] == element:
             finally_element = stable[0]
 
     return finally_element
+
+def timeword(d=0, h=0, m=0):
+    dmy = {'d': int(d), 'h': int(h), 'm': int(m)}
+    print(dmy)
+    words = {'y': ['лет', 'год', 'года'], 'mouth': ['месяцев', 'месяц', 'месяца'], 'd': ['дней', 'день', 'дня'],
+             'h': ['часов', 'час', 'часа'],
+             'm': ['минут', 'минута', 'минуты']}
+
+    out = []
+    for k, v in dmy.items():
+        remainder = v % 10
+        if v == 0 or remainder == 0 or remainder >= 5 or v in range(11, 19):
+            st = str(v), words[k][0]
+        elif remainder == 1:
+            st = str(v), words[k][1]
+        else:
+            st = str(v), words[k][2]
+
+        if int(st[0]) > 0:
+            out.append(" ".join(st))
+        else:
+            pass
+
+    time = " ".join(out)
+    return time

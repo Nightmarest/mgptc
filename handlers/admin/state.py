@@ -15,5 +15,19 @@ class AdminState(StatesGroup):
 
     update_text = State()
 
-class PromoState(StatesGroup):
-    promo = State()
+
+class SubState(StatesGroup):
+    inputid = State()
+
+class SubStateReqs(StatesGroup):
+    input = State()
+
+class CreatePromo(StatesGroup):
+    name = State()
+    discount = State()
+    uses = State()
+    finish = State()
+
+class GiveSub(StatesGroup):
+    input = State()
+    # vrw = State()

@@ -7,7 +7,6 @@ import aiohttp
 from aiogram.types import CallbackQuery, Message
 import asyncio
 from aiogram.fsm.context import FSMContext
-from handlers.admin.state import PromoState
 from keyboards.client_kb import kb
 from config_data.create_bot import db
 from utils.func import get_text, report, current_time, check_donate_sub
@@ -89,13 +88,13 @@ async def accrual_requests(buy_type, chatid, token=None, invoice=None, subid = N
     db.update(chat_id, 'requests_deepai', requests_deepai)
     db.update(chat_id, 'requests_dalle', requests_dalle)
 
-    await bot.send_message(chatid, text)
+    # await bot.send_message(chatid, text)
 
-    await report('<b>💫 Поздравляем</b>\n\n'
-                    f'Username: '
-                    f'ID: <code>{chat_id}</code>\n'
-                    f'Куплено: <code>{donate}</code>',
-                    config["AdminList"])
+    # await report('<b>💫 Поздравляем</b>\n\n'
+    #                 f'Username: '
+    #                 f'ID: <code>{chat_id}</code>\n'
+    #                 f'Куплено: <code>{donate}</code>',
+    #                 config["AdminList"])
 
 
 async def autoupdate(chat_id):

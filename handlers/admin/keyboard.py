@@ -3,6 +3,7 @@ from aiogram_widgets.pagination import KeyboardPaginator
 from config_data.config import config
 from config_data.create_bot import router_admin
 from utils.json import read_json
+from config_data.config_load import pay_list
 
 
 class kb:
@@ -39,11 +40,24 @@ class kb:
             text='✏️ Редактировать текст',
             callback_data='adm_text'
         )
+        b9 = InlineKeyboardButton(
+            text='💰 Подписки',
+            callback_data="subpanel"
+        )
+        b10 = InlineKeyboardButton(
+            text='🔑 Добавить промокод',
+            callback_data="promo"
+        )
+        b11 = InlineKeyboardButton(
+            text='⏱️ Выдача подписок',
+            callback_data="recsub"
+        )
         return InlineKeyboardMarkup(inline_keyboard=[[b1, b2],
                                                      [b3, b4],
                                                      [b5, b7],
-                                                       [b8],
-                                                       [b6]])
+                                                     [b8, b9],
+                                                       [b10, b11],
+                                                        [b6]])
 
     def go_back(section = 'menu'):
         b1 = InlineKeyboardButton(
@@ -202,3 +216,89 @@ class kb:
         )
         return InlineKeyboardMarkup(inline_keyboard=[[b1],
                                                      [b2]])
+
+    def subadmin(id):
+        b2 = InlineKeyboardButton(
+            text='Добавить запросов',
+            callback_data = f"req:plus:{id}"
+        )
+        b3 = InlineKeyboardButton(
+            text='Убавить запросов',
+            callback_data=f"req:minus:{id}"
+
+        )
+        b4 = InlineKeyboardButton(
+            text="✅ Подключить подписку",
+            callback_data=f"subattach:{id}"
+
+        )
+        b5 = InlineKeyboardButton(
+            text="❌ Удалить подписку",
+            callback_data=f"subdel:{id}"
+
+        )
+
+        return InlineKeyboardMarkup(inline_keyboard=[[b4],
+                                                     [b2, b3],
+                                                     [b5]])
+
+    def choose_ai(type):
+        b1 = InlineKeyboardButton(
+            text='🌙 ChatGPT',
+            callback_data=f"ai:{type}:gpt"
+        )
+        b2 = InlineKeyboardButton(
+            text='🍬 SD+GPT',
+            callback_data = f"ai:{type}:mj"
+        )
+        b3 = InlineKeyboardButton(
+            text='🍬 PikaLabs',
+            callback_data=f"ai:{type}:pika"
+        )
+        b4 = InlineKeyboardButton(
+            text="🌇 DeepAI",
+            callback_data=f"ai:{type}:deepai"
+        )
+        b5 = InlineKeyboardButton(
+            text="🎈 Dall-E",
+            callback_data=f"ai:{type}:dalle"
+        )
+
+        return InlineKeyboardMarkup(inline_keyboard=[[b1], [b2],
+                                                     [b3], [b4],
+                                                        [b5]])
+
+
+
+
+    def time_choose():
+        b1 = InlineKeyboardButton(
+            text='День',
+            callback_data=f"givesub:day"
+        )
+        b2 = InlineKeyboardButton(
+            text='Неделя',
+            callback_data = f"givesub:week"
+        )
+        b3 = InlineKeyboardButton(
+            text='Месяц',
+            callback_data=f"givesub:month"
+        )
+        b4 = InlineKeyboardButton(
+            text="Год",
+            callback_data=f"givesub:year"
+        )
+        return InlineKeyboardMarkup(inline_keyboard=[[b1], [b2],
+                                                     [b3], [b4]])
+
+
+    def choose_mode(data):
+        b1 = InlineKeyboardButton(
+            text='✅ Всем подписчикам нейросети',
+            callback_data=f"recursive:all:{data}"
+        )
+        b2 = InlineKeyboardButton(
+            text='⚠️ Опреленным тарифам',
+            callback_data=f"givesub:manual:{data}"
+        )
+        return InlineKeyboardMarkup(inline_keyboard=[[b1], [b2]])

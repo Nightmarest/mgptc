@@ -17,7 +17,13 @@
         "requests_dalle": 0,
         "autosub": true,
         "voiceaccess": true,
-        "period": 1
+        "period": 1,
+        "infinity": true,
+        "dbcolumn": "premium_type",
+        "dbtime": "expired_time"
+
+
+
     },
 
     "buy-1": {
@@ -38,7 +44,15 @@
         "requests_dalle": 0,
         "autosub": true,
         "voiceaccess": true,
-        "period": 1
+        "period": 1,
+        "infinity": true,
+        "dbcolumn": "premium_type",
+        "dbtime": "expired_time"
+
+
+
+
+
 
     },
 
@@ -60,7 +74,12 @@
         "requests_dalle": 0,
         "autosub": true,
         "voiceaccess": true,
-        "period": 3
+        "period": 3,
+        "infinity": true,
+        "dbcolumn": "premium_type",
+        "dbtime": "expired_time"
+
+
     },
 
     "buy-3": {
@@ -80,7 +99,11 @@
         "requests_deepai": 0,
         "requests_dalle": 0,
         "autosub": false,
-        "voiceaccess": false
+        "voiceaccess": false,
+        "infinity": true,
+        "dbcolumn": "course"
+
+
 
     },
 
@@ -102,7 +125,12 @@
         "requests_dalle": 0,
         "autosub": true,
         "voiceaccess": false,
-        "period": 1
+        "period": 1,
+        "infinity": true,
+        "dbcolumn": "premium_type_pika",
+        "dbtime": "expired_time_pika"
+
+
 
     },
     "buy-5": {
@@ -123,7 +151,12 @@
         "requests_dalle": 0,
         "autosub": true,
         "voiceaccess": false,
-        "period": 3
+        "period": 3,
+        "infinity": true,
+        "dbcolumn": "premium_type_pika",
+        "dbtime": "expired_time_pika"
+
+
     },
     "buy-6": {
         "callback_text": "Пробная GPT 3.5",
@@ -143,7 +176,12 @@
         "requests_dalle": 0,
         "autosub": true,
         "voiceaccess": false,
-        "period": 1
+        "period": 1,
+        "infinity": true,
+        "dbcolumn": "premium_type_pika"
+
+
+
     },
     "buy-7": {
         "callback_text": "Стандарт GPT 3.5",
@@ -163,7 +201,12 @@
         "requests_dalle": 0,
         "autosub": true,
         "voiceaccess": true,
-        "period": 1
+        "period": 1,
+        "infinity": true,
+        "dbcolumn": "premium_type"
+
+
+
     },
     "buy-8": {
         "callback_text": "Расширенная GPT 4",
@@ -183,7 +226,13 @@
         "requests_dalle": 0,
         "autosub": true,
         "voiceaccess": true,
-        "period": 1
+        "period": 1,
+        "infinity": true,
+        "dbcolumn": "premium_type"
+
+
+
+
     },
     "buy-9": {
         "callback_text": "Стандарт DeepAI 5$",
@@ -203,7 +252,13 @@
         "requests_dalle": 0,
         "autosub": true,
         "voiceaccess": true,
-        "period": 1
+        "period": 1,
+        "infinity": true,
+        "dbcolumn": "premium_type_deepai",
+        "dbtime": "expired_time_deepai"
+
+
+
         },
     "buy-10": {
         "callback_text": "Расширенная DeepAI 10$",
@@ -223,7 +278,13 @@
         "requests_dalle": 0,
         "autosub": true,
         "voiceaccess": true,
-        "period": 1
+        "period": 1,
+        "infinity": true,
+        "dbcolumn": "premium_type_deepai",
+        "dbtime": "expired_time_deepai"
+
+
+
         },
     "buy-11": {
         "callback_text": "50 запросов Dalle + GPT",
@@ -242,7 +303,10 @@
         "requests_deepai": 0,
         "requests_dalle": 50,
         "autosub": false,
-        "voiceaccess": true
+        "voiceaccess": true,
+        "infinity": true
+
+
         },
     "buy-12": {
         "callback_text": "100 запросов Dalle + GPT",
@@ -261,7 +325,11 @@
         "requests_deepai": 0,
         "requests_dalle": 100,
         "autosub": false,
-        "voiceaccess": true
+        "voiceaccess": true,
+        "infinity": true
+
+
+
         },
     "buy-13": {
         "callback_text": "200 запросов Dalle + GPT",
@@ -280,7 +348,11 @@
         "requests_deepai": 0,
         "requests_dalle": 200,
         "autosub": false,
-        "voiceaccess": true
+        "voiceaccess": true,
+        "infinity": true
+
+
+
         }
 
 }

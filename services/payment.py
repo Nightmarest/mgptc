@@ -78,13 +78,14 @@ class cloudpay_api:
             payurl = response
             return payurl, code, reason
 
-    async def check(track_id, buy_type, chatid):
-        url = 'https://api.cloudpayments.ru/v2/payments/get'
+    async def check(track_id, chatid, buy_type=None):
+        url = 'https://api.cloudpayments.ru/payments/get'
         headers = { 'content-type': 'application/json' }
         session = aiohttp.ClientSession()
         checkpay = {
             "TransactionId": track_id,
         }
+        lg.error(track_id)
 
         async with session.post(
                 url, data = json.dumps(checkpay), headers = headers,
@@ -93,41 +94,60 @@ class cloudpay_api:
             response = await resp.json(content_type = None)
             resp.close()
             await session.close()
+        if buy_type is not None:
 
-        if response['Success'] is True:
-            if pay_list[buy_type]["autosub"] is True:
-                now = datetime.today() + relativedelta(months=1)
+            if response['Success'] is True:
+                if response['Model']['SubscriptionId'] is not None:
+                    if pay_list[buy_type]["autosub"] is True:
+                        now = datetime.today() + relativedelta(months=1)
 
-                url = 'https://api.cloudpayments.ru/subscriptions/create'
-                headers = { 'content-type': 'application/json' }
-                session = aiohttp.ClientSession()
-                create_sub = {
-                    "token": response['Model']['Token'],
-                    "accountId": response['Model']['AccountId'],
-                    "InvoiceId": response['Model']['InvoiceId'],
-                    "description": "Ежемесячная подписка на сервис Midjourney",
-                    "email": "user@example.com",
-                    "amount": pay_list[buy_type]['amount'],
-                    "currency": "RUB",
-                    "requireConfirmation": False,
-                    "startDate": now.strftime("%Y-%m-%dT%H:%M:%S"),
-                    "interval": "Month",
-                    "period": pay_list[buy_type]["period"]
-                }
+                        url = 'https://api.cloudpayments.ru/subscriptions/create'
+                        headers = { 'content-type': 'application/json' }
+                        session = aiohttp.ClientSession()
+                        create_sub = {
+                            "token": response['Model']['Token'],
+                            "accountId": response['Model']['AccountId'],
+                            "InvoiceId": response['Model']['InvoiceId'],
+                            "description": "Ежемесячная подписка на сервис Midjourney",
+                            "email": "user@example.com",
+                            "amount": pay_list[buy_type]['amount'],
+                            "currency": "RUB",
+                            "requireConfirmation": False,
+                            "startDate": now.strftime("%Y-%m-%dT%H:%M:%S"),
+                            "interval": "Month",
+                            "period": pay_list[buy_type]["period"]
+                        }
 
-                async with session.post(
-                        url, data = json.dumps(create_sub), headers = headers,
-                        auth = aiohttp.BasicAuth(
-                            config['CPID'],
-                            config['CPKEY']
-                            )
-                        ) as resp:
-                    subinfo = await resp.json(content_type = None)
-                    resp.close()
-                    await session.close()
-                await buy_handler.accrual_requests(buy_type, chatid, response['Model']['Token'], response['Model']['InvoiceId'], subinfo['Model']['Id'])
+                        async with session.post(
+                                url, data = json.dumps(create_sub), headers = headers,
+                                auth = aiohttp.BasicAuth(
+                                    config['CPID'],
+                                    config['CPKEY']
+                                    )
+                                ) as resp:
+                            subinfo = await resp.json(content_type = None)
+                            resp.close()
+                            await session.close()
+                        await buy_handler.accrual_requests(buy_type, chatid, response['Model']['Token'], response['Model']['InvoiceId'], subinfo['Model']['Id'])
 
-            elif pay_list[buy_type]["autosub"] is False:
+                    elif pay_list[buy_type]["autosub"] is False:
+                        await buy_handler.accrual_requests(buy_type, chatid)
+        else:
+                lg.info(response)
+                buy_type = db.read(chatid, "premium_type")
+                if buy_type is None:
+                    buy_type = 0
+                if buy_type == "":
+                    buy_type = 0
+                if buy_type == 0:
+                    if response['Model']['Amount'] == 480:
+                        buy_type = "buy-0"
+                    elif response['Model']['Amount'] == 980:
+                        buy_type = "buy-1"
+                    elif response['Model']['Amount'] == 2440:
+                        buy_type = "buy-2"
+                    elif response['Model']['Amount'] == 1440:
+                        buy_type = "buy-8"
                 await buy_handler.accrual_requests(buy_type, chatid)
 
     async def subcancel(subid):
