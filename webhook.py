@@ -26,7 +26,7 @@ app = FastAPI()
 #      return {"code": 0}
 
 @app.post("/pay/success/")
-async def webhook(AccountId: str = Form(), InvoiceId: str = Form(), Data: str = Form()):
+async def webhook(AccountId: str = Form(), InvoiceId: str = Form(), Data: None = Form()):
  # if SubscriptionId != "":
     d = ast.literal_eval(Data)
     lg.info(Data)
