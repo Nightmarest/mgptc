@@ -3,14 +3,11 @@ import re, asyncio, datetime, aiohttp
 import logging as lg
 import string, random
 
-from aiogram.fsm.state import State
-from aiogram.types import Message
 from aiogram.fsm.context import FSMContext
 from aiogram.fsm.storage.base import StorageKey
 
-from filters.states.state import ClientState
 from utils.json import read_json
-from config_data.config import config
+from config_data.config import config, MODELS_STABLE, STYLE_STABLE, FORMAT_STABLE
 from config_data.config_load import ban_list
 from config_data.create_bot import bot, dp, db
 
@@ -159,25 +156,20 @@ async def check_photo_nsfw(photo_link: str) -> bool:
 
 
 def stable_formatted(element: str) -> str:
-    stable_list = [
-        ("1:1", "1024:1024"),
-        ("2:3", "512:768"),
-        ("3:2", "768:512"),
+    finally_element = ""
 
-        ("Без стиля", "default"),
-        ("Midjourney", "midjourney"),
+    MODELS_TUPLE = []
+    for key, value in MODELS_STABLE.items():
+        MODELS_TUPLE.append((value.get('first_name'), key))
 
-        ("Juggernaut XL", "juggernaut-xl"),
-        ("SDXL Unstable Diffusers", "yamermix-v8-vae"),
-        ("AlbedoBase XL", "albedobase-xl"),
-        ("Deliberate", "deliberate-v3")
-    ]
+    stable_list = MODELS_TUPLE + STYLE_STABLE + FORMAT_STABLE
 
     for stable in stable_list:
         if stable[1] == element:
             finally_element = stable[0]
 
     return finally_element
+
 
 def timeword(d=0, h=0, m=0):
     dmy = {'d': int(d), 'h': int(h), 'm': int(m)}
