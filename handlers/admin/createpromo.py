@@ -28,8 +28,8 @@ async def createpromo_uses(message: Message, state: FSMContext):
 async def createpromo_finally(message: Message, state: FSMContext):
     text = message.text
     data = await state.get_data()
-
-    db.admin_request(f"INSERT INTO promo (name, uses, used, discount) VALUES ({data['name']}, {text}, 0, {data['discount']})")
+    db.recording_promo(data['name'], data['discount'], text)
+    # db.admin_request(f"INSERT INTO promo (name, uses, used, discount) VALUES ({data['name']}, {text}, 0, {data['discount']})")
 
     await message.answer(f"Промокод {data['name']} успешно создан!")
     await state.set_state(CreatePromo.finish)

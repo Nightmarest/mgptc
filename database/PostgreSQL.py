@@ -6,7 +6,7 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy import text, select, delete
 
 from config_data.config import config
-from database.models import Base, Stack, Clients, Advertising
+from database.models import Base, Stack, Clients, Advertising, Promocodes
 
 
 class PostgreSQL:
@@ -171,11 +171,23 @@ class PostgreSQL:
         try:
             with self.Session() as session:
                 result = session.execute(text(request))
-                session.commit()
                 return result.fetchall()
         except Exception as e:
             lg.error(f"Error in go: {e}")
 
+    def recording_promo(self, promo, discount, uses) -> None:
+            try:
+                with self.Session() as session:
+                        new_promo = Promocodes(
+                            name=str(promo),
+                            discount=int(discount),
+                            uses=int(uses),
+                            used=1
+                        )
+                        session.add(new_promo)
+                        session.commit()
+            except Exception as e:
+                lg.error(f"Error in recording: {e}")
 
     def conn(self):
         return self.Session

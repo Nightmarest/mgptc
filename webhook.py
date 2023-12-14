@@ -2,6 +2,8 @@ import ast
 from datetime import datetime
 import logging as lg
 from random import randint
+from typing import Optional
+
 from fastapi import FastAPI, Query, Request, Form, status as st, HTTPException
 from sqlalchemy import select
 from aiogram.types import URLInputFile
@@ -26,11 +28,15 @@ app = FastAPI()
 #      return {"code": 0}
 
 @app.post("/pay/success/")
-async def webhook(AccountId: str = Form(), InvoiceId: str = Form(), Data: None = Form()):
+async def webhook(AccountId: str = Form(), TransactionId: str = Form(), Data: Optional[str] = Form(None)):
  # if SubscriptionId != "":
-    d = ast.literal_eval(Data)
-    lg.info(Data)
-    await cloudpay_api.check(InvoiceId, d['buytype'], AccountId)
+    lg.info("REQUESTED")
+    if Data is not None:
+        d = ast.literal_eval(Data)
+        lg.info(Data)
+        await cloudpay_api.check(TransactionId, AccountId, d['buytype'])
+    else:
+        await cloudpay_api.check(TransactionId, AccountId)
 
     return {"code": 0}
 
