@@ -41,8 +41,16 @@ async def profile(message: Message, user: Clients):
     agr = db.read(chat_id, "agreement")
     if agr is False:
         await agreement.agreement_check(message)
-    text = f"<i>•Доступно запросов для ChatGPT: {user.requests_gpt}\n\n</i>" \
-               f"<i>•Доступно запросов для StableDiffusion: {user.requests_mj}\n\n</i>" \
+    pm = db.read(chat_id, "premium_type")
+    pmreqs = ""
+    if pm is not None:
+        if pm != "":
+            if pay_list[pm]['infinity'] is True:
+                pmreqs = 'Безлимит'
+            else:
+                pmreqs = user.requests_gpt
+    text = f"<i>•Доступно запросов для ChatGPT: {pmreqs}\n\n</i>" \
+               f"<i>•Доступно запросов для StableDiffusion: {pmreqs}\n\n</i>" \
                f"<i>•Доступно запросов для Pika Labs: {user.requests_pikalabs}\n\n</i>" \
                f"<i>•Доступно запросов для DeepAI: {user.requests_deepai}\n\n</i>" \
                f"<i>•Доступно запросов для Dall-E: {user.requests_dalle}\n\n\n</i>" \
