@@ -8,7 +8,7 @@ from utils.json import read_json
 from config_data.config import config
 from config_data.config_load import pay_list
 from config_data.create_bot import db
-
+from utils.func import checksub
 
 class GPTUserPoorFilter(Filter):
     async def __call__(self, update: Message) -> bool:
@@ -56,6 +56,7 @@ class PikaLabsSUserPoorFilter(Filter):
     async def __call__(self, update: Message) -> bool:
         chat_id = update.from_user.id
 
+
         if db.read(chat_id, "requests_pikalabs") <= 0:
             return True
         else:
@@ -66,6 +67,7 @@ class DeepAIUserPoorFilter(Filter):
     async def __call__(self, update: Message) -> bool:
         chat_id = update.from_user.id
         date: str = db.read(chat_id, 'expired_time_deepai')
+
 
         if date:
             now_date = datetime.date.today()
@@ -140,6 +142,7 @@ class DeepAIModelFilter(Filter):
 class DALLEUserPoorFilter(Filter):
     async def __call__(self, update: Message) -> bool:
         chat_id = update.from_user.id
+
         print(db.read(chat_id, "requests_dalle"), db.read(chat_id, "requests_deepai"))
         if db.read(chat_id, "requests_dalle") <= 0:
             return True
@@ -149,4 +152,5 @@ class DALLEUserPoorFilter(Filter):
 
 class DALLEModelFilter(Filter):
     async def __call__(self, update: Message) -> bool:
+
         return db.read(update.from_user.id, "model") == "dalle"

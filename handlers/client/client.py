@@ -2,6 +2,8 @@ from aiogram.types import Message, CallbackQuery, ChatMemberUpdated, KeyboardBut
 from aiogram.fsm.context import FSMContext
 
 import logging as lg
+
+from services import agreement
 from utils.func import get_text, report, clean
 from utils.check_sub import gen_keyboard
 
@@ -16,7 +18,9 @@ async def command_start(message: Message, state: FSMContext):
     ref_id: str = clean(message.text[7:])
     name: str = message.from_user.username
 
-
+    agr = db.read(chat_id, "agreement")
+    if agr is False:
+        await agreement.agreement_check(message)
     try:
         if not db.is_new(chat_id):
             pass

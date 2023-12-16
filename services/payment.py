@@ -18,7 +18,7 @@ class promo:
     async def checkpromo(chat_id, promo):
         promocode = db.admin_request(f"SELECT * FROM promo WHERE name = '{str(promo)}'")
         prinfo = ""
-
+        lg.info(f"Попытка задействовать промокод {promocode}")
         if promocode is None:
             code = 2
             reason = "Promocode not Found!"

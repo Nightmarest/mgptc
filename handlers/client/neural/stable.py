@@ -15,63 +15,65 @@ from keyboards.client_kb import kb
 
 from services.neural.stable import stable_pic
 from services.neural.deepai import upscale_photo
-from utils.func import check_mj_status, generate_random_text, get_text, clean
+from utils.func import check_mj_status, generate_random_text, get_text, clean, checksub
 
 
 async def stable_prompt(message: Message, state: FSMContext, stable: Stable):
-    sticker_file = FSInputFile(config["StickerMJ"])
-    wait_msg = await message.answer_sticker(sticker=sticker_file)
-    config_dict = {}
+    st = await checksub(message.from_user.id)
+    if st != 0:
+        sticker_file = FSInputFile(config["StickerMJ"])
+        wait_msg = await message.answer_sticker(sticker=sticker_file)
+        config_dict = {}
 
-    matches = re.findall(r'-(\w+)\s+([\w\s:]+)(?=\s*-|\s*$)', message.text)
-    request = re.sub(r'-\w+\s+[\w\s:]+(?=\s*-|\s*$)', '', message.text)
+        matches = re.findall(r'-(\w+)\s+([\w\s:]+)(?=\s*-|\s*$)', message.text)
+        request = re.sub(r'-\w+\s+[\w\s:]+(?=\s*-|\s*$)', '', message.text)
 
-    for match in matches:
-        config_name, config_value = match
-        config_dict[config_name] = config_value
+        for match in matches:
+            config_name, config_value = match
+            config_dict[config_name] = config_value
 
-    # if await state.get_state() == ClientState.prompt_add:
-    #     data = await state.get_data()
-    #     if "prompt_temp" in data:
-    #         prompt_temp: str = data["prompt_temp"]
-    #     request = clean(prompt_temp.format(message.text.lower()))[:2056]
-    # else:
+        # if await state.get_state() == ClientState.prompt_add:
+        #     data = await state.get_data()
+        #     if "prompt_temp" in data:
+        #         prompt_temp: str = data["prompt_temp"]
+        #     request = clean(prompt_temp.format(message.text.lower()))[:2056]
+        # else:
 
-    track_id = generate_random_text()
-    await state.set_state(ClientState.process)
+        track_id = generate_random_text()
+        await state.set_state(ClientState.process)
 
-    await state.update_data(
-        wait_msg_id=wait_msg.message_id,
-        mj_status=f"process_{track_id}",
-        action="prompt"
-    )
-
-    asyncio.create_task(
-        check_mj_status(
-            chat_id=message.from_user.id,
-            track_id=track_id,
-            request=request,
-            wait_msg_id=wait_msg.message_id,
-            state=state
-        )
-    )
-
-    response = await stable_pic(
-        prompt=request,
-        ratio=stable.ratio,
-        model=stable.model,
-        track_id=f"{message.from_user.id}_{track_id}_{clean(message.text)}",
-        config_dict=config_dict
-    )
-
-    if not response:
         await state.update_data(
-            mj_status="error"
+            wait_msg_id=wait_msg.message_id,
+            mj_status=f"process_{track_id}",
+            action="prompt"
         )
-        await state.set_state()
-        await message.answer(
-            text=get_text("text.error_gpt")
+
+        asyncio.create_task(
+            check_mj_status(
+                chat_id=message.from_user.id,
+                track_id=track_id,
+                request=request,
+                wait_msg_id=wait_msg.message_id,
+                state=state
+            )
         )
+
+        response = await stable_pic(
+            prompt=request,
+            ratio=stable.ratio,
+            model=stable.model,
+            track_id=f"{message.from_user.id}_{track_id}_{clean(message.text)}",
+            config_dict=config_dict
+        )
+
+        if not response:
+            await state.update_data(
+                mj_status="error"
+            )
+            await state.set_state()
+            await message.answer(
+                text=get_text("text.error_gpt")
+            )
 
 
 async def stable_upscale(call: CallbackQuery, state: FSMContext, user: Clients):

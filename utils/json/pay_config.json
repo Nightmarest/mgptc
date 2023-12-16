@@ -18,7 +18,7 @@
         "autosub": true,
         "voiceaccess": true,
         "period": 1,
-        "infinity": true,
+        "infinity": false,
         "dbcolumn": "premium_type",
         "dbtime": "expired_time"
 
@@ -100,7 +100,7 @@
         "requests_dalle": 0,
         "autosub": false,
         "voiceaccess": false,
-        "infinity": true,
+        "infinity": false,
         "dbcolumn": "course"
 
 
@@ -126,7 +126,7 @@
         "autosub": true,
         "voiceaccess": false,
         "period": 1,
-        "infinity": true,
+        "infinity": false,
         "dbcolumn": "premium_type_pika",
         "dbtime": "expired_time_pika"
 
@@ -152,7 +152,7 @@
         "autosub": true,
         "voiceaccess": false,
         "period": 3,
-        "infinity": true,
+        "infinity": false,
         "dbcolumn": "premium_type_pika",
         "dbtime": "expired_time_pika"
 
@@ -177,7 +177,7 @@
         "autosub": true,
         "voiceaccess": false,
         "period": 1,
-        "infinity": true,
+        "infinity": false,
         "dbcolumn": "premium_type_pika"
 
 
@@ -202,7 +202,7 @@
         "autosub": true,
         "voiceaccess": true,
         "period": 1,
-        "infinity": true,
+        "infinity": false,
         "dbcolumn": "premium_type"
 
 
@@ -253,7 +253,7 @@
         "autosub": true,
         "voiceaccess": true,
         "period": 1,
-        "infinity": true,
+        "infinity": false,
         "dbcolumn": "premium_type_deepai",
         "dbtime": "expired_time_deepai"
 
@@ -279,7 +279,7 @@
         "autosub": true,
         "voiceaccess": true,
         "period": 1,
-        "infinity": true,
+        "infinity": false,
         "dbcolumn": "premium_type_deepai",
         "dbtime": "expired_time_deepai"
 
@@ -304,7 +304,7 @@
         "requests_dalle": 50,
         "autosub": false,
         "voiceaccess": true,
-        "infinity": true
+        "infinity": false
 
 
         },
@@ -326,7 +326,7 @@
         "requests_dalle": 100,
         "autosub": false,
         "voiceaccess": true,
-        "infinity": true
+        "infinity": false
 
 
 
@@ -349,7 +349,7 @@
         "requests_dalle": 200,
         "autosub": false,
         "voiceaccess": true,
-        "infinity": true
+        "infinity": false
 
 
 

@@ -38,9 +38,6 @@ async def profile(message: Message, user: Clients):
     # if days:
     #     text = get_text('text.profile')
     # else:
-    agr = db.read(chat_id, "agreement")
-    if agr is False:
-        await agreement.agreement_check(message)
     pm = db.read(chat_id, "premium_type")
     pmreqs = ""
     if pm is not None:
@@ -49,13 +46,39 @@ async def profile(message: Message, user: Clients):
                 pmreqs = 'Безлимит'
             else:
                 pmreqs = user.requests_gpt
-    text = f"<i>•Доступно запросов для ChatGPT: {pmreqs}\n\n</i>" \
-               f"<i>•Доступно запросов для StableDiffusion: {pmreqs}\n\n</i>" \
-               f"<i>•Доступно запросов для Pika Labs: {user.requests_pikalabs}\n\n</i>" \
-               f"<i>•Доступно запросов для DeepAI: {user.requests_deepai}\n\n</i>" \
-               f"<i>•Доступно запросов для Dall-E: {user.requests_dalle}\n\n\n</i>" \
-               f"<i>•Оставшееся время подпииски: {tmd}\n\n</i>"\
-               f"<b>•Ваш TelegramID:</b> <code>{message.from_user.id}</code>"
+        else:
+            pmreqs = user.requests_gpt
+    else:
+        pmreqs = user.requests_gpt
+
+
+    premium_type = db.read(chat_id, "premium_type")
+    premium_type_deepai = db.read(chat_id, "premium_type_deepai")
+    premium_type_pika = db.read(chat_id, "premium_type_pika")
+
+    if premium_type == "":
+        txt_premium_type = "Не куплено"
+    elif premium_type is None:
+        txt_premium_type = "Не куплено"
+    else:
+        txt_premium_type = pay_list[premium_type]['message_text']
+
+    text = f"🖱️Подписка - {txt_premium_type}\n" \
+                f"⚖️Осталось - {tmd}\n" \
+                f"<b>📱 Ваш ID:</b> <code>{message.from_user.id}</code>\n\n" \
+                f"<i>Запросы:</i>\n\n" \
+                f"🦋stable diffusion: {pmreqs}\n" \
+                f"📘chatgpt 4: {pmreqs}\n"\
+                f"🧢pika labs: {user.requests_pikalabs}\n" \
+                f"🌑deep ai: {user.requests_deepai}\n" \
+                f"📙dalle 3: {user.requests_dalle}\n"
+    # text = f"<i>•Доступно запросов для ChatGPT: {pmreqs}\n\n</i>" \
+    #            f"<i>•Доступно запросов для StableDiffusion: {pmreqs}\n\n</i>" \
+    #            f"<i>•Доступно запросов для Pika Labs: {user.requests_pikalabs}\n\n</i>" \
+    #            f"<i>•Доступно запросов для DeepAI: {user.requests_deepai}\n\n</i>" \
+    #            f"<i>•Доступно запросов для Dall-E: {user.requests_dalle}\n\n\n</i>" \
+    #            f"<i>•Оставшееся время подпииски: {tmd}\n\n</i>"\
+    #            f"<b>•Ваш TelegramID:</b> <code>{message.from_user.id}</code>"
                # f"{get_text('text.profile')}"
     await message.answer(
         text=text,
@@ -91,15 +114,40 @@ async def call_profile(call: CallbackQuery, user: Clients):
         # Вычисляем разницу между датами
         delta = expired_date - now_date
         tmd = timeword(delta.days)
+    pm = db.read(chat_id, "premium_type")
+    pmreqs = ""
+    if pm is not None:
+        if pm != "":
+            if pay_list[pm]['infinity'] is True:
+                pmreqs = 'Безлимит'
+            else:
+                pmreqs = user.requests_gpt
+        else:
+            pmreqs = user.requests_gpt
+    else:
+        pmreqs = user.requests_gpt
 
-    text = f"<i>•Доступно запросов для ChatGPT: {user.requests_gpt}\n\n</i>" \
-               f"<i>•Доступно запросов для StableDiffusion: {user.requests_mj}\n\n</i>" \
-               f"<i>•Доступно запросов для Pika Labs: {user.requests_pikalabs}\n\n</i>" \
-               f"<i>•Доступно запросов для DeepAI: {user.requests_deepai}\n\n</i>" \
-               f"<i>•Доступно запросов для Dall-E: {user.requests_dalle}\n\n\n</i>" \
-               f"<i>•Оставшееся время подпииски: {tmd}\n\n</i>"\
-               f"<b>•Ваш TelegramID:</b> <code>{call.from_user.id}</code>"
-               # f"{get_text('text.profile')}"
+
+    premium_type = db.read(chat_id, "premium_type")
+    premium_type_deepai = db.read(chat_id, "premium_type_deepai")
+    premium_type_pika = db.read(chat_id, "premium_type_pika")
+
+    if premium_type == "":
+        txt_premium_type = "Не куплено"
+    elif premium_type is None:
+        txt_premium_type = "Не куплено"
+    else:
+        txt_premium_type = pay_list[premium_type]['message_text']
+
+    text = f"🖱️Подписка - {txt_premium_type}\n" \
+                f"⚖️Осталось - {tmd}\n" \
+                f"<b>📱 Ваш TelegramID:</b> <code>{call.from_user.id}</code>\n\n" \
+                f"<i>Запросы:</i>\n\n" \
+                f"🦋stable diffusion: {pmreqs}\n" \
+                f"📘chatgpt 4: {pmreqs}\n"\
+                f"🧢pika labs: {user.requests_pikalabs}\n" \
+                f"🌑deep ai: {user.requests_deepai}\n" \
+                f"📙dalle 3: {user.requests_dalle}\n"
     await call.message.edit_text(
         text=text,
         reply_markup=kb.profile(

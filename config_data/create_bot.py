@@ -19,3 +19,5 @@ db = PostgreSQL()
 @aiocron.crontab("0 0 * * *")
 async def update_requests():
     db.admin_request("UPDATE clients SET requests_mj_today = 0")
+
+

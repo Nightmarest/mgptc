@@ -1,3 +1,4 @@
+from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from thefuzz import fuzz
 import re, asyncio, datetime, aiohttp
 import logging as lg
@@ -195,3 +196,32 @@ def timeword(d=0, h=0, m=0):
 
     time = " ".join(out)
     return time
+
+async def checksub(chatid):
+
+    if int(db.read(chatid, "presub_requests")) >= 6:
+        user_channel_status = await bot.get_chat_member(chat_id='-1001653803528', user_id=chatid)
+        if user_channel_status.status == "left":
+            keyboard_list = []
+            keyboard_list.append([InlineKeyboardButton(text="Наш форум", url=config['forumlink'])])
+            txt = """Уважаемый пользователь, для продолжения подпишитесь на наш <a href='https://t.me/neonixforum'>Форум,</a> где вы можете учиться делать промты, следить за последними реально! интересными новостями, а не теми, что вводят вас в тревогу. 
+
+Учитесь, общайтесь, слушайте музыку и всё это на нашем Форуме. 
+
+Так же за подписку вы будете получать <b>подарком</b> 10 бесплатных генераций в (sd+chatgpt) в неделю, а за отписку генерации сгорают."""
+            await bot.send_message(chat_id=chatid, text=txt, reply_markup=InlineKeyboardMarkup(inline_keyboard=keyboard_list), disable_web_page_preview=True)
+            return 0
+
+    elif int(db.read(chatid, "presub_requests")) < 6:
+        count = int(db.read(chatid, "presub_requests")) + 1
+        print(f"gyyg{count}")
+        db.update(chatid, "presub_requests", count)
+        return 2
+
+    else:
+        if int(db.read(chatid, "gift")) == 0:
+            db.update(chatid, "requests_gpt", int(db.read(chatid, "requests_gpt")) + 10)
+            db.update(chatid, "requests_mj", int(db.read(chatid, "requests_mj")) + 10)
+
+            return 1
+

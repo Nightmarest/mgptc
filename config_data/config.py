@@ -51,8 +51,8 @@ config = {
     "RequestsMonit": True,  # Мониторниг запросов?
     "Debug": True,  # Дебаг?
 
-    "StartFreeTokensGPT": 15, # на старте
-    "StartFreeTokensMJ": 10,  # на старте
+    "StartFreeTokensGPT": 5, # на старте
+    "StartFreeTokensMJ": 5,  # на старте
     "ReferalTokens": 0,  # реферал
     "UserFreeTokens": 0,  # ежедневный апдейт
     "EverydayUpdatesInterval": 3600,  # Интервал для ежедневных обновлений
@@ -88,7 +88,9 @@ config = {
     "path": "/bot/",
 
     "agreement": "http://bit.ly/49WoClh",
-    # True agreement: https://telegra.ph/Usloviya-predostavleniya-uslug-k-Telegram-botu-midjourneychatgpt-bot-11-28
+    # True agreement: https://telegra.ph/Usloviya-predostavleniya-uslug-k-Telegram-botu-midjourneychatgpt-bot-11-28,
+
+    "forumlink": "https://t.me/neonixforum",
 }
 
 

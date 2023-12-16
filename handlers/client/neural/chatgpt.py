@@ -6,7 +6,7 @@ from aiogram.fsm.context import FSMContext
 
 from config_data.create_bot import bot, db
 from config_data.config import config
-from utils.func import get_text, clean
+from utils.func import get_text, clean, checksub
 from services.neural.gpt import get_response_gpt, voice_to_text, text_to_voice
 from filters.states.state import ClientState
 from config_data.config import config
@@ -14,22 +14,23 @@ from config_data.config import config
 
 async def chatgpt_text(message: Message, state: FSMContext):
     chat_id = message.from_user.id
+    st = await checksub(chat_id)
+    if st != 0:
+        sticker_file = FSInputFile(config["StickerGPT"])
+        wait_msg = await message.answer_sticker(sticker=sticker_file)
+        wait_msg_id = wait_msg.message_id
+        prompt = clean(message.text)
 
-    sticker_file = FSInputFile(config["StickerGPT"])
-    wait_msg = await message.answer_sticker(sticker=sticker_file)
-    wait_msg_id = wait_msg.message_id
-    prompt = clean(message.text)
-
-    try:
-        await chatgpt_prompt(message, state, prompt, wait_msg_id)
-    except Exception as e:
-        lg.error(f"{e} from id: {chat_id}")
-        await state.set_state()
-        await message.answer(get_text("text.error_gpt"))
-        await bot.delete_message(
-            chat_id=chat_id,
-            message_id=wait_msg_id
-        )
+        try:
+            await chatgpt_prompt(message, state, prompt, wait_msg_id)
+        except Exception as e:
+            lg.error(f"{e} from id: {chat_id}")
+            await state.set_state()
+            await message.answer(get_text("text.error_gpt"))
+            await bot.delete_message(
+                chat_id=chat_id,
+                message_id=wait_msg_id
+            )
 
 
 async def chatgpt_voice(message: Message, state: FSMContext):

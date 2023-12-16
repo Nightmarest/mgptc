@@ -45,8 +45,8 @@ class Clients(Base):
     subid: Mapped[Optional[str]] = mapped_column(default="")
     promo: Mapped[Optional[str]] = mapped_column(default="")
     agreement: Mapped[bool] = mapped_column(default=False)
-
-
+    presub_requests: Mapped[int] = mapped_column(default=3)
+    gift: Mapped[int] = mapped_column(default=0)
     # mj_images_count = Column(Integer, default=0)
     # requests_mj = Column(Integer, default=10)
     # requests_gpt = Column(Integer, default=10)
