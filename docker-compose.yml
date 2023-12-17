@@ -17,15 +17,6 @@ services:
     environment:
       - TZ=Europe/Moscow
 
-  mj_main:
-    build: .
-    command:  sh -c "python3 mj_main.py"
-    restart: always
-    volumes:
-      - .:/usr/app/src
-    environment:
-      - TZ=Europe/Moscow
-
   pikalabs_1:
     build: .
     command:  sh -c "python3 pikalabs_main.py"
