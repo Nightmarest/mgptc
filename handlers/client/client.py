@@ -19,8 +19,8 @@ async def command_start(message: Message, state: FSMContext):
     name: str = message.from_user.username
 
     agr = db.read(chat_id, "agreement")
-    if agr is False:
-        await agreement.agreement_check(message)
+
+
     try:
         if not db.is_new(chat_id):
             pass
@@ -44,12 +44,15 @@ async def command_start(message: Message, state: FSMContext):
     except Exception as e:
         lg.error(f"ERROR IN START {e}\nfrom id:{chat_id}")
         await report(f"ERROR IN START\n\n<code>{e}</code>\n\nfrom id:{chat_id}", config["DevList"])
-
-    await message.answer_video(
-        video=config["VideoUrl"],
-        caption=get_text('text.start'),
-        reply_markup=kb.start()
-    )
+    if agr is False:
+        await agreement.agreement_check(message)
+        pass
+    else:
+        await message.answer_video(
+            video=config["VideoUrl"],
+            caption=get_text('text.start'),
+            reply_markup=kb.start()
+        )
 
 
 async def user_blocked_bot(event: ChatMemberUpdated, user: Clients):

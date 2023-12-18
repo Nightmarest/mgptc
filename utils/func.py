@@ -208,9 +208,19 @@ async def checksub(chatid):
 
 Учитесь, общайтесь, слушайте музыку и всё это на нашем Форуме. 
 
-Так же за подписку вы будете получать <b>подарком</b> 10 бесплатных генераций в (sd+chatgpt) в неделю, а за отписку генерации сгорают."""
+Так же за подписку вы будете получать <b>подарком</b> 5 бесплатных генераций в (sd+chatgpt) в неделю, а за отписку генерации сгорают."""
             await bot.send_message(chat_id=chatid, text=txt, reply_markup=InlineKeyboardMarkup(inline_keyboard=keyboard_list), disable_web_page_preview=True)
+            if int(db.read(chatid, "gift")) == 1:
+                db.update(chatid, "requests_gpt", int(db.read(chatid, "requests_gpt")) - 5)
+                db.update(chatid, "requests_mj", int(db.read(chatid, "requests_mj")) - 5)
+                db.update(chatid, "gift", 0)
             return 0
+        if int(db.read(chatid, "gift")) == 0:
+            db.update(chatid, "requests_gpt", int(db.read(chatid, "requests_gpt")) + 5)
+            db.update(chatid, "requests_mj", int(db.read(chatid, "requests_mj")) + 5)
+            db.update(chatid, "gift", 1)
+
+            return 1
 
     elif int(db.read(chatid, "presub_requests")) < 6:
         count = int(db.read(chatid, "presub_requests")) + 1
@@ -218,10 +228,5 @@ async def checksub(chatid):
         db.update(chatid, "presub_requests", count)
         return 2
 
-    else:
-        if int(db.read(chatid, "gift")) == 0:
-            db.update(chatid, "requests_gpt", int(db.read(chatid, "requests_gpt")) + 10)
-            db.update(chatid, "requests_mj", int(db.read(chatid, "requests_mj")) + 10)
 
-            return 1
 
