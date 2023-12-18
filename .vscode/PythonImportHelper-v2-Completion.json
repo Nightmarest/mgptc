@@ -217,6 +217,22 @@
         "documentation": {}
     },
     {
+        "label": "config",
+        "importPath": "config_data.config",
+        "description": "config_data.config",
+        "isExtraImport": true,
+        "detail": "config_data.config",
+        "documentation": {}
+    },
+    {
+        "label": "config",
+        "importPath": "config_data.config",
+        "description": "config_data.config",
+        "isExtraImport": true,
+        "detail": "config_data.config",
+        "documentation": {}
+    },
+    {
         "label": "MODELS_STABLE",
         "importPath": "config_data.config",
         "description": "config_data.config",
@@ -306,6 +322,14 @@
     },
     {
         "label": "config",
+        "importPath": "config_data.config",
+        "description": "config_data.config",
+        "isExtraImport": true,
+        "detail": "config_data.config",
+        "documentation": {}
+    },
+    {
+        "label": "MODELS_STABLE",
         "importPath": "config_data.config",
         "description": "config_data.config",
         "isExtraImport": true,
@@ -314,14 +338,6 @@
     },
     {
         "label": "STYLE_STABLE",
-        "importPath": "config_data.config",
-        "description": "config_data.config",
-        "isExtraImport": true,
-        "detail": "config_data.config",
-        "documentation": {}
-    },
-    {
-        "label": "MODELS_STABLE",
         "importPath": "config_data.config",
         "description": "config_data.config",
         "isExtraImport": true,
@@ -473,6 +489,14 @@
         "documentation": {}
     },
     {
+        "label": "BaseMiddleware",
+        "importPath": "aiogram",
+        "description": "aiogram",
+        "isExtraImport": true,
+        "detail": "aiogram",
+        "documentation": {}
+    },
+    {
         "label": "F",
         "importPath": "aiogram",
         "description": "aiogram",
@@ -611,268 +635,43 @@
         "documentation": {}
     },
     {
-        "label": "Mapped",
-        "importPath": "sqlalchemy.orm",
-        "description": "sqlalchemy.orm",
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
         "isExtraImport": true,
-        "detail": "sqlalchemy.orm",
+        "detail": "typing",
         "documentation": {}
     },
     {
-        "label": "mapped_column",
-        "importPath": "sqlalchemy.orm",
-        "description": "sqlalchemy.orm",
+        "label": "Awaitable",
+        "importPath": "typing",
+        "description": "typing",
         "isExtraImport": true,
-        "detail": "sqlalchemy.orm",
+        "detail": "typing",
         "documentation": {}
     },
     {
-        "label": "DeclarativeBase",
-        "importPath": "sqlalchemy.orm",
-        "description": "sqlalchemy.orm",
+        "label": "Callable",
+        "importPath": "typing",
+        "description": "typing",
         "isExtraImport": true,
-        "detail": "sqlalchemy.orm",
+        "detail": "typing",
         "documentation": {}
     },
     {
-        "label": "registry",
-        "importPath": "sqlalchemy.orm",
-        "description": "sqlalchemy.orm",
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
         "isExtraImport": true,
-        "detail": "sqlalchemy.orm",
+        "detail": "typing",
         "documentation": {}
     },
     {
-        "label": "Mapped",
-        "importPath": "sqlalchemy.orm",
-        "description": "sqlalchemy.orm",
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
         "isExtraImport": true,
-        "detail": "sqlalchemy.orm",
-        "documentation": {}
-    },
-    {
-        "label": "mapped_column",
-        "importPath": "sqlalchemy.orm",
-        "description": "sqlalchemy.orm",
-        "isExtraImport": true,
-        "detail": "sqlalchemy.orm",
-        "documentation": {}
-    },
-    {
-        "label": "Mapped",
-        "importPath": "sqlalchemy.orm",
-        "description": "sqlalchemy.orm",
-        "isExtraImport": true,
-        "detail": "sqlalchemy.orm",
-        "documentation": {}
-    },
-    {
-        "label": "mapped_column",
-        "importPath": "sqlalchemy.orm",
-        "description": "sqlalchemy.orm",
-        "isExtraImport": true,
-        "detail": "sqlalchemy.orm",
-        "documentation": {}
-    },
-    {
-        "label": "Mapped",
-        "importPath": "sqlalchemy.orm",
-        "description": "sqlalchemy.orm",
-        "isExtraImport": true,
-        "detail": "sqlalchemy.orm",
-        "documentation": {}
-    },
-    {
-        "label": "mapped_column",
-        "importPath": "sqlalchemy.orm",
-        "description": "sqlalchemy.orm",
-        "isExtraImport": true,
-        "detail": "sqlalchemy.orm",
-        "documentation": {}
-    },
-    {
-        "label": "Mapped",
-        "importPath": "sqlalchemy.orm",
-        "description": "sqlalchemy.orm",
-        "isExtraImport": true,
-        "detail": "sqlalchemy.orm",
-        "documentation": {}
-    },
-    {
-        "label": "mapped_column",
-        "importPath": "sqlalchemy.orm",
-        "description": "sqlalchemy.orm",
-        "isExtraImport": true,
-        "detail": "sqlalchemy.orm",
-        "documentation": {}
-    },
-    {
-        "label": "Mapped",
-        "importPath": "sqlalchemy.orm",
-        "description": "sqlalchemy.orm",
-        "isExtraImport": true,
-        "detail": "sqlalchemy.orm",
-        "documentation": {}
-    },
-    {
-        "label": "mapped_column",
-        "importPath": "sqlalchemy.orm",
-        "description": "sqlalchemy.orm",
-        "isExtraImport": true,
-        "detail": "sqlalchemy.orm",
-        "documentation": {}
-    },
-    {
-        "label": "Mapped",
-        "importPath": "sqlalchemy.orm",
-        "description": "sqlalchemy.orm",
-        "isExtraImport": true,
-        "detail": "sqlalchemy.orm",
-        "documentation": {}
-    },
-    {
-        "label": "mapped_column",
-        "importPath": "sqlalchemy.orm",
-        "description": "sqlalchemy.orm",
-        "isExtraImport": true,
-        "detail": "sqlalchemy.orm",
-        "documentation": {}
-    },
-    {
-        "label": "sessionmaker",
-        "importPath": "sqlalchemy.orm",
-        "description": "sqlalchemy.orm",
-        "isExtraImport": true,
-        "detail": "sqlalchemy.orm",
-        "documentation": {}
-    },
-    {
-        "label": "Session",
-        "importPath": "sqlalchemy.orm",
-        "description": "sqlalchemy.orm",
-        "isExtraImport": true,
-        "detail": "sqlalchemy.orm",
-        "documentation": {}
-    },
-    {
-        "label": "Session",
-        "importPath": "sqlalchemy.orm",
-        "description": "sqlalchemy.orm",
-        "isExtraImport": true,
-        "detail": "sqlalchemy.orm",
-        "documentation": {}
-    },
-    {
-        "label": "Annotated",
-        "importPath": "typing_extensions",
-        "description": "typing_extensions",
-        "isExtraImport": true,
-        "detail": "typing_extensions",
-        "documentation": {}
-    },
-    {
-        "label": "BigInteger",
-        "importPath": "sqlalchemy",
-        "description": "sqlalchemy",
-        "isExtraImport": true,
-        "detail": "sqlalchemy",
-        "documentation": {}
-    },
-    {
-        "label": "create_engine",
-        "importPath": "sqlalchemy",
-        "description": "sqlalchemy",
-        "isExtraImport": true,
-        "detail": "sqlalchemy",
-        "documentation": {}
-    },
-    {
-        "label": "URL",
-        "importPath": "sqlalchemy",
-        "description": "sqlalchemy",
-        "isExtraImport": true,
-        "detail": "sqlalchemy",
-        "documentation": {}
-    },
-    {
-        "label": "text",
-        "importPath": "sqlalchemy",
-        "description": "sqlalchemy",
-        "isExtraImport": true,
-        "detail": "sqlalchemy",
-        "documentation": {}
-    },
-    {
-        "label": "select",
-        "importPath": "sqlalchemy",
-        "description": "sqlalchemy",
-        "isExtraImport": true,
-        "detail": "sqlalchemy",
-        "documentation": {}
-    },
-    {
-        "label": "delete",
-        "importPath": "sqlalchemy",
-        "description": "sqlalchemy",
-        "isExtraImport": true,
-        "detail": "sqlalchemy",
-        "documentation": {}
-    },
-    {
-        "label": "select",
-        "importPath": "sqlalchemy",
-        "description": "sqlalchemy",
-        "isExtraImport": true,
-        "detail": "sqlalchemy",
-        "documentation": {}
-    },
-    {
-        "label": "select",
-        "importPath": "sqlalchemy",
-        "description": "sqlalchemy",
-        "isExtraImport": true,
-        "detail": "sqlalchemy",
-        "documentation": {}
-    },
-    {
-        "label": "select",
-        "importPath": "sqlalchemy",
-        "description": "sqlalchemy",
-        "isExtraImport": true,
-        "detail": "sqlalchemy",
-        "documentation": {}
-    },
-    {
-        "label": "datetime",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "datetime",
-        "description": "datetime",
-        "detail": "datetime",
-        "documentation": {}
-    },
-    {
-        "label": "date",
-        "importPath": "datetime",
-        "description": "datetime",
-        "isExtraImport": true,
-        "detail": "datetime",
-        "documentation": {}
-    },
-    {
-        "label": "datetime",
-        "importPath": "datetime",
-        "description": "datetime",
-        "isExtraImport": true,
-        "detail": "datetime",
-        "documentation": {}
-    },
-    {
-        "label": "datetime",
-        "importPath": "datetime",
-        "description": "datetime",
-        "isExtraImport": true,
-        "detail": "datetime",
+        "detail": "typing",
         "documentation": {}
     },
     {
@@ -988,252 +787,27 @@
         "documentation": {}
     },
     {
-        "label": "Base",
-        "importPath": "database.models",
-        "description": "database.models",
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
         "isExtraImport": true,
-        "detail": "database.models",
+        "detail": "typing",
         "documentation": {}
     },
     {
-        "label": "Base",
-        "importPath": "database.models",
-        "description": "database.models",
+        "label": "Update",
+        "importPath": "aiogram.types",
+        "description": "aiogram.types",
         "isExtraImport": true,
-        "detail": "database.models",
+        "detail": "aiogram.types",
         "documentation": {}
     },
     {
-        "label": "Stack",
-        "importPath": "database.models",
-        "description": "database.models",
+        "label": "User",
+        "importPath": "aiogram.types",
+        "description": "aiogram.types",
         "isExtraImport": true,
-        "detail": "database.models",
-        "documentation": {}
-    },
-    {
-        "label": "Clients",
-        "importPath": "database.models",
-        "description": "database.models",
-        "isExtraImport": true,
-        "detail": "database.models",
-        "documentation": {}
-    },
-    {
-        "label": "Advertising",
-        "importPath": "database.models",
-        "description": "database.models",
-        "isExtraImport": true,
-        "detail": "database.models",
-        "documentation": {}
-    },
-    {
-        "label": "Stable",
-        "importPath": "database.models",
-        "description": "database.models",
-        "isExtraImport": true,
-        "detail": "database.models",
-        "documentation": {}
-    },
-    {
-        "label": "Clients",
-        "importPath": "database.models",
-        "description": "database.models",
-        "isExtraImport": true,
-        "detail": "database.models",
-        "documentation": {}
-    },
-    {
-        "label": "Temp",
-        "importPath": "database.models",
-        "description": "database.models",
-        "isExtraImport": true,
-        "detail": "database.models",
-        "documentation": {}
-    },
-    {
-        "label": "Clients",
-        "importPath": "database.models",
-        "description": "database.models",
-        "isExtraImport": true,
-        "detail": "database.models",
-        "documentation": {}
-    },
-    {
-        "label": "Clients",
-        "importPath": "database.models",
-        "description": "database.models",
-        "isExtraImport": true,
-        "detail": "database.models",
-        "documentation": {}
-    },
-    {
-        "label": "Clients",
-        "importPath": "database.models",
-        "description": "database.models",
-        "isExtraImport": true,
-        "detail": "database.models",
-        "documentation": {}
-    },
-    {
-        "label": "Clients",
-        "importPath": "database.models",
-        "description": "database.models",
-        "isExtraImport": true,
-        "detail": "database.models",
-        "documentation": {}
-    },
-    {
-        "label": "Temp",
-        "importPath": "database.models",
-        "description": "database.models",
-        "isExtraImport": true,
-        "detail": "database.models",
-        "documentation": {}
-    },
-    {
-        "label": "URL",
-        "importPath": "sqlalchemy.engine",
-        "description": "sqlalchemy.engine",
-        "isExtraImport": true,
-        "detail": "sqlalchemy.engine",
-        "documentation": {}
-    },
-    {
-        "label": "AsyncEngine",
-        "importPath": "sqlalchemy.ext.asyncio",
-        "description": "sqlalchemy.ext.asyncio",
-        "isExtraImport": true,
-        "detail": "sqlalchemy.ext.asyncio",
-        "documentation": {}
-    },
-    {
-        "label": "create_async_engine",
-        "importPath": "sqlalchemy.ext.asyncio",
-        "description": "sqlalchemy.ext.asyncio",
-        "isExtraImport": true,
-        "detail": "sqlalchemy.ext.asyncio",
-        "documentation": {}
-    },
-    {
-        "label": "async_sessionmaker",
-        "importPath": "sqlalchemy.ext.asyncio",
-        "description": "sqlalchemy.ext.asyncio",
-        "isExtraImport": true,
-        "detail": "sqlalchemy.ext.asyncio",
-        "documentation": {}
-    },
-    {
-        "label": "async_sessionmaker",
-        "importPath": "sqlalchemy.ext.asyncio",
-        "description": "sqlalchemy.ext.asyncio",
-        "isExtraImport": true,
-        "detail": "sqlalchemy.ext.asyncio",
-        "documentation": {}
-    },
-    {
-        "label": "async_sessionmaker",
-        "importPath": "sqlalchemy.ext.asyncio",
-        "description": "sqlalchemy.ext.asyncio",
-        "isExtraImport": true,
-        "detail": "sqlalchemy.ext.asyncio",
-        "documentation": {}
-    },
-    {
-        "label": "re",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "re",
-        "description": "re",
-        "detail": "re",
-        "documentation": {}
-    },
-    {
-        "label": "State",
-        "importPath": "aiogram.fsm.state",
-        "description": "aiogram.fsm.state",
-        "isExtraImport": true,
-        "detail": "aiogram.fsm.state",
-        "documentation": {}
-    },
-    {
-        "label": "StatesGroup",
-        "importPath": "aiogram.fsm.state",
-        "description": "aiogram.fsm.state",
-        "isExtraImport": true,
-        "detail": "aiogram.fsm.state",
-        "documentation": {}
-    },
-    {
-        "label": "State",
-        "importPath": "aiogram.fsm.state",
-        "description": "aiogram.fsm.state",
-        "isExtraImport": true,
-        "detail": "aiogram.fsm.state",
-        "documentation": {}
-    },
-    {
-        "label": "StatesGroup",
-        "importPath": "aiogram.fsm.state",
-        "description": "aiogram.fsm.state",
-        "isExtraImport": true,
-        "detail": "aiogram.fsm.state",
-        "documentation": {}
-    },
-    {
-        "label": "State",
-        "importPath": "aiogram.fsm.state",
-        "description": "aiogram.fsm.state",
-        "isExtraImport": true,
-        "detail": "aiogram.fsm.state",
-        "documentation": {}
-    },
-    {
-        "label": "Filter",
-        "importPath": "aiogram.filters",
-        "description": "aiogram.filters",
-        "isExtraImport": true,
-        "detail": "aiogram.filters",
-        "documentation": {}
-    },
-    {
-        "label": "StateFilter",
-        "importPath": "aiogram.filters",
-        "description": "aiogram.filters",
-        "isExtraImport": true,
-        "detail": "aiogram.filters",
-        "documentation": {}
-    },
-    {
-        "label": "StateFilter",
-        "importPath": "aiogram.filters",
-        "description": "aiogram.filters",
-        "isExtraImport": true,
-        "detail": "aiogram.filters",
-        "documentation": {}
-    },
-    {
-        "label": "ChatMemberUpdatedFilter",
-        "importPath": "aiogram.filters",
-        "description": "aiogram.filters",
-        "isExtraImport": true,
-        "detail": "aiogram.filters",
-        "documentation": {}
-    },
-    {
-        "label": "KICKED",
-        "importPath": "aiogram.filters",
-        "description": "aiogram.filters",
-        "isExtraImport": true,
-        "detail": "aiogram.filters",
-        "documentation": {}
-    },
-    {
-        "label": "MEMBER",
-        "importPath": "aiogram.filters",
-        "description": "aiogram.filters",
-        "isExtraImport": true,
-        "detail": "aiogram.filters",
+        "detail": "aiogram.types",
         "documentation": {}
     },
     {
@@ -1358,6 +932,46 @@
     },
     {
         "label": "Message",
+        "importPath": "aiogram.types",
+        "description": "aiogram.types",
+        "isExtraImport": true,
+        "detail": "aiogram.types",
+        "documentation": {}
+    },
+    {
+        "label": "FSInputFile",
+        "importPath": "aiogram.types",
+        "description": "aiogram.types",
+        "isExtraImport": true,
+        "detail": "aiogram.types",
+        "documentation": {}
+    },
+    {
+        "label": "CallbackQuery",
+        "importPath": "aiogram.types",
+        "description": "aiogram.types",
+        "isExtraImport": true,
+        "detail": "aiogram.types",
+        "documentation": {}
+    },
+    {
+        "label": "Message",
+        "importPath": "aiogram.types",
+        "description": "aiogram.types",
+        "isExtraImport": true,
+        "detail": "aiogram.types",
+        "documentation": {}
+    },
+    {
+        "label": "InlineKeyboardButton",
+        "importPath": "aiogram.types",
+        "description": "aiogram.types",
+        "isExtraImport": true,
+        "detail": "aiogram.types",
+        "documentation": {}
+    },
+    {
+        "label": "InlineKeyboardMarkup",
         "importPath": "aiogram.types",
         "description": "aiogram.types",
         "isExtraImport": true,
@@ -1405,14 +1019,6 @@
         "documentation": {}
     },
     {
-        "label": "Message",
-        "importPath": "aiogram.types",
-        "description": "aiogram.types",
-        "isExtraImport": true,
-        "detail": "aiogram.types",
-        "documentation": {}
-    },
-    {
         "label": "CallbackQuery",
         "importPath": "aiogram.types",
         "description": "aiogram.types",
@@ -1429,7 +1035,63 @@
         "documentation": {}
     },
     {
+        "label": "InlineKeyboardButton",
+        "importPath": "aiogram.types",
+        "description": "aiogram.types",
+        "isExtraImport": true,
+        "detail": "aiogram.types",
+        "documentation": {}
+    },
+    {
+        "label": "InlineKeyboardMarkup",
+        "importPath": "aiogram.types",
+        "description": "aiogram.types",
+        "isExtraImport": true,
+        "detail": "aiogram.types",
+        "documentation": {}
+    },
+    {
         "label": "FSInputFile",
+        "importPath": "aiogram.types",
+        "description": "aiogram.types",
+        "isExtraImport": true,
+        "detail": "aiogram.types",
+        "documentation": {}
+    },
+    {
+        "label": "Message",
+        "importPath": "aiogram.types",
+        "description": "aiogram.types",
+        "isExtraImport": true,
+        "detail": "aiogram.types",
+        "documentation": {}
+    },
+    {
+        "label": "CallbackQuery",
+        "importPath": "aiogram.types",
+        "description": "aiogram.types",
+        "isExtraImport": true,
+        "detail": "aiogram.types",
+        "documentation": {}
+    },
+    {
+        "label": "FSInputFile",
+        "importPath": "aiogram.types",
+        "description": "aiogram.types",
+        "isExtraImport": true,
+        "detail": "aiogram.types",
+        "documentation": {}
+    },
+    {
+        "label": "BufferedInputFile",
+        "importPath": "aiogram.types",
+        "description": "aiogram.types",
+        "isExtraImport": true,
+        "detail": "aiogram.types",
+        "documentation": {}
+    },
+    {
+        "label": "Message",
         "importPath": "aiogram.types",
         "description": "aiogram.types",
         "isExtraImport": true,
@@ -1805,7 +1467,15 @@
         "documentation": {}
     },
     {
-        "label": "Message",
+        "label": "InlineKeyboardButton",
+        "importPath": "aiogram.types",
+        "description": "aiogram.types",
+        "isExtraImport": true,
+        "detail": "aiogram.types",
+        "documentation": {}
+    },
+    {
+        "label": "InlineKeyboardMarkup",
         "importPath": "aiogram.types",
         "description": "aiogram.types",
         "isExtraImport": true,
@@ -1829,131 +1499,259 @@
         "documentation": {}
     },
     {
-        "label": "check_subscribe",
-        "importPath": "utils.check_sub",
-        "description": "utils.check_sub",
+        "label": "Session",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
         "isExtraImport": true,
-        "detail": "utils.check_sub",
+        "detail": "sqlalchemy.orm",
         "documentation": {}
     },
     {
-        "label": "add_channnel",
-        "importPath": "utils.check_sub",
-        "description": "utils.check_sub",
+        "label": "Mapped",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
         "isExtraImport": true,
-        "detail": "utils.check_sub",
+        "detail": "sqlalchemy.orm",
         "documentation": {}
     },
     {
-        "label": "remove_channel",
-        "importPath": "utils.check_sub",
-        "description": "utils.check_sub",
+        "label": "mapped_column",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
         "isExtraImport": true,
-        "detail": "utils.check_sub",
+        "detail": "sqlalchemy.orm",
         "documentation": {}
     },
     {
-        "label": "gen_keyboard",
-        "importPath": "utils.check_sub",
-        "description": "utils.check_sub",
+        "label": "DeclarativeBase",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
         "isExtraImport": true,
-        "detail": "utils.check_sub",
+        "detail": "sqlalchemy.orm",
         "documentation": {}
     },
     {
-        "label": "c_listener",
-        "importPath": "utils.check_sub",
-        "description": "utils.check_sub",
+        "label": "registry",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
         "isExtraImport": true,
-        "detail": "utils.check_sub",
+        "detail": "sqlalchemy.orm",
         "documentation": {}
     },
     {
-        "label": "pay_list",
-        "importPath": "config_data.config_load",
-        "description": "config_data.config_load",
+        "label": "Mapped",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
         "isExtraImport": true,
-        "detail": "config_data.config_load",
+        "detail": "sqlalchemy.orm",
         "documentation": {}
     },
     {
-        "label": "discord_relax_cycle",
-        "importPath": "config_data.config_load",
-        "description": "config_data.config_load",
+        "label": "mapped_column",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
         "isExtraImport": true,
-        "detail": "config_data.config_load",
+        "detail": "sqlalchemy.orm",
         "documentation": {}
     },
     {
-        "label": "discord_fast_cycle",
-        "importPath": "config_data.config_load",
-        "description": "config_data.config_load",
+        "label": "Mapped",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
         "isExtraImport": true,
-        "detail": "config_data.config_load",
+        "detail": "sqlalchemy.orm",
         "documentation": {}
     },
     {
-        "label": "discord_relax_cycle",
-        "importPath": "config_data.config_load",
-        "description": "config_data.config_load",
+        "label": "mapped_column",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
         "isExtraImport": true,
-        "detail": "config_data.config_load",
+        "detail": "sqlalchemy.orm",
         "documentation": {}
     },
     {
-        "label": "discord_fast_cycle",
-        "importPath": "config_data.config_load",
-        "description": "config_data.config_load",
+        "label": "Mapped",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
         "isExtraImport": true,
-        "detail": "config_data.config_load",
+        "detail": "sqlalchemy.orm",
         "documentation": {}
     },
     {
-        "label": "discord_relax_cycle",
-        "importPath": "config_data.config_load",
-        "description": "config_data.config_load",
+        "label": "mapped_column",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
         "isExtraImport": true,
-        "detail": "config_data.config_load",
+        "detail": "sqlalchemy.orm",
         "documentation": {}
     },
     {
-        "label": "pay_list",
-        "importPath": "config_data.config_load",
-        "description": "config_data.config_load",
+        "label": "Mapped",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
         "isExtraImport": true,
-        "detail": "config_data.config_load",
+        "detail": "sqlalchemy.orm",
         "documentation": {}
     },
     {
-        "label": "pay_list",
-        "importPath": "config_data.config_load",
-        "description": "config_data.config_load",
+        "label": "mapped_column",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
         "isExtraImport": true,
-        "detail": "config_data.config_load",
+        "detail": "sqlalchemy.orm",
         "documentation": {}
     },
     {
-        "label": "pay_list",
-        "importPath": "config_data.config_load",
-        "description": "config_data.config_load",
+        "label": "Mapped",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
         "isExtraImport": true,
-        "detail": "config_data.config_load",
+        "detail": "sqlalchemy.orm",
         "documentation": {}
     },
     {
-        "label": "pay_list",
-        "importPath": "config_data.config_load",
-        "description": "config_data.config_load",
+        "label": "mapped_column",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
         "isExtraImport": true,
-        "detail": "config_data.config_load",
+        "detail": "sqlalchemy.orm",
         "documentation": {}
     },
     {
-        "label": "ban_list",
-        "importPath": "config_data.config_load",
-        "description": "config_data.config_load",
+        "label": "Mapped",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
         "isExtraImport": true,
-        "detail": "config_data.config_load",
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "mapped_column",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "sessionmaker",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "Session",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "Session",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "select",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "BigInteger",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "create_engine",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "URL",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "text",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "select",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "delete",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "select",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "select",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "select",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "importPath": "config_data.create_bot",
+        "description": "config_data.create_bot",
+        "isExtraImport": true,
+        "detail": "config_data.create_bot",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "importPath": "config_data.create_bot",
+        "description": "config_data.create_bot",
+        "isExtraImport": true,
+        "detail": "config_data.create_bot",
         "documentation": {}
     },
     {
@@ -2014,6 +1812,22 @@
     },
     {
         "label": "db",
+        "importPath": "config_data.create_bot",
+        "description": "config_data.create_bot",
+        "isExtraImport": true,
+        "detail": "config_data.create_bot",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "importPath": "config_data.create_bot",
+        "description": "config_data.create_bot",
+        "isExtraImport": true,
+        "detail": "config_data.create_bot",
+        "documentation": {}
+    },
+    {
+        "label": "bot",
         "importPath": "config_data.create_bot",
         "description": "config_data.create_bot",
         "isExtraImport": true,
@@ -2221,6 +2035,14 @@
         "documentation": {}
     },
     {
+        "label": "db",
+        "importPath": "config_data.create_bot",
+        "description": "config_data.create_bot",
+        "isExtraImport": true,
+        "detail": "config_data.create_bot",
+        "documentation": {}
+    },
+    {
         "label": "bot",
         "importPath": "config_data.create_bot",
         "description": "config_data.create_bot",
@@ -2309,243 +2131,501 @@
         "documentation": {}
     },
     {
-        "label": "FSMContext",
-        "importPath": "aiogram.fsm.context",
-        "description": "aiogram.fsm.context",
+        "label": "Clients",
+        "importPath": "database.models.clients",
+        "description": "database.models.clients",
         "isExtraImport": true,
-        "detail": "aiogram.fsm.context",
+        "detail": "database.models.clients",
         "documentation": {}
     },
     {
-        "label": "FSMContext",
-        "importPath": "aiogram.fsm.context",
-        "description": "aiogram.fsm.context",
+        "label": "Clients",
+        "importPath": "database.models.clients",
+        "description": "database.models.clients",
         "isExtraImport": true,
-        "detail": "aiogram.fsm.context",
+        "detail": "database.models.clients",
         "documentation": {}
     },
     {
-        "label": "FSMContext",
-        "importPath": "aiogram.fsm.context",
-        "description": "aiogram.fsm.context",
+        "label": "Clients",
+        "importPath": "database.models.clients",
+        "description": "database.models.clients",
         "isExtraImport": true,
-        "detail": "aiogram.fsm.context",
+        "detail": "database.models.clients",
         "documentation": {}
     },
     {
-        "label": "FSMContext",
-        "importPath": "aiogram.fsm.context",
-        "description": "aiogram.fsm.context",
+        "label": "Stable",
+        "importPath": "database.models.stable",
+        "description": "database.models.stable",
         "isExtraImport": true,
-        "detail": "aiogram.fsm.context",
+        "detail": "database.models.stable",
         "documentation": {}
     },
     {
-        "label": "FSMContext",
-        "importPath": "aiogram.fsm.context",
-        "description": "aiogram.fsm.context",
+        "label": "Stable",
+        "importPath": "database.models.stable",
+        "description": "database.models.stable",
         "isExtraImport": true,
-        "detail": "aiogram.fsm.context",
+        "detail": "database.models.stable",
         "documentation": {}
     },
     {
-        "label": "FSMContext",
-        "importPath": "aiogram.fsm.context",
-        "description": "aiogram.fsm.context",
+        "label": "Stable",
+        "importPath": "database.models.stable",
+        "description": "database.models.stable",
         "isExtraImport": true,
-        "detail": "aiogram.fsm.context",
+        "detail": "database.models.stable",
         "documentation": {}
     },
     {
-        "label": "FSMContext",
-        "importPath": "aiogram.fsm.context",
-        "description": "aiogram.fsm.context",
+        "label": "Annotated",
+        "importPath": "typing_extensions",
+        "description": "typing_extensions",
         "isExtraImport": true,
-        "detail": "aiogram.fsm.context",
+        "detail": "typing_extensions",
         "documentation": {}
     },
     {
-        "label": "FSMContext",
-        "importPath": "aiogram.fsm.context",
-        "description": "aiogram.fsm.context",
+        "label": "datetime",
+        "kind": 6,
         "isExtraImport": true,
-        "detail": "aiogram.fsm.context",
+        "importPath": "datetime",
+        "description": "datetime",
+        "detail": "datetime",
         "documentation": {}
     },
     {
-        "label": "FSMContext",
-        "importPath": "aiogram.fsm.context",
-        "description": "aiogram.fsm.context",
+        "label": "date",
+        "importPath": "datetime",
+        "description": "datetime",
         "isExtraImport": true,
-        "detail": "aiogram.fsm.context",
+        "detail": "datetime",
         "documentation": {}
     },
     {
-        "label": "FSMContext",
-        "importPath": "aiogram.fsm.context",
-        "description": "aiogram.fsm.context",
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
         "isExtraImport": true,
-        "detail": "aiogram.fsm.context",
+        "detail": "datetime",
         "documentation": {}
     },
     {
-        "label": "FSMContext",
-        "importPath": "aiogram.fsm.context",
-        "description": "aiogram.fsm.context",
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
         "isExtraImport": true,
-        "detail": "aiogram.fsm.context",
+        "detail": "datetime",
         "documentation": {}
     },
     {
-        "label": "FSMContext",
-        "importPath": "aiogram.fsm.context",
-        "description": "aiogram.fsm.context",
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
         "isExtraImport": true,
-        "detail": "aiogram.fsm.context",
+        "detail": "datetime",
         "documentation": {}
     },
     {
-        "label": "FSMContext",
-        "importPath": "aiogram.fsm.context",
-        "description": "aiogram.fsm.context",
+        "label": "Base",
+        "importPath": "database.models",
+        "description": "database.models",
         "isExtraImport": true,
-        "detail": "aiogram.fsm.context",
+        "detail": "database.models",
         "documentation": {}
     },
     {
-        "label": "FSMContext",
-        "importPath": "aiogram.fsm.context",
-        "description": "aiogram.fsm.context",
+        "label": "Base",
+        "importPath": "database.models",
+        "description": "database.models",
         "isExtraImport": true,
-        "detail": "aiogram.fsm.context",
+        "detail": "database.models",
         "documentation": {}
     },
     {
-        "label": "FSMContext",
-        "importPath": "aiogram.fsm.context",
-        "description": "aiogram.fsm.context",
+        "label": "Stack",
+        "importPath": "database.models",
+        "description": "database.models",
         "isExtraImport": true,
-        "detail": "aiogram.fsm.context",
+        "detail": "database.models",
         "documentation": {}
     },
     {
-        "label": "FSMContext",
-        "importPath": "aiogram.fsm.context",
-        "description": "aiogram.fsm.context",
+        "label": "Clients",
+        "importPath": "database.models",
+        "description": "database.models",
         "isExtraImport": true,
-        "detail": "aiogram.fsm.context",
+        "detail": "database.models",
         "documentation": {}
     },
     {
-        "label": "FSMContext",
-        "importPath": "aiogram.fsm.context",
-        "description": "aiogram.fsm.context",
+        "label": "Advertising",
+        "importPath": "database.models",
+        "description": "database.models",
         "isExtraImport": true,
-        "detail": "aiogram.fsm.context",
+        "detail": "database.models",
         "documentation": {}
     },
     {
-        "label": "FSMContext",
-        "importPath": "aiogram.fsm.context",
-        "description": "aiogram.fsm.context",
+        "label": "Promocodes",
+        "importPath": "database.models",
+        "description": "database.models",
         "isExtraImport": true,
-        "detail": "aiogram.fsm.context",
+        "detail": "database.models",
         "documentation": {}
     },
     {
-        "label": "kb",
-        "importPath": "handlers.admin.keyboard",
-        "description": "handlers.admin.keyboard",
+        "label": "Stable",
+        "importPath": "database.models",
+        "description": "database.models",
         "isExtraImport": true,
-        "detail": "handlers.admin.keyboard",
+        "detail": "database.models",
         "documentation": {}
     },
     {
-        "label": "kb",
-        "importPath": "handlers.admin.keyboard",
-        "description": "handlers.admin.keyboard",
+        "label": "Clients",
+        "importPath": "database.models",
+        "description": "database.models",
         "isExtraImport": true,
-        "detail": "handlers.admin.keyboard",
+        "detail": "database.models",
         "documentation": {}
     },
     {
-        "label": "kb",
-        "importPath": "handlers.admin.keyboard",
-        "description": "handlers.admin.keyboard",
+        "label": "Temp",
+        "importPath": "database.models",
+        "description": "database.models",
         "isExtraImport": true,
-        "detail": "handlers.admin.keyboard",
+        "detail": "database.models",
         "documentation": {}
     },
     {
-        "label": "kb",
-        "importPath": "handlers.admin.keyboard",
-        "description": "handlers.admin.keyboard",
+        "label": "Clients",
+        "importPath": "database.models",
+        "description": "database.models",
         "isExtraImport": true,
-        "detail": "handlers.admin.keyboard",
+        "detail": "database.models",
         "documentation": {}
     },
     {
-        "label": "kb",
-        "importPath": "handlers.admin.keyboard",
-        "description": "handlers.admin.keyboard",
+        "label": "Clients",
+        "importPath": "database.models",
+        "description": "database.models",
         "isExtraImport": true,
-        "detail": "handlers.admin.keyboard",
+        "detail": "database.models",
         "documentation": {}
     },
     {
-        "label": "AdminState",
-        "importPath": "handlers.admin.state",
-        "description": "handlers.admin.state",
+        "label": "Clients",
+        "importPath": "database.models",
+        "description": "database.models",
         "isExtraImport": true,
-        "detail": "handlers.admin.state",
+        "detail": "database.models",
         "documentation": {}
     },
     {
-        "label": "AdminState",
-        "importPath": "handlers.admin.state",
-        "description": "handlers.admin.state",
+        "label": "Clients",
+        "importPath": "database.models",
+        "description": "database.models",
         "isExtraImport": true,
-        "detail": "handlers.admin.state",
+        "detail": "database.models",
         "documentation": {}
     },
     {
-        "label": "AdminState",
-        "importPath": "handlers.admin.state",
-        "description": "handlers.admin.state",
+        "label": "Temp",
+        "importPath": "database.models",
+        "description": "database.models",
         "isExtraImport": true,
-        "detail": "handlers.admin.state",
+        "detail": "database.models",
         "documentation": {}
     },
     {
-        "label": "AdminState",
-        "importPath": "handlers.admin.state",
-        "description": "handlers.admin.state",
+        "label": "URL",
+        "importPath": "sqlalchemy.engine",
+        "description": "sqlalchemy.engine",
         "isExtraImport": true,
-        "detail": "handlers.admin.state",
+        "detail": "sqlalchemy.engine",
         "documentation": {}
     },
     {
-        "label": "AdminState",
-        "importPath": "handlers.admin.state",
-        "description": "handlers.admin.state",
+        "label": "AsyncEngine",
+        "importPath": "sqlalchemy.ext.asyncio",
+        "description": "sqlalchemy.ext.asyncio",
         "isExtraImport": true,
-        "detail": "handlers.admin.state",
+        "detail": "sqlalchemy.ext.asyncio",
         "documentation": {}
     },
     {
-        "label": "PromoState",
-        "importPath": "handlers.admin.state",
-        "description": "handlers.admin.state",
+        "label": "create_async_engine",
+        "importPath": "sqlalchemy.ext.asyncio",
+        "description": "sqlalchemy.ext.asyncio",
         "isExtraImport": true,
-        "detail": "handlers.admin.state",
+        "detail": "sqlalchemy.ext.asyncio",
         "documentation": {}
     },
     {
-        "label": "PromoState",
-        "importPath": "handlers.admin.state",
-        "description": "handlers.admin.state",
+        "label": "async_sessionmaker",
+        "importPath": "sqlalchemy.ext.asyncio",
+        "description": "sqlalchemy.ext.asyncio",
         "isExtraImport": true,
-        "detail": "handlers.admin.state",
+        "detail": "sqlalchemy.ext.asyncio",
+        "documentation": {}
+    },
+    {
+        "label": "async_sessionmaker",
+        "importPath": "sqlalchemy.ext.asyncio",
+        "description": "sqlalchemy.ext.asyncio",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.ext.asyncio",
+        "documentation": {}
+    },
+    {
+        "label": "async_sessionmaker",
+        "importPath": "sqlalchemy.ext.asyncio",
+        "description": "sqlalchemy.ext.asyncio",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.ext.asyncio",
+        "documentation": {}
+    },
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "State",
+        "importPath": "aiogram.fsm.state",
+        "description": "aiogram.fsm.state",
+        "isExtraImport": true,
+        "detail": "aiogram.fsm.state",
+        "documentation": {}
+    },
+    {
+        "label": "StatesGroup",
+        "importPath": "aiogram.fsm.state",
+        "description": "aiogram.fsm.state",
+        "isExtraImport": true,
+        "detail": "aiogram.fsm.state",
+        "documentation": {}
+    },
+    {
+        "label": "State",
+        "importPath": "aiogram.fsm.state",
+        "description": "aiogram.fsm.state",
+        "isExtraImport": true,
+        "detail": "aiogram.fsm.state",
+        "documentation": {}
+    },
+    {
+        "label": "StatesGroup",
+        "importPath": "aiogram.fsm.state",
+        "description": "aiogram.fsm.state",
+        "isExtraImport": true,
+        "detail": "aiogram.fsm.state",
+        "documentation": {}
+    },
+    {
+        "label": "Filter",
+        "importPath": "aiogram.filters",
+        "description": "aiogram.filters",
+        "isExtraImport": true,
+        "detail": "aiogram.filters",
+        "documentation": {}
+    },
+    {
+        "label": "StateFilter",
+        "importPath": "aiogram.filters",
+        "description": "aiogram.filters",
+        "isExtraImport": true,
+        "detail": "aiogram.filters",
+        "documentation": {}
+    },
+    {
+        "label": "StateFilter",
+        "importPath": "aiogram.filters",
+        "description": "aiogram.filters",
+        "isExtraImport": true,
+        "detail": "aiogram.filters",
+        "documentation": {}
+    },
+    {
+        "label": "ChatMemberUpdatedFilter",
+        "importPath": "aiogram.filters",
+        "description": "aiogram.filters",
+        "isExtraImport": true,
+        "detail": "aiogram.filters",
+        "documentation": {}
+    },
+    {
+        "label": "KICKED",
+        "importPath": "aiogram.filters",
+        "description": "aiogram.filters",
+        "isExtraImport": true,
+        "detail": "aiogram.filters",
+        "documentation": {}
+    },
+    {
+        "label": "MEMBER",
+        "importPath": "aiogram.filters",
+        "description": "aiogram.filters",
+        "isExtraImport": true,
+        "detail": "aiogram.filters",
+        "documentation": {}
+    },
+    {
+        "label": "check_subscribe",
+        "importPath": "utils.check_sub",
+        "description": "utils.check_sub",
+        "isExtraImport": true,
+        "detail": "utils.check_sub",
+        "documentation": {}
+    },
+    {
+        "label": "add_channnel",
+        "importPath": "utils.check_sub",
+        "description": "utils.check_sub",
+        "isExtraImport": true,
+        "detail": "utils.check_sub",
+        "documentation": {}
+    },
+    {
+        "label": "remove_channel",
+        "importPath": "utils.check_sub",
+        "description": "utils.check_sub",
+        "isExtraImport": true,
+        "detail": "utils.check_sub",
+        "documentation": {}
+    },
+    {
+        "label": "gen_keyboard",
+        "importPath": "utils.check_sub",
+        "description": "utils.check_sub",
+        "isExtraImport": true,
+        "detail": "utils.check_sub",
+        "documentation": {}
+    },
+    {
+        "label": "c_listener",
+        "importPath": "utils.check_sub",
+        "description": "utils.check_sub",
+        "isExtraImport": true,
+        "detail": "utils.check_sub",
+        "documentation": {}
+    },
+    {
+        "label": "pay_list",
+        "importPath": "config_data.config_load",
+        "description": "config_data.config_load",
+        "isExtraImport": true,
+        "detail": "config_data.config_load",
+        "documentation": {}
+    },
+    {
+        "label": "pay_list",
+        "importPath": "config_data.config_load",
+        "description": "config_data.config_load",
+        "isExtraImport": true,
+        "detail": "config_data.config_load",
+        "documentation": {}
+    },
+    {
+        "label": "pay_list",
+        "importPath": "config_data.config_load",
+        "description": "config_data.config_load",
+        "isExtraImport": true,
+        "detail": "config_data.config_load",
+        "documentation": {}
+    },
+    {
+        "label": "discord_relax_cycle",
+        "importPath": "config_data.config_load",
+        "description": "config_data.config_load",
+        "isExtraImport": true,
+        "detail": "config_data.config_load",
+        "documentation": {}
+    },
+    {
+        "label": "discord_fast_cycle",
+        "importPath": "config_data.config_load",
+        "description": "config_data.config_load",
+        "isExtraImport": true,
+        "detail": "config_data.config_load",
+        "documentation": {}
+    },
+    {
+        "label": "discord_relax_cycle",
+        "importPath": "config_data.config_load",
+        "description": "config_data.config_load",
+        "isExtraImport": true,
+        "detail": "config_data.config_load",
+        "documentation": {}
+    },
+    {
+        "label": "discord_fast_cycle",
+        "importPath": "config_data.config_load",
+        "description": "config_data.config_load",
+        "isExtraImport": true,
+        "detail": "config_data.config_load",
+        "documentation": {}
+    },
+    {
+        "label": "discord_relax_cycle",
+        "importPath": "config_data.config_load",
+        "description": "config_data.config_load",
+        "isExtraImport": true,
+        "detail": "config_data.config_load",
+        "documentation": {}
+    },
+    {
+        "label": "pay_list",
+        "importPath": "config_data.config_load",
+        "description": "config_data.config_load",
+        "isExtraImport": true,
+        "detail": "config_data.config_load",
+        "documentation": {}
+    },
+    {
+        "label": "pay_list",
+        "importPath": "config_data.config_load",
+        "description": "config_data.config_load",
+        "isExtraImport": true,
+        "detail": "config_data.config_load",
+        "documentation": {}
+    },
+    {
+        "label": "pay_list",
+        "importPath": "config_data.config_load",
+        "description": "config_data.config_load",
+        "isExtraImport": true,
+        "detail": "config_data.config_load",
+        "documentation": {}
+    },
+    {
+        "label": "pay_list",
+        "importPath": "config_data.config_load",
+        "description": "config_data.config_load",
+        "isExtraImport": true,
+        "detail": "config_data.config_load",
+        "documentation": {}
+    },
+    {
+        "label": "ban_list",
+        "importPath": "config_data.config_load",
+        "description": "config_data.config_load",
+        "isExtraImport": true,
+        "detail": "config_data.config_load",
+        "documentation": {}
+    },
+    {
+        "label": "checksub",
+        "importPath": "utils.func",
+        "description": "utils.func",
+        "isExtraImport": true,
+        "detail": "utils.func",
         "documentation": {}
     },
     {
@@ -2573,14 +2653,6 @@
         "documentation": {}
     },
     {
-        "label": "check_ban_words",
-        "importPath": "utils.func",
-        "description": "utils.func",
-        "isExtraImport": true,
-        "detail": "utils.func",
-        "documentation": {}
-    },
-    {
         "label": "get_text",
         "importPath": "utils.func",
         "description": "utils.func",
@@ -2589,7 +2661,31 @@
         "documentation": {}
     },
     {
+        "label": "clean",
+        "importPath": "utils.func",
+        "description": "utils.func",
+        "isExtraImport": true,
+        "detail": "utils.func",
+        "documentation": {}
+    },
+    {
+        "label": "checksub",
+        "importPath": "utils.func",
+        "description": "utils.func",
+        "isExtraImport": true,
+        "detail": "utils.func",
+        "documentation": {}
+    },
+    {
         "label": "check_ban_words",
+        "importPath": "utils.func",
+        "description": "utils.func",
+        "isExtraImport": true,
+        "detail": "utils.func",
+        "documentation": {}
+    },
+    {
+        "label": "checksub",
         "importPath": "utils.func",
         "description": "utils.func",
         "isExtraImport": true,
@@ -2614,6 +2710,14 @@
     },
     {
         "label": "generate_random_text",
+        "importPath": "utils.func",
+        "description": "utils.func",
+        "isExtraImport": true,
+        "detail": "utils.func",
+        "documentation": {}
+    },
+    {
+        "label": "checksub",
         "importPath": "utils.func",
         "description": "utils.func",
         "isExtraImport": true,
@@ -2733,6 +2837,14 @@
         "documentation": {}
     },
     {
+        "label": "checksub",
+        "importPath": "utils.func",
+        "description": "utils.func",
+        "isExtraImport": true,
+        "detail": "utils.func",
+        "documentation": {}
+    },
+    {
         "label": "get_text",
         "importPath": "utils.func",
         "description": "utils.func",
@@ -2773,6 +2885,14 @@
         "documentation": {}
     },
     {
+        "label": "checksub",
+        "importPath": "utils.func",
+        "description": "utils.func",
+        "isExtraImport": true,
+        "detail": "utils.func",
+        "documentation": {}
+    },
+    {
         "label": "check_mj_status",
         "importPath": "utils.func",
         "description": "utils.func",
@@ -2798,6 +2918,14 @@
     },
     {
         "label": "clean",
+        "importPath": "utils.func",
+        "description": "utils.func",
+        "isExtraImport": true,
+        "detail": "utils.func",
+        "documentation": {}
+    },
+    {
+        "label": "checksub",
         "importPath": "utils.func",
         "description": "utils.func",
         "isExtraImport": true,
@@ -2893,6 +3021,14 @@
         "documentation": {}
     },
     {
+        "label": "timeword",
+        "importPath": "utils.func",
+        "description": "utils.func",
+        "isExtraImport": true,
+        "detail": "utils.func",
+        "documentation": {}
+    },
+    {
         "label": "get_text",
         "importPath": "utils.func",
         "description": "utils.func",
@@ -2973,6 +3109,318 @@
         "documentation": {}
     },
     {
+        "label": "FSMContext",
+        "importPath": "aiogram.fsm.context",
+        "description": "aiogram.fsm.context",
+        "isExtraImport": true,
+        "detail": "aiogram.fsm.context",
+        "documentation": {}
+    },
+    {
+        "label": "FSMContext",
+        "importPath": "aiogram.fsm.context",
+        "description": "aiogram.fsm.context",
+        "isExtraImport": true,
+        "detail": "aiogram.fsm.context",
+        "documentation": {}
+    },
+    {
+        "label": "FSMContext",
+        "importPath": "aiogram.fsm.context",
+        "description": "aiogram.fsm.context",
+        "isExtraImport": true,
+        "detail": "aiogram.fsm.context",
+        "documentation": {}
+    },
+    {
+        "label": "FSMContext",
+        "importPath": "aiogram.fsm.context",
+        "description": "aiogram.fsm.context",
+        "isExtraImport": true,
+        "detail": "aiogram.fsm.context",
+        "documentation": {}
+    },
+    {
+        "label": "FSMContext",
+        "importPath": "aiogram.fsm.context",
+        "description": "aiogram.fsm.context",
+        "isExtraImport": true,
+        "detail": "aiogram.fsm.context",
+        "documentation": {}
+    },
+    {
+        "label": "FSMContext",
+        "importPath": "aiogram.fsm.context",
+        "description": "aiogram.fsm.context",
+        "isExtraImport": true,
+        "detail": "aiogram.fsm.context",
+        "documentation": {}
+    },
+    {
+        "label": "FSMContext",
+        "importPath": "aiogram.fsm.context",
+        "description": "aiogram.fsm.context",
+        "isExtraImport": true,
+        "detail": "aiogram.fsm.context",
+        "documentation": {}
+    },
+    {
+        "label": "FSMContext",
+        "importPath": "aiogram.fsm.context",
+        "description": "aiogram.fsm.context",
+        "isExtraImport": true,
+        "detail": "aiogram.fsm.context",
+        "documentation": {}
+    },
+    {
+        "label": "FSMContext",
+        "importPath": "aiogram.fsm.context",
+        "description": "aiogram.fsm.context",
+        "isExtraImport": true,
+        "detail": "aiogram.fsm.context",
+        "documentation": {}
+    },
+    {
+        "label": "FSMContext",
+        "importPath": "aiogram.fsm.context",
+        "description": "aiogram.fsm.context",
+        "isExtraImport": true,
+        "detail": "aiogram.fsm.context",
+        "documentation": {}
+    },
+    {
+        "label": "FSMContext",
+        "importPath": "aiogram.fsm.context",
+        "description": "aiogram.fsm.context",
+        "isExtraImport": true,
+        "detail": "aiogram.fsm.context",
+        "documentation": {}
+    },
+    {
+        "label": "FSMContext",
+        "importPath": "aiogram.fsm.context",
+        "description": "aiogram.fsm.context",
+        "isExtraImport": true,
+        "detail": "aiogram.fsm.context",
+        "documentation": {}
+    },
+    {
+        "label": "FSMContext",
+        "importPath": "aiogram.fsm.context",
+        "description": "aiogram.fsm.context",
+        "isExtraImport": true,
+        "detail": "aiogram.fsm.context",
+        "documentation": {}
+    },
+    {
+        "label": "FSMContext",
+        "importPath": "aiogram.fsm.context",
+        "description": "aiogram.fsm.context",
+        "isExtraImport": true,
+        "detail": "aiogram.fsm.context",
+        "documentation": {}
+    },
+    {
+        "label": "FSMContext",
+        "importPath": "aiogram.fsm.context",
+        "description": "aiogram.fsm.context",
+        "isExtraImport": true,
+        "detail": "aiogram.fsm.context",
+        "documentation": {}
+    },
+    {
+        "label": "FSMContext",
+        "importPath": "aiogram.fsm.context",
+        "description": "aiogram.fsm.context",
+        "isExtraImport": true,
+        "detail": "aiogram.fsm.context",
+        "documentation": {}
+    },
+    {
+        "label": "FSMContext",
+        "importPath": "aiogram.fsm.context",
+        "description": "aiogram.fsm.context",
+        "isExtraImport": true,
+        "detail": "aiogram.fsm.context",
+        "documentation": {}
+    },
+    {
+        "label": "FSMContext",
+        "importPath": "aiogram.fsm.context",
+        "description": "aiogram.fsm.context",
+        "isExtraImport": true,
+        "detail": "aiogram.fsm.context",
+        "documentation": {}
+    },
+    {
+        "label": "FSMContext",
+        "importPath": "aiogram.fsm.context",
+        "description": "aiogram.fsm.context",
+        "isExtraImport": true,
+        "detail": "aiogram.fsm.context",
+        "documentation": {}
+    },
+    {
+        "label": "FSMContext",
+        "importPath": "aiogram.fsm.context",
+        "description": "aiogram.fsm.context",
+        "isExtraImport": true,
+        "detail": "aiogram.fsm.context",
+        "documentation": {}
+    },
+    {
+        "label": "kb",
+        "importPath": "handlers.admin.keyboard",
+        "description": "handlers.admin.keyboard",
+        "isExtraImport": true,
+        "detail": "handlers.admin.keyboard",
+        "documentation": {}
+    },
+    {
+        "label": "kb",
+        "importPath": "handlers.admin.keyboard",
+        "description": "handlers.admin.keyboard",
+        "isExtraImport": true,
+        "detail": "handlers.admin.keyboard",
+        "documentation": {}
+    },
+    {
+        "label": "kb",
+        "importPath": "handlers.admin.keyboard",
+        "description": "handlers.admin.keyboard",
+        "isExtraImport": true,
+        "detail": "handlers.admin.keyboard",
+        "documentation": {}
+    },
+    {
+        "label": "kb",
+        "importPath": "handlers.admin.keyboard",
+        "description": "handlers.admin.keyboard",
+        "isExtraImport": true,
+        "detail": "handlers.admin.keyboard",
+        "documentation": {}
+    },
+    {
+        "label": "kb",
+        "importPath": "handlers.admin.keyboard",
+        "description": "handlers.admin.keyboard",
+        "isExtraImport": true,
+        "detail": "handlers.admin.keyboard",
+        "documentation": {}
+    },
+    {
+        "label": "kb",
+        "importPath": "handlers.admin.keyboard",
+        "description": "handlers.admin.keyboard",
+        "isExtraImport": true,
+        "detail": "handlers.admin.keyboard",
+        "documentation": {}
+    },
+    {
+        "label": "AdminState",
+        "importPath": "handlers.admin.state",
+        "description": "handlers.admin.state",
+        "isExtraImport": true,
+        "detail": "handlers.admin.state",
+        "documentation": {}
+    },
+    {
+        "label": "AdminState",
+        "importPath": "handlers.admin.state",
+        "description": "handlers.admin.state",
+        "isExtraImport": true,
+        "detail": "handlers.admin.state",
+        "documentation": {}
+    },
+    {
+        "label": "AdminState",
+        "importPath": "handlers.admin.state",
+        "description": "handlers.admin.state",
+        "isExtraImport": true,
+        "detail": "handlers.admin.state",
+        "documentation": {}
+    },
+    {
+        "label": "CreatePromo",
+        "importPath": "handlers.admin.state",
+        "description": "handlers.admin.state",
+        "isExtraImport": true,
+        "detail": "handlers.admin.state",
+        "documentation": {}
+    },
+    {
+        "label": "AdminState",
+        "importPath": "handlers.admin.state",
+        "description": "handlers.admin.state",
+        "isExtraImport": true,
+        "detail": "handlers.admin.state",
+        "documentation": {}
+    },
+    {
+        "label": "SubState",
+        "importPath": "handlers.admin.state",
+        "description": "handlers.admin.state",
+        "isExtraImport": true,
+        "detail": "handlers.admin.state",
+        "documentation": {}
+    },
+    {
+        "label": "SubStateReqs",
+        "importPath": "handlers.admin.state",
+        "description": "handlers.admin.state",
+        "isExtraImport": true,
+        "detail": "handlers.admin.state",
+        "documentation": {}
+    },
+    {
+        "label": "CreatePromo",
+        "importPath": "handlers.admin.state",
+        "description": "handlers.admin.state",
+        "isExtraImport": true,
+        "detail": "handlers.admin.state",
+        "documentation": {}
+    },
+    {
+        "label": "GiveSub",
+        "importPath": "handlers.admin.state",
+        "description": "handlers.admin.state",
+        "isExtraImport": true,
+        "detail": "handlers.admin.state",
+        "documentation": {}
+    },
+    {
+        "label": "SubState",
+        "importPath": "handlers.admin.state",
+        "description": "handlers.admin.state",
+        "isExtraImport": true,
+        "detail": "handlers.admin.state",
+        "documentation": {}
+    },
+    {
+        "label": "SubStateReqs",
+        "importPath": "handlers.admin.state",
+        "description": "handlers.admin.state",
+        "isExtraImport": true,
+        "detail": "handlers.admin.state",
+        "documentation": {}
+    },
+    {
+        "label": "GiveSub",
+        "importPath": "handlers.admin.state",
+        "description": "handlers.admin.state",
+        "isExtraImport": true,
+        "detail": "handlers.admin.state",
+        "documentation": {}
+    },
+    {
+        "label": "AdminState",
+        "importPath": "handlers.admin.state",
+        "description": "handlers.admin.state",
+        "isExtraImport": true,
+        "detail": "handlers.admin.state",
+        "documentation": {}
+    },
+    {
         "label": "func",
         "importPath": "handlers.admin.process",
         "description": "handlers.admin.process",
@@ -3011,6 +3459,30 @@
         "importPath": "sys.",
         "description": "sys.",
         "detail": "sys.",
+        "documentation": {}
+    },
+    {
+        "label": "InlineKeyboardBuilder",
+        "importPath": "aiogram.utils.keyboard",
+        "description": "aiogram.utils.keyboard",
+        "isExtraImport": true,
+        "detail": "aiogram.utils.keyboard",
+        "documentation": {}
+    },
+    {
+        "label": "InlineKeyboardBuilder",
+        "importPath": "aiogram.utils.keyboard",
+        "description": "aiogram.utils.keyboard",
+        "isExtraImport": true,
+        "detail": "aiogram.utils.keyboard",
+        "documentation": {}
+    },
+    {
+        "label": "InlineKeyboardBuilder",
+        "importPath": "aiogram.utils.keyboard",
+        "description": "aiogram.utils.keyboard",
+        "isExtraImport": true,
+        "detail": "aiogram.utils.keyboard",
         "documentation": {}
     },
     {
@@ -3119,6 +3591,78 @@
         "description": "handlers.admin.mailling",
         "isExtraImport": true,
         "detail": "handlers.admin.mailling",
+        "documentation": {}
+    },
+    {
+        "label": "submanage_input",
+        "importPath": "handlers.admin.sub_managment",
+        "description": "handlers.admin.sub_managment",
+        "isExtraImport": true,
+        "detail": "handlers.admin.sub_managment",
+        "documentation": {}
+    },
+    {
+        "label": "submanage_panel",
+        "importPath": "handlers.admin.sub_managment",
+        "description": "handlers.admin.sub_managment",
+        "isExtraImport": true,
+        "detail": "handlers.admin.sub_managment",
+        "documentation": {}
+    },
+    {
+        "label": "submanage_requests_input",
+        "importPath": "handlers.admin.sub_managment",
+        "description": "handlers.admin.sub_managment",
+        "isExtraImport": true,
+        "detail": "handlers.admin.sub_managment",
+        "documentation": {}
+    },
+    {
+        "label": "submanage_ai",
+        "importPath": "handlers.admin.sub_managment",
+        "description": "handlers.admin.sub_managment",
+        "isExtraImport": true,
+        "detail": "handlers.admin.sub_managment",
+        "documentation": {}
+    },
+    {
+        "label": "\\",
+        "importPath": "handlers.admin.sub_managment",
+        "description": "handlers.admin.sub_managment",
+        "isExtraImport": true,
+        "detail": "handlers.admin.sub_managment",
+        "documentation": {}
+    },
+    {
+        "label": "createpromo_start",
+        "importPath": "handlers.admin.createpromo",
+        "description": "handlers.admin.createpromo",
+        "isExtraImport": true,
+        "detail": "handlers.admin.createpromo",
+        "documentation": {}
+    },
+    {
+        "label": "createpromo_discount",
+        "importPath": "handlers.admin.createpromo",
+        "description": "handlers.admin.createpromo",
+        "isExtraImport": true,
+        "detail": "handlers.admin.createpromo",
+        "documentation": {}
+    },
+    {
+        "label": "createpromo_uses",
+        "importPath": "handlers.admin.createpromo",
+        "description": "handlers.admin.createpromo",
+        "isExtraImport": true,
+        "detail": "handlers.admin.createpromo",
+        "documentation": {}
+    },
+    {
+        "label": "createpromo_finally",
+        "importPath": "handlers.admin.createpromo",
+        "description": "handlers.admin.createpromo",
+        "isExtraImport": true,
+        "detail": "handlers.admin.createpromo",
         "documentation": {}
     },
     {
@@ -3266,6 +3810,240 @@
         "documentation": {}
     },
     {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "session",
+        "importPath": "aiogram.client",
+        "description": "aiogram.client",
+        "isExtraImport": true,
+        "detail": "aiogram.client",
+        "documentation": {}
+    },
+    {
+        "label": "accrual_requests",
+        "importPath": "handlers.client.buy_handler",
+        "description": "handlers.client.buy_handler",
+        "isExtraImport": true,
+        "detail": "handlers.client.buy_handler",
+        "documentation": {}
+    },
+    {
+        "label": "buy_handler",
+        "importPath": "handlers.client.buy_handler",
+        "description": "handlers.client.buy_handler",
+        "isExtraImport": true,
+        "detail": "handlers.client.buy_handler",
+        "documentation": {}
+    },
+    {
+        "label": "ym_check_payment",
+        "importPath": "handlers.client.buy_handler",
+        "description": "handlers.client.buy_handler",
+        "isExtraImport": true,
+        "detail": "handlers.client.buy_handler",
+        "documentation": {}
+    },
+    {
+        "label": "crypto_check_payment",
+        "importPath": "handlers.client.buy_handler",
+        "description": "handlers.client.buy_handler",
+        "isExtraImport": true,
+        "detail": "handlers.client.buy_handler",
+        "documentation": {}
+    },
+    {
+        "label": "choose_pay_ym",
+        "importPath": "handlers.client.buy_handler",
+        "description": "handlers.client.buy_handler",
+        "isExtraImport": true,
+        "detail": "handlers.client.buy_handler",
+        "documentation": {}
+    },
+    {
+        "label": "choose_pay_crypto",
+        "importPath": "handlers.client.buy_handler",
+        "description": "handlers.client.buy_handler",
+        "isExtraImport": true,
+        "detail": "handlers.client.buy_handler",
+        "documentation": {}
+    },
+    {
+        "label": "premium",
+        "importPath": "handlers.client.buy_handler",
+        "description": "handlers.client.buy_handler",
+        "isExtraImport": true,
+        "detail": "handlers.client.buy_handler",
+        "documentation": {}
+    },
+    {
+        "label": "call_premium",
+        "importPath": "handlers.client.buy_handler",
+        "description": "handlers.client.buy_handler",
+        "isExtraImport": true,
+        "detail": "handlers.client.buy_handler",
+        "documentation": {}
+    },
+    {
+        "label": "crypto_currency",
+        "importPath": "handlers.client.buy_handler",
+        "description": "handlers.client.buy_handler",
+        "isExtraImport": true,
+        "detail": "handlers.client.buy_handler",
+        "documentation": {}
+    },
+    {
+        "label": "description_premium",
+        "importPath": "handlers.client.buy_handler",
+        "description": "handlers.client.buy_handler",
+        "isExtraImport": true,
+        "detail": "handlers.client.buy_handler",
+        "documentation": {}
+    },
+    {
+        "label": "more_about_course",
+        "importPath": "handlers.client.buy_handler",
+        "description": "handlers.client.buy_handler",
+        "isExtraImport": true,
+        "detail": "handlers.client.buy_handler",
+        "documentation": {}
+    },
+    {
+        "label": "choose_premium",
+        "importPath": "handlers.client.buy_handler",
+        "description": "handlers.client.buy_handler",
+        "isExtraImport": true,
+        "detail": "handlers.client.buy_handler",
+        "documentation": {}
+    },
+    {
+        "label": "disable_autoup",
+        "importPath": "handlers.client.buy_handler",
+        "description": "handlers.client.buy_handler",
+        "isExtraImport": true,
+        "detail": "handlers.client.buy_handler",
+        "documentation": {}
+    },
+    {
+        "label": "disable_autoup_off",
+        "importPath": "handlers.client.buy_handler",
+        "description": "handlers.client.buy_handler",
+        "isExtraImport": true,
+        "detail": "handlers.client.buy_handler",
+        "documentation": {}
+    },
+    {
+        "label": "promocodes",
+        "importPath": "handlers.client.buy_handler",
+        "description": "handlers.client.buy_handler",
+        "isExtraImport": true,
+        "detail": "handlers.client.buy_handler",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "get_response_gpt",
+        "importPath": "services.neural.gpt",
+        "description": "services.neural.gpt",
+        "isExtraImport": true,
+        "detail": "services.neural.gpt",
+        "documentation": {}
+    },
+    {
+        "label": "voice_to_text",
+        "importPath": "services.neural.gpt",
+        "description": "services.neural.gpt",
+        "isExtraImport": true,
+        "detail": "services.neural.gpt",
+        "documentation": {}
+    },
+    {
+        "label": "text_to_voice",
+        "importPath": "services.neural.gpt",
+        "description": "services.neural.gpt",
+        "isExtraImport": true,
+        "detail": "services.neural.gpt",
+        "documentation": {}
+    },
+    {
+        "label": "ClientState",
+        "importPath": "filters.states.state",
+        "description": "filters.states.state",
+        "isExtraImport": true,
+        "detail": "filters.states.state",
+        "documentation": {}
+    },
+    {
+        "label": "ClientState",
+        "importPath": "filters.states.state",
+        "description": "filters.states.state",
+        "isExtraImport": true,
+        "detail": "filters.states.state",
+        "documentation": {}
+    },
+    {
+        "label": "ClientState",
+        "importPath": "filters.states.state",
+        "description": "filters.states.state",
+        "isExtraImport": true,
+        "detail": "filters.states.state",
+        "documentation": {}
+    },
+    {
+        "label": "ClientState",
+        "importPath": "filters.states.state",
+        "description": "filters.states.state",
+        "isExtraImport": true,
+        "detail": "filters.states.state",
+        "documentation": {}
+    },
+    {
+        "label": "ClientState",
+        "importPath": "filters.states.state",
+        "description": "filters.states.state",
+        "isExtraImport": true,
+        "detail": "filters.states.state",
+        "documentation": {}
+    },
+    {
+        "label": "ClientState",
+        "importPath": "filters.states.state",
+        "description": "filters.states.state",
+        "isExtraImport": true,
+        "detail": "filters.states.state",
+        "documentation": {}
+    },
+    {
+        "label": "ClientState",
+        "importPath": "filters.states.state",
+        "description": "filters.states.state",
+        "isExtraImport": true,
+        "detail": "filters.states.state",
+        "documentation": {}
+    },
+    {
+        "label": "ClientState",
+        "importPath": "filters.states.state",
+        "description": "filters.states.state",
+        "isExtraImport": true,
+        "detail": "filters.states.state",
+        "documentation": {}
+    },
+    {
         "label": "openai",
         "kind": 6,
         "isExtraImport": true,
@@ -3289,86 +4067,6 @@
         "description": "openai.error",
         "isExtraImport": true,
         "detail": "openai.error",
-        "documentation": {}
-    },
-    {
-        "label": "InvalidRequestError",
-        "importPath": "openai.error",
-        "description": "openai.error",
-        "isExtraImport": true,
-        "detail": "openai.error",
-        "documentation": {}
-    },
-    {
-        "label": "ClientState",
-        "importPath": "filters.states.state",
-        "description": "filters.states.state",
-        "isExtraImport": true,
-        "detail": "filters.states.state",
-        "documentation": {}
-    },
-    {
-        "label": "ClientState",
-        "importPath": "filters.states.state",
-        "description": "filters.states.state",
-        "isExtraImport": true,
-        "detail": "filters.states.state",
-        "documentation": {}
-    },
-    {
-        "label": "ClientState",
-        "importPath": "filters.states.state",
-        "description": "filters.states.state",
-        "isExtraImport": true,
-        "detail": "filters.states.state",
-        "documentation": {}
-    },
-    {
-        "label": "ClientState",
-        "importPath": "filters.states.state",
-        "description": "filters.states.state",
-        "isExtraImport": true,
-        "detail": "filters.states.state",
-        "documentation": {}
-    },
-    {
-        "label": "ClientState",
-        "importPath": "filters.states.state",
-        "description": "filters.states.state",
-        "isExtraImport": true,
-        "detail": "filters.states.state",
-        "documentation": {}
-    },
-    {
-        "label": "ClientState",
-        "importPath": "filters.states.state",
-        "description": "filters.states.state",
-        "isExtraImport": true,
-        "detail": "filters.states.state",
-        "documentation": {}
-    },
-    {
-        "label": "ClientState",
-        "importPath": "filters.states.state",
-        "description": "filters.states.state",
-        "isExtraImport": true,
-        "detail": "filters.states.state",
-        "documentation": {}
-    },
-    {
-        "label": "ClientState",
-        "importPath": "filters.states.state",
-        "description": "filters.states.state",
-        "isExtraImport": true,
-        "detail": "filters.states.state",
-        "documentation": {}
-    },
-    {
-        "label": "ClientState",
-        "importPath": "filters.states.state",
-        "description": "filters.states.state",
-        "isExtraImport": true,
-        "detail": "filters.states.state",
         "documentation": {}
     },
     {
@@ -3501,15 +4199,6 @@
         "documentation": {}
     },
     {
-        "label": "json",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "json",
-        "description": "json",
-        "detail": "json",
-        "documentation": {}
-    },
-    {
         "label": "random",
         "kind": 6,
         "isExtraImport": true,
@@ -3527,43 +4216,11 @@
         "documentation": {}
     },
     {
-        "label": "Stable",
-        "importPath": "database.models.stable",
-        "description": "database.models.stable",
+        "label": "agreement",
+        "importPath": "services",
+        "description": "services",
         "isExtraImport": true,
-        "detail": "database.models.stable",
-        "documentation": {}
-    },
-    {
-        "label": "Stable",
-        "importPath": "database.models.stable",
-        "description": "database.models.stable",
-        "isExtraImport": true,
-        "detail": "database.models.stable",
-        "documentation": {}
-    },
-    {
-        "label": "Clients",
-        "importPath": "database.models.clients",
-        "description": "database.models.clients",
-        "isExtraImport": true,
-        "detail": "database.models.clients",
-        "documentation": {}
-    },
-    {
-        "label": "Clients",
-        "importPath": "database.models.clients",
-        "description": "database.models.clients",
-        "isExtraImport": true,
-        "detail": "database.models.clients",
-        "documentation": {}
-    },
-    {
-        "label": "dalle_image",
-        "importPath": "handlers.client.neural.dalle",
-        "description": "handlers.client.neural.dalle",
-        "isExtraImport": true,
-        "detail": "handlers.client.neural.dalle",
+        "detail": "services",
         "documentation": {}
     },
     {
@@ -3575,15 +4232,23 @@
         "documentation": {}
     },
     {
-        "label": "SessionMiddleware",
-        "importPath": "middlewares",
-        "description": "middlewares",
+        "label": "agreement",
+        "importPath": "services",
+        "description": "services",
         "isExtraImport": true,
-        "detail": "middlewares",
+        "detail": "services",
         "documentation": {}
     },
     {
-        "label": "MediaGroupMiddleware",
+        "label": "dalle_image",
+        "importPath": "handlers.client.neural.dalle",
+        "description": "handlers.client.neural.dalle",
+        "isExtraImport": true,
+        "detail": "handlers.client.neural.dalle",
+        "documentation": {}
+    },
+    {
+        "label": "SessionMiddleware",
         "importPath": "middlewares",
         "description": "middlewares",
         "isExtraImport": true,
@@ -3919,126 +4584,6 @@
         "documentation": {}
     },
     {
-        "label": "buy_handler",
-        "importPath": "handlers.client.buy_handler",
-        "description": "handlers.client.buy_handler",
-        "isExtraImport": true,
-        "detail": "handlers.client.buy_handler",
-        "documentation": {}
-    },
-    {
-        "label": "ym_check_payment",
-        "importPath": "handlers.client.buy_handler",
-        "description": "handlers.client.buy_handler",
-        "isExtraImport": true,
-        "detail": "handlers.client.buy_handler",
-        "documentation": {}
-    },
-    {
-        "label": "crypto_check_payment",
-        "importPath": "handlers.client.buy_handler",
-        "description": "handlers.client.buy_handler",
-        "isExtraImport": true,
-        "detail": "handlers.client.buy_handler",
-        "documentation": {}
-    },
-    {
-        "label": "choose_pay_ym",
-        "importPath": "handlers.client.buy_handler",
-        "description": "handlers.client.buy_handler",
-        "isExtraImport": true,
-        "detail": "handlers.client.buy_handler",
-        "documentation": {}
-    },
-    {
-        "label": "choose_pay_crypto",
-        "importPath": "handlers.client.buy_handler",
-        "description": "handlers.client.buy_handler",
-        "isExtraImport": true,
-        "detail": "handlers.client.buy_handler",
-        "documentation": {}
-    },
-    {
-        "label": "premium",
-        "importPath": "handlers.client.buy_handler",
-        "description": "handlers.client.buy_handler",
-        "isExtraImport": true,
-        "detail": "handlers.client.buy_handler",
-        "documentation": {}
-    },
-    {
-        "label": "call_premium",
-        "importPath": "handlers.client.buy_handler",
-        "description": "handlers.client.buy_handler",
-        "isExtraImport": true,
-        "detail": "handlers.client.buy_handler",
-        "documentation": {}
-    },
-    {
-        "label": "crypto_currency",
-        "importPath": "handlers.client.buy_handler",
-        "description": "handlers.client.buy_handler",
-        "isExtraImport": true,
-        "detail": "handlers.client.buy_handler",
-        "documentation": {}
-    },
-    {
-        "label": "description_premium",
-        "importPath": "handlers.client.buy_handler",
-        "description": "handlers.client.buy_handler",
-        "isExtraImport": true,
-        "detail": "handlers.client.buy_handler",
-        "documentation": {}
-    },
-    {
-        "label": "more_about_course",
-        "importPath": "handlers.client.buy_handler",
-        "description": "handlers.client.buy_handler",
-        "isExtraImport": true,
-        "detail": "handlers.client.buy_handler",
-        "documentation": {}
-    },
-    {
-        "label": "choose_premium",
-        "importPath": "handlers.client.buy_handler",
-        "description": "handlers.client.buy_handler",
-        "isExtraImport": true,
-        "detail": "handlers.client.buy_handler",
-        "documentation": {}
-    },
-    {
-        "label": "disable_autoup",
-        "importPath": "handlers.client.buy_handler",
-        "description": "handlers.client.buy_handler",
-        "isExtraImport": true,
-        "detail": "handlers.client.buy_handler",
-        "documentation": {}
-    },
-    {
-        "label": "disable_autoup_off",
-        "importPath": "handlers.client.buy_handler",
-        "description": "handlers.client.buy_handler",
-        "isExtraImport": true,
-        "detail": "handlers.client.buy_handler",
-        "documentation": {}
-    },
-    {
-        "label": "promocodes",
-        "importPath": "handlers.client.buy_handler",
-        "description": "handlers.client.buy_handler",
-        "isExtraImport": true,
-        "detail": "handlers.client.buy_handler",
-        "documentation": {}
-    },
-    {
-        "label": "InlineKeyboardBuilder",
-        "importPath": "aiogram.utils.keyboard",
-        "description": "aiogram.utils.keyboard",
-        "isExtraImport": true,
-        "detail": "aiogram.utils.keyboard",
-        "documentation": {}
-    },
-    {
         "label": "aiogTTS",
         "importPath": "aiogtts",
         "description": "aiogtts",
@@ -4150,15 +4695,6 @@
         "description": "database.engine",
         "isExtraImport": true,
         "detail": "database.engine",
-        "documentation": {}
-    },
-    {
-        "label": "os",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "os",
-        "description": "os",
-        "detail": "os",
         "documentation": {}
     },
     {
@@ -4288,7 +4824,7 @@
         "kind": 5,
         "importPath": "config_data.config",
         "description": "config_data.config",
-        "peekOfCode": "config = {\n    \"APIToken\": \"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\", # OPENAI\n    \"ZeroscopeToken\": \"r8_DyAbjQpqxhwxSmj9qKVVpjysDmnSUdT4Bkf2g\", #зероскоп токен\n    \"DeeplToken\": \"725ea090-4ba9-494c-8c58-8912b78537a9\",\n    \"BotToken\": \"6062729970:AAG1aK3DE-FxpfP7sMeIivaqcQZIRwaQwYA\",  # Токен самого бота 6062729970:AAHxJG2GCp4A4cL5fROgKRnn7OSrkD5wEBQ\n    # \"BotToken\": \"6157728996:AAGRBicyQL4ozhTtIBW8m9X-YAuO29csT4s\",\n    # Токен самого бота 6062729970:AAHxJG2GCp4A4cL5fROgKRnn7OSrkD5wEBQ\n    \"DBHost\": \"194.31.173.202\",  # DataBase host\n    \"DBPort\": 5432,  # DataBase port\n    \"DBUser\": \"gen_user\",  # DataBase user",
+        "peekOfCode": "config = {\n    \"APIToken\": \"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\", # OPENAI\n    \"ZeroscopeToken\": \"r8_DyAbjQpqxhwxSmj9qKVVpjysDmnSUdT4Bkf2g\", #зероскоп токен\n    \"DeeplToken\": \"725ea090-4ba9-494c-8c58-8912b78537a9\",\n    # \"BotToken\": \"6062729970:AAG1aK3DE-FxpfP7sMeIivaqcQZIRwaQwYA\",  # Токен самого бота 6062729970:AAHxJG2GCp4A4cL5fROgKRnn7OSrkD5wEBQ\n    \"BotToken\": \"6157728996:AAGRBicyQL4ozhTtIBW8m9X-YAuO29csT4s\",\n    # Токен самого бота 6062729970:AAHxJG2GCp4A4cL5fROgKRnn7OSrkD5wEBQ\n    \"DBHost\": \"194.31.173.202\",  # DataBase host\n    \"DBPort\": 5432,  # DataBase port\n    \"DBUser\": \"gen_user\",  # DataBase user",
         "detail": "config_data.config",
         "documentation": {}
     },
@@ -4401,6 +4937,15 @@
         "documentation": {}
     },
     {
+        "label": "SessionMiddleware",
+        "kind": 6,
+        "importPath": "config_data.session_middleware",
+        "description": "config_data.session_middleware",
+        "peekOfCode": "class SessionMiddleware(BaseMiddleware):\n    \"\"\"\n    Middleware for adding await session.\n    \"\"\"\n    def __init__(self, sessionmaker):\n        self.sessionmaker = sessionmaker\n    async def __call__(\n        self,\n        handler: Callable[[Update, Dict[str, Any]], Awaitable[Any]],\n        event: Update,",
+        "detail": "config_data.session_middleware",
+        "documentation": {}
+    },
+    {
         "label": "Advertising",
         "kind": 6,
         "importPath": "database.models.ads",
@@ -4432,7 +4977,7 @@
         "kind": 6,
         "importPath": "database.models.clients",
         "description": "database.models.clients",
-        "peekOfCode": "class Clients(Base):\n    __tablename__ = \"clients\"\n    id: Mapped[bigint] = mapped_column(primary_key=True, autoincrement=True)\n    name: Mapped[Optional[str]] = mapped_column(default=\"\")\n    people_ref: Mapped[int] = mapped_column(default=0)\n    join_date: Mapped[date] = mapped_column(default=date.today())\n    where_from: Mapped[str] = mapped_column(default=\"\")\n    dead: Mapped[bool] = mapped_column(default=False)\n    model: Mapped[str] = mapped_column(default=\"stable\")\n    mj_images_count: Mapped[int] = mapped_column(default=0)",
+        "peekOfCode": "class Clients(Base):\n    __tablename__ = \"clients\"\n    id: Mapped[bigint] = mapped_column(primary_key=True, autoincrement=True)\n    name: Mapped[Optional[str]] = mapped_column(default=\"\")\n    people_ref: Mapped[int] = mapped_column(default=0)\n    join_date: Mapped[date] = mapped_column(default=date.today())\n    where_from: Mapped[str] = mapped_column(default=\"\")\n    dead: Mapped[bool] = mapped_column(default=False)\n    model: Mapped[str] = mapped_column(default=\"dalle\")\n    mj_images_count: Mapped[int] = mapped_column(default=0)",
         "detail": "database.models.clients",
         "documentation": {}
     },
@@ -4716,21 +5261,39 @@
         "documentation": {}
     },
     {
-        "label": "PromoState",
+        "label": "SubState",
         "kind": 6,
         "importPath": "handlers.admin.state",
         "description": "handlers.admin.state",
-        "peekOfCode": "class PromoState(StatesGroup):\n    promo = State()",
+        "peekOfCode": "class SubState(StatesGroup):\n    inputid = State()\nclass SubStateReqs(StatesGroup):\n    input = State()\nclass CreatePromo(StatesGroup):\n    name = State()\n    discount = State()\n    uses = State()\n    finish = State()\nclass GiveSub(StatesGroup):",
         "detail": "handlers.admin.state",
         "documentation": {}
     },
     {
-        "label": "openai.api_key",
-        "kind": 5,
-        "importPath": "handlers.client.neural.chatgpt",
-        "description": "handlers.client.neural.chatgpt",
-        "peekOfCode": "openai.api_key = config['APIToken']\nasync def dalle_image(message: Message, state: FSMContext):\n    prompt = message.text\n    chat_id = message.from_user.id\n    sticker_file = FSInputFile(config[\"StickerGPT\"])\n    wait_msg = await message.answer_sticker(sticker=sticker_file)\n    ban_word = check_ban_words(prompt)\n    if ban_word:\n        await wait_msg.delete()\n        return await message.answer(get_text(\"text.error_gpt\"))",
-        "detail": "handlers.client.neural.chatgpt",
+        "label": "SubStateReqs",
+        "kind": 6,
+        "importPath": "handlers.admin.state",
+        "description": "handlers.admin.state",
+        "peekOfCode": "class SubStateReqs(StatesGroup):\n    input = State()\nclass CreatePromo(StatesGroup):\n    name = State()\n    discount = State()\n    uses = State()\n    finish = State()\nclass GiveSub(StatesGroup):\n    input = State()\n    # vrw = State()",
+        "detail": "handlers.admin.state",
+        "documentation": {}
+    },
+    {
+        "label": "CreatePromo",
+        "kind": 6,
+        "importPath": "handlers.admin.state",
+        "description": "handlers.admin.state",
+        "peekOfCode": "class CreatePromo(StatesGroup):\n    name = State()\n    discount = State()\n    uses = State()\n    finish = State()\nclass GiveSub(StatesGroup):\n    input = State()\n    # vrw = State()",
+        "detail": "handlers.admin.state",
+        "documentation": {}
+    },
+    {
+        "label": "GiveSub",
+        "kind": 6,
+        "importPath": "handlers.admin.state",
+        "description": "handlers.admin.state",
+        "peekOfCode": "class GiveSub(StatesGroup):\n    input = State()\n    # vrw = State()",
+        "detail": "handlers.admin.state",
         "documentation": {}
     },
     {
@@ -4738,7 +5301,7 @@
         "kind": 5,
         "importPath": "handlers.client.neural.dalle",
         "description": "handlers.client.neural.dalle",
-        "peekOfCode": "openai.api_key = config['APIToken']\nasync def dalle_image(message: Message, state: FSMContext):\n    prompt = message.text\n    chat_id = message.from_user.id\n    sticker_file = FSInputFile(config[\"StickerGPT\"])\n    wait_msg = await message.answer_sticker(sticker=sticker_file)\n    ban_word = check_ban_words(prompt)\n    if ban_word:\n        await wait_msg.delete()\n        return await message.answer(get_text(\"text.error_gpt\"))",
+        "peekOfCode": "openai.api_key = config['APIToken']\nasync def dalle_image(message: Message, state: FSMContext):\n    prompt = message.text\n    chat_id = message.from_user.id\n    st = await checksub(chat_id)\n    if st != 0:\n        sticker_file = FSInputFile(config[\"StickerGPT\"])\n        wait_msg = await message.answer_sticker(sticker=sticker_file)\n        ban_word = check_ban_words(prompt)\n        if ban_word:",
         "detail": "handlers.client.neural.dalle",
         "documentation": {}
     },
@@ -4756,7 +5319,7 @@
         "kind": 2,
         "importPath": "handlers.register",
         "description": "handlers.register",
-        "peekOfCode": "def register_middlewares(dp: Dispatcher, sessionmaker: async_sessionmaker):\n    dp.update.outer_middleware(MediaGroupMiddleware())\n    dp.update.outer_middleware(SessionMiddleware(sessionmaker))",
+        "peekOfCode": "def register_middlewares(dp: Dispatcher, sessionmaker: async_sessionmaker):\n    # dp.update.outer_middleware(MediaGroupMiddleware())\n    dp.update.outer_middleware(SessionMiddleware(sessionmaker))",
         "detail": "handlers.register",
         "documentation": {}
     },
@@ -4819,7 +5382,7 @@
         "kind": 6,
         "importPath": "services.payment",
         "description": "services.payment",
-        "peekOfCode": "class promo:\n    async def checkpromo(chat_id, promo):\n        promocode = db.admin_request(f\"SELECT * FROM promo WHERE name = '{str(promo)}'\")\n        prinfo = \"\"\n        if promocode is None:\n            code = 2\n            reason = \"Promocode not Found!\"\n            discount = None\n        else:\n            try:",
+        "peekOfCode": "class promo:\n    async def checkpromo(chat_id, promo):\n        promocode = db.admin_request(f\"SELECT * FROM promo WHERE name = '{str(promo)}'\")\n        prinfo = \"\"\n        lg.info(f\"Попытка задействовать промокод {promocode}\")\n        if promocode is None:\n            code = 2\n            reason = \"Promocode not Found!\"\n            discount = None\n        else:",
         "detail": "services.payment",
         "documentation": {}
     },
@@ -4927,7 +5490,16 @@
         "kind": 2,
         "importPath": "utils.func",
         "description": "utils.func",
-        "peekOfCode": "def stable_formatted(element: str) -> str:\n    MODELS_LIST = [(value.get('first_name'), key) for key, value in MODELS_STABLE.items()]\n    stable_list = FORMAT_STABLE + STYLE_STABLE + MODELS_LIST\n    for stable in stable_list:\n        if stable[1] == element:\n            finally_element = stable[0]\n    return finally_element",
+        "peekOfCode": "def stable_formatted(element: str) -> str:\n    finally_element = \"\"\n    MODELS_TUPLE = []\n    for key, value in MODELS_STABLE.items():\n        MODELS_TUPLE.append((value.get('first_name'), key))\n    stable_list = MODELS_TUPLE + STYLE_STABLE + FORMAT_STABLE\n    for stable in stable_list:\n        if stable[1] == element:\n            finally_element = stable[0]\n    return finally_element",
+        "detail": "utils.func",
+        "documentation": {}
+    },
+    {
+        "label": "timeword",
+        "kind": 2,
+        "importPath": "utils.func",
+        "description": "utils.func",
+        "peekOfCode": "def timeword(d=0, h=0, m=0):\n    dmy = {'d': int(d), 'h': int(h), 'm': int(m)}\n    print(dmy)\n    words = {'y': ['лет', 'год', 'года'], 'mouth': ['месяцев', 'месяц', 'месяца'], 'd': ['дней', 'день', 'дня'],\n             'h': ['часов', 'час', 'часа'],\n             'm': ['минут', 'минута', 'минуты']}\n    out = []\n    for k, v in dmy.items():\n        remainder = v % 10\n        if v == 0 or remainder == 0 or remainder >= 5 or v in range(11, 19):",
         "detail": "utils.func",
         "documentation": {}
     },
@@ -4999,7 +5571,7 @@
         "kind": 5,
         "importPath": "webhook",
         "description": "webhook",
-        "peekOfCode": "app = FastAPI()\n# @app.post(\"/pay/auto/\")\n# async def webhook(AccountId: Annotated[str, Form()], SubscriptionId: Annotated[str, Form()]):\n#  # if SubscriptionId != \"\":\n#      await autoupdate(AccountId)\n#\n#      return {\"code\": 0}\n@app.post(\"/pay/success/\")\nasync def webhook(AccountId: str = Form(), InvoiceId: str = Form(), Data: str = Form()):\n # if SubscriptionId != \"\":",
+        "peekOfCode": "app = FastAPI()\n# @app.post(\"/pay/auto/\")\n# async def webhook(AccountId: Annotated[str, Form()], SubscriptionId: Annotated[str, Form()]):\n#  # if SubscriptionId != \"\":\n#      await autoupdate(AccountId)\n#\n#      return {\"code\": 0}\n@app.post(\"/pay/success/\")\nasync def webhook(AccountId: str = Form(), TransactionId: str = Form(), Data: Optional[str] = Form(None)):\n # if SubscriptionId != \"\":",
         "detail": "webhook",
         "documentation": {}
     }

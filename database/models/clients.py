@@ -13,7 +13,7 @@ class Clients(Base):
     id: Mapped[bigint] = mapped_column(primary_key=True, autoincrement=True)
     name: Mapped[Optional[str]] = mapped_column(default="")
     people_ref: Mapped[int] = mapped_column(default=0)
-    join_date: Mapped[date] = mapped_column(default=date.today())
+    join_date: Mapped[date] = mapped_column(default=date.today)
     where_from: Mapped[str] = mapped_column(default="")
     dead: Mapped[bool] = mapped_column(default=False)
 
