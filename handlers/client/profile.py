@@ -40,17 +40,22 @@ async def profile(message: Message, user: Clients):
     # else:
     pm = db.read(chat_id, "premium_type")
     pmreqs = ""
+    mjreqs = ""
     if pm is not None:
         if pm != "":
             if pay_list[pm]['infinity'] is True:
                 pmreqs = 'Безлимит'
+                mjreqs = 'Безлимит'
             else:
                 pmreqs = user.requests_gpt
+                mjreqs = user.requests_mj
         else:
             pmreqs = user.requests_gpt
+            mjreqs = user.requests_mj
+
     else:
         pmreqs = user.requests_gpt
-
+        mjreqs = user.requests_mj
 
     premium_type = db.read(chat_id, "premium_type")
     premium_type_deepai = db.read(chat_id, "premium_type_deepai")
@@ -67,7 +72,7 @@ async def profile(message: Message, user: Clients):
                 f"⚖️Осталось - {tmd}\n" \
                 f"<b>📱 Ваш ID:</b> <code>{message.from_user.id}</code>\n\n" \
                 f"<i>Запросы:</i>\n\n" \
-                f"🦋stable diffusion: {pmreqs}\n" \
+                f"🦋stable diffusion: {mjreqs}\n" \
                 f"📘chatgpt 4: {pmreqs}\n"\
                 f"🧢pika labs: {user.requests_pikalabs}\n" \
                 f"🌑deep ai: {user.requests_deepai}\n" \
