@@ -17,7 +17,7 @@ class Clients(Base):
     where_from: Mapped[str] = mapped_column(default="")
     dead: Mapped[bool] = mapped_column(default=False)
 
-    model: Mapped[str] = mapped_column(default="dalle")
+    model: Mapped[str] = mapped_column(default="chatgpt")
     mj_images_count: Mapped[int] = mapped_column(default=0)
     requests_mj: Mapped[int] = mapped_column(default=config["StartFreeTokensMJ"])
     requests_gpt: Mapped[int] = mapped_column(default=config["StartFreeTokensGPT"])
