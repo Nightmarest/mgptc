@@ -97,17 +97,17 @@ def register_client_handlers(router: Router):
     router.callback_query.register(manage_stable_model, F.data == "manage_stable_model")
     router.callback_query.register(manage_stable_model, F.data.startswith("choise_model_"))
 
-    router.message.register(stable_prompt, F.text, StableModelFilter())
+    router.message.register(stable_prompt, F.text, StableModelFilter(), is_private=True)
     router.callback_query.register(stable_upscale, StableModelFilter(), F.data.startswith("upscale_"))
     router.callback_query.register(stable_retry, StableModelFilter(), F.data.startswith("retry_"))
-    router.message.register(pikalabs_prompt, PikaLabsModelFilter(), F.text)
-    router.message.register(deepai_image, DeepAIModelFilter(), F.photo)
-    router.message.register(chatgpt_text, ChatGPTModelFilter(), F.text)
-    router.message.register(chatgpt_voice, ChatGPTModelFilter(), F.voice)
+    router.message.register(pikalabs_prompt, PikaLabsModelFilter(), F.text, is_private=True)
+    router.message.register(deepai_image, DeepAIModelFilter(), F.photo, is_private=True)
+    router.message.register(chatgpt_text, ChatGPTModelFilter(), F.text, is_private=True)
+    router.message.register(chatgpt_voice, ChatGPTModelFilter(), F.voice, is_private=True)
     router.callback_query.register(call_pass, F.data == "pass")
     router.message.register(warning_user_poor, DALLEUserPoorFilter(), DALLEModelFilter())
 
-    router.message.register(dalle_image, DALLEModelFilter(), F.text)
+    router.message.register(dalle_image, DALLEModelFilter(), F.text, is_private=True)
 
 
 def register_middlewares(dp: Dispatcher, sessionmaker: async_sessionmaker):
