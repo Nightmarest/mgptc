@@ -40,15 +40,15 @@ from handlers.client.buy_handler import (
 
 def register_client_handlers(router: Router):
     # PAY HANDLERS
-    router.callback_query.register(description_premium, F.data.startswith("description_"))
-    router.callback_query.register(more_about_course, F.data == "more_about_course")
-    router.callback_query.register(buy_handler, F.data.in_({"buy-0", "buy-1", "buy-2", "buy-3", "buy-4", "buy-5"}))
-    router.callback_query.register(ym_check_payment, F.data.startswith("check_"), F.data.contains("ym"))
-    router.callback_query.register(crypto_check_payment, F.data.startswith("check_"), F.data.contains("crypto"))
-    router.callback_query.register(choose_pay_ym, F.data.startswith("ym"))
-    router.callback_query.register(choose_pay_crypto, F.data.startswith("crypto"), F.data.split("_")[2].in_(config["CryptoCurrency"]))
-    router.callback_query.register(crypto_currency, F.data.startswith("crypto"))
-    router.callback_query.register(call_premium, F.data == "back_to_premium")
+    router.callback_query.register(description_premium, F.data.startswith("description_"), F.chat.type == "private")
+    router.callback_query.register(more_about_course, F.data == "more_about_course", F.chat.type == "private")
+    router.callback_query.register(buy_handler, F.data.in_({"buy-0", "buy-1", "buy-2", "buy-3", "buy-4", "buy-5"}), F.chat.type == "private")
+    router.callback_query.register(ym_check_payment, F.data.startswith("check_"), F.data.contains("ym"), F.chat.type == "private")
+    router.callback_query.register(crypto_check_payment, F.data.startswith("check_"), F.data.contains("crypto"), F.chat.type == "private")
+    router.callback_query.register(choose_pay_ym, F.data.startswith("ym"), F.chat.type == "private")
+    router.callback_query.register(choose_pay_crypto, F.data.startswith("crypto"), F.data.split("_")[2].in_(config["CryptoCurrency"]), F.chat.type == "private")
+    router.callback_query.register(crypto_currency, F.data.startswith("crypto"), F.chat.type == "private")
+    router.callback_query.register(call_premium, F.data == "back_to_premium", F.chat.type == "private")
     router.callback_query.register(disable_autoup, F.data == "disable_autoup")
     router.callback_query.register(disable_autoup_off, F.data == "disable_autoup_off")
 
@@ -60,12 +60,12 @@ def register_client_handlers(router: Router):
     router.callback_query.register(call_profile, F.data == "call_profile")
     router.callback_query.register(switch_voice_answer, F.data == 'switch_voice_answer')
     router.callback_query.register(choose_premium, F.data.startswith("choose_premium"))
-    router.message.register(command_start, F.text.startswith("/start"))          # Command /start
-    router.message.register(command_start, F.text == get_text("buts.restart")) # <----|
-    router.message.register(agreement.agreement_ok, F.text == get_text("buts.agreement_ok"))
-    router.message.register(help, F.text == get_text("buts.help"))
-    router.message.register(profile, F.text == get_text("buts.profile"))
-    router.message.register(promocodes, F.text == get_text("buts.premium"))
+    router.message.register(command_start, F.text.startswith("/start"), F.chat.type == "private")          # Command /start
+    router.message.register(command_start, F.text == get_text("buts.restart"), F.chat.type == "private") # <----|
+    router.message.register(agreement.agreement_ok, F.text == get_text("buts.agreement_ok"), F.chat.type == "private")
+    router.message.register(help, F.text == get_text("buts.help"), F.chat.type == "private")
+    router.message.register(profile, F.text == get_text("buts.profile"), F.chat.type == "private")
+    router.message.register(promocodes, F.text == get_text("buts.premium"), F.chat.type == "private")
 
 
 
@@ -94,20 +94,20 @@ def register_client_handlers(router: Router):
     router.callback_query.register(manage_stable_ratio, F.data.startswith("choise_ratio_"))
     router.callback_query.register(manage_stable_style, F.data == "manage_stable_style")
     router.callback_query.register(manage_stable_style, F.data.startswith("choise_style_"))
-    router.callback_query.register(manage_stable_model, F.data == "manage_stable_model")
-    router.callback_query.register(manage_stable_model, F.data.startswith("choise_model_"))
+    router.callback_query.register(manage_stable_model, F.data == "manage_stable_model", F.chat.type == "private")
+    router.callback_query.register(manage_stable_model, F.data.startswith("choise_model_"), F.chat.type == "private")
 
-    router.message.register(stable_prompt, F.text, StableModelFilter(), is_private=True)
-    router.callback_query.register(stable_upscale, StableModelFilter(), F.data.startswith("upscale_"))
-    router.callback_query.register(stable_retry, StableModelFilter(), F.data.startswith("retry_"))
-    router.message.register(pikalabs_prompt, PikaLabsModelFilter(), F.text, is_private=True)
-    router.message.register(deepai_image, DeepAIModelFilter(), F.photo, is_private=True)
-    router.message.register(chatgpt_text, ChatGPTModelFilter(), F.text, is_private=True)
-    router.message.register(chatgpt_voice, ChatGPTModelFilter(), F.voice, is_private=True)
-    router.callback_query.register(call_pass, F.data == "pass")
-    router.message.register(warning_user_poor, DALLEUserPoorFilter(), DALLEModelFilter())
+    router.message.register(stable_prompt, F.text, StableModelFilter())
+    router.callback_query.register(stable_upscale, StableModelFilter(), F.data.startswith("upscale_"), F.chat.type == "private")
+    router.callback_query.register(stable_retry, StableModelFilter(), F.data.startswith("retry_"), F.chat.type == "private")
+    router.message.register(pikalabs_prompt, PikaLabsModelFilter(), F.text, F.chat.type == "private")
+    router.message.register(deepai_image, DeepAIModelFilter(), F.photo, F.chat.type == "private")
+    router.message.register(chatgpt_text, ChatGPTModelFilter(), F.text, F.chat.type == "private")
+    router.message.register(chatgpt_voice, ChatGPTModelFilter(), F.voice, F.chat.type == "private")
+    router.callback_query.register(call_pass, F.data == "pass", F.chat.type == "private")
+    router.message.register(warning_user_poor, DALLEUserPoorFilter(), DALLEModelFilter(), F.chat.type == "private")
 
-    router.message.register(dalle_image, DALLEModelFilter(), F.text, is_private=True)
+    router.message.register(dalle_image, DALLEModelFilter(), F.text, F.chat.type == "private")
 
 
 def register_middlewares(dp: Dispatcher, sessionmaker: async_sessionmaker):
