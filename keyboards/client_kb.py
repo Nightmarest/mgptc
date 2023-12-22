@@ -427,7 +427,7 @@ class kb:
     def manage_model(model: str):
         builder = InlineKeyboardBuilder()
 
-        for key, value in MODELS_STABLE:
+        for key, value in MODELS_STABLE.items():
             if model == key:
                 call_text = "✨ " + value.get('first_name')
                 callback_data = "pass"
