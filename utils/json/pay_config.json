@@ -10,15 +10,15 @@
         "limited_reqs": true,
         "product_type": "subscribe",
         "type": "mj+gpt",
-        "requests_gpt": 350,
-        "requests_mj": 320,
+        "requests_gpt": 0,
+        "requests_mj": 32000000,
         "requests_pikalabs": 0,
         "requests_deepai": 0,
         "requests_dalle": 0,
         "autosub": true,
         "voiceaccess": true,
         "period": 1,
-        "infinity": false,
+        "infinity": true,
         "dbcolumn": "premium_type",
         "dbtime": "expired_time"
 
@@ -353,6 +353,122 @@
 
 
 
+        },
+        "buy-14": {
+        "callback_text": "96 запросов Dalle",
+        "message_text": "96 запросов Dalle",
+        "amount": 249,
+        "expired_time": "month",
+        "skip_buy_handler": false,
+        "course": false,
+        "menu_prompt": false,
+        "limited_reqs": false,
+        "product_type": "requests",
+        "type": "dalle",
+        "requests_gpt": 0,
+        "requests_mj": 0,
+        "requests_pikalabs": 0,
+        "requests_deepai": 0,
+        "requests_dalle": 96,
+        "autosub": false,
+        "voiceaccess": true,
+        "infinity": false
+
+
+
+        },
+        "buy-15": {
+        "callback_text": "201 запросов Dalle + GPT",
+        "message_text": "201 запросов Dalle + GPT",
+        "amount": 454,
+        "expired_time": "month",
+        "skip_buy_handler": false,
+        "course": false,
+        "menu_prompt": false,
+        "limited_reqs": false,
+        "product_type": "requests",
+        "type": "dalle",
+        "requests_gpt": 0,
+        "requests_mj": 0,
+        "requests_pikalabs": 0,
+        "requests_deepai": 0,
+        "requests_dalle": 201,
+        "autosub": false,
+        "voiceaccess": true,
+        "infinity": false
+
+
+
+        },
+        "buy-16": {
+        "callback_text": "366 запросов Dalle",
+        "message_text": "366 запросов Dalle",
+        "amount": 597,
+        "expired_time": "month",
+        "skip_buy_handler": false,
+        "course": false,
+        "menu_prompt": false,
+        "limited_reqs": false,
+        "product_type": "requests",
+        "type": "dalle",
+        "requests_gpt": 0,
+        "requests_mj": 0,
+        "requests_pikalabs": 0,
+        "requests_deepai": 0,
+        "requests_dalle": 366,
+        "autosub": false,
+        "voiceaccess": true,
+        "infinity": false
+
+
+
+        },
+        "buy-17": {
+        "callback_text": "497 запросов Dalle",
+        "message_text": "497 запросов Dalle",
+        "amount": 780,
+        "expired_time": "month",
+        "skip_buy_handler": false,
+        "course": false,
+        "menu_prompt": false,
+        "limited_reqs": false,
+        "product_type": "requests",
+        "type": "dalle",
+        "requests_gpt": 0,
+        "requests_mj": 0,
+        "requests_pikalabs": 0,
+        "requests_deepai": 0,
+        "requests_dalle": 497,
+        "autosub": false,
+        "voiceaccess": true,
+        "infinity": false
+
+
+
+        },
+        "buy-18": {
+        "callback_text": "997 запросов Dalle",
+        "message_text": "997 запросов Dalle",
+        "amount": 1850,
+        "expired_time": "month",
+        "skip_buy_handler": false,
+        "course": false,
+        "menu_prompt": false,
+        "limited_reqs": false,
+        "product_type": "requests",
+        "type": "dalle",
+        "requests_gpt": 0,
+        "requests_mj": 0,
+        "requests_pikalabs": 0,
+        "requests_deepai": 0,
+        "requests_dalle": 997,
+        "autosub": false,
+        "voiceaccess": true,
+        "infinity": false
+
+
+
         }
+
 
 }

@@ -49,17 +49,17 @@ def register_client_handlers(router: Router):
     router.callback_query.register(choose_pay_crypto, F.data.startswith("crypto"), F.data.split("_")[2].in_(config["CryptoCurrency"]), F.chat.type == "private")
     router.callback_query.register(crypto_currency, F.data.startswith("crypto"), F.chat.type == "private")
     router.callback_query.register(call_premium, F.data == "back_to_premium", F.chat.type == "private")
-    router.callback_query.register(disable_autoup, F.data == "disable_autoup")
-    router.callback_query.register(disable_autoup_off, F.data == "disable_autoup_off")
+    router.callback_query.register(disable_autoup, F.data == "disable_autoup", F.chat.type == "private")
+    router.callback_query.register(disable_autoup_off, F.data == "disable_autoup_off", F.chat.type == "private")
 
     # GENERAL HANDLERS
     router.my_chat_member.register(user_blocked_bot, ChatMemberUpdatedFilter(member_status_changed=KICKED), F.chat.type == "private")
     router.my_chat_member.register(user_unblocked_bot, ChatMemberUpdatedFilter(member_status_changed=MEMBER), F.chat.type == "private")
 
-    router.callback_query.register(c_listener, F.data == 'subcheck') # ОП
-    router.callback_query.register(call_profile, F.data == "call_profile")
-    router.callback_query.register(switch_voice_answer, F.data == 'switch_voice_answer')
-    router.callback_query.register(choose_premium, F.data.startswith("choose_premium"))
+    router.callback_query.register(c_listener, F.data == 'subcheck', F.chat.type == "private") # ОП
+    router.callback_query.register(call_profile, F.data == "call_profile", F.chat.type == "private")
+    router.callback_query.register(switch_voice_answer, F.data == 'switch_voice_answer', F.chat.type == "private")
+    router.callback_query.register(choose_premium, F.data.startswith("choose_premium"), F.chat.type == "private")
     router.message.register(command_start, F.text.startswith("/start"), F.chat.type == "private")          # Command /start
     router.message.register(command_start, F.text == get_text("buts.restart"), F.chat.type == "private") # <----|
     router.message.register(agreement.agreement_ok, F.text == get_text("buts.agreement_ok"), F.chat.type == "private")
@@ -69,26 +69,26 @@ def register_client_handlers(router: Router):
 
 
 
-    router.callback_query.register(call_warning_in_progress, StateFilter(ClientState.process))
-    router.message.register(warning_in_progress, StateFilter(ClientState.process))
-    router.message.register(panel_mode, F.text == get_text("buts.choise_mode"))
-    router.callback_query.register(choose_mode, F.data.endswith("_mode"))
+    router.callback_query.register(call_warning_in_progress, StateFilter(ClientState.process), F.chat.type == "private")
+    router.message.register(warning_in_progress, StateFilter(ClientState.process), F.chat.type == "private")
+    router.message.register(panel_mode, F.text == get_text("buts.choise_mode"), F.chat.type == "private")
+    router.callback_query.register(choose_mode, F.data.endswith("_mode"), F.chat.type == "private")
 
     # FILTERS IN PROGRESS AND CHECK SUB
-    router.message.register(warning_check_sub, CheckSubFilter())
-    router.callback_query.register(call_warning_check_sub, CheckSubFilter())
+    router.message.register(warning_check_sub, CheckSubFilter(), F.chat.type == "private")
+    router.callback_query.register(call_warning_check_sub, CheckSubFilter(), F.chat.type == "private")
 
-    router.message.register(warning_user_poor, GPTUserPoorFilter(), ChatGPTModelFilter())
-    router.message.register(warning_user_poor, MJUserPoorFilter(), StableModelFilter())
-    router.message.register(warning_user_poor, PikaLabsSUserPoorFilter(), PikaLabsModelFilter())
+    router.message.register(warning_user_poor, GPTUserPoorFilter(), ChatGPTModelFilter(), F.chat.type == "private")
+    router.message.register(warning_user_poor, MJUserPoorFilter(), StableModelFilter(), F.chat.type == "private")
+    router.message.register(warning_user_poor, PikaLabsSUserPoorFilter(), PikaLabsModelFilter(), F.chat.type == "private")
 
-    router.callback_query.register(call_warning_user_poor, GPTUserPoorFilter(), ChatGPTModelFilter())
-    router.callback_query.register(call_warning_user_poor, MJUserPoorFilter(), StableModelFilter())
-    router.message.register(call_warning_user_poor, PikaLabsSUserPoorFilter(), PikaLabsModelFilter())
-    router.message.register(call_warning_user_poor, DeepAIUserPoorFilter(), DeepAIModelFilter())
+    router.callback_query.register(call_warning_user_poor, GPTUserPoorFilter(), ChatGPTModelFilter(), F.chat.type == "private")
+    router.callback_query.register(call_warning_user_poor, MJUserPoorFilter(), StableModelFilter(), F.chat.type == "private")
+    router.message.register(call_warning_user_poor, PikaLabsSUserPoorFilter(), PikaLabsModelFilter(), F.chat.type == "private")
+    router.message.register(call_warning_user_poor, DeepAIUserPoorFilter(), DeepAIModelFilter(), F.chat.type == "private")
 
-    router.message.register(limit_requests_today, MJRequestsToday(), StableModelFilter())
-    router.callback_query.register(call_limit_requests_today, MJRequestsToday(), StableModelFilter())
+    router.message.register(limit_requests_today, MJRequestsToday(), StableModelFilter(), F.chat.type == "private")
+    router.callback_query.register(call_limit_requests_today, MJRequestsToday(), StableModelFilter(), F.chat.type == "private")
     router.callback_query.register(manage_stable_menu, F.data.startswith("manage_stable_menu"))
     router.callback_query.register(manage_stable_ratio, F.data == "manage_stable_ratio")
     router.callback_query.register(manage_stable_ratio, F.data.startswith("choise_ratio_"))
@@ -97,7 +97,7 @@ def register_client_handlers(router: Router):
     router.callback_query.register(manage_stable_model, F.data == "manage_stable_model", F.chat.type == "private")
     router.callback_query.register(manage_stable_model, F.data.startswith("choise_model_"), F.chat.type == "private")
 
-    router.message.register(stable_prompt, F.text, StableModelFilter())
+    router.message.register(stable_prompt, F.text, StableModelFilter(), F.chat.type == "private")
     router.callback_query.register(stable_upscale, StableModelFilter(), F.data.startswith("upscale_"), F.chat.type == "private")
     router.callback_query.register(stable_retry, StableModelFilter(), F.data.startswith("retry_"), F.chat.type == "private")
     router.message.register(pikalabs_prompt, PikaLabsModelFilter(), F.text, F.chat.type == "private")

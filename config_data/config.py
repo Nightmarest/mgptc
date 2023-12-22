@@ -9,9 +9,15 @@ config = {
     # "BotToken": "6157728996:AAGRBicyQL4ozhTtIBW8m9X-YAuO29csT4s",
     # Токен самого бота 6062729970:AAHxJG2GCp4A4cL5fROgKRnn7OSrkD5wEBQ
 
-    "DBHost": "194.31.173.202",  # DataBase host
+    # "DBHost": "194.31.173.202",  # DataBase host
+    # "DBPort": 5432,  # DataBase port
+    # "DBUser": "gen_user",  # DataBase user
+    # "DBPswd": "ne+xutQ%tUT6*=",  # DataBase password
+    # "DBName": "default_db",  # DataBase name
+
+    "DBHost": "37.220.85.157",  # DataBase host
     "DBPort": 5432,  # DataBase port
-    "DBUser": "gen_user",  # DataBase user
+    "DBUser": "postgres",  # DataBase user
     "DBPswd": "ne+xutQ%tUT6*=",  # DataBase password
     "DBName": "default_db",  # DataBase name
 
