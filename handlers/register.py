@@ -71,7 +71,7 @@ def register_client_handlers(router: Router):
 
     router.callback_query.register(call_warning_in_progress, StateFilter(ClientState.process), F.chat.type == "private")
     router.message.register(warning_in_progress, StateFilter(ClientState.process), F.chat.type == "private")
-    router.message.register(panel_mode, F.text == get_text("buts.choise_mode"), F.chat.type == "private")
+    router.message.register(panel_mode, F.text == get_text("buts.choise_mode"))
     router.callback_query.register(choose_mode, F.data.endswith("_mode"), F.chat.type == "private")
 
     # FILTERS IN PROGRESS AND CHECK SUB
@@ -94,8 +94,8 @@ def register_client_handlers(router: Router):
     router.callback_query.register(manage_stable_ratio, F.data.startswith("choise_ratio_"))
     router.callback_query.register(manage_stable_style, F.data == "manage_stable_style")
     router.callback_query.register(manage_stable_style, F.data.startswith("choise_style_"))
-    router.callback_query.register(manage_stable_model, F.data == "manage_stable_model", F.chat.type == "private")
-    router.callback_query.register(manage_stable_model, F.data.startswith("choise_model_"), F.chat.type == "private")
+    router.callback_query.register(manage_stable_model, F.data == "manage_stable_model")
+    router.callback_query.register(manage_stable_model, F.data.startswith("choise_model_"))
 
     router.message.register(stable_prompt, F.text, StableModelFilter(), F.chat.type == "private")
     router.callback_query.register(stable_upscale, StableModelFilter(), F.data.startswith("upscale_"), F.chat.type == "private")
