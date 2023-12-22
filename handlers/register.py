@@ -68,11 +68,10 @@ def register_client_handlers(router: Router):
     router.message.register(promocodes, F.text == get_text("buts.premium"), F.chat.type == "private")
 
 
-
-    router.callback_query.register(call_warning_in_progress, StateFilter(ClientState.process), F.chat.type == "private")
-    router.message.register(warning_in_progress, StateFilter(ClientState.process), F.chat.type == "private")
+    router.callback_query.register(call_warning_in_progress, StateFilter(ClientState.process))
+    router.message.register(warning_in_progress, StateFilter(ClientState.process))
     router.message.register(panel_mode, F.text == get_text("buts.choise_mode"))
-    router.callback_query.register(choose_mode, F.data.endswith("_mode"), F.chat.type == "private")
+    router.callback_query.register(choose_mode, F.data.endswith("_mode"))
 
     # FILTERS IN PROGRESS AND CHECK SUB
     router.message.register(warning_check_sub, CheckSubFilter(), F.chat.type == "private")
