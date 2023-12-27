@@ -74,7 +74,7 @@ class cloudpay_api:
             return payurl, code, reason
         except Exception:
             code = 1
-            reason = "Unexpected Error! Please ask @langley_reddle for details"
+            reason = "Unexpected Error! Please ask admin for details"
             payurl = response
             return payurl, code, reason
 
@@ -113,7 +113,6 @@ class cloudpay_api:
                                 "amount": pay_list[buy_type]['amount'],
                                 "currency": "RUB",
                                 "requireConfirmation": False,
-                                "startDate": now.strftime("%Y-%m-%dT%H:%M:%S"),
                                 "interval": "Month",
                                 "period": pay_list[buy_type]["period"]
                             }
@@ -133,7 +132,7 @@ class cloudpay_api:
                         elif pay_list[buy_type]["autosub"] is False:
                             await buy_handler.accrual_requests(buy_type, chatid)
             else:
-                    lg.info("STEP-2", response)
+                    lg.info("STEP-2")
                     buy_type = db.read(chatid, "premium_type")
                     if buy_type is None:
                         buy_type = 0

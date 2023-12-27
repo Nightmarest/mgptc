@@ -29,7 +29,7 @@
     "buy-1": {
         "callback_text": "980p Расширенная (Месяц) 🍬",
         "message_text": "Расширенная подписка на месяц",
-        "amount": 980,
+        "amount": 720,
         "expired_time": "month",
         "skip_buy_handler": false,
         "course": false,
@@ -59,7 +59,7 @@
     "buy-2": {
         "callback_text": "2440р Pro (3 месяца)",
         "message_text": "Pro подписка на 3 месяца",
-        "amount": 2440,
+        "amount": 1850,
         "expired_time": "three_month",
         "skip_buy_handler": false,
         "course": true,
