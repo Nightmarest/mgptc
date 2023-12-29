@@ -48,7 +48,7 @@ class cloudpay_api:
             payload = {
                 "Amount": sum,
                 "Currency": "RUB",
-                "Description": "Оплата подписки",
+                "Description": "Оплата",
                 "Email": "u@midjourney.me",
                 "RequireConfirmation": False,
                 "SendEmail": False,
