@@ -16,8 +16,9 @@ from pyCryptomusAPI import pyCryptomusAPI
 
 class promo:
     async def checkpromo(chat_id, promo):
-        promocode = db.admin_request(f"SELECT * FROM promo WHERE name = '{str(promo)}'")
+        # promocode = db.admin_request(f"SELECT * FROM promo WHERE name = '{str(promo)}'")
         prinfo = ""
+        promocode = db.readpromo(promo)
         lg.info(f"Попытка задействовать промокод {promocode}")
         if promocode is None:
             code = 2

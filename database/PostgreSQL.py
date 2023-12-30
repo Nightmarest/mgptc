@@ -189,5 +189,15 @@ class PostgreSQL:
             except Exception as e:
                 lg.error(f"Error in recording: {e}")
 
+    def readpromo(self, promo: str) -> Any:
+            try:
+                with self.Session() as session:
+                    promo = session.query(Promocodes).filter(Promocodes.name == promo).first()
+                    if promo:
+                        return promo
+            except Exception as e:
+                lg.error(f"Error in read: {e}")
+                return "None"
+
     def conn(self):
         return self.Session
