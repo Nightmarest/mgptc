@@ -49,8 +49,8 @@ def register_client_handlers(router: Router):
     router.callback_query.register(choose_pay_crypto, F.data.startswith("crypto"), F.data.split("_")[2].in_(config["CryptoCurrency"]), F.chat.type == "private")
     router.callback_query.register(crypto_currency, F.data.startswith("crypto"), F.chat.type == "private")
     router.callback_query.register(call_premium, F.data == "back_to_premium", F.chat.type == "private")
-    router.callback_query.register(disable_autoup, F.data == "disable_autoup", F.chat.type == "private")
-    router.callback_query.register(disable_autoup_off, F.data == "disable_autoup_off", F.chat.type == "private")
+    router.callback_query.register(disable_autoup, F.data == "disable_autoup")
+    router.callback_query.register(disable_autoup_off, F.data == "disable_autoup_off")
 
     # GENERAL HANDLERS
     router.my_chat_member.register(user_blocked_bot, ChatMemberUpdatedFilter(member_status_changed=KICKED), F.chat.type == "private")
