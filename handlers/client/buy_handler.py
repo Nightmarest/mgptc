@@ -45,7 +45,7 @@ async def accrual_requests(buy_type, chatid, token=None, invoice=None, subid = N
     mydb = mongoclient["payments"]
     sub = mydb["subscribtions"]
     userdata = {"_id": chat_id}
-    usercol = sub.find(chat_id)
+    usercol = sub.find_one(chat_id)
     if usercol is None:
         sub.insert_one(userdata)
 

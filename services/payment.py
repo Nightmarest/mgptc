@@ -149,7 +149,7 @@ class cloudpay_api:
                                 subinfo = await resp.json(content_type = None)
                                 resp.close()
                                 await session.close()
-                            print(response)
+                            lg.info(f"{response}, {subinfo}")
                             await buy_handler.accrual_requests(buy_type, chatid, response['Model']['Token'], response['Model']['InvoiceId'], subinfo['Model']['Id'])
 
                         elif pay_list[buy_type]["autosub"] is False:
