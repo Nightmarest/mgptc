@@ -121,7 +121,7 @@ class cloudpay_api:
                             #         resp.close()
                             #         await session.close()
                             db.update(chatid, "subid", None)
-                            now = datetime.today() + relativedelta(months=1)
+                            now = datetime.today() + relativedelta(months=pay_list[buy_type]["period"])
 
                             url = 'https://api.cloudpayments.ru/subscriptions/create'
                             headers = { 'content-type': 'application/json' }
