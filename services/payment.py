@@ -100,26 +100,26 @@ class cloudpay_api:
 
                 if response['Success'] is True:
                         if pay_list[buy_type]["autosub"] is True:
-                            if db.read(chatid, "subid") is not None:
-                                subid = db.read(chatid, "subid")
-                                url = 'https://api.cloudpayments.ru/subscriptions/cancel'
-                                headers = {'content-type': 'application/json'}
-                                session = aiohttp.ClientSession()
-                                subcancel = {
-                                    "Id": subid,
-                                }
-
-                                async with session.post(
-                                        url, data=json.dumps(subcancel), headers=headers,
-                                        auth=aiohttp.BasicAuth(
-                                            config['CPID'],
-                                            config['CPKEY']
-                                        )
-                                ) as resp:
-                                    response = await resp.json(content_type=None)
-
-                                    resp.close()
-                                    await session.close()
+                            # if db.read(chatid, "subid") is not None:
+                            #     subid = db.read(chatid, "subid")
+                            #     url = 'https://api.cloudpayments.ru/subscriptions/cancel'
+                            #     headers = {'content-type': 'application/json'}
+                            #     session = aiohttp.ClientSession()
+                            #     subcancel = {
+                            #         "Id": subid,
+                            #     }
+                            #
+                            #     async with session.post(
+                            #             url, data=json.dumps(subcancel), headers=headers,
+                            #             auth=aiohttp.BasicAuth(
+                            #                 config['CPID'],
+                            #                 config['CPKEY']
+                            #             )
+                            #     ) as resp:
+                            #         response = await resp.json(content_type=None)
+                            #
+                            #         resp.close()
+                            #         await session.close()
                             db.update(chatid, "subid", None)
                             now = datetime.today() + relativedelta(months=1)
 

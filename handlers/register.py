@@ -34,7 +34,8 @@ from handlers.client.neural.deepai import deepai_image
 from handlers.client.buy_handler import (
     buy_handler, ym_check_payment, crypto_check_payment, choose_pay_ym,
     choose_pay_crypto, premium, call_premium, crypto_currency, description_premium,
-    more_about_course, choose_premium, disable_autoup, disable_autoup_off, promocodes
+    more_about_course, choose_premium, disable_autoup, disable_autoup_off, promocodes, disable_autoup_off_recursive,
+    disable_autoups, submanagment
 )
 
 
@@ -51,7 +52,9 @@ def register_client_handlers(router: Router):
     router.callback_query.register(call_premium, F.data == "back_to_premium", F.chat.type == "private")
     router.callback_query.register(disable_autoup, F.data == "disable_autoup")
     router.callback_query.register(disable_autoup_off, F.data == "disable_autoup_off")
-
+    router.callback_query.register(disable_autoup_off_recursive, F.data == "disable_autoup_recursive")
+    router.callback_query.register(disable_autoups, F.data == "disable_autoups")
+    router.callback_query.register(submanagment, F.data.startswith("submgt"))
     # GENERAL HANDLERS
     router.my_chat_member.register(user_blocked_bot, ChatMemberUpdatedFilter(member_status_changed=KICKED), F.chat.type == "private")
     router.my_chat_member.register(user_unblocked_bot, ChatMemberUpdatedFilter(member_status_changed=MEMBER), F.chat.type == "private")

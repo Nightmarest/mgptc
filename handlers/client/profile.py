@@ -1,7 +1,9 @@
 import datetime
 
+import pymongo
 from aiogram.types import Message, CallbackQuery
 
+from config_data.config import config
 from config_data.create_bot import db
 from database.models import Clients
 from services import agreement
@@ -12,15 +14,35 @@ from config_data.config_load import pay_list
 
 
 async def profile(message: Message, user: Clients):
+    chat_id: int = message.from_user.id
+
+    mongoclient = pymongo.MongoClient(f"mongodb://{config['MongoDBHost']}:{config['MongoDBPort']}/")
+    mydb = mongoclient["payments"]
+    sub = mydb["subscribtions"]
+    userdata = {"_id": chat_id}
+    usercol = sub.find_one(chat_id)
+    autov2 = False
+    if usercol is None:
+        sub.insert_one(userdata)
+        autov2 = False
     card = user.subid
     auto = None
     if card is not None:
         auto = True
     elif card is None:
         auto = False
-    chat_id: int = message.from_user.id
+    if usercol is not None:
+        print(usercol)
+        try:
+            if len(usercol['buytypes']) >= 1:
+                autov2 = True
+        except KeyError:
+            autov2 = False
 
+    else:
+        autov2 = False
 
+    print(autov2)
     days: int = check_donate_sub(chat_id)
     date = db.read(chat_id, 'expired_time')
     tmd = ""
@@ -91,7 +113,8 @@ async def profile(message: Message, user: Clients):
             user.premium_type,
             user.course,
             user.voice_answer,
-            auto
+            auto,
+            autov2
         )
     )
 

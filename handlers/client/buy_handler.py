@@ -1,12 +1,14 @@
 import json
 import random
 import logging as lg
-
+import pymongo
 import aiohttp
 # from services.payment import cloudpay_api, cryptobot_api
-from aiogram.types import CallbackQuery, Message
+from aiogram.types import CallbackQuery, Message, InlineKeyboardButton
 import asyncio
 from aiogram.fsm.context import FSMContext
+from aiogram.utils.keyboard import InlineKeyboardBuilder
+
 from keyboards.client_kb import kb
 from config_data.create_bot import db
 from utils.func import get_text, report, current_time, check_donate_sub
@@ -39,6 +41,13 @@ async def ym_check_payment(call: CallbackQuery):
 
 async def accrual_requests(buy_type, chatid, token=None, invoice=None, subid = None):
     chat_id = chatid
+    mongoclient = pymongo.MongoClient(f"mongodb://{config['MongoDBHost']}:{config['MongoDBPort']}/")
+    mydb = mongoclient["payments"]
+    sub = mydb["subscribtions"]
+    userdata = {"_id": chat_id}
+    usercol = sub.find(chat_id)
+    if usercol is None:
+        sub.insert_one(userdata)
 
     if pay_list[buy_type]["course"]:
         text = f"<b>💫 Поздравлем! Оформлена {pay_list[buy_type]['message_text']}!</b>\n\n" \
@@ -65,6 +74,7 @@ async def accrual_requests(buy_type, chatid, token=None, invoice=None, subid = N
 
     if pay_list[buy_type]["product_type"] == "subscribe":
         if pay_list[buy_type]["type"] == "mj+gpt":
+
             db.update(chat_id, 'expired_time', expired_time)
             db.update(chat_id, 'premium_type', buy_type)
         elif pay_list[buy_type]["type"] == "zeroscope":
@@ -79,6 +89,18 @@ async def accrual_requests(buy_type, chatid, token=None, invoice=None, subid = N
             db.update(chat_id, 'subid', subid)
         else:
             pass
+
+        if subid is not None:
+            usersubid = sub.find(f"subid_{pay_list[buy_type]['type']}")
+            if usersubid is not None:
+                x = await subcancel(usersubid)
+            newsubid = {"$set": {f"subid_{pay_list[buy_type]['type']}": subid}}
+            newsub = {"$set": {pay_list[buy_type]['type']: buy_type}}
+            newsubs = {"$push": { "buytypes": buy_type}}
+            sub.update_one(userdata, newsubid)
+            sub.update_one(userdata, newsub)
+            sub.update_one(userdata, newsubs)
+
 
     db.update(chat_id, 'buyer', True)
     db.update(chat_id, 'course', course)
@@ -261,6 +283,86 @@ async def premium(message: Message, state: FSMContext):
     )
 
 
+async def disable_autoups(call: CallbackQuery):
+    await call.message.edit_text("⚙️ Собираем информацию о подписках, ожидайте...")
+    chat_id = call.from_user.id
+    builder = InlineKeyboardBuilder()
+    mongoclient = pymongo.MongoClient(f"mongodb://{config['MongoDBHost']}:{config['MongoDBPort']}/")
+    mydb = mongoclient["payments"]
+    sub = mydb["subscribtions"]
+    usercol = sub.find_one(chat_id)
+    for x in usercol['buytypes']:
+        button_list = [
+            InlineKeyboardButton(text=pay_list[x]['callback_text'], callback_data=f"submgt:{x}")]
+        builder.add(*button_list)
+        builder.adjust(1)
+    await call.message.edit_text("⬇️ Выберите подписку ниже", reply_markup=builder.as_markup())
+
+async def submanagment(call: CallbackQuery):
+    mongoclient = pymongo.MongoClient(f"mongodb://{config['MongoDBHost']}:{config['MongoDBPort']}/")
+    mydb = mongoclient["payments"]
+    sub = mydb["subscribtions"]
+    chat_id = call.from_user.id
+    usercol = sub.find_one(chat_id)
+
+    buytype = call.data.split(":")[1]
+
+    tftype = pay_list[buytype]['type']
+    subid = ""
+    try:
+        subid = usercol[f"subid_{tftype}"]
+    except:
+        await call.message.edit_text("⚠️ Не удалось получить информацию о подписке. Обратитесь к менеджеру.")
+
+    url = "https://api.cloudpayments.ru/subscriptions/find"
+
+    headers = {'content-type': 'application/json'}
+    session = aiohttp.ClientSession()
+
+    info = {
+        "accountId": chat_id
+    }
+    sub = []
+    async with session.post(
+            url, data=json.dumps(info), headers=headers,
+            auth=aiohttp.BasicAuth(
+                config['CPID'],
+                config['CPKEY']
+            )
+    ) as resp:
+        subinfo = await resp.json(content_type=None)
+        resp.close()
+        await session.close()
+    for i in subinfo['Model']:
+        # print(i)
+
+        if i['Id'] == subid:
+            sub.append(i)
+    time = ""
+    starttime = ""
+    amount = ""
+    print(len(sub))
+    if len(sub) == 1:
+        for x in sub:
+            print(sub)
+            starttime = x['StartDateIso']
+            time = x['NextTransactionDateIso']
+            amount = x['Amount']
+    else:
+        await call.answer("Подписка недоступна")
+        return
+
+
+    print(amount, starttime, time)
+    await call.message.edit_text(f"""ℹ️ Информация о подписке {pay_list[buytype]['type']}
+
+⏱️ Начало подписки: {starttime.split('T')[0]} в {starttime.split('T')[1]}
+
+⚡️ Дата следующего платежа: {time.split('T')[0]} в {time.split('T')[1]}
+
+💰 Стоимость подписки: {amount}""")
+
+
 async def disable_autoup(call: CallbackQuery):
     await call.message.edit_text(
         text="""Внимание !
@@ -314,6 +416,82 @@ async def disable_autoup_off(call: CallbackQuery):
         await call.message.edit_text(
             text="❌ Произошла ошибка при отмене подписки. Пожалуйста, обратитесь к менеджеру.",
             reply_markup=kb.back_to_profile()
+        )
+
+async def disable_autoup_off_recursive(call: CallbackQuery):
+    await call.message.edit_text(
+        text="🕐 Пожалуйста, подождите, выполняется поиск подписок...",
+    )
+    active = []
+    url = "https://api.cloudpayments.ru/subscriptions/find"
+
+    headers = {'content-type': 'application/json'}
+    session = aiohttp.ClientSession()
+
+    info = {
+        "accountId": call.from_user.id
+    }
+
+    async with session.post(
+            url, data=json.dumps(info), headers=headers,
+            auth=aiohttp.BasicAuth(
+                config['CPID'],
+                config['CPKEY']
+            )
+    ) as resp:
+        subinfo = await resp.json(content_type=None)
+        resp.close()
+        await session.close()
+    for i in subinfo['Model']:
+
+        # if i['Status'] == "Active":
+            active.append(i['Id'])
+
+
+    subid = db.read(call.from_user.id, "subid")
+    if subid is not None:
+        if subid != "":
+            try:
+                active.remove(subid)
+            except ValueError:
+                pass
+    if len(active) == 0:
+        await call.message.edit_text(
+            text=f"✅ Хорошие новости! У вас нет активных подписок.",
+        )
+    else:
+        await call.message.edit_text(
+            text=f"⚠️ Найдено {len(active)} подписок. Отключаем...",
+        )
+        await asyncio.sleep(3)
+        n = 0
+        for x in active:
+            await call.message.edit_text(
+                text=f"⚠️ Выполняется отключение. Отключено {n}/{len(active)} подписок...",
+            )
+            url = 'https://api.cloudpayments.ru/subscriptions/cancel'
+            headers = {'content-type': 'application/json'}
+            session = aiohttp.ClientSession()
+            subcancel = {
+                "Id": x,
+            }
+
+            async with session.post(
+                    url, data=json.dumps(subcancel), headers=headers,
+                    auth=aiohttp.BasicAuth(
+                        config['CPID'],
+                        config['CPKEY']
+                    )
+            ) as resp:
+                response = await resp.json(content_type=None)
+
+                resp.close()
+                await session.close()
+                print(response)
+            await asyncio.sleep(3)
+            n = n + 1
+        await call.message.edit_text(
+            text=f"✅ Хорошие новости! Подписок отключено - {len(active)}",
         )
 
 

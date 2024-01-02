@@ -49,7 +49,7 @@ class kb:
         return InlineKeyboardMarkup(inline_keyboard=keyboard_list)
 
 
-    def profile(premium_type: str, course: bool, voice_answer: bool, auto: bool):
+    def profile(premium_type: str, course: bool, voice_answer: bool, auto: bool, autov2: bool):
         if premium_type:
             query_menu = pay_list[premium_type]["menu_prompt"]
         else:
@@ -86,6 +86,19 @@ class kb:
                 text=get_text("buts.autoup"),
                 callback_data="disable_autoup"
             )])
+        keyboard_list.append([InlineKeyboardButton(
+            text="Отключить предыдущие подписки",
+            callback_data="disable_autoup_recursive"
+        )])
+
+        if autov2 is True:
+            keyboard_list.append([InlineKeyboardButton(
+                # text=get_text("buts.autoup"),
+                text="Управление подписками",
+                callback_data="disable_autoups"
+            )])
+
+
         return InlineKeyboardMarkup(inline_keyboard=keyboard_list)
 
 

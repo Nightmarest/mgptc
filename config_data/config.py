@@ -5,8 +5,8 @@ config = {
     "APIToken": "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", # OPENAI
     "ZeroscopeToken": "r8_DyAbjQpqxhwxSmj9qKVVpjysDmnSUdT4Bkf2g", #зероскоп токен
     "DeeplToken": "725ea090-4ba9-494c-8c58-8912b78537a9",
-    "BotToken": "6062729970:AAG1aK3DE-FxpfP7sMeIivaqcQZIRwaQwYA",  # Токен самого бота 6062729970:AAHxJG2GCp4A4cL5fROgKRnn7OSrkD5wEBQ
-    # "BotToken": "6157728996:AAGRBicyQL4ozhTtIBW8m9X-YAuO29csT4s",
+    # "BotToken": "6062729970:AAG1aK3DE-FxpfP7sMeIivaqcQZIRwaQwYA",  # Токен самого бота 6062729970:AAHxJG2GCp4A4cL5fROgKRnn7OSrkD5wEBQ
+    "BotToken": "6157728996:AAGRBicyQL4ozhTtIBW8m9X-YAuO29csT4s",
     # Токен самого бота 6062729970:AAHxJG2GCp4A4cL5fROgKRnn7OSrkD5wEBQ
 
     # "DBHost": "194.31.173.202",  # DataBase host
@@ -20,6 +20,9 @@ config = {
     "DBUser": "postgres",  # DataBase user
     "DBPswd": "ne+xutQ%tUT6*=",  # DataBase password
     "DBName": "default_db",  # DataBase name
+
+    "MongoDBHost": "37.220.85.157",
+    "MongoDBPort": "27017",
 
     # Yoomoney
     "YomoneyToken": "4100117825234416.F2B91EDA8EE3DE9FACD59EF611966E0A5AA09546EBDB994BF1E3BFA0EFB1F8CFE517514BAAEFE8515EB3910E0DCB8EC360DF9401041C0D2461756ACBEB8FA546B2F0B0C9B9D0E66D0EBEFDA89404B4E91B20E97168C6CE3087C6CFFE0E2D4EB4CAEDF7767B503185955C10DFF394F18AF30B1CEF9266F28CC6678EC7788B63B5", # токен акка юмани
