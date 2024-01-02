@@ -19,7 +19,7 @@ async def profile(message: Message, user: Clients):
     mongoclient = pymongo.MongoClient(f"mongodb://{config['MongoDBHost']}:{config['MongoDBPort']}/")
     mydb = mongoclient["payments"]
     sub = mydb["subscribtions"]
-    userdata = {"_id": chat_id}
+    userdata = {"_id": str(chat_id)}
     usercol = sub.find_one(str(chat_id))
     autov2 = False
     if usercol is None:
@@ -126,10 +126,13 @@ async def call_profile(call: CallbackQuery, user: Clients):
     userdata = {"_id": str(chat_id)}
     usercol = sub.find_one(str(chat_id))
     autov2 = False
-
     if usercol is None:
-        sub.insert_one(userdata)
-        autov2 = False
+        try:
+            sub.insert_one(userdata)
+        except:
+            pass
+    autov2 = False
+
     if usercol is not None:
         try:
             if len(usercol['buytypes']) >= 1:
