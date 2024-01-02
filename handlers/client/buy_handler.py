@@ -44,8 +44,8 @@ async def accrual_requests(buy_type, chatid, token=None, invoice=None, subid = N
     mongoclient = pymongo.MongoClient(f"mongodb://{config['MongoDBHost']}:{config['MongoDBPort']}/")
     mydb = mongoclient["payments"]
     sub = mydb["subscribtions"]
-    userdata = {"_id": chat_id}
-    usercol = sub.find_one(chat_id)
+    userdata = {"_id": str(chat_id)}
+    usercol = sub.find_one(str(chat_id))
     if usercol is None:
         sub.insert_one(userdata)
 
@@ -294,7 +294,7 @@ async def disable_autoups(call: CallbackQuery):
     mongoclient = pymongo.MongoClient(f"mongodb://{config['MongoDBHost']}:{config['MongoDBPort']}/")
     mydb = mongoclient["payments"]
     sub = mydb["subscribtions"]
-    usercol = sub.find_one(chat_id)
+    usercol = sub.find_one(str(chat_id))
     for x in usercol['buytypes']:
         button_list = [
             InlineKeyboardButton(text=pay_list[x]['callback_text'], callback_data=f"submgt:{x}")]
@@ -307,24 +307,25 @@ async def submanagment(call: CallbackQuery):
     mydb = mongoclient["payments"]
     sub = mydb["subscribtions"]
     chat_id = call.from_user.id
-    usercol = sub.find_one(chat_id)
+    usercol = sub.find_one(str(chat_id))
 
     buytype = call.data.split(":")[1]
 
     tftype = pay_list[buytype]['type']
     subid = ""
+    print(usercol)
     try:
         subid = usercol[f"subid_{tftype}"]
     except:
         await call.message.edit_text("⚠️ Не удалось получить информацию о подписке. Обратитесь к менеджеру.")
 
-    url = "https://api.cloudpayments.ru/subscriptions/find"
+    url = "https://api.cloudpayments.ru/subscriptions/get"
 
     headers = {'content-type': 'application/json'}
     session = aiohttp.ClientSession()
-
+    print(subid)
     info = {
-        "accountId": chat_id
+        "Id": subid
     }
     sub = []
     async with session.post(
@@ -337,34 +338,45 @@ async def submanagment(call: CallbackQuery):
         subinfo = await resp.json(content_type=None)
         resp.close()
         await session.close()
-    for i in subinfo['Model']:
-        # print(i)
 
-        if i['Id'] == subid:
-            sub.append(i)
-    time = ""
-    starttime = ""
-    amount = ""
-    print(len(sub))
-    if len(sub) == 1:
-        for x in sub:
-            print(sub)
-            starttime = x['StartDateIso']
-            time = x['NextTransactionDateIso']
-            amount = x['Amount']
+    if subinfo is not None:
+        print(subinfo)
+        x = subinfo['Model']
+
+        starttime = x['StartDateIso']
+        time = x['NextTransactionDateIso']
+        amount = x['Amount']
+        print(amount, starttime, time)
+        await call.message.edit_text(f"""ℹ️ Информация о подписке {pay_list[buytype]['callback_text']}
+
+⚡️ Дата следующего платежа: {time.split('T')[0]} в {time.split('T')[1]}
+
+💰 Стоимость подписки: {amount}₽""", reply_markup=kb.submgr(x['Id'], buytype))
     else:
         await call.answer("Подписка недоступна")
         return
 
-
-    print(amount, starttime, time)
-    await call.message.edit_text(f"""ℹ️ Информация о подписке {pay_list[buytype]['type']}
-
-⏱️ Начало подписки: {starttime.split('T')[0]} в {starttime.split('T')[1]}
-
-⚡️ Дата следующего платежа: {time.split('T')[0]} в {time.split('T')[1]}
-
-💰 Стоимость подписки: {amount}""")
+async def submgr_disable(call: CallbackQuery):
+    data = call.data.split(":")[1]
+    buytype = call.data.split(":")[2]
+    cancel = await subcancel(data)
+    if cancel is True:
+        mongoclient = pymongo.MongoClient(f"mongodb://{config['MongoDBHost']}:{config['MongoDBPort']}/")
+        mydb = mongoclient["payments"]
+        sub = mydb["subscribtions"]
+        try:
+            myquery = {"_id": str(call.from_user.id)}
+            removetype = {"$pull": {"buytypes": buytype}}
+            removebuytume = {"$unset": {pay_list[buytype]['type']: buytype}}
+            removesubid = {"$unset": {f"subid_{pay_list[buytype]['type']}": data}}
+            sub.update_one(myquery, removetype)
+            sub.update_one(myquery, removebuytume)
+            sub.update_one(myquery, removesubid)
+            await call.message.edit_text("✅ Автопродление успешно отключено. Спасибо за использование!")
+        except Exception as e:
+            await call.message.edit_text("⚠️ Не удалось отключить подписку. Пожалуйста, обратитесь к менеджеру!")
+    else:
+        await call.message.edit_text("⚠️ Не удалось отключить подписку. Пожалуйста, обратитесь к менеджеру!")
 
 
 async def disable_autoup(call: CallbackQuery):

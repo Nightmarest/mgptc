@@ -342,6 +342,18 @@ class kb:
         )])
         return InlineKeyboardMarkup(inline_keyboard=keyboard_list)
 
+    def submgr(sub, buytype):
+        keyboard_list = []
+        keyboard_list.append([InlineKeyboardButton(
+            text=f"❌ Отключить автопродление",
+            callback_data=f"submgr_disable:{sub}:{buytype}"
+        )])
+        keyboard_list.append([InlineKeyboardButton(
+            text=f"⚡️ Назад",
+            callback_data=f"profile"
+        )])
+        return InlineKeyboardMarkup(inline_keyboard=keyboard_list)
+
 
     def switch_to_stable():
         builder = InlineKeyboardBuilder()

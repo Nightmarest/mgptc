@@ -20,7 +20,7 @@ async def profile(message: Message, user: Clients):
     mydb = mongoclient["payments"]
     sub = mydb["subscribtions"]
     userdata = {"_id": chat_id}
-    usercol = sub.find_one(chat_id)
+    usercol = sub.find_one(str(chat_id))
     autov2 = False
     if usercol is None:
         sub.insert_one(userdata)
@@ -31,6 +31,7 @@ async def profile(message: Message, user: Clients):
         auto = True
     elif card is None:
         auto = False
+    print(usercol)
     if usercol is not None:
         print(usercol)
         try:
@@ -121,6 +122,28 @@ async def profile(message: Message, user: Clients):
 
 async def call_profile(call: CallbackQuery, user: Clients):
     chat_id: int = call.from_user.id
+
+    mongoclient = pymongo.MongoClient(f"mongodb://{config['MongoDBHost']}:{config['MongoDBPort']}/")
+    mydb = mongoclient["payments"]
+    sub = mydb["subscribtions"]
+    userdata = {"_id": chat_id}
+    usercol = sub.find_one(str(chat_id))
+    autov2 = False
+    if usercol is None:
+        sub.insert_one(userdata)
+        autov2 = False
+    print(usercol)
+    if usercol is not None:
+        print(usercol)
+        try:
+            if len(usercol['buytypes']) >= 1:
+                autov2 = True
+        except KeyError:
+            autov2 = False
+
+    else:
+        autov2 = False
+
     card = user.subid
     auto = None
     if card is not None:
@@ -182,7 +205,8 @@ async def call_profile(call: CallbackQuery, user: Clients):
             user.premium_type,
             user.course,
             user.voice_answer,
-            auto
+            auto,
+            autov2
         )
     )
 
