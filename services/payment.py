@@ -65,7 +65,6 @@ class cloudpay_api:
                     auth = aiohttp.BasicAuth(config['CPID'], config['CPKEY'])
                     ) as resp:
                 response = await resp.json(content_type = None)
-                print(response)
                 payurl = response['Model']['Url']
                 payid = response['Model']['Id']
                 resp.close()

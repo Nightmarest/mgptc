@@ -31,9 +31,7 @@ async def profile(message: Message, user: Clients):
         auto = True
     elif card is None:
         auto = False
-    print(usercol)
     if usercol is not None:
-        print(usercol)
         try:
             if len(usercol['buytypes']) >= 1:
                 autov2 = True
@@ -43,7 +41,6 @@ async def profile(message: Message, user: Clients):
     else:
         autov2 = False
 
-    print(autov2)
     days: int = check_donate_sub(chat_id)
     date = db.read(chat_id, 'expired_time')
     tmd = ""
@@ -132,9 +129,7 @@ async def call_profile(call: CallbackQuery, user: Clients):
     if usercol is None:
         sub.insert_one(userdata)
         autov2 = False
-    print(usercol)
     if usercol is not None:
-        print(usercol)
         try:
             if len(usercol['buytypes']) >= 1:
                 autov2 = True
@@ -151,7 +146,6 @@ async def call_profile(call: CallbackQuery, user: Clients):
     elif card is None:
         auto = False
     days: int = check_donate_sub(chat_id)
-    print(days)
     date = db.read(chat_id, 'expired_time')
     tmd = ""
     if date is None:

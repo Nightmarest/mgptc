@@ -184,14 +184,10 @@ async def choose_pay_ym(call: CallbackQuery):
     track_id = str(chat_id) +  str(random.randint(1, 99999))
     promo = db.read(chat_id, "promo")
     amount = pay_list[payment_type]["amount"]
-    print(promo)
     if promo is not None:
         discount = db.admin_request(f"SELECT * FROM promo WHERE name = '{promo}'")
-        print(discount, amount)
         amount = int(amount) - (int(amount) / 100 * int(discount[0][3]))
     payinfo = await cloudpay_api.create_payment(track_id, amount, chat_id, data[1])
-    print(data)
-    print(track_id)
     callback = f"check_ym_{payment_type}_{track_id}"
 
     await call.message.edit_text(
@@ -261,7 +257,6 @@ async def premium(message: Message, state: FSMContext):
     await state.clear()
 
     promocode = db.admin_request(f"SELECT * FROM promo WHERE name = '{str(promo)}'")
-    print(promocode)
     prinfo = ""
 
     if promocode is None:
@@ -313,7 +308,6 @@ async def submanagment(call: CallbackQuery):
 
     tftype = pay_list[buytype]['type']
     subid = ""
-    print(usercol)
     try:
         subid = usercol[f"subid_{tftype}"]
     except:
@@ -323,7 +317,6 @@ async def submanagment(call: CallbackQuery):
 
     headers = {'content-type': 'application/json'}
     session = aiohttp.ClientSession()
-    print(subid)
     info = {
         "Id": subid
     }
@@ -340,13 +333,11 @@ async def submanagment(call: CallbackQuery):
         await session.close()
 
     if subinfo is not None:
-        print(subinfo)
         x = subinfo['Model']
 
         starttime = x['StartDateIso']
         time = x['NextTransactionDateIso']
         amount = x['Amount']
-        print(amount, starttime, time)
         await call.message.edit_text(f"""ℹ️ Информация о подписке {pay_list[buytype]['callback_text']}
 
 ⚡️ Дата следующего платежа: {time.split('T')[0]} в {time.split('T')[1]}
@@ -503,7 +494,6 @@ async def disable_autoup_off_recursive(call: CallbackQuery):
 
                 resp.close()
                 await session.close()
-                print(response)
             await asyncio.sleep(3)
             n = n + 1
         await call.message.edit_text(
