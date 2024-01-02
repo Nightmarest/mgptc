@@ -91,9 +91,13 @@ async def accrual_requests(buy_type, chatid, token=None, invoice=None, subid = N
             pass
 
         if subid is not None:
-            usersubid = sub.find(f"subid_{pay_list[buy_type]['type']}")
-            if usersubid is not None:
-                x = await subcancel(usersubid)
+            try:
+                usersubid = usercol[f"subid_{pay_list[buy_type]['type']}"]
+                if usersubid is not None:
+                    x = await subcancel(usersubid)
+
+            except:
+                pass
             newsubid = {"$set": {f"subid_{pay_list[buy_type]['type']}": subid}}
             newsub = {"$set": {pay_list[buy_type]['type']: buy_type}}
             newsubs = {"$push": { "buytypes": buy_type}}
