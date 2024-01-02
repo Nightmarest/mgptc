@@ -134,10 +134,10 @@ class cloudpay_api:
                                 "email": "user@example.com",
                                 "amount": pay_list[buy_type]['amount'],
                                 "currency": "RUB",
-                                "StartDate": now,
+                                "StartDate": str(now),
                                 "requireConfirmation": False,
                                 "interval": "Month",
-                                "period": pay_list[buy_type]["period"]
+                                "period": str(pay_list[buy_type]["period"])
                             }
 
                             async with session.post(
