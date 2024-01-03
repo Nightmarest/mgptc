@@ -61,7 +61,7 @@ def register_client_handlers(router: Router):
     router.my_chat_member.register(user_unblocked_bot, ChatMemberUpdatedFilter(member_status_changed=MEMBER), F.chat.type == "private")
 
     router.callback_query.register(c_listener, F.data == 'subcheck', F.chat.type == "private") # ОП
-    router.callback_query.register(call_profile, F.data == "call_profile", F.chat.type == "private")
+    router.callback_query.register(call_profile, F.data == "call_profile")
     router.callback_query.register(switch_voice_answer, F.data == 'switch_voice_answer', F.chat.type == "private")
     router.callback_query.register(choose_premium, F.data.startswith("choose_premium"), F.chat.type == "private")
     router.message.register(command_start, F.text.startswith("/start"), F.chat.type == "private")          # Command /start

@@ -350,7 +350,7 @@ class kb:
         )])
         keyboard_list.append([InlineKeyboardButton(
             text=f"⚡️ Назад",
-            callback_data=f"profile"
+            callback_data=f"call_profile"
         )])
         return InlineKeyboardMarkup(inline_keyboard=keyboard_list)
 
