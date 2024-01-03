@@ -27,7 +27,7 @@
     },
 
     "buy-1": {
-        "callback_text": "980p Расширенная (Месяц) 🍬",
+        "callback_text": "720p Расширенная (Месяц) 🍬",
         "message_text": "Расширенная подписка на месяц",
         "amount": 720,
         "expired_time": "month",
@@ -57,7 +57,7 @@
     },
 
     "buy-2": {
-        "callback_text": "2440р Pro (3 месяца)",
+        "callback_text": "1850р Pro (3 месяца)",
         "message_text": "Pro подписка на 3 месяца",
         "amount": 1850,
         "expired_time": "three_month",
@@ -134,8 +134,8 @@
 
     },
     "buy-5": {
-        "callback_text": "Расширенная 399р (3 Месяца)",
-        "message_text": "Расширенная 399р (3 Месяца)",
+        "callback_text": "Расширенная 199р (3 Месяца)",
+        "message_text": "Расширенная 199р (3 Месяца)",
         "amount": 199,
         "expired_time": "three_month",
         "skip_buy_handler": false,
@@ -167,7 +167,7 @@
         "course": false,
         "menu_prompt": false,
         "limited_reqs": false,
-        "product_type": "requests",
+        "product_type": "subscribe",
         "type": "gpt",
         "requests_gpt": 300,
         "requests_mj": 0,
@@ -192,7 +192,7 @@
         "course": false,
         "menu_prompt": false,
         "limited_reqs": false,
-        "product_type": "requests",
+        "product_type": "subscribe",
         "type": "gpt",
         "requests_gpt": 500,
         "requests_mj": 0,
