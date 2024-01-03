@@ -83,12 +83,12 @@ async def accrual_requests(buy_type, chatid, token=None, invoice=None, subid = N
         else:
             db.update(chat_id, f'expired_time_{pay_list[buy_type]["type"]}', expired_time)
             db.update(chat_id, f'premium_type_{pay_list[buy_type]["type"]}', buy_type)
-        if invoice and token is not None:
-            db.update(chat_id, 'invoiceid', invoice)
-            db.update(chat_id, 'cardtoken', token)
-            db.update(chat_id, 'subid', subid)
-        else:
-            pass
+        # if invoice and token is not None:
+        #     db.update(chat_id, 'invoiceid', invoice)
+        #     db.update(chat_id, 'cardtoken', token)
+        #     db.update(chat_id, 'subid', subid)
+        # else:
+        #     pass
 
         if subid is not None:
             try:
