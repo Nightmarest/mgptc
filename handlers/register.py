@@ -101,8 +101,8 @@ def register_client_handlers(router: Router):
     router.callback_query.register(manage_stable_model, F.data.startswith("choise_model_"))
 
     router.message.register(stable_prompt, F.text, StableModelFilter(), F.chat.type == "private")
-    router.callback_query.register(stable_upscale, StableModelFilter(), F.data.startswith("upscale_"), F.chat.type == "private")
-    router.callback_query.register(stable_retry, StableModelFilter(), F.data.startswith("retry_"), F.chat.type == "private")
+    router.callback_query.register(stable_upscale, StableModelFilter(), F.data.startswith("upscale_"))
+    router.callback_query.register(stable_retry, StableModelFilter(), F.data.startswith("retry_"))
     router.message.register(pikalabs_prompt, PikaLabsModelFilter(), F.text, F.chat.type == "private")
     router.message.register(deepai_image, DeepAIModelFilter(), F.photo, F.chat.type == "private")
     router.message.register(chatgpt_text, ChatGPTModelFilter(), F.text, F.chat.type == "private")

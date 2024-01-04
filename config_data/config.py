@@ -121,9 +121,9 @@ MODELS_STABLE = {
         'description': f'''{hide_link("https://image.stablediffusionapi.com/?quality=45&Image=https://pub-3626123a908346a7a8be8d9295f44e26.r2.dev/generations/18141439221696749891.png")}<b>Эта модель не поддается ограничениям и дает вам возможность создавать все, что пожелает ваше воображение.</b>'''
     },
 
-    'colossus-project-xl-sfwns': {
-        'first_name': 'Colossus Project XL',
-        'description': f'''{hide_link("https://pub-3626123a908346a7a8be8d9295f44e26.r2.dev/generations/18350195621701335828.png")}<b>Новая Colossus Project XL даёт революционные возможности создания изображений по коротким подсказкам. Уникальный набор данных и улучшенные алгоритмы позволяют с лёгкостью генерировать шедевры.</b>'''
+    'dreamshaper-xl': {
+        'first_name': 'DreamShaper XL',
+        'description': f'''{hide_link("https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/c4dbf85a-c96a-47f3-b98f-9bae25f750d9/width=1152/31073260-554464390-In%20Casey%20Baugh's%20evocative%20style,%20art%20of%20a%20beautiful%20young%20girl%20cyborg%20with%20long%20brown%20hair,%20futuristic,%20scifi,%20intricate,%20elega.jpeg")}<b>Новая DreamShaper XL даёт революционные возможности создания изображений по коротким подсказкам. Уникальный набор данных и улучшенные алгоритмы позволяют с лёгкостью генерировать шедевры.</b>'''
     }
 }
 
