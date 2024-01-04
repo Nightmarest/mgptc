@@ -66,5 +66,5 @@ async def pikalabs_prompt(message: Message, state: FSMContext):
                 chat_id=chat_id,
                 message_id=wait_msg_id
             )
-    requested = db.read(message.from_user.id, "requested")
-    db.update(message.from_user.id, "requested", int(requested) + 1)
+    # requested = db.read(message.from_user.id, "requested")
+    # db.update(message.from_user.id, "requested", int(requested) + 1)

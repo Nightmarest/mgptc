@@ -22,19 +22,19 @@ async def update_requests():
 
 @aiocron.crontab("0 0 1 * *")
 async def update_requests_for_depd():
-    ai = db.admin_request("SELECT id FROM clients WHERE requested = 1")
+    ai = db.admin_request("SELECT id FROM clients")
     for x in ai:
         status = db.read(x, "requested")
         sd = db.read(x, "requests_mj")
         gpt = db.read(x, "requests_gpt")
 
-        if status >= 5:
-            db.update(x, "requests_mj", int(sd) + int(config['MonthlySD']))
-            db.update(x, "requests_gpt", int(gpt) + int(config['MonthlyGPT']))
-        elif status < 5:
-            db.update(x, "requests_mj", int(sd) - int(config['MonthlySD']))
-            db.update(x, "requests_gpt", int(gpt) - int(config['MonthlyGPT']))
-        db.update(x, "requested", 0)
+        # if status >= 5:
+        #     db.update(x, "requests_mj", int(sd) + int(config['MonthlySD']))
+        #     db.update(x, "requests_gpt", int(gpt) + int(config['MonthlyGPT']))
+        # elif status < 5:
+        db.update(x, "requests_mj", int(sd) - int(config['MonthlySD']))
+        db.update(x, "requests_gpt", int(gpt) - int(config['MonthlyGPT']))
+        # db.update(x, "requested", 0)
 
 
 
