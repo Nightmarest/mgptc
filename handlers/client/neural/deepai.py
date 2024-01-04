@@ -37,5 +37,7 @@ async def deepai_image(message: Message, state: FSMContext):
         )
 
         await bot.send_photo(chat_id=chat_id, caption=get_text("text.deepai_after_progress"), photo=image)
+        requested = db.read(chat_id, "requested")
+        db.update(chat_id, "requested", int(requested) + 1)
         reqs = db.read(chat_id, "requests_deepai") - 1
         db.update(chat_id, "requests_deepai", reqs) if reqs >= 0 else ...

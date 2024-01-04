@@ -10,7 +10,7 @@ from sqlalchemy import select
 
 from filters.states.state import ClientState
 from database.models import Stable, Clients, Temp
-from config_data.create_bot import config, bot
+from config_data.create_bot import config, bot, db
 from keyboards.client_kb import kb
 
 from services.neural.stable import stable_pic
@@ -74,6 +74,8 @@ async def stable_prompt(message: Message, state: FSMContext, stable: Stable):
             await message.answer(
                 text=get_text("text.error_gpt")
             )
+    requested = db.read(message.from_user.id, "requested")
+    db.update(message.from_user.id, "requested", int(requested) + 1)
 
 
 async def stable_upscale(call: CallbackQuery, state: FSMContext, user: Clients):
@@ -120,6 +122,7 @@ async def stable_upscale(call: CallbackQuery, state: FSMContext, user: Clients):
     user.requests_mj_today += 1
     if user.requests_mj > 0:
         user.requests_mj -= 1
+
 
 
 async def stable_retry(call: CallbackQuery, state: FSMContext, stable: Stable, session: Session):

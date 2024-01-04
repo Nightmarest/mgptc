@@ -50,5 +50,7 @@ async def dalle_image(message: Message, state: FSMContext):
 
         photo = response['data'][0]['url']
         await bot.send_photo(chat_id=message.from_user.id, photo=photo, caption=get_text("text.dalle_after_progress"), parse_mode='html')
+        requested = db.read(chat_id, "requested")
+        db.update(chat_id, "requested", int(requested) + 1)
         reqs = db.read(chat_id, "requests_dalle") - 1
         db.update(chat_id, "requests_dalle", reqs) if reqs >= 0 else ...

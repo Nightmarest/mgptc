@@ -20,4 +20,21 @@ db = PostgreSQL()
 async def update_requests():
     db.admin_request("UPDATE clients SET requests_mj_today = 0")
 
+@aiocron.crontab("0 0 1 * *")
+async def update_requests_for_depd():
+    ai = db.admin_request("SELECT id FROM clients WHERE requested = 1")
+    for x in ai:
+        status = db.read(x, "requested")
+        sd = db.read(x, "requests_mj")
+        gpt = db.read(x, "requests_gpt")
+
+        if status >= 5:
+            db.update(x, "requests_mj", int(sd) + int(config['MonthlySD']))
+            db.update(x, "requests_gpt", int(gpt) + int(config['MonthlyGPT']))
+        elif status < 5:
+            db.update(x, "requests_mj", int(sd) - int(config['MonthlySD']))
+            db.update(x, "requests_gpt", int(gpt) - int(config['MonthlyGPT']))
+        db.update(x, "requested", 0)
+
+
 

@@ -59,6 +59,8 @@ async def midjourney_prompt(message: Message, state: FSMContext):
             track_id = generate_random_text()
             premium_type = db.read(chat_id, "premium_type")
             requests_mj = db.read(chat_id, 'requests_mj')
+            requested = db.read(chat_id, "requested")
+            db.update(chat_id, "requested", int(requested) + 1)
             discord_config = next(discord_fast_cycle) if (premium_type and requests_mj > 0) else next(discord_relax_cycle)
             response = await midjourney.prompt(request, discord_config)
 

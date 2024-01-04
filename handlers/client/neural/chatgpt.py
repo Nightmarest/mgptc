@@ -92,5 +92,7 @@ async def chatgpt_prompt(message: Message, state: FSMContext, prompt: str, wait_
         pass
 
     await state.set_state()
+    requested = db.read(chat_id, "requested")
+    db.update(chat_id, "requested", int(requested) + 1)
     reqs = db.read(chat_id, "requests_gpt") - 1
     db.update(chat_id, "requests_gpt", reqs) if reqs >= 0 else ...
