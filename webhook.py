@@ -10,11 +10,14 @@ from aiogram.types import URLInputFile
 from aiogram.exceptions import TelegramBadRequest
 from contextlib import suppress
 
+import config_data.config
 from database.models import Clients, Temp
 from config_data.create_bot import bot, db
 from services.payment import cloudpay_api, promo as chpr, cryptobot_api
 from keyboards.client_kb import kb
 from utils import func
+from config_data.config_load import pay_list
+
 
 
 lg.basicConfig(level=lg.INFO, format="%(asctime)s - %(levelname)s - %(name)s - %(message)s")#, filename=config["WebHookLog"])
@@ -66,20 +69,23 @@ async def checkpromo(chatid: str = Form(), promo: str = Form()):
 @app.post("/pay/checkout/standart/")
 async def standartcheckout(chatid: str = Form(), amount: int = Form(), buytype: str = Form()):
     track_id = str(chatid) +  str(randint(1, 99999))
-    status = await cloudpay_api.create_payment(track_id, chatid, amount, buytype)
-    if status[1] == 0:
-        r = {
-            "url": status[0],
-            "code": status[1],
-            "reason": status[2]
-        }
-        raise HTTPException(status_code=201, detail=r)
+    if pay_list[buytype]['requests_dalle'] >= 1:
+        raise HTTPException(status_code=406)
     else:
-        r = {
-            "reason": status[0],
-            "code": status[1],
-        }
-        raise HTTPException(status_code=406, detail=r)
+        status = await cloudpay_api.create_payment(track_id, chatid, amount, buytype)
+        if status[1] == 0:
+            r = {
+                "url": status[0],
+                "code": status[1],
+                "reason": status[2]
+            }
+            raise HTTPException(status_code=201, detail=r)
+        else:
+            r = {
+                "reason": status[0],
+                "code": status[1],
+            }
+            raise HTTPException(status_code=406, detail=r)
 
 
 @app.post("/pay/checkout/crypto/")
