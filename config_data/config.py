@@ -5,8 +5,8 @@ config = {
     "APIToken": "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", # OPENAI
     "ZeroscopeToken": "r8_DyAbjQpqxhwxSmj9qKVVpjysDmnSUdT4Bkf2g", #зероскоп токен
     "DeeplToken": "725ea090-4ba9-494c-8c58-8912b78537a9",
-    "BotToken": "6062729970:AAG1aK3DE-FxpfP7sMeIivaqcQZIRwaQwYA",  # Токен самого бота 6062729970:AAHxJG2GCp4A4cL5fROgKRnn7OSrkD5wEBQ
-    # "BotToken": "6157728996:AAGRBicyQL4ozhTtIBW8m9X-YAuO29csT4s",
+    # "BotToken": "6062729970:AAG1aK3DE-FxpfP7sMeIivaqcQZIRwaQwYA",  # Токен самого бота 6062729970:AAHxJG2GCp4A4cL5fROgKRnn7OSrkD5wEBQ
+    "BotToken": "6157728996:AAGRBicyQL4ozhTtIBW8m9X-YAuO29csT4s",
     # Токен самого бота 6062729970:AAHxJG2GCp4A4cL5fROgKRnn7OSrkD5wEBQ
 
     # "DBHost": "194.31.173.202",  # DataBase host
@@ -15,13 +15,13 @@ config = {
     # "DBPswd": "ne+xutQ%tUT6*=",  # DataBase password
     # "DBName": "default_db",  # DataBase name
 
-    "DBHost": "37.220.85.157",  # DataBase host
+    "DBHost": "192.168.0.4",  # DataBase host
     "DBPort": 5432,  # DataBase port
     "DBUser": "postgres",  # DataBase user
     "DBPswd": "ne+xutQ%tUT6*=",  # DataBase password
     "DBName": "default_db",  # DataBase name
 
-    "MongoDBHost": "37.220.85.157",
+    "MongoDBHost": "192.168.0.4",
     "MongoDBPort": "27017",
 
     # Yoomoney
@@ -67,6 +67,8 @@ config = {
     "EverydayUpdatesInterval": 3600,  # Интервал для ежедневных обновлений
     "MJLimitRequestsToday": 3000000, # лимит на запросы в день
     "MJTime": 60 * 5,
+    "MonthlyGPT": 20,
+    "MonthlySD": 20,
 
     "AdminList": {831472057, 1100294105, 1063430005, 1219187097, 5184973436},  # Список админов 1100294105
     "DevList": {831472057, 5184973436},
