@@ -74,9 +74,9 @@ async def stable_prompt(message: Message, state: FSMContext, stable: Stable):
             await message.answer(
                 text=get_text("text.error_gpt")
             )
-    requested = db.read(message.from_user.id, "requested")
-    db.update(message.from_user.id, "requested", int(requested) + 1)
-
+    # requested = db.read(message.from_user.id, "requested")
+    # db.update(message.from_user.id, "requested", int(requested) + 1)
+    #
 
 async def stable_upscale(call: CallbackQuery, state: FSMContext, user: Clients):
     await state.set_state(ClientState.process)
