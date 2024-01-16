@@ -171,9 +171,6 @@ async def replicate_dalle(req: Request):
             reply_markup=kb.stable(track_id)
         )
 
-    requested = db.read(user_id, "requested")
-    db.update(user_id, "requested", int(requested) + 1)
-
     reqs = db.read(user_id, "requests_mj") - 1
     db.update(user_id, "requests_mj", reqs) if reqs >= 0 else ...
 
@@ -209,9 +206,6 @@ async def replicate_deepai(req: Request):
             document=photo_output,
             caption=func.get_text("text.deepai_after_progress")
         )
-
-    requested = db.read(user_id, "requested")
-    db.update(user_id, "requested", int(requested) + 1)
 
     if fsm_data.get('action') == "upscale":
         reqs = db.read(user_id, "requests_mj") - 1
