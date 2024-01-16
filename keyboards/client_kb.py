@@ -117,7 +117,7 @@ class kb:
             callback_data="pikalabs_mode"
         )])
         keyboard_list.append([InlineKeyboardButton(
-            text = "DALLE",
+            text = "DALL-E",
             callback_data="dalle_mode"
         )])
         keyboard_list.append([InlineKeyboardButton(
