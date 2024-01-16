@@ -1,19 +1,19 @@
 from aiogram.utils.markdown import hide_link
 
 
+# "DBHost": "194.31.173.202",  # DataBase host
+# "DBPort": 5432,  # DataBase port
+# "DBUser": "gen_user",  # DataBase user
+# "DBPswd": "ne+xutQ%tUT6*=",  # DataBase password
+# "DBName": "default_db",  # DataBase name
+
+
 config = {
     "APIToken": "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", # OPENAI
     "ZeroscopeToken": "r8_DyAbjQpqxhwxSmj9qKVVpjysDmnSUdT4Bkf2g", #зероскоп токен
     "DeeplToken": "725ea090-4ba9-494c-8c58-8912b78537a9",
+    "ReplicateToken": "r8_DyAbjQpqxhwxSmj9qKVVpjysDmnSUdT4Bkf2g",
     "BotToken": "6062729970:AAG1aK3DE-FxpfP7sMeIivaqcQZIRwaQwYA",  # Токен самого бота 6062729970:AAHxJG2GCp4A4cL5fROgKRnn7OSrkD5wEBQ
-    # "BotToken": "6157728996:AAGRBicyQL4ozhTtIBW8m9X-YAuO29csT4s",
-    # Токен самого бота 6062729970:AAHxJG2GCp4A4cL5fROgKRnn7OSrkD5wEBQ
-
-    # "DBHost": "194.31.173.202",  # DataBase host
-    # "DBPort": 5432,  # DataBase port
-    # "DBUser": "gen_user",  # DataBase user
-    # "DBPswd": "ne+xutQ%tUT6*=",  # DataBase password
-    # "DBName": "default_db",  # DataBase name
 
     "DBHost": "192.168.0.4",  # DataBase host
     "DBPort": 5432,  # DataBase port

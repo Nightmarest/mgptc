@@ -24,7 +24,7 @@ services:
     volumes:
       - .:/usr/app/src
     environment:
-      - TOKEN=MTE3MTA3NjA3NDk4MjA4MDU2Mg.GZxem_.JRkUqXSvJ9LcqB6hwLFmhrOQYQ1_P-vGk2mxPg
+      - TOKEN=MTE2OTUzOTgzMzE0MDYxNzIyOA.G1gMXK.Qxkxs-NAHZ7zTkgc6Dpz3p1m_4dBDg0c5HkC1U
       - TZ=Europe/Moscow
 
   api:

@@ -118,27 +118,20 @@ async def cryptosuccess(req: Request):
     return 200
 
 
-@app.post("/neural/stable")
-async def stableprocess(req: Request):
+@app.post("/replicate/stable")
+async def replicate_dalle(req: Request):
     response = await req.json()
 
-    if response["status"] == 'processing':
-        return 200
+    prompt: str = response["input"]["prompt"]
+    user_id: int = response["input"]["user_id"]
+    wait_msg_id: int = response["input"]["wait_msg_id"]
+    photo_output: str = response["output"][0]
+    track_id = func.generate_random_text()
+    state = await func.state_with(user_id)
 
-    photo_url: str = response["output"][0].replace("\\", "")
-    payload: str = response["track_id"]
-    chat_id: int = int(payload.split('_')[0])
-    track_id: str = payload.split('_')[1]
-    prompt: str = payload.split('_')[2]
-
-    today = datetime.now()
-    state = await func.state_with(chat_id)
     fsm_data = await state.get_data()
-    parts = photo_url.split('/')
-    pic_code = parts[-1].split('.')[0]
 
-
-    if track_id not in fsm_data["mj_status"]:
+    if fsm_data.get('mj_status') == "success":
         return 200
 
     await state.set_state()
@@ -150,44 +143,83 @@ async def stableprocess(req: Request):
     with sessionmaker() as session:
         with session.begin():
             new_temp = Temp(
-                pic_code=pic_code,
+                pic_code=track_id,
                 prompt=prompt
             )
             session.merge(new_temp)
 
             user = session.scalar(
                 select(Clients)
-                .where(Clients.id == int(chat_id))
+                .where(Clients.id == int(user_id))
             )
             user.requests_mj_today += 1
 
             if user.requests_mj > 0:
                 user.requests_mj -= 1
 
-    await bot.delete_message(
-        chat_id=chat_id,
-        message_id=fsm_data["wait_msg_id"]
+    with suppress(TelegramBadRequest):
+        await bot.delete_message(
+            chat_id=user_id,
+            message_id=wait_msg_id
+        )
+
+    with suppress(TelegramBadRequest):
+        await bot.send_photo(
+            chat_id=user_id,
+            photo=photo_output,
+            caption=func.get_text("text.mj_after_progress"),
+            reply_markup=kb.stable(track_id)
+        )
+
+    requested = db.read(user_id, "requested")
+    db.update(user_id, "requested", int(requested) + 1)
+
+    reqs = db.read(user_id, "requests_mj") - 1
+    db.update(user_id, "requests_mj", reqs) if reqs >= 0 else ...
+
+
+@app.post("/replicate/deepai")
+async def replicate_deepai(req: Request):
+    response = await req.json()
+
+    user_id: int = response["input"]["user_id"]
+    wait_msg_id: int = response["input"]["wait_msg_id"]
+    photo_output: str = response["output"]
+
+    state = await func.state_with(user_id)
+
+    fsm_data = await state.get_data()
+
+    if fsm_data.get('mj_status') == "success":
+        return 200
+
+    await state.set_state()
+    await state.update_data(
+        mj_status="success"
     )
 
-    if fsm_data["action"] == "prompt":
-        with suppress(TelegramBadRequest):
-            await bot.send_photo(
-                chat_id=chat_id,
-                photo=photo_url,
-                caption=func.get_text("text.mj_after_progress"),
-                reply_markup=kb.stable(pic_code)
-            )
+    await bot.delete_message(
+        chat_id=user_id,
+        message_id=wait_msg_id
+    )
 
-    elif fsm_data["action"] == "upscale":
-        with suppress(TelegramBadRequest):
-            await bot.send_document(
-                chat_id=chat_id,
-                document=URLInputFile(
-                    url=photo_url,
-                    filename=today.strftime("%Y-%m-%d %H:%M:%S" + ".png")
-                ),
-                caption=func.get_text("text.mj_after_progress_upscale"),
-                reply_markup=kb.stable_menu()
-            )
+    with suppress(TelegramBadRequest):
+        await bot.send_document(
+            chat_id=user_id,
+            document=photo_output,
+            caption=func.get_text("text.deepai_after_progress")
+        )
 
-    return 200
+    requested = db.read(user_id, "requested")
+    db.update(user_id, "requested", int(requested) + 1)
+
+    if fsm_data.get('action') == "upscale":
+        reqs = db.read(user_id, "requests_mj") - 1
+        db.update(user_id, "requests_mj", reqs) if reqs >= 0 else ...
+    else:
+        reqs = db.read(user_id, "requests_deepai") - 1
+        db.update(user_id, "requests_deepai", reqs) if reqs >= 0 else ...
+
+    await state.update_data(
+        action=""
+    )
