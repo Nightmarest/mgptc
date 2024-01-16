@@ -117,6 +117,10 @@ class kb:
             callback_data="pikalabs_mode"
         )])
         keyboard_list.append([InlineKeyboardButton(
+            text = "DALLE",
+            callback_data="dalle_mode"
+        )])
+        keyboard_list.append([InlineKeyboardButton(
             text = "DeepAI",
             callback_data="deepai_mode"
         )])
