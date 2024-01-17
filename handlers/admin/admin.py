@@ -21,6 +21,15 @@ async def admin_menu(message: Message):
                         reply_markup = kb.admin_menu())
 
 
+async def admin_db(message: Message):
+    try:
+        finish = db.admin_request(message.text)
+    except Exception as e:
+        return await message.answer(str(e))
+    else:
+        await message.answer(f"Успешно <code>{str(finish)}</code>")
+
+
 async def admin_call_handler(call: CallbackQuery, state: FSMContext):
     step = call.data.split("_")[1]
 

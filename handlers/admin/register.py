@@ -6,7 +6,7 @@ from handlers.admin.state import (
     AdminState, SubState, SubStateReqs, CreatePromo, GiveSub
 )
 from handlers.admin.admin import (
-    admin_call_handler, admin_menu
+    admin_call_handler, admin_menu, admin_db
 )
 from handlers.admin.mailling import (
     mailling, mailling_stop
@@ -35,6 +35,7 @@ def register_admin_hanlders(router_admin: Router):
     router_admin.message.filter(F.chat.id.in_(config["AdminList"]))
 
     # MAILLING
+    router_admin.message.register(admin_db, F.text.startswith("/db"))
     router_admin.message.register(mailling, StateFilter(AdminState.mail))
     router_admin.callback_query.register(mailling_stop, F.data == 'mail_stop')
 
