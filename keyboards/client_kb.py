@@ -116,14 +116,14 @@ class kb:
             text = "Pika Labs",
             callback_data="pikalabs_mode"
         )])
+        #keyboard_list.append([InlineKeyboardButton(
+        #    text = "DALL-E",
+        #    callback_data="dalle_mode"
+        #)])
         keyboard_list.append([InlineKeyboardButton(
-            text = "DALL-E",
-            callback_data="dalle_mode"
+            text = "DeepAI",
+            callback_data="deepai_mode"
         )])
-        # keyboard_list.append([InlineKeyboardButton(
-        #     text = "DeepAI",
-        #     callback_data="deepai_mode"
-        # )])
         return InlineKeyboardMarkup(inline_keyboard=keyboard_list)
 
 
