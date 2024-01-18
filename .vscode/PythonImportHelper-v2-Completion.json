@@ -265,7 +265,23 @@
         "documentation": {}
     },
     {
+        "label": "config",
+        "importPath": "config_data.config",
+        "description": "config_data.config",
+        "isExtraImport": true,
+        "detail": "config_data.config",
+        "documentation": {}
+    },
+    {
         "label": "MODELS_STABLE",
+        "importPath": "config_data.config",
+        "description": "config_data.config",
+        "isExtraImport": true,
+        "detail": "config_data.config",
+        "documentation": {}
+    },
+    {
+        "label": "config",
         "importPath": "config_data.config",
         "description": "config_data.config",
         "isExtraImport": true,
@@ -795,6 +811,14 @@
         "documentation": {}
     },
     {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
         "label": "Update",
         "importPath": "aiogram.types",
         "description": "aiogram.types",
@@ -1244,6 +1268,14 @@
     },
     {
         "label": "Message",
+        "importPath": "aiogram.types",
+        "description": "aiogram.types",
+        "isExtraImport": true,
+        "detail": "aiogram.types",
+        "documentation": {}
+    },
+    {
+        "label": "InlineKeyboardButton",
         "importPath": "aiogram.types",
         "description": "aiogram.types",
         "isExtraImport": true,
@@ -1963,6 +1995,14 @@
         "documentation": {}
     },
     {
+        "label": "db",
+        "importPath": "config_data.create_bot",
+        "description": "config_data.create_bot",
+        "isExtraImport": true,
+        "detail": "config_data.create_bot",
+        "documentation": {}
+    },
+    {
         "label": "bot",
         "importPath": "config_data.create_bot",
         "description": "config_data.create_bot",
@@ -2621,6 +2661,14 @@
         "documentation": {}
     },
     {
+        "label": "pay_list",
+        "importPath": "config_data.config_load",
+        "description": "config_data.config_load",
+        "isExtraImport": true,
+        "detail": "config_data.config_load",
+        "documentation": {}
+    },
+    {
         "label": "checksub",
         "importPath": "utils.func",
         "description": "utils.func",
@@ -2718,6 +2766,14 @@
     },
     {
         "label": "checksub",
+        "importPath": "utils.func",
+        "description": "utils.func",
+        "isExtraImport": true,
+        "detail": "utils.func",
+        "documentation": {}
+    },
+    {
+        "label": "check_mj_status",
         "importPath": "utils.func",
         "description": "utils.func",
         "isExtraImport": true,
@@ -3486,6 +3542,14 @@
         "documentation": {}
     },
     {
+        "label": "InlineKeyboardBuilder",
+        "importPath": "aiogram.utils.keyboard",
+        "description": "aiogram.utils.keyboard",
+        "isExtraImport": true,
+        "detail": "aiogram.utils.keyboard",
+        "documentation": {}
+    },
+    {
         "label": "KeyboardPaginator",
         "importPath": "aiogram_widgets.pagination",
         "description": "aiogram_widgets.pagination",
@@ -3947,6 +4011,38 @@
         "documentation": {}
     },
     {
+        "label": "disable_autoup_off_recursive",
+        "importPath": "handlers.client.buy_handler",
+        "description": "handlers.client.buy_handler",
+        "isExtraImport": true,
+        "detail": "handlers.client.buy_handler",
+        "documentation": {}
+    },
+    {
+        "label": "disable_autoups",
+        "importPath": "handlers.client.buy_handler",
+        "description": "handlers.client.buy_handler",
+        "isExtraImport": true,
+        "detail": "handlers.client.buy_handler",
+        "documentation": {}
+    },
+    {
+        "label": "submanagment",
+        "importPath": "handlers.client.buy_handler",
+        "description": "handlers.client.buy_handler",
+        "isExtraImport": true,
+        "detail": "handlers.client.buy_handler",
+        "documentation": {}
+    },
+    {
+        "label": "submgr_disable",
+        "importPath": "handlers.client.buy_handler",
+        "description": "handlers.client.buy_handler",
+        "isExtraImport": true,
+        "detail": "handlers.client.buy_handler",
+        "documentation": {}
+    },
+    {
         "label": "os",
         "kind": 6,
         "isExtraImport": true,
@@ -3977,6 +4073,14 @@
         "description": "services.neural.gpt",
         "isExtraImport": true,
         "detail": "services.neural.gpt",
+        "documentation": {}
+    },
+    {
+        "label": "ClientState",
+        "importPath": "filters.states.state",
+        "description": "filters.states.state",
+        "isExtraImport": true,
+        "detail": "filters.states.state",
         "documentation": {}
     },
     {
@@ -4079,19 +4183,19 @@
         "documentation": {}
     },
     {
-        "label": "upscale_photo",
-        "importPath": "services.neural.deepai",
-        "description": "services.neural.deepai",
+        "label": "replicate",
+        "importPath": "services.neural.replicate",
+        "description": "services.neural.replicate",
         "isExtraImport": true,
-        "detail": "services.neural.deepai",
+        "detail": "services.neural.replicate",
         "documentation": {}
     },
     {
-        "label": "upscale_photo",
-        "importPath": "services.neural.deepai",
-        "description": "services.neural.deepai",
+        "label": "replicate",
+        "importPath": "services.neural.replicate",
+        "description": "services.neural.replicate",
         "isExtraImport": true,
-        "detail": "services.neural.deepai",
+        "detail": "services.neural.replicate",
         "documentation": {}
     },
     {
@@ -4199,6 +4303,14 @@
         "documentation": {}
     },
     {
+        "label": "upscale_photo",
+        "importPath": "services.neural.deepai",
+        "description": "services.neural.deepai",
+        "isExtraImport": true,
+        "detail": "services.neural.deepai",
+        "documentation": {}
+    },
+    {
         "label": "random",
         "kind": 6,
         "isExtraImport": true,
@@ -4213,6 +4325,15 @@
         "description": "random",
         "isExtraImport": true,
         "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "pymongo",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pymongo",
+        "description": "pymongo",
+        "detail": "pymongo",
         "documentation": {}
     },
     {
@@ -4824,7 +4945,7 @@
         "kind": 5,
         "importPath": "config_data.config",
         "description": "config_data.config",
-        "peekOfCode": "config = {\n    \"APIToken\": \"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\", # OPENAI\n    \"ZeroscopeToken\": \"r8_DyAbjQpqxhwxSmj9qKVVpjysDmnSUdT4Bkf2g\", #зероскоп токен\n    \"DeeplToken\": \"725ea090-4ba9-494c-8c58-8912b78537a9\",\n    # \"BotToken\": \"6062729970:AAG1aK3DE-FxpfP7sMeIivaqcQZIRwaQwYA\",  # Токен самого бота 6062729970:AAHxJG2GCp4A4cL5fROgKRnn7OSrkD5wEBQ\n    \"BotToken\": \"6157728996:AAGRBicyQL4ozhTtIBW8m9X-YAuO29csT4s\",\n    # Токен самого бота 6062729970:AAHxJG2GCp4A4cL5fROgKRnn7OSrkD5wEBQ\n    \"DBHost\": \"194.31.173.202\",  # DataBase host\n    \"DBPort\": 5432,  # DataBase port\n    \"DBUser\": \"gen_user\",  # DataBase user",
+        "peekOfCode": "config = {\n    \"APIToken\": \"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\", # OPENAI\n    \"ZeroscopeToken\": \"r8_DyAbjQpqxhwxSmj9qKVVpjysDmnSUdT4Bkf2g\", #зероскоп токен\n    \"DeeplToken\": \"725ea090-4ba9-494c-8c58-8912b78537a9\",\n    \"ReplicateToken\": \"r8_DyAbjQpqxhwxSmj9qKVVpjysDmnSUdT4Bkf2g\",\n    \"BotToken\": \"6062729970:AAG1aK3DE-FxpfP7sMeIivaqcQZIRwaQwYA\",  # Токен самого бота 6062729970:AAHxJG2GCp4A4cL5fROgKRnn7OSrkD5wEBQ\n    \"DBHost\": \"192.168.0.4\",  # DataBase host\n    \"DBPort\": 5432,  # DataBase port\n    \"DBUser\": \"postgres\",  # DataBase user\n    \"DBPswd\": \"ne+xutQ%tUT6*=\",  # DataBase password",
         "detail": "config_data.config",
         "documentation": {}
     },
@@ -4932,7 +5053,7 @@
         "kind": 5,
         "importPath": "config_data.create_bot",
         "description": "config_data.create_bot",
-        "peekOfCode": "db = PostgreSQL()\n@aiocron.crontab(\"0 0 * * *\")\nasync def update_requests():\n    db.admin_request(\"UPDATE clients SET requests_mj_today = 0\")",
+        "peekOfCode": "db = PostgreSQL()\n@aiocron.crontab(\"0 0 * * *\")\nasync def update_requests():\n    db.admin_request(\"UPDATE clients SET requests_mj_today = 0\")\n@aiocron.crontab(\"0 0 1 * *\")\nasync def update_requests_for_depd():\n    ai = db.admin_request(\"SELECT id FROM clients\")\n    for x in ai:\n        status = db.read(x, \"requested\")\n        sd = db.read(x, \"requests_mj\")",
         "detail": "config_data.create_bot",
         "documentation": {}
     },
@@ -4977,7 +5098,7 @@
         "kind": 6,
         "importPath": "database.models.clients",
         "description": "database.models.clients",
-        "peekOfCode": "class Clients(Base):\n    __tablename__ = \"clients\"\n    id: Mapped[bigint] = mapped_column(primary_key=True, autoincrement=True)\n    name: Mapped[Optional[str]] = mapped_column(default=\"\")\n    people_ref: Mapped[int] = mapped_column(default=0)\n    join_date: Mapped[date] = mapped_column(default=date.today())\n    where_from: Mapped[str] = mapped_column(default=\"\")\n    dead: Mapped[bool] = mapped_column(default=False)\n    model: Mapped[str] = mapped_column(default=\"dalle\")\n    mj_images_count: Mapped[int] = mapped_column(default=0)",
+        "peekOfCode": "class Clients(Base):\n    __tablename__ = \"clients\"\n    id: Mapped[bigint] = mapped_column(primary_key=True, autoincrement=True)\n    name: Mapped[Optional[str]] = mapped_column(default=\"\")\n    people_ref: Mapped[int] = mapped_column(default=0)\n    join_date: Mapped[date] = mapped_column(default=date.today)\n    where_from: Mapped[str] = mapped_column(default=\"\")\n    dead: Mapped[bool] = mapped_column(default=False)\n    model: Mapped[str] = mapped_column(default=\"chatgpt\")\n    mj_images_count: Mapped[int] = mapped_column(default=0)",
         "detail": "database.models.clients",
         "documentation": {}
     },
@@ -5310,7 +5431,7 @@
         "kind": 2,
         "importPath": "handlers.register",
         "description": "handlers.register",
-        "peekOfCode": "def register_client_handlers(router: Router):\n    # PAY HANDLERS\n    router.callback_query.register(description_premium, F.data.startswith(\"description_\"))\n    router.callback_query.register(more_about_course, F.data == \"more_about_course\")\n    router.callback_query.register(buy_handler, F.data.in_({\"buy-0\", \"buy-1\", \"buy-2\", \"buy-3\", \"buy-4\", \"buy-5\"}))\n    router.callback_query.register(ym_check_payment, F.data.startswith(\"check_\"), F.data.contains(\"ym\"))\n    router.callback_query.register(crypto_check_payment, F.data.startswith(\"check_\"), F.data.contains(\"crypto\"))\n    router.callback_query.register(choose_pay_ym, F.data.startswith(\"ym\"))\n    router.callback_query.register(choose_pay_crypto, F.data.startswith(\"crypto\"), F.data.split(\"_\")[2].in_(config[\"CryptoCurrency\"]))\n    router.callback_query.register(crypto_currency, F.data.startswith(\"crypto\"))",
+        "peekOfCode": "def register_client_handlers(router: Router):\n    # PAY HANDLERS\n    router.callback_query.register(description_premium, F.data.startswith(\"description_\"), F.chat.type == \"private\")\n    router.callback_query.register(more_about_course, F.data == \"more_about_course\", F.chat.type == \"private\")\n    router.callback_query.register(buy_handler, F.data.in_({\"buy-0\", \"buy-1\", \"buy-2\", \"buy-3\", \"buy-4\", \"buy-5\"}), F.chat.type == \"private\")\n    router.callback_query.register(ym_check_payment, F.data.startswith(\"check_\"), F.data.contains(\"ym\"), F.chat.type == \"private\")\n    router.callback_query.register(crypto_check_payment, F.data.startswith(\"check_\"), F.data.contains(\"crypto\"), F.chat.type == \"private\")\n    router.callback_query.register(choose_pay_ym, F.data.startswith(\"ym\"), F.chat.type == \"private\")\n    router.callback_query.register(choose_pay_crypto, F.data.startswith(\"crypto\"), F.data.split(\"_\")[2].in_(config[\"CryptoCurrency\"]), F.chat.type == \"private\")\n    router.callback_query.register(crypto_currency, F.data.startswith(\"crypto\"), F.chat.type == \"private\")",
         "detail": "handlers.register",
         "documentation": {}
     },
@@ -5382,7 +5503,7 @@
         "kind": 6,
         "importPath": "services.payment",
         "description": "services.payment",
-        "peekOfCode": "class promo:\n    async def checkpromo(chat_id, promo):\n        promocode = db.admin_request(f\"SELECT * FROM promo WHERE name = '{str(promo)}'\")\n        prinfo = \"\"\n        lg.info(f\"Попытка задействовать промокод {promocode}\")\n        if promocode is None:\n            code = 2\n            reason = \"Promocode not Found!\"\n            discount = None\n        else:",
+        "peekOfCode": "class promo:\n    async def checkpromo(chat_id, promo):\n        promocode = db.admin_request(f\"SELECT * FROM promo WHERE name = '{str(promo)}'\")\n        prinfo = \"\"\n        # promocode = db.readpromo(promo)\n        lg.info(f\"Попытка задействовать промокод {promocode}\")\n        if promocode is None:\n            code = 2\n            reason = \"Promocode not Found!\"\n            discount = None",
         "detail": "services.payment",
         "documentation": {}
     },
@@ -5391,7 +5512,7 @@
         "kind": 6,
         "importPath": "services.payment",
         "description": "services.payment",
-        "peekOfCode": "class cloudpay_api:\n    async def create_payment(track_id, chat_id, sum, buytype):\n        try:\n            url = 'https://api.cloudpayments.ru/orders/create'\n            headers = { 'content-type': 'application/json' }\n            payload = {\n                \"Amount\": sum,\n                \"Currency\": \"RUB\",\n                \"Description\": \"Оплата подписки\",\n                \"Email\": \"u@midjourney.me\",",
+        "peekOfCode": "class cloudpay_api:\n    async def create_payment(track_id, chat_id, sum, buytype):\n        try:\n            url = 'https://api.cloudpayments.ru/orders/create'\n            headers = { 'content-type': 'application/json' }\n            payload = {\n                \"Amount\": sum,\n                \"Currency\": \"RUB\",\n                \"Description\": \"Оплата\",\n                \"Email\": \"u@midjourney.me\",",
         "detail": "services.payment",
         "documentation": {}
     },

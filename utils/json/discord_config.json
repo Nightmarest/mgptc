@@ -1,20 +1,18 @@
 {
     "fast":[
         {
-            "name": "kukueptasyka",
-            "PikaLabsID": "1171101130810478602",
+            "name": "simskail.16",
+            "PikaLabsID": "1196837896364228728",
             "DavinciToken": "MTE3MTEyMzU4NDkyNDY2MzkwOA.GT0FQb.ypjjuv3057hn5WiBfm7zVaTSo_4W_VCg1c4LO4",
-            "SalaiToken": "MTE3MTA3NjA3NDk4MjA4MDU2Mg.GZxem_.JRkUqXSvJ9LcqB6hwLFmhrOQYQ1_P-vGk2mxPg", 
-            "ServerID": "1171121375692476548",
-            "ChannelID": "1171121376283856963"
+            "SalaiToken": "MTE2OTUzOTgzMzE0MDYxNzIyOA.G1gMXK.Qxkxs-NAHZ7zTkgc6Dpz3p1m_4dBDg0c5HkC1U",
+            "ServerID": "1171121375692476548"
         }],
     "relax": [
         {
-            "name": "kukueptasyka",
-            "PikaLabsID": "1171101130810478602",
+            "name": "simskail.16",
+            "PikaLabsID": "1196837896364228728",
             "DavinciToken": "MTE3MTEyMzU4NDkyNDY2MzkwOA.GT0FQb.ypjjuv3057hn5WiBfm7zVaTSo_4W_VCg1c4LO4",
-            "SalaiToken": "MTE3MTA3NjA3NDk4MjA4MDU2Mg.GZxem_.JRkUqXSvJ9LcqB6hwLFmhrOQYQ1_P-vGk2mxPg", 
-            "ServerID": "1171121375692476548",
-            "ChannelID": "1171121376283856963"
+            "SalaiToken": "MTE2OTUzOTgzMzE0MDYxNzIyOA.G1gMXK.Qxkxs-NAHZ7zTkgc6Dpz3p1m_4dBDg0c5HkC1U",
+            "ServerID": "1171121375692476548"
         }]
 }

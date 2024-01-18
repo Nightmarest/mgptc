@@ -33,13 +33,13 @@ async def panel_mode(message: Message, user: Clients):
             text="<b>Выбран режим: 👨‍🎨 DeepAi</b>",
             reply_markup=kb.panel_mode()
         )
+
     elif user.model == "dalle":
         await message.answer(
             text="<b>Выбран режим: 👨‍🎨 DALL-E</b>",
             reply_markup=kb.panel_mode()
 
         )
-
 
 
 async def choose_mode(call: CallbackQuery, state: FSMContext, user: Clients):
@@ -85,10 +85,9 @@ async def choose_mode(call: CallbackQuery, state: FSMContext, user: Clients):
 
 async def manage_stable_menu(call: CallbackQuery, stable: Stable):
     await call.answer()
-    TEXT = "<b>🏙️ Формат:</b> <code>{}</code>\n🧢 <b>Стиль:</b> <code>{}</code>\n<b>🖱️ Модель:</b> <code>{}</code>".format(
+    TEXT = "<b>🏙️ Формат:</b> <code>{}</code>\n🧢 <b>Стиль:</b> <code>{}</code>".format(
             stable_formatted(stable.ratio),
-            stable_formatted(stable.style),
-            stable_formatted(stable.model)
+            stable_formatted(stable.style)
     )
 
     if call.data == "manage_stable_menu_new":
