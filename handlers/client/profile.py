@@ -95,8 +95,8 @@ async def profile(message: Message, user: Clients):
                 f"🦋stable diffusion: {mjreqs}\n" \
                 f"📘chatgpt 4: {pmreqs}\n"\
                 f"🧢pika labs: {user.requests_pikalabs}\n" \
-                f"🌑deep ai: {user.requests_deepai}\n" \
-                f"📙dalle 3: {user.requests_dalle}\n"
+                f"🌑deep ai: {user.requests_deepai}\n"
+                # f"📙dalle 3: {user.requests_dalle}\n"
     # text = f"<i>•Доступно запросов для ChatGPT: {pmreqs}\n\n</i>" \
     #            f"<i>•Доступно запросов для StableDiffusion: {pmreqs}\n\n</i>" \
     #            f"<i>•Доступно запросов для Pika Labs: {user.requests_pikalabs}\n\n</i>" \
@@ -195,8 +195,8 @@ async def call_profile(call: CallbackQuery, user: Clients):
                 f"🦋stable diffusion: {pmreqs}\n" \
                 f"📘chatgpt 4: {pmreqs}\n"\
                 f"🧢pika labs: {user.requests_pikalabs}\n" \
-                f"🌑deep ai: {user.requests_deepai}\n" \
-                f"📙dalle 3: {user.requests_dalle}\n"
+                f"🌑deep ai: {user.requests_deepai}\n"
+                # f"📙dalle 3: {user.requests_dalle}\n"
     await call.message.edit_text(
         text=text,
         reply_markup=kb.profile(
