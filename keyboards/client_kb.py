@@ -120,10 +120,10 @@ class kb:
             text = "DeepAI",
             callback_data="deepai_mode"
         )])
-        keyboard_list.append([InlineKeyboardButton(
-            text = "DALL-E",
-            callback_data="dalle_mode"
-        )])
+        # keyboard_list.append([InlineKeyboardButton(
+        #     text = "DALL-E",
+        #     callback_data="dalle_mode"
+        # )])
         return InlineKeyboardMarkup(inline_keyboard=keyboard_list)
 
 

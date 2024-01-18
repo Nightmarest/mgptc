@@ -29,10 +29,10 @@ async def dalle_image(message: Message, state: FSMContext):
             return await message.answer(get_text("text.error_gpt"))
 
         await state.set_state(ClientState.process)
-
+####  В экриейт указана неверная модель!
         try:
             response = await openai.Image.acreate(
-                model="dall-e-3",
+                model="wall-eeeeeeee-2",
                 prompt=prompt,
                 n=1,
                 size="1024x1024",
