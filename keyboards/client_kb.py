@@ -109,7 +109,7 @@ class kb:
             callback_data='chatgpt_mode'
         )])
         keyboard_list.append([InlineKeyboardButton(
-            text = "Stable Diffusion",
+            text = "Stable Diffusion XL",
             callback_data="stable_mode"
         )])
         keyboard_list.append([InlineKeyboardButton(
@@ -117,12 +117,12 @@ class kb:
             callback_data="pikalabs_mode"
         )])
         keyboard_list.append([InlineKeyboardButton(
-            text = "DeepAI",
-            callback_data="deepai_mode"
-        )])
-        keyboard_list.append([InlineKeyboardButton(
             text = "DALL-E",
             callback_data="dalle_mode"
+        )])
+        keyboard_list.append([InlineKeyboardButton(
+            text = "DeepAI",
+            callback_data="deepai_mode"
         )])
         return InlineKeyboardMarkup(inline_keyboard=keyboard_list)
 
@@ -379,12 +379,7 @@ class kb:
             callback_data="manage_stable_style"
         )
 
-        builder.button(
-            text="🖱️ Модель",
-            callback_data="manage_stable_model"
-        )
-
-        builder.adjust(2, 1)
+        builder.adjust(2)
         return builder.as_markup()
 
 
@@ -472,4 +467,3 @@ class kb:
 
         builder.adjust(1)
         return builder.as_markup()
-
