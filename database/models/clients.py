@@ -23,7 +23,7 @@ class Clients(Base):
     requests_gpt: Mapped[int] = mapped_column(default=config["StartFreeTokensGPT"])
     requests_mj_today: Mapped[int] = mapped_column(default=0)
     requests_pikalabs: Mapped[int] = mapped_column(default=config["StartFreeTokensGPT"])
-    requests_deepai: Mapped[int] = mapped_column(default=2)
+    requests_deepai: Mapped[int] = mapped_column(default=6)
     requests_dalle: Mapped[int] = mapped_column(default=1)
 
 

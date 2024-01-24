@@ -60,8 +60,8 @@ config = {
     "RequestsMonit": True,  # Мониторниг запросов?
     "Debug": True,  # Дебаг?
 
-    "StartFreeTokensGPT": 13, # на старте
-    "StartFreeTokensMJ": 21,  # на старте
+    "StartFreeTokensGPT": 15, # на старте
+    "StartFreeTokensMJ": 15,  # на старте
     "ReferalTokens": 0,  # реферал
     "UserFreeTokens": 0,  # ежедневный апдейт
     "EverydayUpdatesInterval": 3600,  # Интервал для ежедневных обновлений
