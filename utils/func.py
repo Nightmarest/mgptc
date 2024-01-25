@@ -199,15 +199,13 @@ def timeword(d=0, h=0, m=0):
 
 async def checksub(chatid):
 
-    if int(db.read(chatid, "presub_requests")) >= 6:
+    if int(db.read(chatid, "presub_requests")) >= 2:
         user_channel_status = await bot.get_chat_member(chat_id='-1001653803528', user_id=chatid)
         lg.error(user_channel_status.status)
         if user_channel_status.status == "left":
             keyboard_list = []
             keyboard_list.append([InlineKeyboardButton(text="Наш форум", url=config['forumlink'])])
-            txt = """Уважаемый пользователь, для продолжения подпишитесь на наш <a href='https://t.me/neonixforum'>Форум,</a> где вы можете учиться делать промты, следить за последними реально! интересными новостями, а не теми, что вводят вас в тревогу. 
-
-Учитесь, общайтесь, слушайте музыку и всё это на нашем Форуме. 
+            txt = """Уважаемый пользователь, для продолжения подпишитесь на наш <a href='https://t.me/infoblik'>Канал,</a> где вы можете учиться делать промты, следить за последними реально! интересными новостями, а не теми, что вводят вас в тревогу. 
 
 Так же за подписку вы будете получать <b>подарком</b> 5 бесплатных генераций в (sd+chatgpt) в неделю, а за отписку генерации сгорают."""
             await bot.send_message(chat_id=chatid, text=txt, reply_markup=InlineKeyboardMarkup(inline_keyboard=keyboard_list), disable_web_page_preview=True)
@@ -223,7 +221,7 @@ async def checksub(chatid):
 
             return 1
 
-    elif int(db.read(chatid, "presub_requests")) < 6:
+    elif int(db.read(chatid, "presub_requests")) < 2:
         count = int(db.read(chatid, "presub_requests")) + 1
         print(f"gyyg{count}")
         db.update(chatid, "presub_requests", count)

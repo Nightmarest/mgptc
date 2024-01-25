@@ -78,7 +78,7 @@ config = {
     "BotNickName": "midjourneychatgpt_bot",  # Никнейм Бота для реферальных ссылок
     "BotUrl": "https://t.me/midjourneychatgpt_bot",
     "EducationUrl": "https://telegra.ph/Kak-pisat-promty-dlya-Midjourney-50-krutyh-primerov-09-14",
-    "ForumUrl": "https://t.me/neonixforum",
+    "ForumUrl": "https://t.me/infoblik",
     "WebHookUrl": "http://37.220.85.219:8000",
     "ManagerLink": "https://t.me/Lauren_shorts",
 
