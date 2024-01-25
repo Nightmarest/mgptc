@@ -200,7 +200,7 @@ def timeword(d=0, h=0, m=0):
 async def checksub(chatid):
 
     if int(db.read(chatid, "presub_requests")) >= 2:
-        user_channel_status = await bot.get_chat_member(chat_id='-1001653803528', user_id=chatid)
+        user_channel_status = await bot.get_chat_member(chat_id='-2130320163', user_id=chatid)
         lg.error(user_channel_status.status)
         if user_channel_status.status == "left":
             keyboard_list = []
