@@ -112,7 +112,8 @@ async def profile(message: Message, user: Clients):
             user.course,
             user.voice_answer,
             auto,
-            autov2
+            autov2,
+            chat_id,
         )
     )
 
@@ -204,7 +205,8 @@ async def call_profile(call: CallbackQuery, user: Clients):
             user.course,
             user.voice_answer,
             auto,
-            autov2
+            autov2,
+            chat_id
         )
     )
 

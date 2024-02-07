@@ -11,24 +11,25 @@ from config_data.config import MODELS_STABLE
 from config_data.config import config
 from config_data.config_load import pay_list
 from utils.func import get_text
+from config_data.create_bot import db
 
 
 class kb:
     # Start Keyboard
-    def start_agreement():
-        b1 = KeyboardButton(text = get_text("buts.agreement_ok"))
+    def start_agreement(id):
+        b1 = KeyboardButton(text = get_text("buts.agreement_ok", id))
         kb_agreement = ReplyKeyboardMarkup(
             row_width=1, resize_keyboard=True,
             one_time_keyboard = True, keyboard = [[b1]]
         )
 
         return kb_agreement
-    def start():
-        b1 = KeyboardButton(text = get_text("buts.choise_mode"))
-        b2 = KeyboardButton(text = get_text("buts.help"))
-        b3 = KeyboardButton(text = get_text("buts.profile"))
+    def start(id):
+        b1 = KeyboardButton(text = get_text("buts.choise_mode", id))
+        b2 = KeyboardButton(text = get_text("buts.help", id))
+        b3 = KeyboardButton(text = get_text("buts.profile", id))
         # b4 = KeyboardButton(text = get_text("buts.premium"))
-        b4 = KeyboardButton(text = get_text("buts.restart"))
+        b4 = KeyboardButton(text = get_text("buts.restart", id))
 
         kb_start = ReplyKeyboardMarkup(
             row_width=2, resize_keyboard=True, one_time_keyboard=False,
@@ -40,16 +41,16 @@ class kb:
         return kb_start
 
 
-    def panel_mode():
+    def panel_mode(id):
         keyboard_list = []
         keyboard_list.append([InlineKeyboardButton(
-            text = get_text('buts.change_mode'),
+            text = get_text('buts.change_mode', id),
             callback_data= 'change_mode'
         )])
         return InlineKeyboardMarkup(inline_keyboard=keyboard_list)
 
 
-    def profile(premium_type: str, course: bool, voice_answer: bool, auto: bool, autov2: bool):
+    def profile(premium_type: str, course: bool, voice_answer: bool, auto: bool, autov2: bool, id: int):
         if premium_type:
             query_menu = pay_list[premium_type]["menu_prompt"]
         else:
@@ -62,17 +63,17 @@ class kb:
 
         if course:
             keyboard_list.append([InlineKeyboardButton(
-                text = get_text('buts.profile_education'),
+                text = get_text('buts.profile_education', id),
                 url= config["EducationUrl"]
             )])
         else:
             keyboard_list.append([InlineKeyboardButton(
-                text = get_text('buts.profile_education'),
+                text = get_text('buts.profile_education', id),
                 callback_data= "description_buy-3_buy-3"
             )])
 
         keyboard_list.append([InlineKeyboardButton(
-            text = get_text('buts.profile_forum'),
+            text = get_text('buts.profile_forum', id),
             url = config["ForumUrl"]
         )])
 
@@ -83,7 +84,7 @@ class kb:
 
         if auto is True:
             keyboard_list.append([InlineKeyboardButton(
-                text=get_text("buts.autoup"),
+                text=get_text("buts.autoup", id),
                 callback_data="disable_autoup"
             )])
         # keyboard_list.append([InlineKeyboardButton(
@@ -102,7 +103,7 @@ class kb:
         return InlineKeyboardMarkup(inline_keyboard=keyboard_list)
 
 
-    def change_mode():
+    def change_mode(id):
         keyboard_list = []
         keyboard_list.append([InlineKeyboardButton(
             text = 'ChatGPT 4',
@@ -127,7 +128,7 @@ class kb:
         return InlineKeyboardMarkup(inline_keyboard=keyboard_list)
 
 
-    def back_to_profile():
+    def back_to_profile(id):
         keyboard_list = []
         keyboard_list.append([InlineKeyboardButton(
             text = "⬅️ Вернуться назад",
@@ -136,7 +137,7 @@ class kb:
         return InlineKeyboardMarkup(inline_keyboard=keyboard_list)
 
 
-    def pay_list_keyboard(type: str, auto: bool):
+    def pay_list_keyboard(type: str, auto: bool, id: int):
         keyboard_list = []
         for key, value in pay_list.items():
             if value["type"] != type:
@@ -149,7 +150,7 @@ class kb:
                 text=text,
                 callback_data=callback_data)])
         keyboard_list.append([InlineKeyboardButton(
-            text=get_text("buts.back"),
+            text=get_text("buts.back", id),
             callback_data="back_to_premium"
         )])
         return InlineKeyboardMarkup(inline_keyboard=keyboard_list)
@@ -278,7 +279,7 @@ class kb:
         return InlineKeyboardMarkup(inline_keyboard=keyboard_list)
 
 
-    def stable(pic_code: str):
+    def stable(pic_code: str, id):
         builder = InlineKeyboardBuilder()
 
         builder.button(
@@ -300,7 +301,7 @@ class kb:
         return builder.as_markup()
 
 
-    def stable_menu():
+    def stable_menu(id):
         builder = InlineKeyboardBuilder()
 
         builder.button(
@@ -311,7 +312,7 @@ class kb:
         return builder.as_markup()
 
 
-    def read_keyboard(keyboard: InlineKeyboardMarkup, action):
+    def read_keyboard(keyboard: InlineKeyboardMarkup, action, id):
         keyboard_list = []
         for string in keyboard.inline_keyboard:
             temp_list = []
@@ -329,7 +330,7 @@ class kb:
         return InlineKeyboardMarkup(inline_keyboard=keyboard_list)
 
 
-    def auto_confirm():
+    def auto_confirm(id):
         keyboard_list = []
 
         keyboard_list.append([InlineKeyboardButton(
@@ -337,12 +338,12 @@ class kb:
             callback_data="disable_autoup_off"
         )])
         keyboard_list.append([InlineKeyboardButton(
-            text=get_text("buts.back"),
+            text=get_text("buts.back", id),
             callback_data="call_profile"
         )])
         return InlineKeyboardMarkup(inline_keyboard=keyboard_list)
 
-    def submgr(sub, buytype):
+    def submgr(sub, buytype, id):
         keyboard_list = []
         keyboard_list.append([InlineKeyboardButton(
             text=f"❌ Отключить автопродление",
@@ -355,7 +356,7 @@ class kb:
         return InlineKeyboardMarkup(inline_keyboard=keyboard_list)
 
 
-    def switch_to_stable():
+    def switch_to_stable(id):
         builder = InlineKeyboardBuilder()
 
         builder.button(
@@ -366,7 +367,7 @@ class kb:
         return builder.as_markup()
 
 
-    def manage_stable(stable_ratio: str):
+    def manage_stable(stable_ratio: str, id):
         builder = InlineKeyboardBuilder()
 
         builder.button(
@@ -383,7 +384,7 @@ class kb:
         return builder.as_markup()
 
 
-    def manage_ratio(ratio: str):
+    def manage_ratio(ratio: str, id):
         builder = InlineKeyboardBuilder()
 
         button_list = [
@@ -414,7 +415,7 @@ class kb:
         return builder.as_markup()
 
 
-    def manage_style(style: str):
+    def manage_style(style: str, id):
         builder = InlineKeyboardBuilder()
 
         button_list = [
@@ -444,7 +445,7 @@ class kb:
         return builder.as_markup()
 
 
-    def manage_model(model: str):
+    def manage_model(model: str, id):
         builder = InlineKeyboardBuilder()
 
         for key, value in MODELS_STABLE.items():

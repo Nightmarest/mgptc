@@ -13,31 +13,31 @@ async def panel_mode(message: Message, user: Clients):
     if user.model == "stable":
         await message.answer(
             text=get_text('text.generate_mj'),
-            reply_markup=kb.panel_mode()
+            reply_markup=kb.panel_mode(message.from_user.id)
         )
 
     elif user.model == "chatgpt":
         await message.answer(
             text=get_text('text.generate_gpt'),
-            reply_markup=kb.panel_mode()
+            reply_markup=kb.panel_mode(message.from_user.id)
         )
 
     elif user.model == "pikalabs":
         await message.answer(
             text=get_text('text.generate_zeroscope'),
-            reply_markup=kb.panel_mode()
+            reply_markup=kb.panel_mode(message.from_user.id)
         )
 
     elif user.model == "deepai":
         await message.answer(
             text="<b>Выбран режим: 👨‍🎨 DeepAi</b>",
-            reply_markup=kb.panel_mode()
+            reply_markup=kb.panel_mode(message.from_user.id)
         )
 
     elif user.model == "dalle":
         await message.answer(
             text="<b>Выбран режим: 👨‍🎨 DALL-E</b>",
-            reply_markup=kb.panel_mode()
+            reply_markup=kb.panel_mode(message.from_user.id)
 
         )
 
@@ -46,7 +46,7 @@ async def choose_mode(call: CallbackQuery, state: FSMContext, user: Clients):
     if call.data == 'change_mode':
         await call.message.edit_text(
             text=get_text('text.change_mode_sms'),
-            reply_markup= kb.change_mode()
+            reply_markup= kb.change_mode(call.from_user.id)
         )
 
     elif call.data == 'chatgpt_mode':
@@ -62,7 +62,7 @@ async def choose_mode(call: CallbackQuery, state: FSMContext, user: Clients):
         user.model = "stable"
         await call.message.edit_text(
             text=get_text('text.switch_to_midjourney'),
-            reply_markup=kb.switch_to_stable()
+            reply_markup=kb.switch_to_stable(call.from_user.id)
         )
 
     elif call.data == 'pikalabs_mode':
@@ -86,19 +86,19 @@ async def choose_mode(call: CallbackQuery, state: FSMContext, user: Clients):
 async def manage_stable_menu(call: CallbackQuery, stable: Stable):
     await call.answer()
     TEXT = "<b>🏙️ Формат:</b> <code>{}</code>\n🧢 <b>Стиль:</b> <code>{}</code>".format(
-            stable_formatted(stable.ratio),
+            stable_formatted(stable.ratio, call.from_user.id),
             stable_formatted(stable.style)
     )
 
     if call.data == "manage_stable_menu_new":
         await call.message.answer(
             text=TEXT,
-            reply_markup=kb.manage_stable(stable.ratio)
+            reply_markup=kb.manage_stable(stable.ratio, call.from_user.id)
         )
     else:
         await call.message.edit_text(
             text=TEXT,
-            reply_markup=kb.manage_stable(stable.ratio)
+            reply_markup=kb.manage_stable(stable.ratio, call.from_user.id)
         )
 
 
@@ -119,7 +119,7 @@ async def manage_stable_ratio(call: CallbackQuery, stable: Stable):
 
     await call.message.edit_text(
         text=call_text,
-        reply_markup=kb.manage_ratio(stable.ratio)
+        reply_markup=kb.manage_ratio(stable.ratio, call.from_user.id)
     )
 
 
@@ -137,7 +137,7 @@ async def manage_stable_style(call: CallbackQuery, stable: Stable):
 
     await call.message.edit_text(
         text=call_text,
-        reply_markup=kb.manage_style(stable.style)
+        reply_markup=kb.manage_style(stable.style, call.from_user.id)
     )
 
 
@@ -150,5 +150,5 @@ async def manage_stable_model(call: CallbackQuery, stable: Stable):
 
     await call.message.edit_text(
         text=call_text,
-        reply_markup=kb.manage_model(stable.model)
+        reply_markup=kb.manage_model(stable.model, call.from_user.id)
     )

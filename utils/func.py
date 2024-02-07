@@ -24,8 +24,9 @@ from config_data.create_bot import bot, dp, db
 
 
 # Получить текст по коду из JSON файла
-def get_text(code: str) -> str:
-    langs = read_json(config["Langs"])
+def get_text(code: str, id: int) -> str:
+    lang = db.read(id, "lang")
+    langs = read_json(config["Langs"])[lang]
     data = code.split(".")
     section = data[0]
     name = data[1]

@@ -33,7 +33,7 @@ async def command_start(message: Message, state: FSMContext):
             reqs_mj: int = db.read(ref_id, "requests_mj") + config['ReferalTokens']
             db.update(ref_id, "requests_gpt", reqs_gpt)
             db.update(ref_id, "requests_mj", reqs_mj)
-            await bot.send_message(ref_id, get_text("text.reg_by_ur_link"))
+            await bot.send_message(ref_id, get_text("text.reg_by_ur_link", message.from_user.id))
             db.recording(chat_id, name, ref_id)
         else:
             db.recording(chat_id, name, "")
@@ -50,8 +50,8 @@ async def command_start(message: Message, state: FSMContext):
     else:
         await message.answer_video(
             video=config["VideoUrl"],
-            caption=get_text('text.start'),
-            reply_markup=kb.start()
+            caption=get_text('text.start', message.from_user.id),
+            reply_markup=kb.start(chat_id)
         )
 
 
@@ -64,24 +64,24 @@ async def user_unblocked_bot(event: ChatMemberUpdated, user: Clients):
 
 
 async def call_warning_user_poor(call: CallbackQuery):
-    await call.answer(get_text("text.no_requests"))
+    await call.answer(get_text("text.no_requests", call.from_user.id))
 
 
 async def warning_user_poor(message: Message):
-    await message.answer(get_text("text.no_requests"))
+    await message.answer(get_text("text.no_requests", message.from_user.id))
 
 
 async def warning_in_progress(message: Message):
-    await message.answer(get_text('text.alert_in_progress'))
+    await message.answer(get_text('text.alert_in_progress', message.from_user.id))
 
 
 async def call_warning_in_progress(call: CallbackQuery):
-    await call.answer(get_text("text.call_alert_in_progress"),
+    await call.answer(get_text("text.call_alert_in_progress", call.from_user.id),
                       show_alert=True)
 
 
 async def help(message: Message):
-    await message.answer(get_text('text.help'))
+    await message.answer(get_text('text.help', message.from_user.id))
 
 
 async def warning_check_sub(message: Message):
@@ -93,12 +93,12 @@ async def call_warning_check_sub(call: CallbackQuery):
 
 
 async def limit_requests_today(message: Message):
-    await message.answer(get_text('text.limit_request_today'))
+    await message.answer(get_text('text.limit_request_today', message.from_user.id))
 
 
 async def call_limit_requests_today(call: CallbackQuery):
     await call.answer()
-    await call.message.answer(get_text('text.limit_request_today'))
+    await call.message.answer(get_text('text.limit_request_today', call.from_user.id))
 
 
 async def call_pass(call: CallbackQuery):
