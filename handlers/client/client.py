@@ -4,6 +4,7 @@ from aiogram.fsm.context import FSMContext
 import logging as lg
 
 from services import agreement
+from services.select_lang import lang_check
 from utils.func import get_text, report, clean
 from utils.check_sub import gen_keyboard
 
@@ -44,9 +45,18 @@ async def command_start(message: Message, state: FSMContext):
     except Exception as e:
         lg.error(f"ERROR IN START {e}\nfrom id:{chat_id}")
         await report(f"ERROR IN START\n\n<code>{e}</code>\n\nfrom id:{chat_id}", config["DevList"])
+    if db.read(chat_id, "lang") is None:
+        await lang_check(message)
+        pass
     if agr is False:
         await agreement.agreement_check(message)
-        pass
+        db.update(message.from_user.id, "agreement", True)
+
+        await message.answer_video(
+            video=config["VideoUrl"],
+            caption=get_text('text.start', message.from_user.id),
+            reply_markup=kb.start(chat_id)
+        )
     else:
         await message.answer_video(
             video=config["VideoUrl"],

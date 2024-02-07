@@ -5,6 +5,7 @@ from sqlalchemy.ext.asyncio import async_sessionmaker
 
 from handlers.client.neural.dalle import dalle_image
 from services import agreement
+from services.select_lang import setlang, qlang_check
 from utils.check_sub import c_listener
 from config_data.config import config
 from config_data.create_bot import db
@@ -56,25 +57,38 @@ def register_client_handlers(router: Router):
     router.callback_query.register(disable_autoups, F.data == "disable_autoups")
     router.callback_query.register(submanagment, F.data.startswith("submgt"))
     router.callback_query.register(submgr_disable, F.data.startswith("submgr_disable"))
+    router.callback_query.register(qlang_check, F.data.startswith("getlang"))
+    router.callback_query.register(setlang, F.data.startswith("setlang"))
     # GENERAL HANDLERS
     router.my_chat_member.register(user_blocked_bot, ChatMemberUpdatedFilter(member_status_changed=KICKED), F.chat.type == "private")
     router.my_chat_member.register(user_unblocked_bot, ChatMemberUpdatedFilter(member_status_changed=MEMBER), F.chat.type == "private")
-
     router.callback_query.register(c_listener, F.data == 'subcheck', F.chat.type == "private") # ОП
     router.callback_query.register(call_profile, F.data == "call_profile")
     router.callback_query.register(switch_voice_answer, F.data == 'switch_voice_answer', F.chat.type == "private")
     router.callback_query.register(choose_premium, F.data.startswith("choose_premium"), F.chat.type == "private")
     router.message.register(command_start, F.text.startswith("/start"), F.chat.type == "private")          # Command /start
-    router.message.register(command_start, F.text == get_text("buts.restart"), F.chat.type == "private") # <----|
-    router.message.register(agreement.agreement_ok, F.text == get_text("buts.agreement_ok"), F.chat.type == "private")
-    router.message.register(help, F.text == get_text("buts.help"), F.chat.type == "private")
-    router.message.register(profile, F.text == get_text("buts.profile"), F.chat.type == "private")
-    router.message.register(promocodes, F.text == get_text("buts.premium"), F.chat.type == "private")
+    router.message.register(command_start, F.text == "⚡️ Перезагрузка", F.chat.type == "private") # <----|
+    router.message.register(command_start, F.text == "Continue ➡️", F.chat.type == "private")
+    router.message.register(command_start, F.text == "Продолжить работу ➡️", F.chat.type == "private")
+    router.message.register(agreement.agreement_ok, F.text == "✅ Я принимаю польз. соглашение", F.chat.type == "private")
+    router.message.register(help, F.text == "📂 Информация", F.chat.type == "private")
+    router.message.register(profile, F.text == "🖱️ Мой профиль", F.chat.type == "private")
+
+    # router.message.register(promocodes, F.text == "buts.premium", F.chat.type == "private")
+
+    router.message.register(command_start, F.text == "⚡️ Reboot", F.chat.type == "private") # <----|
+    router.message.register(agreement.agreement_ok, F.text == "✅ I accept the user agreement", F.chat.type == "private")
+    router.message.register(help, F.text == "📂 Information", F.chat.type == "private")
+    router.message.register(profile, F.text == "🖱️ My profile", F.chat.type == "private")
+    # router.message.register(promocodes, F.text == get_text("buts.premium"), F.chat.type == "private")
+
 
 
     router.callback_query.register(call_warning_in_progress, StateFilter(ClientState.process))
     router.message.register(warning_in_progress, StateFilter(ClientState.process))
-    router.message.register(panel_mode, F.text == get_text("buts.choise_mode"))
+    router.message.register(panel_mode, F.text == "⚙️ Режим нейросети")
+    router.message.register(panel_mode, F.text == "⚙️ Neural mode")
+
     router.callback_query.register(choose_mode, F.data.endswith("_mode"))
 
     # FILTERS IN PROGRESS AND CHECK SUB

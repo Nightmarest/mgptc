@@ -2,6 +2,7 @@ from aiogram.types import (Message, CallbackQuery)
 from aiogram.fsm.context import FSMContext
 from aiogram.utils.markdown import hide_link
 
+from config_data.create_bot import db
 from utils.func import get_text, stable_formatted
 from config_data.config import MODELS_STABLE
 from database.models.stable import Stable
@@ -12,31 +13,31 @@ from keyboards.client_kb import kb
 async def panel_mode(message: Message, user: Clients):
     if user.model == "stable":
         await message.answer(
-            text=get_text('text.generate_mj'),
+            text=get_text('text.generate_mj', message.from_user.id),
             reply_markup=kb.panel_mode(message.from_user.id)
         )
 
     elif user.model == "chatgpt":
         await message.answer(
-            text=get_text('text.generate_gpt'),
+            text=get_text('text.generate_gpt', message.from_user.id),
             reply_markup=kb.panel_mode(message.from_user.id)
         )
 
     elif user.model == "pikalabs":
         await message.answer(
-            text=get_text('text.generate_zeroscope'),
+            text=get_text('text.generate_zeroscope', message.from_user.id),
             reply_markup=kb.panel_mode(message.from_user.id)
         )
 
     elif user.model == "deepai":
         await message.answer(
-            text="<b>Выбран режим: 👨‍🎨 DeepAi</b>",
+            text=get_text('text.generate_deepai', message.from_user.id),
             reply_markup=kb.panel_mode(message.from_user.id)
         )
 
     elif user.model == "dalle":
         await message.answer(
-            text="<b>Выбран режим: 👨‍🎨 DALL-E</b>",
+            text=get_text('text.generate_dalle', message.from_user.id),
             reply_markup=kb.panel_mode(message.from_user.id)
 
         )
@@ -45,7 +46,7 @@ async def panel_mode(message: Message, user: Clients):
 async def choose_mode(call: CallbackQuery, state: FSMContext, user: Clients):
     if call.data == 'change_mode':
         await call.message.edit_text(
-            text=get_text('text.change_mode_sms'),
+            text=get_text('text.change_mode_sms', call.from_user.id),
             reply_markup= kb.change_mode(call.from_user.id)
         )
 
@@ -55,40 +56,47 @@ async def choose_mode(call: CallbackQuery, state: FSMContext, user: Clients):
             dialog_list=[{"role": "system", "content": ""}]
         )
         await call.message.edit_text(
-            text=get_text('text.switch_to_chatgpt')
+            text=get_text('text.switch_to_chatgpt', call.from_user.id)
         )
 
     elif call.data == 'stable_mode':
         user.model = "stable"
         await call.message.edit_text(
-            text=get_text('text.switch_to_midjourney'),
+            text=get_text('text.switch_to_midjourney', call.from_user.id),
             reply_markup=kb.switch_to_stable(call.from_user.id)
         )
 
     elif call.data == 'pikalabs_mode':
         user.model = "pikalabs"
         await call.message.edit_text(
-            text=get_text('text.switch_to_pikalabs')
+            text=get_text('text.switch_to_pikalabs', call.from_user.id)
         )
 
     elif call.data == 'deepai_mode':
         user.model = "deepai"
         await call.message.edit_text(
-            text=get_text('text.switch_to_deepai')
+            text=get_text('text.switch_to_deepai', call.from_user.id)
         )
     elif call.data == 'dalle_mode':
         user.model = "dalle"
         await call.message.edit_text(
-            text=get_text('text.switch_to_dalle')
+            text=get_text('text.switch_to_dalle', call.from_user.id)
         )
 
 
 async def manage_stable_menu(call: CallbackQuery, stable: Stable):
     await call.answer()
-    TEXT = "<b>🏙️ Формат:</b> <code>{}</code>\n🧢 <b>Стиль:</b> <code>{}</code>".format(
-            stable_formatted(stable.ratio, call.from_user.id),
-            stable_formatted(stable.style)
-    )
+    lang = db.read(call.from_user.id, "lang")
+    if lang == "ru":
+        TEXT = "<b>🏙️ Формат:</b> <code>{}</code>\n🧢 <b>Стиль:</b> <code>{}</code>".format(
+                stable_formatted(stable.ratio),
+                stable_formatted(stable.style)
+        )
+    elif lang == "en":
+        TEXT = "<b>🏙️ Format:</b> <code>{}</code>\n🧢 <b>Style:</b> <code>{}</code>".format(
+                stable_formatted(stable.ratio),
+                stable_formatted(stable.style)
+        )
 
     if call.data == "manage_stable_menu_new":
         await call.message.answer(

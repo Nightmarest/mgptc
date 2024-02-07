@@ -13,15 +13,22 @@ config = {
     "ZeroscopeToken": "r8_DyAbjQpqxhwxSmj9qKVVpjysDmnSUdT4Bkf2g", #зероскоп токен
     "DeeplToken": "725ea090-4ba9-494c-8c58-8912b78537a9",
     "ReplicateToken": "r8_DyAbjQpqxhwxSmj9qKVVpjysDmnSUdT4Bkf2g",
-    "BotToken": "6062729970:AAG1aK3DE-FxpfP7sMeIivaqcQZIRwaQwYA",  # Токен самого бота 6062729970:AAHxJG2GCp4A4cL5fROgKRnn7OSrkD5wEBQ
+    # "BotToken": "6062729970:AAG1aK3DE-FxpfP7sMeIivaqcQZIRwaQwYA",  # Токен самого бота 6062729970:AAHxJG2GCp4A4cL5fROgKRnn7OSrkD5wEBQ
+    'BotToken': "6157728996:AAGRBicyQL4ozhTtIBW8m9X-YAuO29csT4s",
 
-    "DBHost": "192.168.0.4",  # DataBase host
+    # "DBHost": "192.168.0.4",  # DataBase host
+    # "DBPort": 8080,  # DataBase port
+    # "DBUser": "postgres",  # DataBase user
+    # "DBPswd": "ne+xutQ%tUT6*=",  # DataBase password
+    # "DBName": "default_db",  # DataBase name
+
+    "DBHost": "localhost",  # DataBase host
     "DBPort": 8080,  # DataBase port
     "DBUser": "postgres",  # DataBase user
     "DBPswd": "ne+xutQ%tUT6*=",  # DataBase password
     "DBName": "default_db",  # DataBase name
 
-    "MongoDBHost": "192.168.0.4",
+    "MongoDBHost": "localhost",
     "MongoDBPort": "27017",
 
     # Yoomoney
@@ -41,7 +48,7 @@ config = {
     "LangsDir": "langs/",  # Директория с файлами языков
     "MJDownloads": "mj_downloads/",  # Директория с контентом от MJ,
     "BanWords": "utils/ban_words.txt", # бан слова файл
-    "Langs": {"ru": "lexicon/rus.json", 'en': "lexicon/en.json"}, # файл с языками
+    "Langs": {"ru": "lexicon/rus.json", 'en': "lexicon/eng.json"}, # файл с языками
     "LangsAdmin": "lexicon/rus_admin.json", # файл для
     "DiscordLog": "logs/disc_main.log",
     "BotLog": "logs/bot.log",

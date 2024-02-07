@@ -88,23 +88,25 @@ async def profile(message: Message, user: Clients):
     else:
         txt_premium_type = pay_list[premium_type]['message_text']
 
-    text = f"🖱️Подписка - {txt_premium_type}\n" \
-                f"⚖️Осталось - {tmd}\n" \
-                f"<b>📱 Ваш ID:</b> <code>{message.from_user.id}</code>\n\n" \
-                f"<i>Запросы:</i>\n\n" \
-                f"🦋stable diffusion: {mjreqs}\n" \
-                f"📘chatgpt 4: {pmreqs}\n"\
-                f"🧢pika labs: {user.requests_pikalabs}\n" \
-                f"🌑deep ai: {user.requests_deepai}\n"
-                # f"📙dalle 3: {user.requests_dalle}\n"
-    # text = f"<i>•Доступно запросов для ChatGPT: {pmreqs}\n\n</i>" \
-    #            f"<i>•Доступно запросов для StableDiffusion: {pmreqs}\n\n</i>" \
-    #            f"<i>•Доступно запросов для Pika Labs: {user.requests_pikalabs}\n\n</i>" \
-    #            f"<i>•Доступно запросов для DeepAI: {user.requests_deepai}\n\n</i>" \
-    #            f"<i>•Доступно запросов для Dall-E: {user.requests_dalle}\n\n\n</i>" \
-    #            f"<i>•Оставшееся время подпииски: {tmd}\n\n</i>"\
-    #            f"<b>•Ваш TelegramID:</b> <code>{message.from_user.id}</code>"
-               # f"{get_text('text.profile')}"
+    lang = db.read(chat_id, "lang")
+    if lang == "ru":
+        text = f"🖱️Подписка - {txt_premium_type}\n" \
+                    f"⚖️Осталось - {tmd}\n" \
+                    f"<b>📱 Ваш TelegramID:</b> <code>{message.from_user.id}</code>\n\n" \
+                    f"<i>Запросы:</i>\n\n" \
+                    f"🦋stable diffusion: {pmreqs}\n" \
+                    f"📘chatgpt 4: {pmreqs}\n"\
+                    f"🧢pika labs: {user.requests_pikalabs}\n" \
+                    f"🌑deep ai: {user.requests_deepai}\n"
+    elif lang == "en":
+        text = f"🖱Subscription - {txt_premium_type}\n" \
+               f"⚖️Time of end - {tmd}\n" \
+               f"<b>📱 Telegram ID:</b> <code>{message.from_user.id}</code>\n\n" \
+               f"<i>Requests:</i>\n\n" \
+               f"🦋stable diffusion: {pmreqs}\n"\
+               f"📘chatgpt 4: {pmreqs}\n"\
+               f"🧢pika labs: {user.requests_pikalabs}\n" \
+               f"🌑deep ai: {user.requests_deepai}\n"
     await message.answer(
         text=text,
         reply_markup=kb.profile(
@@ -188,15 +190,25 @@ async def call_profile(call: CallbackQuery, user: Clients):
         txt_premium_type = "Не куплено"
     else:
         txt_premium_type = pay_list[premium_type]['message_text']
-
-    text = f"🖱️Подписка - {txt_premium_type}\n" \
-                f"⚖️Осталось - {tmd}\n" \
-                f"<b>📱 Ваш TelegramID:</b> <code>{call.from_user.id}</code>\n\n" \
-                f"<i>Запросы:</i>\n\n" \
-                f"🦋stable diffusion: {pmreqs}\n" \
-                f"📘chatgpt 4: {pmreqs}\n"\
-                f"🧢pika labs: {user.requests_pikalabs}\n" \
-                f"🌑deep ai: {user.requests_deepai}\n"
+    lang = db.read(chat_id, "lang")
+    if lang == "ru":
+        text = f"🖱️Подписка - {txt_premium_type}\n" \
+                    f"⚖️Осталось - {tmd}\n" \
+                    f"<b>📱 Ваш TelegramID:</b> <code>{call.from_user.id}</code>\n\n" \
+                    f"<i>Запросы:</i>\n\n" \
+                    f"🦋stable diffusion: {pmreqs}\n" \
+                    f"📘chatgpt 4: {pmreqs}\n"\
+                    f"🧢pika labs: {user.requests_pikalabs}\n" \
+                    f"🌑deep ai: {user.requests_deepai}\n"
+    elif lang == "en":
+        text = f"🖱️Default - {txt_premium_type}\n" \
+               f"⚖️English - {tmd}\n" \
+               f"<b>📱 Telegram ID:</b> <code>{call.from_user.id}</code>\n\n" \
+               f"<i>Subject:</i>\n\n" \
+               f"🦋stable broadcast: {pmreqs}\n"\
+               f"📘chatgpt 4: {pmreqs}\n"\
+               f"🧢pika labs: {user.requests_pikalabs}\n" \
+               f"🌑deep ai: {user.requests_deepai}\n"
                 # f"📙dalle 3: {user.requests_dalle}\n"
     await call.message.edit_text(
         text=text,

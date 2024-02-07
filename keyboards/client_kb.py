@@ -15,6 +15,29 @@ from config_data.create_bot import db
 
 
 class kb:
+    def choose_lang():
+        keyboard_list = []
+
+        keyboard_list.append([InlineKeyboardButton(
+            text="🇷🇺 Русский",
+            callback_data="setlang:ru"
+        )])
+        keyboard_list.append([InlineKeyboardButton(
+            text="🇺🇸 English",
+            callback_data="setlang:en"
+        )])
+
+        return InlineKeyboardMarkup(inline_keyboard=keyboard_list)
+
+
+    def langinstalled(id):
+        b1 = KeyboardButton(text = get_text("buts.Continue", id))
+        kb_langc = ReplyKeyboardMarkup(
+            row_width=1, resize_keyboard=True,
+            one_time_keyboard = True, keyboard = [[b1]]
+        )
+
+        return kb_langc
     # Start Keyboard
     def start_agreement(id):
         b1 = KeyboardButton(text = get_text("buts.agreement_ok", id))
@@ -56,9 +79,9 @@ class kb:
         else:
             query_menu = False
         if voice_answer:
-            voice_text = "⚙️ Голосовые ответы от ChatGPT: вкл."
+            voice_text = get_text('buts.voice_text_on', id)
         else:
-            voice_text = "⚙️ Голосовые ответы от ChatGPT: выкл."
+            voice_text = get_text('buts.voice_text_off', id)
         keyboard_list = []
 
         if course:
@@ -87,6 +110,11 @@ class kb:
                 text=get_text("buts.autoup", id),
                 callback_data="disable_autoup"
             )])
+        keyboard_list.append([InlineKeyboardButton(
+            text=get_text("buts.AnotherLang", id),
+            callback_data="getlang"
+        )])
+
         # keyboard_list.append([InlineKeyboardButton(
         #     text="Отключить предыдущие подписки",
         #     callback_data="disable_autoup_recursive"
@@ -94,8 +122,7 @@ class kb:
 
         if autov2 is True:
             keyboard_list.append([InlineKeyboardButton(
-                # text=get_text("buts.autoup"),
-                text="Управление подписками",
+                text=get_text("buts.SubManage", id),
                 callback_data="disable_autoups"
             )])
 
@@ -131,7 +158,7 @@ class kb:
     def back_to_profile(id):
         keyboard_list = []
         keyboard_list.append([InlineKeyboardButton(
-            text = "⬅️ Вернуться назад",
+            text = get_text("buts.back", id),
             callback_data= "call_profile"
         )])
         return InlineKeyboardMarkup(inline_keyboard=keyboard_list)
@@ -288,12 +315,12 @@ class kb:
         )
 
         builder.button(
-            text="💫 Повторить",
+            text=get_text("buts.stable_retry", id),
             callback_data=f"retry_{pic_code}"
         )
 
         builder.button(
-            text="⚙️ Меню",
+            text=get_text("buts.stable_menu", id),
             callback_data="manage_stable_menu_new"
         )
 
@@ -305,7 +332,7 @@ class kb:
         builder = InlineKeyboardBuilder()
 
         builder.button(
-            text="⚙️ Меню",
+            text=get_text("buts.stable_menu", id),
             callback_data="manage_stable_menu_new"
         )
 
@@ -334,7 +361,7 @@ class kb:
         keyboard_list = []
 
         keyboard_list.append([InlineKeyboardButton(
-            text=f"✅ Да, я хочу отключить автоподписку",
+            text=get_text("buts.disableautosubf", id),
             callback_data="disable_autoup_off"
         )])
         keyboard_list.append([InlineKeyboardButton(
@@ -346,11 +373,11 @@ class kb:
     def submgr(sub, buytype, id):
         keyboard_list = []
         keyboard_list.append([InlineKeyboardButton(
-            text=f"❌ Отключить автопродление",
+            text=get_text("buts.disableautosub", id),
             callback_data=f"submgr_disable:{sub}:{buytype}"
         )])
         keyboard_list.append([InlineKeyboardButton(
-            text=f"⚡️ Назад",
+            text=get_text("buts.back", id),
             callback_data=f"call_profile"
         )])
         return InlineKeyboardMarkup(inline_keyboard=keyboard_list)
@@ -360,7 +387,7 @@ class kb:
         builder = InlineKeyboardBuilder()
 
         builder.button(
-            text="⚙️ Настроить Stable Diffusion",
+            text=get_text("buts.SettingsStable", id),
             callback_data="manage_stable_menu"
         )
 
@@ -371,12 +398,12 @@ class kb:
         builder = InlineKeyboardBuilder()
 
         builder.button(
-            text="🏙️ Формат",
+            text=get_text("buts.StableFormat", id),
             callback_data="manage_stable_ratio"
         )
 
         builder.button(
-            text="🧢 Стиль",
+            text=get_text("buts.StableStyle", id),
             callback_data="manage_stable_style"
         )
 
@@ -407,7 +434,7 @@ class kb:
             )
 
         builder.button(
-            text="💫 Назад",
+            text=get_text("buts.back", id),
             callback_data="manage_stable_menu"
         )
 
@@ -437,7 +464,7 @@ class kb:
             )
 
         builder.button(
-            text="💫 Назад",
+            text=get_text("buts.back", id),
             callback_data="manage_stable_menu"
         )
 
@@ -462,9 +489,11 @@ class kb:
             )
 
         builder.button(
-            text="💫 Назад",
+            text=get_text("buts.back", id),
             callback_data="manage_stable_menu"
         )
 
         builder.adjust(1)
         return builder.as_markup()
+
+
