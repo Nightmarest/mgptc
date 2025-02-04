@@ -18,6 +18,8 @@ services:
       - .:/usr/app/src
     environment:
       - TZ=Europe/Moscow
+    depends_on:
+      - redis
 
   pikalabs_1:
     build: .
