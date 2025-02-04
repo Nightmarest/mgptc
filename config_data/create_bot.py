@@ -1,4 +1,5 @@
 from aiogram import Bot, Dispatcher, Router
+from aiogram.client.default import DefaultBotProperties
 from aiogram.fsm.storage.redis import RedisStorage, Redis
 import logging as lg
 import aiocron
@@ -9,7 +10,7 @@ from database.PostgreSQL import PostgreSQL
 lg.basicConfig(level=lg.INFO, format="%(asctime)s - %(levelname)s - %(name)s - %(message)s")#, filename = config["BotLog"])
 redis: Redis = Redis(host='redis', port=6378)
 storage: RedisStorage = RedisStorage(redis=redis)
-bot: Bot = Bot(token=config["BotToken"], parse_mode='HTML')
+bot: Bot = Bot(token=config["BotToken"], default=DefaultBotProperties(parse_mode='HTML'))
 dp: Dispatcher = Dispatcher(storage=storage)
 router_client: Router = Router()
 router_admin: Router = Router()
