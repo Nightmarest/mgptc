@@ -33,17 +33,17 @@ services:
 
   api:
     build: .
-    command:  sh -c "uvicorn webhook:app --host 0.0.0.0 --port 8080"
+    command:  sh -c "uvicorn webhook:app --host 0.0.0.0 --port 8880"
     restart: always
     expose:
-      - 8080
+      - 8880
     volumes:
       - .:/usr/app/src
     environment:
       - TOKEN=MTEyMzEzMzc1MjM5OTM2NDE0Ng.GQ53qc.3cC2Lme96oHaRTEdFe9a3jyao46sOje1GJSg-k
       - TZ=Europe/Moscow
     ports:
-      - 8080:8080
+      - 8880:8880
 
   nginx:
     image: nginx:latest
