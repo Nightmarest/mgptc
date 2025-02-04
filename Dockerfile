@@ -15,9 +15,9 @@ RUN pip3 install redis --break-system-packages
 RUN pip3 install aiocron --break-system-packages
 RUN pip3 install Levenshtein --break-system-packages
 RUN pip3 install asyncpg --break-system-packages
-RUN sudo apt-get install libssl-dev -y
-RUN sudo apt-get install portaudio19-dev -y
-RUN sudo apt-get install libpcap-dev libssl-dev -y
+RUN apt-get install libssl-dev -y
+RUN apt-get install portaudio19-dev -y
+RUN apt-get install libpcap-dev libssl-dev -y
 ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=Asia/Yekaterinburg
 RUN apt-get install -y tzdata
