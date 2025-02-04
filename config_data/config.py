@@ -14,7 +14,7 @@ config = {
     "DeeplToken": "725ea090-4ba9-494c-8c58-8912b78537a9",
     "ReplicateToken": "r8_DyAbjQpqxhwxSmj9qKVVpjysDmnSUdT4Bkf2g",
     # "BotToken": "6062729970:AAG1aK3DE-FxpfP7sMeIivaqcQZIRwaQwYA",  # Токен самого бота 6062729970:AAHxJG2GCp4A4cL5fROgKRnn7OSrkD5wEBQ
-    'BotToken': "6157728996:AAGRBicyQL4ozhTtIBW8m9X-YAuO29csT4s",
+    'BotToken': "6191232352:AAFUk1ka7KPqQNyzPkupIdMhMgEi4gWIjtI",
 
     # "DBHost": "192.168.0.4",  # DataBase host
     # "DBPort": 8080,  # DataBase port

@@ -3,7 +3,6 @@ FROM ubuntu:latest
 RUN apt update
 RUN apt install python3-pip -y
 RUN apt-get install libpq-dev -y
-RUN pip3 install psycopg2-binary
 RUN pip3 install aiogtts
 RUN pip3 install uvicorn
 RUN pip3 install fastapi==0.103.1
