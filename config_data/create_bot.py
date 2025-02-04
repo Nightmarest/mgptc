@@ -8,7 +8,7 @@ from config_data.config import config
 from database.PostgreSQL import PostgreSQL
 
 lg.basicConfig(level=lg.INFO, format="%(asctime)s - %(levelname)s - %(name)s - %(message)s")#, filename = config["BotLog"])
-redis: Redis = Redis(host='redis', port=6376)
+redis: Redis = Redis(host='188.241.196.149', port=6376)
 storage: RedisStorage = RedisStorage(redis=redis)
 bot: Bot = Bot(token=config["BotToken"], default=DefaultBotProperties(parse_mode='HTML'))
 dp: Dispatcher = Dispatcher(storage=storage)
