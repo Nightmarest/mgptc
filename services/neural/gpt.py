@@ -1,22 +1,12 @@
-import openai.error
 from typing import Tuple
 import logging as lg
 import io
-from aiogtts import aiogTTS
+
+import openai
 
 from config_data.config import config
 from utils.func import report, get_text
 
-
-async def text_to_voice(text: str) -> io.BytesIO:
-    aiogtts = aiogTTS()
-    voice_bytes = io.BytesIO()
-    await aiogtts.write_to_fp(
-        text=text,
-        fp=voice_bytes,
-        lang='ru'
-    )
-    return voice_bytes
 
 
 async def voice_to_text(voice: io.BytesIO, attempt = 0) -> str:
@@ -31,11 +21,7 @@ async def voice_to_text(voice: io.BytesIO, attempt = 0) -> str:
         )
         print(result["text"])
         return result["text"]
-    except (
-        openai.error.Timeout,
-        openai.error.ServiceUnavailableError,
-        openai.error.APIConnectionError,
-        openai.error.InvalidRequestError,
+    except ( Exception
     ) as e:
         lg.error(f"ERROR IN get_response_gpt: {e} ||| Try again...")
         return await voice_to_text(voice, attempt + 1)
@@ -57,11 +43,7 @@ async def get_response_gpt(dialog_list: list, request: str, attempt=0) -> Tuple[
         )
         response = completion.choices[0].message.content
         dialog_list.append({"role": "assistant", "content": response})
-    except (
-        openai.error.Timeout,
-        openai.error.ServiceUnavailableError,
-        openai.error.APIConnectionError,
-        openai.error.InvalidRequestError,
+    except (Exception
     ) as e:
         lg.error(f"ERROR IN get_response_gpt: {e} ||| Try again...")
         return await get_response_gpt(

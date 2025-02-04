@@ -7,7 +7,7 @@ from aiogram.fsm.context import FSMContext
 from config_data.create_bot import bot, db
 from config_data.config import config
 from utils.func import get_text, clean, checksub
-from services.neural.gpt import get_response_gpt, voice_to_text, text_to_voice
+from services.neural.gpt import get_response_gpt, voice_to_text
 from filters.states.state import ClientState
 from config_data.config import config
 
@@ -74,7 +74,7 @@ async def chatgpt_prompt(message: Message, state: FSMContext, prompt: str, wait_
     await state.update_data(dialog_list= dialog_list)
 
     if db.read(chat_id, 'voice_answer'):
-        voice = await text_to_voice(response)
+        voice = None
         await message.answer_voice(
             voice=BufferedInputFile(
                 voice.getvalue(),
