@@ -1,5 +1,9 @@
 FROM ubuntu:latest
-
+RUN apt-get update && \
+    apt-get install -y software-properties-common && \
+    add-apt-repository -y ppa:deadsnakes/ppa && \
+    apt-get update && \
+    apt install -y python3.8
 RUN apt update
 RUN apt install python3-pip -y
 RUN apt-get install libpq-dev -y

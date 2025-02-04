@@ -10,7 +10,7 @@ services:
 
   bot:
     build: .
-    command:  sh -c "python3 main.py"
+    command:  sh -c "python3.8 main.py"
     restart: always
     volumes:
       - .:/usr/app/src
@@ -19,7 +19,7 @@ services:
 
   pikalabs_1:
     build: .
-    command:  sh -c "python3 pikalabs_main.py"
+    command:  sh -c "python3.8 pikalabs_main.py"
     restart: always
     volumes:
       - .:/usr/app/src
