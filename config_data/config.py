@@ -22,11 +22,11 @@ config = {
     # "DBPswd": "ne+xutQ%tUT6*=",  # DataBase password
     # "DBName": "default_db",  # DataBase name
 
-    "DBHost": "localhost",  # DataBase host
-    "DBPort": 8080,  # DataBase port
+    "DBHost": "postgres",  # DataBase host
+    "DBPort": 5435,  # DataBase port
     "DBUser": "postgres",  # DataBase user
-    "DBPswd": "ne+xutQ%tUT6*=",  # DataBase password
-    "DBName": "default_db",  # DataBase name
+    "DBPswd": "postgres",  # DataBase password
+    "DBName": "postgres",  # DataBase name
 
     "MongoDBHost": "localhost",
     "MongoDBPort": "27017",

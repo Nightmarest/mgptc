@@ -62,7 +62,18 @@ services:
     volumes:
       - ./data/certbot/conf:/etc/letsencrypt
       - ./data/certbot/www:/var/www/certbot
-
+  postgres:
+    image: postgres:16
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+      PGPORT: 5435
+    ports:
+      - "5435:5435"
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
   webapp_store:
     build:
       context: .
