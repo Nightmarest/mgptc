@@ -6,7 +6,6 @@ import aiohttp
 
 from config_data.create_bot import db
 from config_data.config import config
-from openpyxl import Workbook
 from utils.json import read_json
 
 
@@ -189,18 +188,6 @@ class func:
 
         return summary_text
 
-
-    def get_bd():
-        headers = db.admin_request(f"SELECT column_name FROM information_schema.columns WHERE table_name = '{config['BDTable']}' ORDER BY ordinal_position;")
-        data = db.admin_request(f"SELECT * FROM {config['BDTable']}")
-        wb = Workbook()
-        ws = wb.active
-
-        for index, value in enumerate(headers, 1):
-            ws.cell(row=1, column=index, value=value[0])
-        for row_data in data:
-            ws.append(row_data)
-        wb.save('admins/output.xlsx')
 
 
     def divide_list(lst, parts):
