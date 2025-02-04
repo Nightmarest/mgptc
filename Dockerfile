@@ -1,8 +1,8 @@
 FROM ubuntu:latest
 
 RUN apt update
-RUN apt install python3-pip -y --break-system-packages
-RUN apt-get install libpq-dev -y --break-system-packages
+RUN apt install python3-pip -y
+RUN apt-get install libpq-dev -y
 RUN pip3 install aiogtts --break-system-packages
 RUN pip3 install uvicorn --break-system-packages
 RUN pip3 install fastapi==0.103.1 --break-system-packages
