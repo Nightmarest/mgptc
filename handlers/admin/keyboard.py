@@ -1,5 +1,4 @@
 from aiogram.types import (InlineKeyboardButton, InlineKeyboardMarkup)
-from aiogram_widgets.pagination import KeyboardPaginator
 from config_data.config import config
 from config_data.create_bot import router_admin
 from utils.json import read_json
@@ -113,11 +112,6 @@ class kb:
                 )
             )
 
-        return KeyboardPaginator(
-            data=ref_button_list,
-            additional_buttons=additional_buttons,
-            router=router_admin,
-        ).as_markup()
 
 
     def link_manage(token: str) -> InlineKeyboardMarkup:
@@ -181,28 +175,6 @@ class kb:
         return InlineKeyboardMarkup(inline_keyboard=[[b1, b2],
                                                     [b3, b4],
                                                     [b5]])
-
-
-    def text():
-        langs = read_json(config["LangsAdmin"])
-        text: dict = langs['text']
-        buttons = []
-        for key, value in text.items():
-            buttons.append(
-                InlineKeyboardButton(
-                    text=value,
-                    callback_data=f"text:{key}"
-                )
-            )
-        back = [[InlineKeyboardButton(
-            text='⬅️ Назад',
-            callback_data='adm_menu'
-        )]]
-        return KeyboardPaginator(
-            data=buttons,
-            additional_buttons=back,
-            router=router_admin,
-        ).as_markup()
 
 
     def text_call_handler(section):
