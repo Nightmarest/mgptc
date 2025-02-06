@@ -1,3 +1,9 @@
+{
+
+    email hostmaster@melancholia.dev
+
+}
+
 shinea.melancholia.dev {
     reverse_proxy http://webapp_store:3000
 }
