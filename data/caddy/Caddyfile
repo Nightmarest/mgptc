@@ -1,0 +1,7 @@
+shinea.melancholia.dev {
+    reverse_proxy http://webapp_store:3000
+}
+
+shineaapi.melancholia.dev {
+    reverse_proxy http://api:8880
+}
