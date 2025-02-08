@@ -44,7 +44,7 @@ class Clients(Base):
     cardtoken: Mapped[Optional[str]] = mapped_column(default="")
     subid: Mapped[Optional[str]] = mapped_column(default="")
     promo: Mapped[Optional[str]] = mapped_column(default="")
-    agreement: Mapped[bool] = mapped_column(default=False)
+    agreement: Mapped[bool] = mapped_column(default=True)
     presub_requests: Mapped[int] = mapped_column(default=3)
     gift: Mapped[int] = mapped_column(default=0)
     lang: Mapped[Optional[str]] = mapped_column()
