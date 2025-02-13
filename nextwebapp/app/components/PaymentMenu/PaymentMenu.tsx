@@ -26,7 +26,7 @@ export const PaymentMenu: React.FC<PaymentMenuProps> = ({
                 );
                 formData.append("buytype", String(payInfo.buytype));
             }
-            const url = `https://gpt.apicluster.ru/pay/checkout/${
+            const url = `https:/shineaapi.melancholia.dev/pay/checkout/${
                 method == "bankCard" ? "standart" : "crypto"
             }`;
             const response = await fetch(url, {

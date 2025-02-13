@@ -15,7 +15,8 @@ config = {
     "ReplicateToken": "r8_DyAbjQpqxhwxSmj9qKVVpjysDmnSUdT4Bkf2g",
     # "BotToken": "6062729970:AAG1aK3DE-FxpfP7sMeIivaqcQZIRwaQwYA",  # Токен самого бота 6062729970:AAHxJG2GCp4A4cL5fROgKRnn7OSrkD5wEBQ
     'BotToken': "6191232352:AAFUk1ka7KPqQNyzPkupIdMhMgEi4gWIjtI",
-
+    "YOOKASSA_TOKEN": "live_iEDqaX-fwQ2gNR-VC5l0vNiinYuw7Qd2g2_L9UErx_U",
+    "YOOKASSA_ID": 209773,
     # "DBHost": "192.168.0.4",  # DataBase host
     # "DBPort": 8080,  # DataBase port
     # "DBUser": "postgres",  # DataBase user

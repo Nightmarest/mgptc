@@ -12,6 +12,7 @@ from handlers.client import buy_handler
 from aiogram.types import CallbackQuery
 from config_data.create_bot import db
 from pyCryptomusAPI import pyCryptomusAPI
+from yookassa import Payment, Configuration
 
 
 class promo:
@@ -44,38 +45,55 @@ class promo:
 class cloudpay_api:
     async def create_payment(track_id, chat_id, sum, buytype):
         try:
-            url = 'https://api.cloudpayments.ru/orders/create'
-            headers = { 'content-type': 'application/json' }
-            payload = {
-                "Amount": sum,
-                "Currency": "RUB",
-                "Description": "Оплата",
-                "Email": "u@midjourney.me",
-                "RequireConfirmation": False,
-                "SendEmail": False,
-                "InvoiceId": track_id,
-                "AccountId": chat_id,
-                "JsonData": {
-                    "buytype": buytype
-                }
-            }
+            Configuration.account_id = config['YOOKASSA_ID']
+            Configuration.secret_key = config['YOOKASSA_TOKEN']
+            payment = Payment.create({
+                "amount": {
+                    "value": sum + ".00",
+                    "currency": "RUB"
+                },
+                "payment_method_data": {
+                    "type": "bank_card"
+                },
+                "confirmation": {
+                    "type": "redirect",
+                    "return_url": "https://google.com"
+                },
+                "receipt": {
+                    "customer": {
+                        "email": "git@afedko.ru",
+                    },
+                    "items": [
+                        {
+
+                            "description": f"Пополнение ЛК {chat_id.split(':')[0]}",
+                            "quantity": "1",
+                            "amount": {
+                                "value": sum + ".00",
+                                "currency": "RUB",
+                            },
+                            "vat_code": "1"
+
+                        },
+                    ]
+
+                },
+
+                "capture": True,
+                "description": chat_id
+            })
+            payment_data = json.loads(payment.json())
+            payment_id = payment_data['id']
+            payment_url = (payment_data['confirmation'])['confirmation_url']
+            payment = json.loads((Payment.find_one(payment_id)).json())
             session = aiohttp.ClientSession()
-            async with session.post(
-                    url, data = json.dumps(payload), headers = headers,
-                    auth = aiohttp.BasicAuth(config['CPID'], config['CPKEY'])
-                    ) as resp:
-                response = await resp.json(content_type = None)
-                payurl = response['Model']['Url']
-                payid = response['Model']['Id']
-                resp.close()
-                await session.close()
-                code = 0
-                reason = "Successfully created!"
-            return payurl, code, reason
+            code = 0
+            reason = "Successfully created!"
+            return payment_url, code, reason
         except Exception:
             code = 1
             reason = "Unexpected Error! Please ask admin for details"
-            payurl = response
+            payurl = None
             return payurl, code, reason
 
     async def check(track_id, chatid, buy_type=None):
