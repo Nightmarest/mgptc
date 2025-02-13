@@ -71,6 +71,7 @@ async def standartcheckout(chatid: str = Form(), amount: int = Form(), buytype: 
     track_id = str(chatid) +  str(randint(1, 99999))
 
     status = await cloudpay_api.create_payment(track_id, chatid, amount, buytype)
+    lg.error(status)
     if status[1] == 0:
         r = {
             "url": status[0],
