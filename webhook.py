@@ -78,13 +78,13 @@ async def standartcheckout(chatid: str = Form(), amount: int = Form(), buytype: 
             "code": status[1],
             "reason": status[2]
         }
-        raise HTTPException(status_code=201, detail=r)
+        return r
     else:
         r = {
             "reason": status[0],
             "code": status[1],
         }
-        raise HTTPException(status_code=406, detail=r)
+        return r
 
 
 @app.post("/pay/checkout/crypto/")
