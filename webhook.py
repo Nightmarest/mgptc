@@ -10,6 +10,8 @@ from aiogram.types import URLInputFile
 from aiogram.exceptions import TelegramBadRequest
 from contextlib import suppress
 
+from starlette.middleware.cors import CORSMiddleware
+
 import config_data.config
 from database.models import Clients, Temp
 from config_data.create_bot import bot, db
@@ -22,6 +24,17 @@ from config_data.config_load import pay_list
 
 lg.basicConfig(level=lg.INFO, format="%(asctime)s - %(levelname)s - %(name)s - %(message)s")#, filename=config["WebHookLog"])
 app = FastAPI()
+origins = [
+    "*",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # @app.post("/pay/auto/")
 # async def webhook(AccountId: Annotated[str, Form()], SubscriptionId: Annotated[str, Form()]):
