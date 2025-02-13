@@ -46,6 +46,7 @@ class promo:
 class cloudpay_api:
     async def create_payment(track_id, chat_id, sum, buytype):
         try:
+
             Configuration.account_id = config['YOOKASSA_ID']
             Configuration.secret_key = config['YOOKASSA_TOKEN']
             payment = Payment.create({
@@ -87,7 +88,7 @@ class cloudpay_api:
             payment_id = payment_data['id']
             payment_url = (payment_data['confirmation'])['confirmation_url']
             payment = json.loads((Payment.find_one(payment_id)).json())
-            session = aiohttp.ClientSession()
+
             code = 0
             reason = "Successfully created!"
             return payment_url, code, reason
