@@ -24,6 +24,7 @@ RUN pip3 install typing_extensions --break-system-packages
 RUN pip3 install fake_useragent --break-system-packages
 #RUN pip3 install flask[async] --break-system-packages
 RUN pip3 install pyCryptomusAPI --break-system-packages
+RUN pip3 install yookassa --break-system-packages
 WORKDIR /usr/app/src
 
 COPY requirements.txt requirements.txt
