@@ -70,7 +70,7 @@ class cloudpay_api:
                             "description": f"Оплата подписки {buytype} для ЛК {chat_id}",
                             "quantity": "1",
                             "amount": {
-                                "value": sum + ".00",
+                                "value": str(sum) + ".00",
                                 "currency": "RUB",
                             },
                             "vat_code": "1"
