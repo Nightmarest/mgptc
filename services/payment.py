@@ -1,5 +1,6 @@
 import json
 import random
+import traceback
 
 from config_data.config import config
 from config_data.config_load import pay_list
@@ -94,6 +95,7 @@ class cloudpay_api:
             code = 1
             reason = "Unexpected Error! Please ask admin for details"
             payurl = None
+            lg.error(traceback.format_exc())
             return payurl, code, reason
 
     async def check(track_id, chatid, buy_type=None):
