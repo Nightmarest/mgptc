@@ -66,7 +66,7 @@ class cloudpay_api:
                     "items": [
                         {
 
-                            "description": f"Пополнение ЛК {chat_id.split(':')[0]}",
+                            "description": f"Оплата подписки {buytype} для ЛК {chat_id}",
                             "quantity": "1",
                             "amount": {
                                 "value": sum + ".00",
