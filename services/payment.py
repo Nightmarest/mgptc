@@ -50,7 +50,7 @@ class cloudpay_api:
             Configuration.secret_key = config['YOOKASSA_TOKEN']
             payment = Payment.create({
                 "amount": {
-                    "value": sum + ".00",
+                    "value": str(sum) + ".00",
                     "currency": "RUB"
                 },
                 "payment_method_data": {
